@@ -1,112 +1,43 @@
 [
     {
-        "BusName": "Express 101",
-        "BusNo": "EX101",
-        "Origin": "Downtown",
-        "Destination": "Uptown",
-        "Route": "Main Street",
-        "Date": "2024-07-20T00:00:00Z",
-        "DepartureTime": "2024-07-20T08:00:00Z",
-        "ArrivalTime": "2024-07-20T10:00:00Z",
-        "BusType": "Luxury",
-        "Amenities": [
-            "WiFi",
-            "Air Conditioning",
-            "USB Charging Ports"
-        ],
-        "DriverName": "Alice Johnson",
-        "DriverPhoneNo": "+1234567890",
-        "isActive": true,
-        "Price": 30.00,
-        "SeatPrices": {
-            "LowerBirth": 35.00,
-            "UpperBirth": 25.00,
-            "SemiSleeper": 40.00
-        }
+      "carModel": "Model S",
+      "brand": "Tesla",
+      "price": 150,
+      "seats": 5,
+      "availability": true,
+      "imageUrl": "./images/car.avif",
+      "description": "A premium electric sedan with autopilot features.",
+      "category": "One-Way Rental"
     },
     {
-        "BusName": "City Link",
-        "BusNo": "CL202",
-        "Origin": "Central Park",
-        "Destination": "Airport",
-        "Route": "Broadway",
-        "Date": "2024-07-21T00:00:00Z",
-        "DepartureTime": "2024-07-21T09:30:00Z",
-        "ArrivalTime": "2024-07-21T11:30:00Z",
-        "BusType": "Standard",
-        "Amenities": ["Air Conditioning", "Reclining Seats"],
-        "DriverName": "Bob Smith",
-        "DriverPhoneNo": "+1987654321",
-        "isActive": true,
-        "Price": 20.00,
-        "SeatPrices": {
-            "LowerBirth": 25.00,
-            "UpperBirth": 15.00,
-            "SemiSleeper": 30.00
-        }
+      "carModel": "Civic",
+      "brand": "Honda",
+      "price": 75,
+      "seats": 5,
+      "availability": true,
+      "imageUrl": "./images/car.avif",
+      "description": "A reliable and fuel-efficient sedan.",
+      "category": "Round Trip"
     },
     {
-        "BusName": "Highway Star",
-        "BusNo": "HS303",
-        "Origin": "Southside",
-        "Destination": "Northgate",
-        "Route": "Highway 1",
-        "Date": "2024-07-22T00:00:00Z",
-        "DepartureTime": "2024-07-22T07:00:00Z",
-        "ArrivalTime": "2024-07-22T12:00:00Z",
-        "BusType": "Luxury",
-        "Amenities": ["WiFi", "Reclining Seats", "Entertainment System"],
-        "DriverName": "Carol Davis",
-        "DriverPhoneNo": "+1122334455",
-        "isActive": true,
-        "Price": 45.00,
-        "SeatPrices": {
-            "LowerBirth": 50.00,
-            "UpperBirth": 35.00,
-            "SemiSleeper": 55.00
-        }
+      "carModel": "Mustang",
+      "brand": "Ford",
+      "price": 120,
+      "seats": 4,
+      "availability": false,
+      "imageUrl": "./images/car.avif",
+      "description": "A classic American muscle car with powerful performance.",
+      "category": "Hourly Rental"
     },
     {
-        "BusName": "Metro Express",
-        "BusNo": "ME404",
-        "Origin": "East End",
-        "Destination": "West End",
-        "Route": "Elm Street",
-        "Date": "2024-07-23T00:00:00Z",
-        "DepartureTime": "2024-07-23T10:00:00Z",
-        "ArrivalTime": "2024-07-23T12:30:00Z",
-        "BusType": "Standard",
-        "Amenities": ["Air Conditioning", "USB Charging Ports"],
-        "DriverName": "Dave Wilson",
-        "DriverPhoneNo": "+2233445566",
-        "isActive": true,
-        "Price": 25.00,
-        "SeatPrices": {
-            "LowerBirth": 30.00,
-            "UpperBirth": 20.00,
-            "SemiSleeper": 35.00
-        }
-    },
-    {
-        "BusName": "Comfort Ride",
-        "BusNo": "CR505",
-        "Origin": "Suburbia",
-        "Destination": "City Center",
-        "Route": "Park Avenue",
-        "Date": "2024-07-24T00:00:00Z",
-        "DepartureTime": "2024-07-24T15:00:00Z",
-        "ArrivalTime": "2024-07-24T18:00:00Z",
-        "BusType": "Luxury",
-        "Amenities": ["WiFi", "Air Conditioning", "Entertainment System", "Reclining Seats"],
-        "DriverName": "Emily Clark",
-        "DriverPhoneNo": "+3344556677",
-        "isActive": true,
-        "Price": 50.00,
-        "SeatPrices": {
-            "LowerBirth": 60.00,
-            "UpperBirth": 40.00,
-            "SemiSleeper": 65.00
-        }
-    }      
-    
-]
+      "carModel": "Camry",
+      "brand": "Toyota",
+      "price": 85,
+      "seats": 5,
+      "availability": true,
+      "imageUrl": "./images/car.avif",
+      "description": "A spacious and comfortable sedan, perfect for family trips.",
+      "category": "Round Trip"
+    }
+  ]
+  

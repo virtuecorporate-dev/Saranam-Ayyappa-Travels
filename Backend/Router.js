@@ -1,7 +1,8 @@
 const express= require("express")
 const router= express.Router()
-const {getAllBuses}= require('./Controller/AllBusesController')
+const { getAllCar, createCar } = require("./Controller/carController")
 
-router.route("/allbuses").get(getAllBuses)
+router.route("/allCars").get(getAllCar)
+router.route("/createCar").post(createCar)
 
 module.exports=router

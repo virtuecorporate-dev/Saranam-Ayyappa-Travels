@@ -6,6 +6,7 @@ import Footer from './Components/Footer';
 import { Store } from './Store';
 import { Provider } from 'react-redux';
 import Admin from './Pages/Admin';
+import { CreateTable } from './Components/CreateTable';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/admin' element={<Admin/>}/>
+            <Route path='/admin/create' element={<CreateTable/>}/>
           </Routes>
 
           <Footer />
