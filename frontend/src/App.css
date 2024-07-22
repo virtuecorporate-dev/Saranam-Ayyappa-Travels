@@ -49,9 +49,9 @@ body{
 
 /* searching bar---------------- */
 .search-call{
-    padding: 30px;
-    background-color: #2E236C;
-    opacity: 0.9;
+    /* padding: 30px; */
+  
+    /* opacity: 0.9; */
     color: white;
     margin-top: -80px;
 }
@@ -84,4 +84,21 @@ body{
 .home-banner-img img{
     height: 100%;
     width: 100%;
+}
+
+/* -----------------------------------form -style----------------------------------- */
+.form-left, .form-right{
+    padding: 50px;
+}
+.form-right{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.from-input input {
+    margin: 10px;
+    
+}
+.from-input {
+
+    color: black !important;
 }
