@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    background-color:#2E236C !important;
+    padding: 20px;
+    position: sticky;
+}
+
+.nav-link, .nav-link.active {
+    color: white !important;    
+    align-items: end !important;
+    display: flex;
+}
+
+.navbar-nav .nav-link:hover {
+    color: red !important;
+  }
+  
+.navbar-nav.ml-auto {
+    display: flex;
+    justify-content: end !important;
+  }
+
+#navbarNav{
+    justify-items: flex-end;
+}
+
+.navbar-toggler {
+    color: white;
+    background-color: white;
+}
+
+/* navbar end-------------------------------------------- */
+
+/* Banner-image start-------------------------------------- */
+.banner-img{
+    margin: 0;
+    height: 80vh;
+    padding:0;
+}
+.banner-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    padding:0;
+}
+
+/* searching bar---------------- */
+.search-call{
+    padding: 30px;
+    background-color: #2E236C;
+    opacity: 0.9;
+    color: white;
+    margin-top: -80px;
+}
+
+.phone-icon {
+    border: 2px solid black !important;
+    
+}
+.book button{
+    background-color: red !important;
+    border: #2E236C;
+    border-radius: 5px;
+    color:#2E236C;
+    font-weight: bolder;
+    padding: 5px;
+}
+
+.book button:hover{
+    background-color: wheat !important;
+}
+
+/* home banner-------------------------- */
+.home-banner{
+    margin-top: 50px;
+}
+.home-banner-text {
+    color: #2E236C !important;
+    font-weight: bolder;
+}
+.home-banner-img img{
+    height: 100%;
+    width: 100%;
+}
