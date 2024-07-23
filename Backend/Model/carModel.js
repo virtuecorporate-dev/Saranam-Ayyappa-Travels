@@ -23,18 +23,18 @@ const carSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
       },
-      imageUrl: {
-        type: String,
-        required: true,
-      },
+      // imageUrl: {
+      //   type: String,
+      //   required: true,
+      // },
       description: {
         type: String,
         trim: true,
       },
       category: {
-        type: String,
+        type: [String],
         required: true,
-        enum: ['One-Way Rental', 'Round Trip', 'Hourly Rental'],
+        
       },
      
 })
