@@ -60,7 +60,8 @@ function Table() {
                             <td>
                             {car.category}
                                 </td>   
-                            <button>Update</button>     
+                                <Link to={`/edit/${car.id}`}><button>Edit</button>     
+                                </Link>
                             <button>Delete</button>         
                             </tr>
                     })}

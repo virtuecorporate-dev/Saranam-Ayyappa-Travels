@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import Admin from './Pages/Admin';
 import { CreateTable } from './Components/CreateTable';
 import Cars from './Pages/Cars';
+import { UpdateTable } from './Components/updateTable';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/admin/create' element={<CreateTable/>}/>
             <Route path='/cars' element={<Cars/>}/>
+            <Route path='/edit/:id' element={<UpdateTable/>} />
           </Routes>
 
           <Footer />

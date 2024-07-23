@@ -24,11 +24,22 @@ const carSlice = createSlice({
       addCar: (state, action) => {
         state.Cars.push(action.payload);
       },
-  
+      updateCar:(state,action)=>{
+          const index = state.Cars.findIndex(x=>x.id === action.payload.id);
+          state.users[index]={
+            carModel:action.payload.carModel, 
+            brand:action.payload.brand, 
+            price:action.payload.price, 
+            seats:action.payload.price, 
+            availability:action.payload.availability, 
+            description:action.payload.description, 
+            category:action.payload.category
+          }
+      }
 
     }
   });
   
-  export const { getAllCar,addCar } = carSlice.actions;
+  export const { getAllCar,addCar,updateCar} = carSlice.actions;
   export default carSlice.reducer;
   
