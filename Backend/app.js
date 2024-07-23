@@ -4,11 +4,14 @@ const dotenv= require("dotenv")
 const path= require("path")
 const mongodbConnection = require("./config/connectDatabase");
 const cors= require('cors');
+
 app.use(cors({
     origin: 'http://localhost:3000',
     credentials: true
 }))
 app.use(express.json())
+app.use('/uploads', express.static(path.join(__dirname,'uploads') ) )
+
 
 dotenv.config({path:path.join(__dirname,"config","config.env")})
 mongodbConnection()

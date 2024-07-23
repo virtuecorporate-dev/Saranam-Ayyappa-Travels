@@ -12,45 +12,36 @@ exports.getAllCar = async (req, res) => {
         console.log(error.message)
     }
 }
-// exports.createCar = async (req, res) => {
-//     try {
-//       const { carModel, brand, price, seats, availability, imageUrl, description, category } = req.body;
-//       const createCar = await createModel.create({ carModel, brand, price, seats, availability, imageUrl, description, category });
-//       res.status(201).json({
-//         success: true,
-//         createCar
-//       });
-//     } catch (error) {
-//       res.status(500).json({
-//         success: false,
-//         message: error.message
-//       });
-//     }
-//   };
-  
-exports.createCar= async(req,res)=>{
-    try {
-     const { carModel, brand, price, seats, availability, imageUrl, description, category} = req.body;
-     const createCar = await CarModel.create({ carModel, brand, price, seats, availability, imageUrl, description, category} );
-     res.status(201).json({
-      success:"true",
-      createCar
-     })
-    } catch(error) {
-      res.status(500).json({
-        success:"fail",
-        error:error.message
-      })
-    }
-  }
 
-// exports.createCar = (req, res) => {
-//     createModel.create(req.body)
-//       .then(car => {
-//         res.status(201).json(car);
-//       })
-//       .catch(err => {
-//         res.status(500).json({ message: err.message });
-//       });
-//   };
-  
+
+exports.createCar = async (req, res) => {
+  try {
+    const { carModel, brand, price, seats, availability, description, category } = req.body;
+    const imageUrl = req.file ? req.file.path : ''; // Multer will handle the file upload
+
+    const newCar = new CarModel({
+      carModel,
+      brand,
+      price,
+      seats,
+      availability,
+      // imageUrl,
+      category,
+      description,
+    });
+
+    await newCar.save();
+
+    res.status(201).json({
+      success: true,
+      newCar
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+};
+
+

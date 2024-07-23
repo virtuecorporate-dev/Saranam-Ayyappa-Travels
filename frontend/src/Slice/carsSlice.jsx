@@ -20,10 +20,13 @@ const carSlice = createSlice({
             category: car.category
           };
         });
+      },
+      addCar:(state,action)=>{
+        state.Cars.push(action.payload);
       }
     }
   });
   
-  export const { getAllCar } = carSlice.actions;
+  export const { getAllCar,addCar } = carSlice.actions;
   export default carSlice.reducer;
   

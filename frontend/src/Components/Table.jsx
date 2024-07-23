@@ -58,9 +58,7 @@ function Table() {
                             />
                             <td>{car.description}</td>
                             <td>
-                                <select>
-                                    <option>{car.category}</option>
-                                </select>
+                            {car.category}
                                 </td>   
                             <button>Update</button>     
                             <button>Delete</button>         

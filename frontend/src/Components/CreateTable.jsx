@@ -9,23 +9,24 @@ export function CreateTable(){
         availability: true,
         imageUrl: '',
         description: '',
-        category: 'One-Way Rental',
+        category: '',
       });
     
       // Handle change for all input fields
       const handleChange = (e) => {
-        const { name, value, type, checked } = e.target;
-        setFormData({
-          ...formData,
-          [name]: type === 'checkbox' ? checked : value,
-        });
+        // const { name, value, type, checked } = e.target;
+        // setFormData({
+        //   ...formData,
+        //   [name]: type === 'checkbox' ? checked : value,
+        // });
+        setFormData(e.target.value);
       };
+
     
       // Handle form submission
-      const handleSubmit = (e) => {
+      const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log('Form data submitted:', formData);
-        
+        await axios.post(``)        
       };
     
       return (
