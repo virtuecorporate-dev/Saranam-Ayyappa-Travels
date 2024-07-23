@@ -61,7 +61,7 @@ const BookingForm = () => {
 
     const navigate= useNavigate()
     const FormSubmit = () => {
-        navigate("/cars")
+        navigate("/cars", {state:state})
        
     };
 
