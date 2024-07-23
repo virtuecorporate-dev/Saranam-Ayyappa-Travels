@@ -44,4 +44,26 @@ exports.createCar = async (req, res) => {
   }
 };
 
+exports.updateCar = async(req,res)=>{
+  try {
+    const id = req.params.id
+  
+    const update = await CarModel.findByIdAndUpdate({_id:id},{
+      carModel:req.body.carModel,
+      brand:req.body.brand,
+      price:req.body.price,
+      seats:req.body.seats,
+      availability:req.body.availability,
+      // imageUrl,
+      category:req.body.category,
+      description:req.body.description
+    })
+    res.status(201).json({
+      success:true,
+      update
+    })
+  } catch (error) {
+      error:error.message
+  }
 
+}

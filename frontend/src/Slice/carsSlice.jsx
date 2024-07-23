@@ -21,9 +21,11 @@ const carSlice = createSlice({
           };
         });
       },
-      addCar:(state,action)=>{
+      addCar: (state, action) => {
         state.Cars.push(action.payload);
-      }
+      },
+  
+
     }
   });
   
