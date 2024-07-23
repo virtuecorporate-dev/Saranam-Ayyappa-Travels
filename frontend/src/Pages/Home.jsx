@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <Fragment>
       <div className="container-fluid banner-img">
-        <img src="images/Home.jpg" alt="image-not-found" className='img-fluid' />
+        <img src="images/car.avif" alt="image-not-found" className='img-fluid' />
       </div>
 
       <section>
