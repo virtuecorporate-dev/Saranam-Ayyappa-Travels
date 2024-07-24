@@ -9,7 +9,6 @@ export function UpdateTable(){
     const Cars = useSelector(state => state.Cars.Cars)
     const {id} = useParams();
     const car = Cars.find(u=>u.id === id);
-    console.log(car);
     const [carModel, setCarModel] = useState(car.carModel);
     const [brand, setBrand] = useState(car.brand);
     const [price, setPrice] = useState(car.price);
@@ -25,8 +24,8 @@ export function UpdateTable(){
       e.preventDefault();
       try {
         const formData = { carModel, brand, price, seats, availability, description, category };
-        const response = await axios.put('http://localhost:8000/api/v1/update'+id, formData);
-        dispatch(updateCar(response.data));
+        const response = await axios.put(`http://localhost:8000/api/v1/update/${id}`, formData);
+        dispatch(updateCar(response.data.car));
         navigate('/admin');
       } catch (error) {
         console.error('Error:', error.message);

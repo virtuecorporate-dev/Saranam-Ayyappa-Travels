@@ -1,12 +1,21 @@
 import React, { Fragment, useEffect } from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllCar } from '../Slice/carsSlice';
+import { deleteCar, getAllCar } from '../Slice/carsSlice';
 import { Link } from 'react-router-dom';
 
 function Table() {
     const dispatch = useDispatch();
     const cars = useSelector(state => state.Cars.Cars || [])
+
+    const handleDelete= (id)=>{
+        try {
+            const response1 = axios.delete(`http://localhost:8000/api/v1/delete/${id}`)
+            dispatch (deleteCar(response1({id})))
+        } catch (error) {
+            
+        }
+    }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -62,7 +71,7 @@ function Table() {
                                 </td>   
                                 <Link to={`/edit/${car.id}`}><button>Edit</button>     
                                 </Link>
-                            <button>Delete</button>         
+                            <button onClick={()=>handleDelete(car.id)}>Delete</button>         
                             </tr>
                     })}
 
