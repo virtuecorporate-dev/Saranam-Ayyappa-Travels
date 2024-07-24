@@ -68,15 +68,15 @@ const BookingForm = () => {
     return (
         <div className="container">
             <div className="row search-call">
-                <div className="col-lg-4 form-left" style={{ backgroundColor: "#2E236C" }} >
+                <div className="col-lg-4 form-left " style={{ backgroundColor: "#2E236C" }} >
                     <h3>Call Now !</h3>
                     <div className="row">
-                        <div className="col-lg-2 phone-icons mt-2">
-                            <i className="fa-solid fa-phone" style={{ fontSize: "30px", background: "red", padding: "8px", color: "white" }}></i>
+                        <div className="col-lg-2 phone-icons mt-4">
+                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", background: "red", padding: "8px", color: "white",textAlign:"start" }}></i>
                         </div>
-                        <div className="col-lg-10">
-                            <h6 className='text-secondary'>Call for detail information</h6>
-                            <h3>1234 1234 98</h3>
+                        <div className="col-lg-10 callDetails">
+                            <h6>Call for detail information</h6>
+                            <h2>1234 1234 983</h2>
                         </div>
                     </div>
                 </div>
@@ -230,7 +230,7 @@ const BookingForm = () => {
                         )}
 
                         <div className='row mt-4'>
-                            <div className="col-12">
+                            <div className="col-12 search-cab">
                                 <button type='submit'>Search Cabs</button>
                             </div>
                         </div>

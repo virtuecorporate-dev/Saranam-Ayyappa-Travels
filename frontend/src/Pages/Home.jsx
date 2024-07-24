@@ -3,43 +3,51 @@ import BookingForm from '../Components/Form';
 
 export default function Home() {
 
- 
-
-
-
   return (
     <Fragment>
+      <div className='landing'>
       <div className="container-fluid banner-img">
-        <img src="images/car.avif" alt="image-not-found" className='img-fluid' />
+        <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
       </div>
+      <div className="landing-text">
+        <pre> <h1>Charter With Us For An 
+                Adventure-Filled Journey</h1>
+                </pre>
+       
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
+        <button>Explore us </button>
+      </div>
+      </div>
+      
 
       <section className='booking-form-sec'>
-       <BookingForm/>
+        <BookingForm />
       </section>
+      
       <section>
-        <div className="container-fluid">
-          <div className="container ">
-            <div className="row home-banner">
-              <div className="col-lg-6">
-                <h3>A bus rental that's affordable and comfortable</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?</p>
-                <div className="row ">
-                  <div className="col-lg-6">
-                    <h2 className='home-banner-text'>25 + </h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
-                  </div>
-                  <div className="col-lg-6">
-                    < h2 className='home-banner-text'>97 %</h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
-                  </div>
+        <div className="container-fluid p-3">
+          <div className="row home-banner p-5">
+            <div className="col-lg-6">
+              <h2>A Car rental that's affordable and comfortable</h2>
+              <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus saepe voluptatem magni optio! Porro, ipsam temporibus adipisci tempore quam explicabo recusandae fuga? Quam voluptatem reiciendis neque, fugiat illo eius dolorum!
+              </p>
+              <div className="row mt-2">
+                <div className="col-lg-6">
+                  <h2 className='home-banner-text'>25 + </h2>
+                  <h5>Bus Ready</h5>
+                  <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                </div>
+                <div className="col-lg-6">
+                  <h2 className='home-banner-text'>97 %</h2>
+                  <h5>Bus Ready</h5>
+                  <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="home-banner-img">
-                  <img src="./images/home-img.webp" alt="" class="img-fluid" />
-                </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="home-banner-img">
+                <img src="./images/carbanner1.png" alt="" class="img-fluid" />
               </div>
             </div>
           </div>
@@ -47,14 +55,15 @@ export default function Home() {
       </section>
       <section>
         <div className="container-fluid">
-          <div className="row p-5 ">
+          <div className="row p-5 whoweare">
             <div className="col-lg-4">
               <h5>WHO WE ARE
               </h5>
               <h3>Enjoy the journey – travel with us</h3>
             </div>
             <div className="col-lg-8">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
             </div>
           </div>
           <div className="row gap-0">
