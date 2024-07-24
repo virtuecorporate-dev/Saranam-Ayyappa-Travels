@@ -60,7 +60,8 @@ const BookingForm = () => {
     const [state, dispatch] = useReducer(reducer, InitialState);
 
     const navigate= useNavigate()
-    const FormSubmit = () => {
+    const FormSubmit = (e) => {
+        e.preventDefault();
         navigate("/cars", {state:state})
        
     };
@@ -143,7 +144,7 @@ const BookingForm = () => {
                             </div>
                         </div>
 
-                        <div className='row mt-3'>
+                        {/* <div className='row mt-3'>
                             <div className='col-4'>
                                 <label htmlFor="name">Name</label>
                                 <input type="text" className='input-field'
@@ -165,7 +166,7 @@ const BookingForm = () => {
                                     placeholder={state.mail}
                                     onChange={(e) => dispatch({ type: "MAIL", payload: e.target.value })} />
                             </div>
-                        </div>
+                        </div> */}
 
                         <div className='row mt-3'>
                             <div className='col-6'>
