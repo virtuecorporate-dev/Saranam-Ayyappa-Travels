@@ -42,14 +42,22 @@ body {
 /* Banner-image start-------------------------------------- */
 .banner-img {
     margin: 0;
-    height: 80vh;
+    height: 90vh;
     padding: 0;
     position:relative;
 }
+.landing{
+    padding: 0;
+    margin: 0;
+}
 .landing-text{
     position: absolute;
-    top: 180px;
+    top: 300px;
     color: white;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    
 }
 
 .landing-text h1{
@@ -64,6 +72,7 @@ body {
   font-weight: 500;
   font-style: normal;
   font-size: larger;
+  justify-self: right;
 
 }
 
@@ -82,7 +91,6 @@ body {
 .banner-img img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
     padding: 0;
 }
 
@@ -116,11 +124,11 @@ body {
 
 /* home banner-------------------------- */
 .home-banner {
-    margin-top: 60px;
-
+    margin-top: 450px;
+    padding-left: 10px;
 }
 .home-banner h3{
-    font-family: "Roboto", sans-serif;
+font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
 }
@@ -150,7 +158,6 @@ body {
 .home-banner-img{
     width:auto;
     margin-top: -20px;
-    box-shadow: 5px 5px  whitesmoke;
 }
 
 .home-banner-img img {
@@ -161,8 +168,7 @@ body {
 /* -----------------------------------form -style----------------------------------- */
 .form-left,
 .form-right {
-    padding: 30px;
-    text-align: center;
+    padding: 20px;
     align-content: center;
     box-shadow: 7px 5px whitesmoke;
     
@@ -239,7 +245,10 @@ body {
 }
 
 /* whoweare ------------------------------------------------ */
-
+.whoweare{
+    background-color: #2E236C;
+    color: white;
+}
 .whoweare h5 {
     font-family: "Roboto Mono", monospace;
   font-optical-sizing: auto;
@@ -255,3 +264,103 @@ font-family: "Roboto", sans-serif;
   font-style: normal;
   font-size: 40px;
 }
+
+.whoweare p{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: large;
+  font-style: normal;
+
+}
+
+/* full banner image---------------------------- */
+.fullbanner{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.fullbanner img{
+    height: 100%;
+    width: 100%;
+}
+.banner-text{
+    position: absolute;
+    margin-top: -500px;
+    color: white;
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    margin-left: 400px;
+    
+}
+
+.banner-text h1{
+    font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.banner-text p{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: larger;
+  justify-self: right;
+
+}
+
+.banner-text button{
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: x-large;
+
+
+  
+}
+
+/* flat icons-------------------------- */
+
+.flat-icons{
+    display: flex;
+    justify-content: center;
+}
+
+/* -------------footer-start--------------- */
+footer{
+    background-color: #2E236C;
+    color: white;
+  }
+  .footer-content-col{
+    /* border: 1px solid red; */
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo{
+    width: 130px;
+   
+  }
+  
+  .footer-content ul{
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .footer-content li{
+    list-style-type: none;
+    padding: 0 10px;
+  }
+  .footer-icons i{
+    font-size: 25px;
+    padding: 15px 15px 15px 0;
+  }
+  

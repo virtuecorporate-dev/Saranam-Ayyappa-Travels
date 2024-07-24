@@ -6,56 +6,61 @@ export default function Home() {
   return (
     <Fragment>
       <div className='landing'>
-      <div className="container-fluid banner-img">
-        <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
+        <div className="container-fluid banner-img">
+          <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
+        </div>
+        <div className="landing-text row p-0">
+          <div className="col-lg-6">
+            <h1>Charter With Us For An Adventure-Filled Journey</h1>
+
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
+            <button>Explore us </button>
+          </div>
+          <div className="col-lg-5"></div>
+
+        </div>
       </div>
-      <div className="landing-text">
-        <pre> <h1>Charter With Us For An 
-                Adventure-Filled Journey</h1>
-                </pre>
-       
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
-        <button>Explore us </button>
-      </div>
-      </div>
-      
+
 
       <section className='booking-form-sec'>
         <BookingForm />
       </section>
-      
+
       <section>
-        <div className="container-fluid p-3">
-          <div className="row home-banner p-5">
-            <div className="col-lg-6">
-              <h2>A Car rental that's affordable and comfortable</h2>
-              <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus saepe voluptatem magni optio! Porro, ipsam temporibus adipisci tempore quam explicabo recusandae fuga? Quam voluptatem reiciendis neque, fugiat illo eius dolorum!
-              </p>
-              <div className="row mt-2">
-                <div className="col-lg-6">
-                  <h2 className='home-banner-text'>25 + </h2>
-                  <h5>Bus Ready</h5>
-                  <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
-                </div>
-                <div className="col-lg-6">
-                  <h2 className='home-banner-text'>97 %</h2>
-                  <h5>Bus Ready</h5>
-                  <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+        <div className="container-fluid ">
+          <div className="container">
+            <div className="row home-banner ">
+              <div className="col-lg-6">
+                <h2>A Car rental that's affordable and comfortable</h2>
+                <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus saepe voluptatem magni optio! Porro, ipsam temporibus adipisci tempore quam explicabo recusandae fuga? Quam voluptatem reiciendis neque, fugiat illo eius dolorum!
+                </p>
+                <div className="row mt-2">
+                  <div className="col-lg-6">
+                    <h2 className='home-banner-text'>25 + </h2>
+                    <h5>Bus Ready</h5>
+                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                  </div>
+                  <div className="col-lg-6">
+                    <h2 className='home-banner-text'>97 %</h2>
+                    <h5>Bus Ready</h5>
+                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-6">
-              <div className="home-banner-img">
-                <img src="./images/carbanner1.png" alt="" class="img-fluid" />
+              <div className="col-lg-6">
+                <div className="home-banner-img">
+                  <img src="./images/carbanner1.png" alt="" class="img-fluid" />
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
       <section>
-        <div className="container-fluid">
-          <div className="row p-5 whoweare">
+        <div className="container-fluid mt-5 whoweare">
+          <div className="row p-5 ">
             <div className="col-lg-4">
               <h5>WHO WE ARE
               </h5>
@@ -67,16 +72,34 @@ export default function Home() {
             </div>
           </div>
           <div className="row gap-0">
-            <div className="col-lg-4">
-              <img src="./images/bus.jpg" alt="" class="img-fluid" />
+            <div className="col-lg-3">
+              <img src="./images/car1.png" alt="" class="img-fluid" />
             </div>
-            <div className="col-lg-4">
-              <img src="./images/businterior1.jpg" class="img-fluid" alt="" />
+            <div className="col-lg-3">
+              <img src="./images/car2.png" class="img-fluid" alt="" />
             </div>
-            <div className="col-lg-4">
-              <img src="./images/businterior.jpg" class="img-fluid" alt="" />
+            <div className="col-lg-3">
+              <img src="./images/car3.png" class="img-fluid" alt="" />
+            </div>
+            <div className="col-lg-3">
+              <img src="./images/car4.png" class="img-fluid" alt="" />
             </div>
           </div>
+        </div>
+      </section>
+      <section>
+        <div className="fullbanner">
+          <img src="./images/fullbanner.jpg" alt="image not found" class='img-fluid'/>
+        </div>
+        <div className="banner-text row p-0">
+          <div className="col-lg-6">
+            <h1>Charter With Us For An Adventure-Filled Journey</h1>
+
+            <p className='mt-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
+            <button>Explore us </button>
+          </div>
+          <div className="col-lg-5"></div>
+
         </div>
       </section>
       <section>
@@ -90,6 +113,7 @@ export default function Home() {
           <div className="row p-5 home-banner1-icons">
             <div className="col-lg-3 d-flex align-items-center justify-content-center">
               <div className="card">
+                <div className='flat-icons'>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="80" height="80" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
                   <g>
                     <g data-name="Layer 2">
@@ -98,6 +122,8 @@ export default function Home() {
                     </g>
                   </g>
                 </svg>
+                </div>
+               
                 <div className="card-body">
                   <h5 className="card-title text-center">Corporate Travelers</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -106,6 +132,7 @@ export default function Home() {
             </div>
             <div className="col-lg-3 d-flex align-items-center justify-content-center">
               <div className="card">
+              <div className='flat-icons'>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="80" height="80" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
                   <g>
                     <g data-name="Layer 2">
@@ -114,6 +141,7 @@ export default function Home() {
                     </g>
                   </g>
                 </svg>
+                </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Corporate Travelers</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -122,6 +150,7 @@ export default function Home() {
             </div>
             <div className="col-lg-3 d-flex align-items-center justify-content-center">
               <div className="card">
+              <div className='flat-icons'>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="80" height="80" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
                   <g>
                     <g data-name="Layer 2">
@@ -130,6 +159,7 @@ export default function Home() {
                     </g>
                   </g>
                 </svg>
+                </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Corporate Travelers</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -138,6 +168,7 @@ export default function Home() {
             </div>
             <div className="col-lg-3 d-flex align-items-center justify-content-center">
               <div className="card">
+              <div className='flat-icons'>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlnsXlink="http://www.w3.org/1999/xlink" width="80" height="80" x="0" y="0" viewBox="0 0 64 64" style={{ enableBackground: 'new 0 0 512 512' }} xmlSpace="preserve" className="">
                   <g>
                     <g data-name="Layer 2">
@@ -146,6 +177,7 @@ export default function Home() {
                     </g>
                   </g>
                 </svg>
+                </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Corporate Travelers</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
