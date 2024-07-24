@@ -3,7 +3,8 @@ const CarModel = require('../Model/carModel')
 
 exports.getAllCar = async (req, res) => {
     try {
-        const Cars = await CarModel.find({})
+      const category =req.query.category
+        const Cars = await CarModel.find({category})
         res.json({
             success: true,
             Cars

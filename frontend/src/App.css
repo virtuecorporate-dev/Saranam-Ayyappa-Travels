@@ -48,12 +48,15 @@ body{
 }
 
 /* searching bar---------------- */
+.booking-form-sec{
+    margin-top: -80px;
+}
 .search-call{
     /* padding: 30px; */
   
     /* opacity: 0.9; */
     color: white;
-    margin-top: -80px;
+   
 }
 
 .phone-icon {
@@ -95,10 +98,20 @@ body{
     padding-bottom: 30px;
 }
 .from-input input {
-    margin: 10px;
+    margin: 10px 10px 0 0;
     
 }
 .from-input {
 
     color: black !important;
+}
+.booking-form label{
+    color: black;
+}
+.input-field{
+    width: 95% !important;
+    margin-top: 5px;
+    border: none;
+    /* border: 0 0 2px 0 solid black; */
+    border-bottom: 2px solid black;
 }
