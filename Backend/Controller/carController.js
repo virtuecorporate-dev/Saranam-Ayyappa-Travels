@@ -2,16 +2,28 @@
 const CarModel = require('../Model/carModel')
 
 exports.getAllCar = async (req, res) => {
-    try {
-      const category =req.query.category
-        const Cars = await CarModel.find({category})
-        res.json({
-            success: true,
-            Cars
-        })
-    } catch (error) {
-        console.log(error.message)
-    }
+  try { 
+    const Cars = await CarModel.find({})
+    res.json({
+      success: true,
+      Cars
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
+}
+
+exports.getCarsByCategory = async (req, res) => {
+  try {
+    const category = req.query.category
+    const Cars = await CarModel.find({ category })
+    res.json({
+      success: true,
+      Cars
+    })
+  } catch (error) {
+    console.log(error.message)
+  }
 }
 
 
@@ -45,26 +57,26 @@ exports.createCar = async (req, res) => {
   }
 };
 
-exports.updateCar = async(req,res)=>{
+exports.updateCar = async (req, res) => {
   try {
     const id = req.params.id
-  
-    const update = await CarModel.findByIdAndUpdate({_id:id},{
-      carModel:req.body.carModel,
-      brand:req.body.brand,
-      price:req.body.price,
-      seats:req.body.seats,
-      availability:req.body.availability,
+
+    const update = await CarModel.findByIdAndUpdate({ _id: id }, {
+      carModel: req.body.carModel,
+      brand: req.body.brand,
+      price: req.body.price,
+      seats: req.body.seats,
+      availability: req.body.availability,
       // imageUrl,
-      category:req.body.category,
-      description:req.body.description
+      category: req.body.category,
+      description: req.body.description
     })
     res.status(201).json({
-      success:true,
+      success: true,
       update
     })
   } catch (error) {
-      error:error.message
+    error: error.message
   }
 
 }

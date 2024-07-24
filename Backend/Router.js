@@ -1,6 +1,6 @@
 const express= require("express")
 const router= express.Router()
-const { getAllCar, createCar, updateCar } = require("./Controller/carController");
+const { getAllCar, createCar, updateCar, getCarsByCategory } = require("./Controller/carController");
 const multer = require('multer');
 const path = require('path')
 
@@ -13,6 +13,7 @@ const upload = multer({storage: multer.diskStorage({
     }
 }) })
 router.route("/allCars").get(getAllCar)
+router.route("/avaibleCars").get(getCarsByCategory)
 // router.route("/createCar").post(upload.single('imageUrl'), createCar);
 router.route("/createCar").post(createCar);
 router.route("/update/:id").put(updateCar);

@@ -9,6 +9,7 @@ import Admin from './Pages/Admin';
 import { CreateTable } from './Components/CreateTable';
 import Cars from './Pages/Cars';
 import { UpdateTable } from './Components/updateTable';
+import ConfirmBooking from './Pages/Confirm Booking';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <Route path='/admin/create' element={<CreateTable/>}/>
             <Route path='/cars' element={<Cars/>}/>
             <Route path='/edit/:id' element={<UpdateTable/>} />
+            <Route path='/confirmbooking' element={<ConfirmBooking/>}/>
           </Routes>
 
           <Footer />
