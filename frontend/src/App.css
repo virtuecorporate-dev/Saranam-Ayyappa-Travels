@@ -1,29 +1,34 @@
-body{
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
     margin: 0;
     padding: 0;
 }
-.navbar{
-    background-color:#2E236C !important;
+
+.navbar {
+    background-color: #2E236C !important;
     padding: 20px;
     position: sticky;
 }
 
-.nav-link, .nav-link.active {
-    color: white !important;    
+
+.nav-link,
+.nav-link.active {
+    color: white !important;
     align-items: end !important;
     display: flex;
 }
 
 .navbar-nav .nav-link:hover {
     color: red !important;
-  }
-  
+}
+
 .navbar-nav.ml-auto {
     display: flex;
     justify-content: end !important;
-  }
+}
 
-#navbarNav{
+#navbarNav {
     justify-items: flex-end;
 }
 
@@ -35,83 +40,327 @@ body{
 /* navbar end-------------------------------------------- */
 
 /* Banner-image start-------------------------------------- */
-.banner-img{
+.banner-img {
     margin: 0;
-    height: 80vh;
-    padding:0;
+    height: 90vh;
+    padding: 0;
+    position:relative;
 }
-.banner-img img{
+.landing{
+    padding: 0;
+    margin: 0;
+}
+.landing-text{
+    position: absolute;
+    top: 300px;
+    color: white;
+    display: flex;
+    justify-content: left;
+    text-align: center;
+    
+}
+
+.landing-text h1{
+    font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.landing-text p{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: larger;
+  justify-self: right;
+
+}
+
+.landing-text button{
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: x-large;
+
+}
+.banner-img img {
     height: 100%;
     width: 100%;
-    object-fit: cover;
-    padding:0;
+    padding: 0;
 }
 
 /* searching bar---------------- */
-.booking-form-sec{
+.booking-form-sec {
     margin-top: -80px;
 }
-.search-call{
-    /* padding: 30px; */
-  
-    /* opacity: 0.9; */
+
+.search-call {
+   position: absolute;
     color: white;
-   
 }
 
 .phone-icon {
     border: 2px solid black !important;
-    
+
 }
-.book button{
+
+.book button {
     background-color: red !important;
     border: #2E236C;
     border-radius: 5px;
-    color:#2E236C;
+    color: #2E236C;
     font-weight: bolder;
     padding: 5px;
 }
 
-.book button:hover{
+.book button:hover {
     background-color: wheat !important;
 }
 
 /* home banner-------------------------- */
-.home-banner{
-    margin-top: 50px;
+.home-banner {
+    margin-top: 450px;
+    padding-left: 10px;
 }
+.home-banner h3{
+font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.home-banner p{
+   font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: large;
+}
+
 .home-banner-text {
     color: #2E236C !important;
-    font-weight: bolder;
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    margin-top: 5px;
 }
-.home-banner-img img{
+
+.home-banner h5{
+    font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style:normal;
+
+}
+
+.home-banner-img{
+    width:auto;
+    margin-top: -20px;
+}
+
+.home-banner-img img {
     height: 100%;
     width: 100%;
 }
 
 /* -----------------------------------form -style----------------------------------- */
-.form-left, .form-right{
-    padding: 50px;
-}
-.form-right{
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-.from-input input {
-    margin: 10px 10px 0 0;
+.form-left,
+.form-right {
+    padding: 20px;
+    align-content: center;
+    box-shadow: 7px 5px whitesmoke;
     
 }
+
+.form-left h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-align: start !important;
+    padding: 10px;
+
+}
+
+.callDetails  {
+    text-align: start;
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    margin-top: 20px;
+
+}
+.callDetails h2{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    text-align: start !important;
+}
+.triptype label{
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-top: 20px;
+}
+.search-cab button{
+    font-family: "Merriweather", serif;
+    font-weight: 700;
+    font-style: normal;
+    padding: 10px;
+    background-color: #2e236cd0;
+    color: white;
+    border-radius: 20px;
+}
+.search-cab button:hover{
+    background-color: red;
+}
+.form-right {
+    /* padding-top: 30px;
+    padding-bottom: 30px; */
+}
+
+.from-input input {
+    margin: 10px 10px 0 0;
+
+}
+
 .from-input {
 
     color: black !important;
 }
-.booking-form label{
+
+.booking-form label {
     color: black;
 }
-.input-field{
+
+.input-field {
     width: 95% !important;
     margin-top: 5px;
     border: none;
     /* border: 0 0 2px 0 solid black; */
     border-bottom: 2px solid black;
 }
+
+/* whoweare ------------------------------------------------ */
+.whoweare{
+    background-color: #2E236C;
+    color: white;
+}
+.whoweare h5 {
+    font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+
+  
+}
+
+.whoweare  h3{
+font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.whoweare p{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: large;
+  font-style: normal;
+
+}
+
+/* full banner image---------------------------- */
+.fullbanner{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+.fullbanner img{
+    height: 100%;
+    width: 100%;
+}
+.banner-text{
+    position: absolute;
+    margin-top: -500px;
+    color: white;
+    display: flex;
+    justify-content: right;
+    text-align: center;
+    margin-left: 400px;
+    
+}
+
+.banner-text h1{
+    font-family: "Merriweather", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.banner-text p{
+    font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: larger;
+  justify-self: right;
+
+}
+
+.banner-text button{
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: x-large;
+
+
+  
+}
+
+/* flat icons-------------------------- */
+
+.flat-icons{
+    display: flex;
+    justify-content: center;
+}
+
+/* -------------footer-start--------------- */
+footer{
+    background-color: #2E236C;
+    color: white;
+  }
+  .footer-content-col{
+    /* border: 1px solid red; */
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo{
+    width: 130px;
+   
+  }
+  
+  .footer-content ul{
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  .footer-content li{
+    list-style-type: none;
+    padding: 0 10px;
+  }
+  .footer-icons i{
+    font-size: 25px;
+    padding: 15px 15px 15px 0;
+  }
+  
