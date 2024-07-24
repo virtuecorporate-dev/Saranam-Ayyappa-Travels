@@ -33,7 +33,31 @@ const ConfirmBooking = () => {
         }));
     }
 
-    const BookNow = () => { }
+    const BookNow = (e) => { 
+        e.preventDefault();
+        const bookingDetails = {
+            ...state,
+            ...form,
+            selectedCab: state.selectedCab
+    }
+
+    fetch('http://localhost:8000/api/v1/sendemail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ bookingDetails })
+      })
+        .then(response => response.json())
+        .then(data => {
+            alert("mail send")
+          console.log('Success:', data);
+          // You can add additional logic here, like showing a success message or redirecting the user.
+        })
+        .catch((error) => {
+          console.error( error);
+        });
+    }
 
 
 
@@ -70,7 +94,7 @@ const ConfirmBooking = () => {
                                     <p>Pick Up Location- {state.pickUpLocation}</p>
                                     <p>Pick Up Time- {state.pickUpTime}</p>
                                     {state.triptype === "Hourly Trip" &&
-                                        <p>Visiting Place- {state.visitingPlaces}</p>
+                                        <p>Visiting Place- {state.visitingPlaces.join(', ')}</p>
                                     }
                                     {(state.triptype === "Round Trip" || state.triptype === "Hourly Trip") &&
                                         <div>
