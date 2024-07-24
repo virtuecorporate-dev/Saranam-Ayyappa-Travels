@@ -104,9 +104,9 @@ export function UpdateTable(){
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          <option value="One-Way Rental">One-Way Rental</option>
+          <option value="One Way Trip">One Way Trip</option>
           <option value="Round Trip">Round Trip</option>
-          <option value="Hourly Rental">Hourly Rental</option>
+          <option value="Hourly Trip">Hourly Trip</option>
         </select>
       </div>
       <button type="submit">Update</button>
