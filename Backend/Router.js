@@ -24,6 +24,7 @@ const upload = multer({
 
 
 
+const { sendMail } = require("./nodemailer");
 
 router.route("/allCars").get(getAllCar)
 router.route("/avaibleCars").get(getCarsByCategory)
@@ -63,5 +64,6 @@ router.post("/createCar", upload.single('imageUrl'), async (req, res) => {
 // router.route("/createCar").post(createCar);
 router.route("/update/:id").put(updateCar);
 router.route("/delete/:id").delete(deleteCar)
+router.post('/sendemail', sendMail);
 
 module.exports=router
