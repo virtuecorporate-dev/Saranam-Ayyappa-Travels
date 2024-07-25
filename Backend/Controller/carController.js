@@ -27,39 +27,39 @@ exports.getCarsByCategory = async (req, res) => {
 }
 
 
-exports.createCar = async (req, res) => {
-  try {
-      const { carModel, brand, price, seats, availability, description, category } = req.body;
-      const imageUrl = req.file ? `/images/${req.file.filename}` : '';
+// exports.createCar = async (req, res) => {
+//   try {
+//       const { carModel, brand, price, seats, availability, description, category } = req.body;
+//       const imageUrl = req.file ? `/images/${req.file.filename}` : '';
 
-      if (!imageUrl) {
-          throw new Error('Image upload failed. Please try again.');
-      }
+//       if (!imageUrl) {
+//           throw new Error('Image upload failed. Please try again.');
+//       }
 
-      const newCar = new CarModel({
-          carModel,
-          brand,
-          price,
-          seats,
-          availability,
-          imageUrl,
-          category,
-          description,
-      });
+//       const newCar = new CarModel({
+//           carModel,
+//           brand,
+//           price,
+//           seats,
+//           availability,
+//           imageUrl,
+//           category,
+//           description,
+//       });
 
-      await newCar.save();
+//       await newCar.save();
 
-      res.status(201).json({
-          success: true,
-          newCar
-      });
-  } catch (error) {
-      res.status(500).json({
-          success: false,
-          error: error.message
-      });
-  }
-};
+//       res.status(201).json({
+//           success: true,
+//           newCar
+//       });
+//   } catch (error) {
+//       res.status(500).json({
+//           success: false,
+//           error: error.message
+//       });
+//   }
+// };
 
 exports.updateCar = async (req, res) => {
   try {

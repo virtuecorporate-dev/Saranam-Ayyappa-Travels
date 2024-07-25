@@ -38,7 +38,7 @@ export function CreateTable() {
       if (file) {
         formData.append('imageUrl', file);
       }
-
+      
       const response = await axios.post('http://localhost:8000/api/v1/createCar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
