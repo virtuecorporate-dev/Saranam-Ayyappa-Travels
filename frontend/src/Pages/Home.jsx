@@ -5,21 +5,37 @@ export default function Home() {
 
   return (
     <Fragment>
-      <div className='landing'>
-        <div className="container-fluid banner-img">
-          <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
-        </div>
-        <div className="landing-text row p-0">
-          <div className="col-lg-6">
-            <h1>Charter With Us For An Adventure-Filled Journey</h1>
+      <section className='container-fluid landing'>
+        <div className='row'>
+          <div className='col-12 p-0'>
+            <div className='banner'>
+              <div className="banner-img">
+                <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
+              </div>
+              <div className="landing-text container-fluid">
+                <div className='row'>
+                  <div className="col-9 col-sm-8 col-md-6">
+                    <div className='banner-content'>
+                      <h1>Charter With Us For An Adventure-Filled Journey</h1>
 
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
-            <button>Explore us </button>
+                      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
+                      <button>Explore us </button>
+                    </div>
+
+                  </div>
+                  <div className="col-3 col-sm-4 col-md-5"></div>
+
+                </div>
+
+
+              </div>
+            </div>
+
           </div>
-          <div className="col-lg-5"></div>
-
         </div>
-      </div>
+
+
+      </section>
 
 
       <section className='booking-form-sec'>
@@ -58,6 +74,8 @@ export default function Home() {
 
         </div>
       </section>
+
+
       <section>
         <div className="container-fluid mt-5 whoweare">
           <div className="row p-5 ">
@@ -87,7 +105,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section>
+
+      {/* <section>
         <div className="fullbanner">
           <img src="./images/fullbanner.jpg" alt="image not found" class='img-fluid'/>
         </div>
@@ -101,8 +120,9 @@ export default function Home() {
           <div className="col-lg-5"></div>
 
         </div>
-      </section>
-      <section>
+      </section> */}
+
+      {/* <section>
         <div className="container-fluid">
           <div className="container p-5">
             <h5 className='text-center'>OUR SERVICES </h5>
@@ -186,7 +206,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Fragment>
   )
 }

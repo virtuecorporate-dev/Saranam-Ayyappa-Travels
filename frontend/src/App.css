@@ -1,8 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 body {
     margin: 0;
     padding: 0;
+    font-family: "Arsenal SC", sans-serif;
+    font-style: normal;
+    /* overflow-x: hidden; */
 }
 
 .navbar {
@@ -40,52 +44,42 @@ body {
 /* navbar end-------------------------------------------- */
 
 /* Banner-image start-------------------------------------- */
-.banner-img {
-    margin: 0;
-    height: 90vh;
-    padding: 0;
-    position:relative;
+
+.banner{
+    position: relative;
 }
-.landing{
-    padding: 0;
-    margin: 0;
+
+.banner-content{
+    padding: 0 0 0 80px;
 }
 .landing-text{
     position: absolute;
-    top: 300px;
+    top: 250px;
     color: white;
-    display: flex;
-    justify-content: left;
     text-align: center;
     
 }
 
 .landing-text h1{
-    font-family: "Merriweather", serif;
-  font-weight: 900;
-  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
 }
 
 .landing-text p{
-    font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
+  
   font-weight: 500;
-  font-style: normal;
-  font-size: larger;
   justify-self: right;
 
 }
 
 .landing-text button{
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: white;
     color: black;
-    padding: 10px;
-    font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size: x-large;
+    padding: 10px 30px;
+    font-weight: 700;
+  font-size: 18px;
+  border: none;
 
 }
 .banner-img img {
@@ -93,22 +87,26 @@ body {
     width: 100%;
     padding: 0;
 }
-
-/* searching bar---------------- */
-.booking-form-sec {
-    margin-top: -80px;
+.landing{
+    z-index: -2000;
 }
+/*------------------------------- Banner-image-end-------------------------------------- */
+
+/*---------------------------------- form start------------------------------------ */
+
+.booking-form-sec{
+    margin-top: -100px;
+   position: relative;
+} 
+
 
 .search-call {
-   position: absolute;
     color: white;
-}
-
-.phone-icon {
-    border: 2px solid black !important;
-
-}
-
+    }
+    
+    
+        
+/* 
 .book button {
     background-color: red !important;
     border: #2E236C;
@@ -120,9 +118,78 @@ body {
 
 .book button:hover {
     background-color: wheat !important;
+} */
+
+/* ----------------------------------------------------- */
+
+.form-left,
+.form-right {
+    padding: 20px;
+    align-content: center;
+    box-shadow: 7px  7px whitesmoke;
+    
 }
 
-/* home banner-------------------------- */
+.form-left h3 {
+    font-weight: 700;
+    text-align: start !important;
+    padding: 10px;
+
+}
+
+.callDetails  {
+    text-align: start;
+    font-weight: 400;
+    margin-top: 20px;
+
+}
+.callDetails h2{
+    font-weight: 700;
+    text-align: start !important;
+}
+.triptype label{
+    font-weight: 700;
+    margin-top: 20px;
+}
+.search-cab button{
+    font-weight: 700;
+    padding: 5px 30px;
+    background-color: #2e236cd0;
+    color: white;
+    border-radius: 5px;
+    border: none;
+}
+.search-cab button:hover {
+   background-color: white !important;
+   color: #2e236cd0 !important;
+}
+
+.from-input input {
+    margin: 10px 10px 0 0;
+
+}
+
+.from-input {
+
+    color: black !important;
+}
+
+.booking-form label {
+    color: black;
+}
+
+.input-field {
+    width: 95% !important;
+    margin-top: 5px;
+    border: none;
+    /* border: 0 0 2px 0 solid black; */
+    border-bottom: 2px solid black;
+}
+
+/*---------------------------------- form end------------------------------------ */
+
+
+/*------------------------------------ home banner-------------------------- */
 .home-banner {
     margin-top: 450px;
     padding-left: 10px;
@@ -165,86 +232,10 @@ font-family: "Roboto", sans-serif;
     width: 100%;
 }
 
-/* -----------------------------------form -style----------------------------------- */
-.form-left,
-.form-right {
-    padding: 20px;
-    align-content: center;
-    box-shadow: 7px 5px whitesmoke;
-    
-}
+/* -----------------------------------home -banner----------------------------------- */
 
-.form-left h3 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    text-align: start !important;
-    padding: 10px;
 
-}
-
-.callDetails  {
-    text-align: start;
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    margin-top: 20px;
-
-}
-.callDetails h2{
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    text-align: start !important;
-}
-.triptype label{
-    font-family: "Quicksand", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    margin-top: 20px;
-}
-.search-cab button{
-    font-family: "Merriweather", serif;
-    font-weight: 700;
-    font-style: normal;
-    padding: 10px;
-    background-color: #2e236cd0;
-    color: white;
-    border-radius: 20px;
-}
-.search-cab button:hover{
-    background-color: red;
-}
-.form-right {
-    /* padding-top: 30px;
-    padding-bottom: 30px; */
-}
-
-.from-input input {
-    margin: 10px 10px 0 0;
-
-}
-
-.from-input {
-
-    color: black !important;
-}
-
-.booking-form label {
-    color: black;
-}
-
-.input-field {
-    width: 95% !important;
-    margin-top: 5px;
-    border: none;
-    /* border: 0 0 2px 0 solid black; */
-    border-bottom: 2px solid black;
-}
-
-/* whoweare ------------------------------------------------ */
+/*--------------------------------------- whoweare ------------------------------------------------ */
 .whoweare{
     background-color: #2E236C;
     color: white;
@@ -364,3 +355,193 @@ footer{
     padding: 15px 15px 15px 0;
   }
   
+
+  /* @media (max-width:990px) {
+    .landing-text{
+        position: absolute;
+        top: 0px;
+    }
+  } */
+  @media (max-width:1400px){
+    .landing-text{
+    position: absolute;
+    top: 200px;
+  }
+  
+  
+}
+@media (max-width:1300px){
+  .landing-text{
+    position: absolute;
+    top: 150px;
+  }
+  .landing-text h1{
+    font-size: 40px;
+  }
+
+  .landing-text button{
+    font-size: 16px;
+  }
+  .booking-form-sec{
+   margin-top: 50px;
+   position: relative;
+} 
+}
+
+@media (max-width:1050px){
+    .landing-text{
+        position: absolute;
+        top: 120px;
+      }
+      .landing-text h1{
+        font-size: 30px;
+      }
+} 
+@media (max-width:900px){
+    .banner-content{
+        padding: 0 0 0 10px;
+    }
+  .landing-text{
+    position: absolute;
+    top: 100px;
+  }
+  
+} 
+@media (max-width:800px){
+    .landing-text{
+        position: absolute;
+        top: 80px;
+        
+      }
+      .landing-text h1{
+        font-size: 25px;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+      }
+      .banner-content{
+        padding:0 30px 30px 30px;
+    }
+
+}
+@media (max-width:700px){
+    .landing-text{
+        position: absolute;
+        top: 80px;
+        
+      }
+      .landing-text h1{
+        font-size: 20px;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+      }
+      .banner-content{
+        padding:0 30px 0 30px ;
+    }
+}
+
+@media (max-width:680px){
+    .landing-text{
+        position: absolute;
+        top: 70px;
+
+        
+      }
+      .landing-text h1{
+        font-size: 20px;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+        margin-bottom: 5px !important;
+      }
+      .landing-text p{
+        margin-bottom: 5px !important;
+      }
+      .banner-content{
+        padding:0 0px 20px 20px ;
+    }
+
+}
+
+@media (max-width:570px){
+    .landing-text{
+        position: absolute;
+        top: 60px;
+        
+      }
+    .banner-content{
+        padding:0 50px 0 0px ;
+    }
+    .landing-text p{
+        font-size: 12px;
+      }
+
+}
+
+@media (max-width:530px){
+    .landing-text{
+        position: absolute;
+        top: 50px;
+        
+      }
+    .banner-content{
+        padding:0 40px 0 0px ;
+    }
+    .landing-text h1{
+        font-size: 18px;
+      }
+      .landing-text p{
+        font-size: 12px;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+        font-size: 12px;
+      }
+  
+}
+
+@media (max-width:460px){
+    .landing-text{
+        position: absolute;
+        top: 40px;
+        
+      }
+    .banner-content{
+        padding:0 30px 0 0px ;
+    }
+    .landing-text h1{
+        font-size: 18px;
+      }
+      .landing-text p{
+        font-size: 10px;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+        font-size: 12px;
+      }
+  
+}
+
+@media (max-width:420px){
+    .landing-text{
+        position: absolute;
+        top: 40px;
+        
+      }
+    .banner-content{
+        padding:0 25px 0 0px ;
+    }
+    .landing-text h1{
+        font-size: 18px;
+      }
+      .landing-text p{
+        font-size: 10px;
+        margin-bottom: 5px !important;
+      }
+      .landing-text button{
+        padding: 3px 20px;
+        font-size: 10px;
+      }
+  
+}
