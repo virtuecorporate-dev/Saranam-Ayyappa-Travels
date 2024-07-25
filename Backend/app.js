@@ -4,17 +4,32 @@ const dotenv= require("dotenv")
 const path= require("path")
 const mongodbConnection = require("./config/connectDatabase");
 const cors= require('cors');
+const multer = require('multer');
+
+
+dotenv.config({path:path.join(__dirname,"config","config.env")})
+mongodbConnection();
 
 app.use(cors({
     origin: 'http://localhost:3000',
     credentials: true
-}))
+}));
+
+
 app.use(express.json())
-app.use('/uploads', express.static(path.join(__dirname,'uploads') ) )
+app.use(express.static(path.join(__dirname, 'public')));
 
-
-dotenv.config({path:path.join(__dirname,"config","config.env")})
-mongodbConnection()
+// Multer setup for file uploads
+const upload = multer({
+    storage: multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, path.join(__dirname, 'public/images')); // Adjust the path if needed
+        },
+        filename: function (req, file, cb) {
+            cb(null, file.originalname);
+        }
+    })
+});
 
 const router=require('./Router')
 

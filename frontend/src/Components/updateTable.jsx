@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
 import { updateCar } from "../Slice/carsSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";  
 
 export function UpdateTable(){
     const Cars = useSelector(state => state.Cars.Cars)
@@ -16,14 +16,23 @@ export function UpdateTable(){
     const [availability, setAvailability] = useState(true);
     const [description, setDescription] = useState(car.description);
     const [category, setCategory] = useState(car.category);
+    const [file, setFile] = useState(null);
+    const [imageUrl, setImageUrl] = useState(car.imageUrl);
+  
+    
   
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const handleFileChange = (e) => {
+      const selectedFile = e.target.files[0];
+      setFile(selectedFile);
+      setImageUrl(URL.createObjectURL(selectedFile));
+    };
   
     const handleUpdate = async (e) => {
       e.preventDefault();
       try {
-        const formData = { carModel, brand, price, seats, availability, description, category };
+        const formData = { carModel, brand, price, seats, availability, description, category,imageUrl  };
         const response = await axios.put(`http://localhost:8000/api/v1/update/${id}`, formData);
         dispatch(updateCar(response.data.car));
         navigate('/admin');
@@ -96,6 +105,20 @@ export function UpdateTable(){
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+      <div>
+        <label htmlFor="imageUrl">Upload Image:</label>
+        <input
+          type="file"
+          id="imageUrl"
+          name="imageUrl"
+          onChange={handleFileChange}
+        />
+      </div>
+      {imageUrl && (
+        <div>
+          <img src={imageUrl} alt="Image Preview" style={{ width: '200px', height: 'auto' }} />
+        </div>
+      )}
       <div>
         <label htmlFor="category">Category:</label>
         <select

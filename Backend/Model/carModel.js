@@ -23,10 +23,10 @@ const carSchema = new mongoose.Schema({
         type: Boolean,
         default: true,
       },
-      // imageUrl: {
-      //   type: String,
-      //   required: true,
-      // },
+      imageUrl: {
+        type: String,
+        required: true,
+      },
       description: {
         type: String,
         trim: true,

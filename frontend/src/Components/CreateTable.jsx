@@ -12,15 +12,38 @@ export function CreateTable() {
   const [availability, setAvailability] = useState(true);
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState('');
+  const [file, setFile] = useState(null);
+  const [imagePreviewUrl, setImagePreviewUrl] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    setFile(selectedFile);
+    setImagePreviewUrl(URL.createObjectURL(selectedFile));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const formData = { carModel, brand, price, seats, availability, description, category };
-      const response = await axios.post('http://localhost:8000/api/v1/createCar', formData);
+      const formData = new FormData();
+      formData.append('carModel', carModel);
+      formData.append('brand', brand);
+      formData.append('price', price);
+      formData.append('seats', seats);
+      formData.append('availability', availability);
+      formData.append('description', description);
+      formData.append('category', category);
+      if (file) {
+        formData.append('imageUrl', file);
+      }
+
+      const response = await axios.post('http://localhost:8000/api/v1/createCar', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
       dispatch(addCar(response.data.newCar));
       navigate('/admin');
     } catch (error) {
@@ -90,6 +113,20 @@ export function CreateTable() {
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
+      <div>
+        <label htmlFor="imageUrl">Upload Image:</label>
+        <input
+          type="file"
+          id="imageUrl"
+          name="imageUrl"
+          onChange={handleFileChange}
+        />
+      </div>
+      {imagePreviewUrl && (
+        <div>
+          <img src={imagePreviewUrl} alt="Image Preview" style={{ width: '200px', height: 'auto' }} />
+        </div>
+      )}
       <div>
         <label htmlFor="category">Category:</label>
         <select
