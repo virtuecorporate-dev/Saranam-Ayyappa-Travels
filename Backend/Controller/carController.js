@@ -29,31 +29,35 @@ exports.getCarsByCategory = async (req, res) => {
 
 exports.createCar = async (req, res) => {
   try {
-    const { carModel, brand, price, seats, availability, description, category } = req.body;
-    const imageUrl = req.file ? req.file.path : ''; // Multer will handle the file upload
+      const { carModel, brand, price, seats, availability, description, category } = req.body;
+      const imageUrl = req.file ? `/images/${req.file.filename}` : '';
 
-    const newCar = new CarModel({
-      carModel,
-      brand,
-      price,
-      seats,
-      availability,
-      // imageUrl,
-      category,
-      description,
-    });
+      if (!imageUrl) {
+          throw new Error('Image upload failed. Please try again.');
+      }
 
-    await newCar.save();
+      const newCar = new CarModel({
+          carModel,
+          brand,
+          price,
+          seats,
+          availability,
+          imageUrl,
+          category,
+          description,
+      });
 
-    res.status(201).json({
-      success: true,
-      newCar
-    });
+      await newCar.save();
+
+      res.status(201).json({
+          success: true,
+          newCar
+      });
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      error: error.message
-    });
+      res.status(500).json({
+          success: false,
+          error: error.message
+      });
   }
 };
 
@@ -69,6 +73,7 @@ exports.updateCar = async (req, res) => {
         price: req.body.price,
         seats: req.body.seats,
         availability: req.body.availability,
+        imageUrl:req.body.imageUrl,
         category: req.body.category,
         description: req.body.description,
       },
