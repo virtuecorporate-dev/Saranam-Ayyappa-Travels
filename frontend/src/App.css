@@ -10,15 +10,15 @@ body {
 }
 
 .navbar {
-    background-color: #2E236C !important;
+    background-color: transparent !important;
     padding: 20px;
-    position: sticky;
+    z-index: 1000;
 }
 
 
 .nav-link,
 .nav-link.active {
-    color: white !important;
+    color: black !important;
     align-items: end !important;
     display: flex;
 }
@@ -88,7 +88,8 @@ body {
     padding: 0;
 }
 .landing{
-    z-index: -2000;
+    margin-top: -116px !important;
+    /* z-index: -700; */
 }
 /*------------------------------- Banner-image-end-------------------------------------- */
 
@@ -162,6 +163,7 @@ body {
 .search-cab button:hover {
    background-color: white !important;
    color: #2e236cd0 !important;
+   border: 1px solid #2e236cd0;
 }
 
 .from-input input {
@@ -185,33 +187,41 @@ body {
     /* border: 0 0 2px 0 solid black; */
     border-bottom: 2px solid black;
 }
+.visiting-pl-add, .visiting-pl-delete{
+border: none;
+background-color: #2e236cd0;
+color: white;
+border-radius: 20px;
+padding: 0px 9px;
+font-size: 18px;
+font-weight: 700;
+margin:5px ;
+}
+.visiting-pl-delete{
+    font-weight: 400 !important;
+    font-size: 18px;
+}
 
 /*---------------------------------- form end------------------------------------ */
 
 
 /*------------------------------------ home banner-------------------------- */
 .home-banner {
-    margin-top: 450px;
-    padding-left: 10px;
+    margin-top: 50px;
+    /* padding-left: 10px; */
 }
-.home-banner h3{
-font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+.home-banner h2{
+  font-weight: 700;
+  font-size: 35px;
 }
 
 .home-banner p{
-   font-family: "Roboto", sans-serif;
   font-weight: 400;
-  font-style: normal;
-  font-size: large;
 }
 
 .home-banner-text {
     color: #2E236C !important;
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-style: normal;
+    font-weight: 700;
     margin-top: 5px;
 }
 
@@ -241,31 +251,20 @@ font-family: "Roboto", sans-serif;
     color: white;
 }
 .whoweare h5 {
-    font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal;
-
-  
 }
 
 .whoweare  h3{
-font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+      font-weight: 700;
   font-size: 40px;
 }
 
 .whoweare p{
-    font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-size: large;
-  font-style: normal;
-
+  font-weight: 400;
+  text-align: justify;
 }
 
-/* full banner image---------------------------- */
+/* -----------------full banner image---------------------------- */
 .fullbanner{
     height: 100vh;
     padding: 0;
@@ -288,34 +287,32 @@ font-family: "Roboto", sans-serif;
 }
 
 .banner-text h1{
-    font-family: "Merriweather", serif;
-  font-weight: 900;
-  font-style: normal;
+  font-weight: 700;
 }
 
 .banner-text p{
-    font-family: "Quicksand", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
+  font-weight: 400;
   font-size: larger;
   justify-self: right;
 
 }
 
 .banner-text button{
-    border-radius: 10px;
+    border-radius: 5px;
+    border: 1px solid #2e236cd0;
     background-color: white;
-    color: black;
-    padding: 10px;
-    font-family: "Roboto Mono", monospace;
-  font-optical-sizing: auto;
+    color: #2e236cd0;
+    padding: 5px 30px;
   font-weight: 700;
-  font-style: normal;
-  font-size: x-large;
+  font-size: 18px;
 
 
   
+}
+
+.banner-text button:hover{
+    background-color: #2E236C;
+    color: white;
 }
 
 /* flat icons-------------------------- */
@@ -324,6 +321,37 @@ font-family: "Roboto", sans-serif;
     display: flex;
     justify-content: center;
 }
+
+/* ---------------avail car page---------------------- */
+
+.avail-cars h2{
+    background-color: #2e236cd0;
+    padding: 10px 20px;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 15px;
+    color: white;
+    border-radius: 10px;
+
+}
+.avail-cars{
+    padding: 30px 0;
+}
+.cabs{
+    border: 1px solid red;
+}
+.cab-img{
+    width: 400px;
+}
+.cab-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*  ---------------avail cars page---------------------- */
+
+
 
 /* -------------footer-start--------------- */
 footer{

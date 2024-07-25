@@ -42,7 +42,7 @@ export default function Home() {
         <BookingForm />
       </section>
 
-      <section>
+      <section className='pt-5 pb-5'>
         <div className="container-fluid ">
           <div className="container">
             <div className="row home-banner ">
@@ -78,18 +78,26 @@ export default function Home() {
 
       <section>
         <div className="container-fluid mt-5 whoweare">
-          <div className="row p-5 ">
-            <div className="col-lg-4">
-              <h5>WHO WE ARE
-              </h5>
-              <h3>Enjoy the journey – travel with us</h3>
+          <div className="row">
+            <div className='col-12 col-md-10 mx-auto pt-5 pb-5'>
+            <div className='container'>
+              <div className='row'>
+                <div className="col-lg-4">
+                  <h5>WHO WE ARE
+                  </h5>
+                  <h3>Enjoy the journey – travel with us</h3>
+                </div>
+                <div className="col-lg-8">
+                  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
+                </div>
+              </div>
             </div>
-            <div className="col-lg-8">
-              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
             </div>
+            
+
           </div>
-          <div className="row gap-0">
+          <div className="row gap-0" >
             <div className="col-lg-3">
               <img src="./images/car1.png" alt="" class="img-fluid" />
             </div>
@@ -106,7 +114,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section>
+      <section>
         <div className="fullbanner">
           <img src="./images/fullbanner.jpg" alt="image not found" class='img-fluid'/>
         </div>
@@ -120,13 +128,13 @@ export default function Home() {
           <div className="col-lg-5"></div>
 
         </div>
-      </section> */}
+      </section>
 
-      {/* <section>
+      <section>
         <div className="container-fluid">
           <div className="container p-5">
-            <h5 className='text-center'>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4'> We Provide Best Services For You</h3>
+            <h5 className='text-center' style={{fontWeight:"700"}}>OUR SERVICES </h5>
+            <h3 className='text-center  mt-4' style={{fontWeight:"700"}}> We Provide Best Services For You</h3>
             <p className='text-center mt-4'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
 
           </div>
@@ -206,7 +214,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
     </Fragment>
   )
 }

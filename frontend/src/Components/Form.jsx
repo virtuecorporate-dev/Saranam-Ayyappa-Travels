@@ -67,15 +67,15 @@ const BookingForm = () => {
     };
 
     return (
-        <div className="container form-section" style={{border:"1px solid red"}}>
+        <div className="container form-section">
             <div className="row search-call">
                 <div className=" col-md-4 form-left " style={{ backgroundColor: "#2E236C" }} >
                     <h3>Call Now !</h3>
                     <div className="row">
-                        <div className="col-lg-2 phone-icons mt-4">
+                        <div className="col-2 phone-icons mt-4">
                             <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white",textAlign:"start" }}></i>
                         </div>
-                        <div className=" col-lg-10 callDetails">
+                        <div className=" col-10 callDetails">
                             <h6>Call for detail information</h6>
                             <h2>1234 1234 983</h2>
                         </div>
@@ -201,8 +201,8 @@ const BookingForm = () => {
                                                 />
                                             </div>
                                             <div className='col-4'>
-                                                <button type='button' onClick={() => dispatch({ type: "ADD-VISITING-PLACE" })}>+</button>
-                                                <button type='button' onClick={() => dispatch({ type: "REMOVE-VISITING-PLACE", payload: index })}>x</button>
+                                                <button className='visiting-pl-add' type='button' onClick={() => dispatch({ type: "ADD-VISITING-PLACE" })}>+</button>
+                                                <button className='visiting-pl-delete' type='button' onClick={() => dispatch({ type: "REMOVE-VISITING-PLACE", payload: index })}>x</button>
                                             </div>
                                         </div>
                                     ))}
