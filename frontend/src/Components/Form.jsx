@@ -67,21 +67,21 @@ const BookingForm = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container form-section" style={{border:"1px solid red"}}>
             <div className="row search-call">
-                <div className="col-lg-4 form-left " style={{ backgroundColor: "#2E236C" }} >
+                <div className=" col-md-4 form-left " style={{ backgroundColor: "#2E236C" }} >
                     <h3>Call Now !</h3>
                     <div className="row">
                         <div className="col-lg-2 phone-icons mt-4">
-                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", background: "red", padding: "8px", color: "white",textAlign:"start" }}></i>
+                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white",textAlign:"start" }}></i>
                         </div>
-                        <div className="col-lg-10 callDetails">
+                        <div className=" col-lg-10 callDetails">
                             <h6>Call for detail information</h6>
                             <h2>1234 1234 983</h2>
                         </div>
                     </div>
                 </div>
-                <div className="col-lg-8 form-right" style={{ backgroundColor: "white" }}>
+                <div className=" col-md-8 form-right" style={{ backgroundColor: "white" }}>
                     <form className='container-fluid booking-form' onSubmit={FormSubmit}>
                         <div className='row triptype'>
                             <div className='col-4 from-input'>
