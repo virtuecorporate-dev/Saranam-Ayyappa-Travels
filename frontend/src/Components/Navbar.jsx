@@ -92,7 +92,8 @@ export default function Header() {
 
               </li>
               <li className="nav-item">
-                <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">About us </a>
+                <Link to='/about' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >About</a> </Link>
+                
               </li>
               <li className="nav-item">
                 <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</a>

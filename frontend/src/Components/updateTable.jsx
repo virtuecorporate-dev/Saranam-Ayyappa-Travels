@@ -44,8 +44,10 @@ export function UpdateTable(){
   
     return(
         <Fragment>
-            <form onSubmit={handleUpdate}>
-      <div>
+            <form onSubmit={handleUpdate} className="create-table">
+            <h1 className="create-head mb-5">Update Your Cab Details</h1>
+
+      <div className="form-group">
         <label htmlFor="carModel">Car Model:</label>
         <input
           type="text"
@@ -55,7 +57,7 @@ export function UpdateTable(){
           onChange={(e) => setCarModel(e.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="brand">Brand:</label>
         <input
           type="text"
@@ -65,7 +67,7 @@ export function UpdateTable(){
           onChange={(e) => setBrand(e.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="price">Price:</label>
         <input
           type="number"
@@ -75,7 +77,7 @@ export function UpdateTable(){
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="seats">Seats:</label>
         <input
           type="number"
@@ -85,7 +87,7 @@ export function UpdateTable(){
           onChange={(e) => setSeats(e.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="availability">Availability:</label>
         <input
           type="checkbox"
@@ -95,7 +97,7 @@ export function UpdateTable(){
           onChange={(e) => setAvailability(e.target.checked)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="description">Description:</label>
         <input
           type="text"
@@ -105,7 +107,7 @@ export function UpdateTable(){
           onChange={(e) => setDescription(e.target.value)}
         />
       </div>
-      <div>
+      <div className="form-group">
         <label htmlFor="imageUrl">Upload Image:</label>
         <input
           type="file"
@@ -119,7 +121,7 @@ export function UpdateTable(){
           <img src={imageUrl} alt="Image Preview" style={{ width: '200px', height: 'auto' }} />
         </div>
       )}
-      <div>
+      <div className="form-group">
         <label htmlFor="category">Category:</label>
         <select
           id="category"
@@ -132,7 +134,7 @@ export function UpdateTable(){
           <option value="Hourly Trip">Hourly Trip</option>
         </select>
       </div>
-      <button type="submit">Update</button>
+      <button className="create-submit mb-3" type="submit">Update</button>
     </form>
         </Fragment>
     )

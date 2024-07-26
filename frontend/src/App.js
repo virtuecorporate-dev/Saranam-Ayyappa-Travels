@@ -10,6 +10,7 @@ import { CreateTable } from './Components/CreateTable';
 import Cars from './Pages/Cars';
 import { UpdateTable } from './Components/updateTable';
 import ConfirmBooking from './Pages/Confirm Booking';
+import About from './Pages/About';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About/>} />
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/admin/create' element={<CreateTable/>}/>
             <Route path='/cars' element={<Cars/>}/>
