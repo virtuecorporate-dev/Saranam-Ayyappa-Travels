@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Arsenal SC", sans-serif;
-    font-style: normal;
-    /* overflow-x: hidden; */
+  margin: 0;
+  padding: 0;
+  font-family: "Arsenal SC", sans-serif;
+  font-style: normal;
+  /* overflow-x: hidden; */
 }
+
 /* 
 .navbar {
     background-color: transparent !important;
@@ -42,92 +44,101 @@ body {
 } */
 
 
-.desktop-nav{
+.desktop-nav {
   background-color: transparent;
-      z-index: 1000;
-      padding:20px;
-     
-  }
- .nav-link {
-    font-weight: 700;
-  }
-  .navbar-toggler {
-    color: white !important;
-   
-}
-  
+  z-index: 1000;
+  padding: 20px;
 
- .nav-item .homeNav-color{
-    color: #fff !important;
-  }
-  
-  .scroll-nav{
-    background-color: #005395 !important;
-    padding: 10px !important;
-    color: #fff;
-    position: sticky;
-    top: 0;
-  }
-  .scroll-nav .nav-link{
-    color: #fff !important;
-  }
-  
-  .scroll-nav .logo{
-    width: 100px !important;
-  }
-  
-  /* ----------------mobile-nav------------------------------- */
-  
-  .mobile-nav{
+}
+
+.nav-link {
+  font-weight: 700;
+}
+
+.navbar-toggler {
+  color: white !important;
+
+}
+
+
+.nav-item .homeNav-color {
+  color: #fff !important;
+}
+
+.scroll-nav {
+  background-color: #005395 !important;
+  padding: 10px !important;
+  color: #fff;
+  position: sticky;
+  top: 0;
+}
+
+.scroll-nav .nav-link {
+  color: #fff !important;
+}
+
+.scroll-nav .logo {
+  width: 100px !important;
+}
+
+/* ----------------mobile-nav------------------------------- */
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width:990px) {
+
+  .desktop-nav {
     display: none;
   }
-  
-@media (max-width:990px){
-  
-  .desktop-nav{
-    display: none;
-  }
-  
-  .mobile-nav{
+
+  .mobile-nav {
     display: block;
-  background-color: transparent;
-      z-index: 1000;
-      padding:10px;
-     
+    background-color: transparent;
+    z-index: 1000;
+    padding: 10px;
+
   }
-  .mobile-nav .icons{
+
+  .mobile-nav .icons {
     font-size: larger;
     font-weight: bolder;
   }
-  .mobile-nav .nav-item{
+
+  .mobile-nav .nav-item {
     font-size: larger;
   }
+
   /* .mobile-nav .nav-link{
     color: black !important;
   } */
-  
-  .mobile-nav .navbar-collapse .navbar-nav{
+
+  .mobile-nav .navbar-collapse .navbar-nav {
     width: 100%;
-   display: flex;
-   justify-content: end;
-   margin-right: 0 !important;
+    display: flex;
+    justify-content: end;
+    margin-right: 0 !important;
   }
-  .mobile-nav .nav-item{
+
+  .mobile-nav .nav-item {
     padding: 0 20px;
-   font-weight: 500;
-   
+    font-weight: 500;
+
   }
-  .mobile-nav .navbar-toggler{
+
+  .mobile-nav .navbar-toggler {
     border: none;
   }
 }
 
-@media (max-width:790px){
-  .mobile-logo{
+@media (max-width:790px) {
+  .mobile-logo {
     margin-left: -20px;
     /* border: 1px solid red; */
   }
-  .mobile-logo img{
+
+  .mobile-logo img {
     width: 150px !important;
   }
 }
@@ -137,74 +148,78 @@ body {
 
 /* Banner-image start-------------------------------------- */
 
-.banner{
-    position: relative;
+.banner {
+  position: relative;
 }
 
-.banner-content{
-    padding: 0 0 0 80px;
-}
-.landing-text{
-    position: absolute;
-    top: 250px;
-    color: white;
-    text-align: center;
-    
+.banner-content {
+  padding: 0 0 0 80px;
 }
 
-.landing-text h1{
+.landing-text {
+  position: absolute;
+  top: 250px;
+  color: white;
+  text-align: center;
+
+}
+
+.landing-text h1 {
   font-weight: 700;
   font-size: 50px;
 }
 
-.landing-text p{
-  
+.landing-text p {
+
   font-weight: 500;
   justify-self: right;
 
 }
 
-.landing-text button{
-    border-radius: 5px;
-    background-color: white;
-    color: black;
-    padding: 10px 30px;
-    font-weight: 700;
+.landing-text button {
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  padding: 10px 30px;
+  font-weight: 700;
   font-size: 18px;
   border: none;
 
 }
+
 .banner-img img {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-}
-.landing{
-    margin-top: -128px !important;
-    /* z-index: -700; */
+  height: 100%;
+  width: 100%;
+  padding: 0;
 }
 
-@media (max-width:990px){
-  .landing{
+.landing {
+  margin-top: -128px !important;
+  /* z-index: -700; */
+}
+
+@media (max-width:990px) {
+  .landing {
     margin-top: 0 !important;
   }
 }
+
 /*------------------------------- Banner-image-end-------------------------------------- */
 
 /*---------------------------------- form start------------------------------------ */
 
-.booking-form-sec{
-    margin-top: -100px;
-   position: relative;
-} 
+.booking-form-sec {
+  margin-top: -100px;
+  position: relative;
+}
 
 
 .search-call {
-    color: white;
-    }
-    
-    
-        
+  color: white;
+}
+
+
+
 /* 
 .book button {
     background-color: red !important;
@@ -223,81 +238,92 @@ body {
 
 .form-left,
 .form-right {
-    padding: 20px;
-    align-content: center;
-    box-shadow: 7px  7px whitesmoke;
-    
+  padding: 20px;
+  align-content: center;
+  box-shadow: 7px 7px whitesmoke;
+
 }
 
 .form-left h3 {
-    font-weight: 700;
-    text-align: start !important;
-    padding: 10px;
+  font-weight: 700;
+  text-align: start !important;
+  padding: 10px;
 
 }
 
-.callDetails  {
-    text-align: start;
-    font-weight: 400;
-    margin-top: 20px;
+.callDetails {
+  text-align: start;
+  font-weight: 400;
+  margin-top: 20px;
 
 }
-.callDetails h2{
-    font-weight: 700;
-    text-align: start !important;
+
+.callDetails h2 {
+  font-weight: 700;
+  text-align: start !important;
 }
-.triptype label{
-    font-weight: 700;
-    margin-top: 20px;
+
+.triptype label {
+  font-weight: 700;
+  margin-top: 20px;
 }
-.search-cab button{
-    font-weight: 700;
-    padding: 5px 30px;
-    background-color: #2e236cd0;
-    color: white;
-    border-radius: 5px;
-    border: none;
+
+.search-cab button {
+  font-weight: 700;
+  padding: 5px 30px;
+  background-color: #2e236cd0;
+  color: white;
+  border-radius: 5px;
+  border: none;
 }
+
 .search-cab button:hover {
-   background-color: white !important;
-   color: #2e236cd0 !important;
-   border: 1px solid #2e236cd0;
+  background-color: white !important;
+  color: #2e236cd0 !important;
+  border: 1px solid #2e236cd0;
 }
 
 .from-input input {
-    margin: 10px 10px 0 0;
+  margin: 10px 10px 0 0;
+
+}
+.input-field{
+  margin: 10px 10px 0 0;
 
 }
 
 .from-input {
 
-    color: black !important;
+  color: black !important;
 }
 
 .booking-form label {
-    color: black;
+  color: black;
 }
 
 .input-field {
-    width: 95% !important;
-    margin-top: 5px;
-    border: none;
-    /* border: 0 0 2px 0 solid black; */
-    border-bottom: 2px solid black;
+  width: 95% !important;
+  margin-top: 5px;
+  border: none;
+  /* border: 0 0 2px 0 solid black; */
+  border-bottom: 2px solid black;
 }
-.visiting-pl-add, .visiting-pl-delete{
-border: none;
-background-color: #2e236cd0;
-color: white;
-border-radius: 20px;
-padding: 0px 9px;
-font-size: 18px;
-font-weight: 700;
-margin:5px ;
+
+.visiting-pl-add,
+.visiting-pl-delete {
+  border: none;
+  background-color: #2e236cd0;
+  color: white;
+  border-radius: 20px;
+  padding: 0px 9px;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 5px;
 }
-.visiting-pl-delete{
-    font-weight: 400 !important;
-    font-size: 18px;
+
+.visiting-pl-delete {
+  font-weight: 400 !important;
+  font-size: 18px;
 }
 
 /*---------------------------------- form end------------------------------------ */
@@ -305,479 +331,586 @@ margin:5px ;
 
 /*------------------------------------ home banner-------------------------- */
 .home-banner {
-    margin-top: 50px;
-    /* padding-left: 10px; */
+  margin-top: 50px;
+  /* padding-left: 10px; */
 }
-.home-banner h2{
+
+.home-banner h2 {
   font-weight: 700;
   font-size: 35px;
 }
 
-.home-banner p{
+.home-banner p {
   font-weight: 400;
 }
 
 .home-banner-text {
-    color: #2E236C !important;
-    font-weight: 700;
-    margin-top: 5px;
+  color: #2E236C !important;
+  font-weight: 700;
+  margin-top: 5px;
 }
 
-.home-banner h5{
-    font-family: "Roboto", sans-serif;
+.home-banner h5 {
+  font-family: "Roboto", sans-serif;
   font-weight: 900;
-  font-style:normal;
+  font-style: normal;
 
 }
 
-.home-banner-img{
-    width:auto;
-    margin-top: -20px;
+.home-banner-img {
+  width: auto;
+  margin-top: -20px;
 }
 
 .home-banner-img img {
-    height: 100%;
-    width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 /* -----------------------------------home -banner----------------------------------- */
 
 
 /*--------------------------------------- whoweare ------------------------------------------------ */
-.whoweare{
-    background-color: #2E236C;
-    color: white;
+.whoweare {
+  background-color: #2E236C;
+  color: white;
 }
+
 .whoweare h5 {
   font-weight: 700;
 }
 
-.whoweare  h3{
-      font-weight: 700;
+.whoweare h3 {
+  font-weight: 700;
   font-size: 40px;
 }
 
-.whoweare p{
+.whoweare p {
   font-weight: 400;
   text-align: justify;
 }
 
 /* -----------------full banner image---------------------------- */
 
-.fullbanner-sec{
+.fullbanner-sec {
   position: relative;
   height: 100vh;
 }
-.fullbanner{
-    height: 100%;
-    width: 100%;
-    /* padding: 0;
+
+.fullbanner {
+  height: 100%;
+  width: 100%;
+  /* padding: 0;
     margin: 0; */
 }
-.fullbanner img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
+
+.fullbanner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
-.banner-text{
-    position: absolute;
-    top: 0;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    
+
+.banner-text {
+  position: absolute;
+  top: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+
 }
-.banner-text-inner{
+
+.banner-text-inner {
   width: 80%;
 }
-.banner-text h1{
+
+.banner-text h1 {
   font-weight: 700;
 }
 
-.banner-text p{
+.banner-text p {
   font-weight: 400;
   justify-self: right;
 
 }
 
-.banner-text button{
-    border-radius: 5px;
-    border: 1px solid #2e236cd0;
-    background-color: white;
-    color: #2e236cd0;
-    padding: 5px 30px;
+.banner-text button {
+  border-radius: 5px;
+  border: 1px solid #2e236cd0;
+  background-color: white;
+  color: #2e236cd0;
+  padding: 5px 30px;
   font-weight: 700;
   font-size: 18px;
 
 
-  
+
 }
 
-.banner-text button:hover{
-    background-color: #2E236C;
-    color: white;
+.banner-text button:hover {
+  background-color: #2E236C;
+  color: white;
 }
 
 /* flat icons-------------------------- */
 
-.flat-icons{
-    display: flex;
-    justify-content: center;
+.flat-icons {
+  display: flex;
+  justify-content: center;
 }
 
 /* ---------------avail car page---------------------- */
 
-.avail-cars h2{
-    background-color: #2e236cd0;
-    padding: 10px 20px;
-    width: fit-content;
-    font-weight: 700;
-    font-size: 15px;
-    color: white;
-    border-radius: 10px;
+.avail-cars h2 {
+  background-color: #2e236cd0;
+  padding: 10px 20px;
+  width: fit-content;
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  border-radius: 10px;
 
 }
-.avail-cars{
-    padding: 30px 0;
+
+.avail-cars {
+  padding: 30px 0;
 }
-.cabs{
-    border: 1px solid red;
+
+.cabs {
+  height: 510px;
+  /* border: 1px solid red; */
+  padding: 20px;
 }
-.cab-img{
-    width: 400px;
+.cab-inner{
+  height: 100%;
+  border-radius: 20px;
+  /* border: 1px solid black; */
+  background-color: white;
+  box-shadow: 1px 1px 7px gray;
 }
-.cab-img img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.cab-img {
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #f3f2f2;
+}
+
+.cab-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* overflow: hidden; */
+}
+.select-button{
+  font-weight: 700;
+  padding: 5px 30px;
+  background-color: #2e236cd0;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  margin-top: -20px;
+}
+
+.select-button:hover{
+  background-color: white !important;
+  color: #2e236cd0 !important;
+  border: 1px solid #2e236cd0;
+}
+
+
+
+.car-name-details h3{
+  font-weight: 700;
+}
+
+.cab-fare{
+  font-weight: 700;
+ text-align: right;
+ padding-right: 25px;
+}
+.cab-fees{
+  padding: 0;
+  font-size: 12px;
+  border-bottom: 2px solid black;
+  width: fit-content;
+}
+.dotted-line{
+  border-bottom: 2px  dashed black;
+}
+.extra-fea{
+  background-color: whitesmoke;
+  width: fit-content;
+  padding: 0 10px;
+  border-radius: 5px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.car-description{
+  /* display: flex; */
 }
 
 /*  ---------------avail cars page---------------------- */
 
 
 
-/* -------------footer-start--------------- */
-footer{
-    background-color: #2E236C;
-    color: white;
-  }
-  .footer-content-col{
-    /* border: 1px solid red; */
-    overflow: hidden;
-    margin-bottom: 20px;
-  }
-  
-  .footer-logo{
-    width: 130px;
-   
-  }
-  
-  .footer-content ul{
-    padding: 0;
-    margin-top: 20px;
-  }
-  
-  .footer-content li{
-    list-style-type: none;
-    padding: 0 10px;
-  }
-  .footer-icons i{
-    font-size: 25px;
-    padding: 15px 15px 15px 0;
-  }
-  
 
-  /* Admin table start-------------------------------------- */
 
-  .table-add{
-    display: flex;
-    justify-content: flex-end;
-  }
+/* Admin table start-------------------------------------- */
 
-  .table-add button{
-    background-color: #2E236C;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-  }
-  .edit{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-  }
-
-  .update, .delete{
-    background-color: #2E236C;
-    color: white;
-  }
-  
-.car-details{
-    display:flex;
-    justify-content: flex-start;
-    row-gap: 10px;
-    /* border: 3px solid red; */
+.table-add {
+  display: flex;
+  justify-content: flex-end;
 }
 
-.car-detail{
-    /* border: 2px solid blue; */
-    padding: 20px;
-    background-color: #2E236C;
-    color: white;
-} 
-
-  /* @media (max-width:990px) {
-    .landing-text{
-        position: absolute;
-        top: 0px;
-    }
-  } */
-  @media (max-width:1400px){
-    .landing-text{
-    position: absolute;
-    top: 200px;
-  }
-  
-  
-}
-@media (max-width:1300px){
-  .landing-text{
-    position: absolute;
-    top: 150px;
-  }
-  .landing-text h1{
-    font-size: 40px;
-  }
-
-  .landing-text button{
-    font-size: 16px;
-  }
-  .booking-form-sec{
-   margin-top: 50px;
-   position: relative;
-} 
+.table-add button {
+  background-color: #2E236C;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-@media (max-width:1050px){
-    .landing-text{
-        position: absolute;
-        top: 120px;
-      }
-      .landing-text h1{
-        font-size: 30px;
-      }
-} 
-@media (max-width:900px){
-    .banner-content{
-        padding: 0 0 0 10px;
-    }
-  .landing-text{
-    position: absolute;
-    top: 100px;
-  }
-  
-} 
-@media (max-width:800px){
-    .landing-text{
-        position: absolute;
-        top: 80px;
-        
-      }
-      .landing-text h1{
-        font-size: 25px;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-      }
-      .banner-content{
-        padding:0 30px 30px 30px;
-    }
-
-}
-@media (max-width:700px){
-    .landing-text{
-        position: absolute;
-        top: 80px;
-        
-      }
-      .landing-text h1{
-        font-size: 20px;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-      }
-      .banner-content{
-        padding:0 30px 0 30px ;
-    }
+.edit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
 }
 
-@media (max-width:680px){
-    .landing-text{
-        position: absolute;
-        top: 70px;
-
-        
-      }
-      .landing-text h1{
-        font-size: 20px;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-        margin-bottom: 5px !important;
-      }
-      .landing-text p{
-        margin-bottom: 5px !important;
-      }
-      .banner-content{
-        padding:0 0px 20px 20px ;
-    }
-
+.update,
+.delete {
+  background-color: #2E236C;
+  color: white;
 }
 
-@media (max-width:570px){
-    .landing-text{
-        position: absolute;
-        top: 60px;
-        
-      }
-    .banner-content{
-        padding:0 50px 0 0px ;
-    }
-    .landing-text p{
-        font-size: 12px;
-      }
-
+.car-details {
+  display: flex;
+  justify-content: flex-start;
+  row-gap: 10px;
+  /* border: 3px solid red; */
 }
 
-@media (max-width:530px){
-    .landing-text{
-        position: absolute;
-        top: 50px;
-        
-      }
-    .banner-content{
-        padding:0 40px 0 0px ;
-    }
-    .landing-text h1{
-        font-size: 18px;
-      }
-      .landing-text p{
-        font-size: 12px;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-        font-size: 12px;
-      }
-  
-}
-
-@media (max-width:460px){
-    .landing-text{
-        position: absolute;
-        top: 40px;
-        
-      }
-    .banner-content{
-        padding:0 30px 0 0px ;
-    }
-    .landing-text h1{
-        font-size: 18px;
-      }
-      .landing-text p{
-        font-size: 10px;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-        font-size: 12px;
-      }
-  
-}
-
-@media (max-width:420px){
-    .landing-text{
-        position: absolute;
-        top: 40px;
-        
-      }
-    .banner-content{
-        padding:0 25px 0 0px ;
-    }
-    .landing-text h1{
-        font-size: 18px;
-      }
-      .landing-text p{
-        font-size: 10px;
-        margin-bottom: 5px !important;
-      }
-      .landing-text button{
-        padding: 3px 20px;
-        font-size: 10px;
-      }
-  
+.car-detail {
+  /* border: 2px solid blue; */
+  padding: 20px;
+  background-color: #2E236C;
+  color: white;
 }
 
 /* create table --------------------------------------- */
 
-.create{
+.create {
   padding: 50px;
   display: flex;
   justify-content: center;
 }
-.create-table{
+
+.create-table {
   text-align: center;
   align-items: center;
   border: 2px solid #2E236C;
   background-color: #2E236C;
   color: white;
   width: 800px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  padding-right: 60px;
+
+
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  padding-left: 50px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+}
+
+.container.create {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.create-submit {
+  padding: 0.75rem 1.5rem;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+}
+
+.create-submit:hover {
+  background-color: white;
+  color: black;
+}
+
+
+/* -------------footer-start--------------- */
+footer {
+  background-color: #2E236C;
+  color: white;
+}
+
+.footer-content-col {
+  /* border: 1px solid red; */
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.footer-logo {
+  width: 130px;
+
+}
+
+.footer-content ul {
+  padding: 0;
+  margin-top: 20px;
+}
+
+.footer-content li {
+  list-style-type: none;
+  padding: 0 10px;
+}
+
+.footer-icons i {
+  font-size: 25px;
+  padding: 15px 15px 15px 0;
+}
+
+
+
+
+
+@media (max-width:1400px) {
+  .landing-text {
+    position: absolute;
+    top: 200px;
   }
-  .form-group {
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    justify-content: space-between;
-    padding-right: 60px;
+
+
+}
+
+@media (max-width:1300px) {
+  .landing-text {
+    position: absolute;
+    top: 150px;
+  }
+
+  .landing-text h1 {
+    font-size: 40px;
+  }
+
+  .landing-text button {
+    font-size: 16px;
+  }
+
+  .booking-form-sec {
+    margin-top: 50px;
+    position: relative;
+  }
+}
+
+@media (max-width:1050px) {
+  .landing-text {
+    position: absolute;
+    top: 120px;
+  }
+
+  .landing-text h1 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width:900px) {
+  .banner-content {
+    padding: 0 0 0 10px;
+  }
+
+  .landing-text {
+    position: absolute;
+    top: 100px;
+  }
+
+}
+
+@media (max-width:800px) {
+  .landing-text {
+    position: absolute;
+    top: 80px;
+
+  }
+
+  .landing-text h1 {
+    font-size: 25px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+  }
+
+  .banner-content {
+    padding: 0 30px 30px 30px;
+  }
+
+}
+
+@media (max-width:700px) {
+  .landing-text {
+    position: absolute;
+    top: 80px;
+
+  }
+
+  .landing-text h1 {
+    font-size: 20px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+  }
+
+  .banner-content {
+    padding: 0 30px 0 30px;
+  }
+}
+
+@media (max-width:680px) {
+  .landing-text {
+    position: absolute;
+    top: 70px;
 
 
   }
-  
-  .form-group label {
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-    padding-left: 50px;
-    }
-  
-  .form-group input,
-  .form-group textarea,
-  .form-group select {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 50%;
+
+  .landing-text h1 {
+    font-size: 20px;
   }
-  
-  .container.create {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
+
+  .landing-text button {
+    padding: 3px 20px;
+    margin-bottom: 5px !important;
   }
-  
-  .create-submit {
-    padding: 0.75rem 1.5rem;
-    margin-top: 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    
+
+  .landing-text p {
+    margin-bottom: 5px !important;
   }
-  
-  .create-submit:hover {
-    background-color: white;
-    color: black;
+
+  .banner-content {
+    padding: 0 0px 20px 20px;
   }
-  
+
+}
+
+@media (max-width:570px) {
+  .landing-text {
+    position: absolute;
+    top: 60px;
+
+  }
+
+  .banner-content {
+    padding: 0 50px 0 0px;
+  }
+
+  .landing-text p {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width:530px) {
+  .landing-text {
+    position: absolute;
+    top: 50px;
+
+  }
+
+  .banner-content {
+    padding: 0 40px 0 0px;
+  }
+
+  .landing-text h1 {
+    font-size: 18px;
+  }
+
+  .landing-text p {
+    font-size: 12px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width:460px) {
+  .landing-text {
+    position: absolute;
+    top: 40px;
+
+  }
+
+  .banner-content {
+    padding: 0 30px 0 0px;
+  }
+
+  .landing-text h1 {
+    font-size: 18px;
+  }
+
+  .landing-text p {
+    font-size: 10px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width:420px) {
+  .landing-text {
+    position: absolute;
+    top: 40px;
+
+  }
+
+  .banner-content {
+    padding: 0 25px 0 0px;
+  }
+
+  .landing-text h1 {
+    font-size: 18px;
+  }
+
+  .landing-text p {
+    font-size: 10px;
+    margin-bottom: 5px !important;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 10px;
+  }
+
+}

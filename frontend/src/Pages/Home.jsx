@@ -13,6 +13,7 @@ export default function Home() {
                 <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
               </div>
               <div className="landing-text container-fluid">
+                
                 <div className='row'>
                   <div className="col-9 col-sm-8 col-md-6">
                     <div className='banner-content'>

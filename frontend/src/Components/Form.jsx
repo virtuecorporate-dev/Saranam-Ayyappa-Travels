@@ -1,5 +1,9 @@
 import React, { useReducer } from 'react';
 import {useNavigate} from 'react-router-dom'
+import Datepicker from 'react-datepicker'
+// import {TimePickerComponent} from '@syncfusion/ej2-react-calendars'
+import 'react-datepicker/dist/react-datepicker.css';
+
 
 const BookingForm = () => {
 
@@ -28,7 +32,7 @@ const BookingForm = () => {
             case "TO":
                 return { ...state, to: action.payload };
             case "DATE":
-                return { ...state, date: action.payload };
+                return { ...state, date: action.payload.toISOString() };
             case "NAME":
                 return { ...state, name: action.payload };
             case "MOBILE":
@@ -136,11 +140,11 @@ const BookingForm = () => {
                             </div>
 
                             <div className='col-4'>
-                                <label htmlFor="Date">Date</label>
-                                <input type="text" className='input-field'
-                                    id='Date'
-                                    placeholder={state.date}
-                                    onChange={(e) => { dispatch({ type: "DATE", payload: e.target.value }) }} />
+                                <label htmlFor="Date">Date</label> <br />
+                                <Datepicker  className='input-field'
+                                    selected={state.date}
+                
+                                    onChange={(date) => { dispatch({ type: "DATE", payload: date }) }} />
                             </div>
                         </div>
 
@@ -178,9 +182,10 @@ const BookingForm = () => {
                                     onChange={(e) => { dispatch({ type: "PICK-UP-LOCATION", payload: e.target.value }) }} />
                             </div>
                             <div className='col-6'>
-                                <label htmlFor="PickUpTime">Pick Up Time</label>
+                                <label htmlFor="PickUpTime">Pick Up Time</label> <br />
                                 <input type="text" className='input-field'
                                     id='PickUpTime'
+                                    value={state.pickUpTime}
                                     placeholder={state.pickUpTime}
                                     onChange={(e) => dispatch({ type: "PICK-UP-TIME", payload: e.target.value })} />
                             </div>

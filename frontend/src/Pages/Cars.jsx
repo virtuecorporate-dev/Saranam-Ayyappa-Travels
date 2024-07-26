@@ -31,32 +31,83 @@ const Cars = () => {
                         <h2>Showing {cars.length} Available Cabs</h2>
                     </div>
 
-                    <div className='container'>
+                    <div className='container '>
                         <div className='row'>
-                                {cars.length > 0 ? cars.map((car, index) => {
+                            {cars.length > 0 ? cars.map((car, index) => {
 
-                                    return (
-                                        <div key={index} className='col-4 cabs' >
+                                return (
+                                    <div key={index} className='col-4 cabs' >
+                                        <div className='cab-inner'>
+
                                             <div className='cab-img'>
                                                 <img src={car.imageUrl} alt="img" />
                                             </div>
 
-                                            <h5>{car.brand}</h5>
-                                            <p>{car.seats} seater</p>
-                                            <p>{car.description}</p>
-                                            <p>price - {car.price}</p>
+                                            <div className='cab-details-content container mt-3'>
+                                                <div className='row'>
+                                                    <div className='col-8' >
+                                                        <div className='car-name-details'>
+                                                            <h3 >{car.brand} {car.carModel}</h3>
+                                                        </div>
 
-                                            <button type='button' onClick={() => {
-                                                console.log(car);
-                                                SelectCab(car)
-                                            }}>Select</button>
+                                                        <div className='car-description'>
+                                                            <p>Manual - Petrol - {car.seats} seats</p>
+
+                                                            
+                                                            
+                                                        </div>
+
+                                                        
+                                                        
+                                                    </div>
+
+                                                    <div className="col-4 p-0" >
+                                                        <div className='cab-fare-inner'>
+                                                        <h3 className='cab-fare'> ₹{car.price}</h3>
+                                                        <p className='cab-fees'>₹1000 excluding fees</p>
+
+                                                      
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+
+                                                <div className='dotted-line'></div>
+
+                                                <div className='row'>
+                                                    <div className='col-12'>
+                                                    <p className='pt-3' style={{textWrap:"wrap"}}>{car.description}</p>
+                                                    </div>
+                                                </div>
+
+                                                <div className='row'>
+                                                    <div className="col-8 ">
+                                                        <p className='extra-fea'>Active Fastag</p>
+
+                                                    </div>
+                                                    <div className='col-4 p-0'>
+                                                    <button className='select-button' type='button' onClick={() => {
+                                                            console.log(car);
+                                                            SelectCab(car)
+                                                        }}>Select
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+
+
                                         </div>
 
+                                    </div>
 
-                                    )
-                                })
-                                    : <p>No Cars Available</p>
-                                }
+
+                                )
+                            })
+                                : <p>No Cars Available</p>
+                            }
                         </div>
                     </div>
 
