@@ -553,6 +553,72 @@ body {
 
 /*  ---------------avail cars page---------------------- */
 
+/* -----------------selected cab----------------------------- */
+
+.form-details{
+  border-radius: 5px;
+  padding: 20px 0;
+}
+.form-details h4{
+  font-weight: 700;
+}
+.form-details h4 .bi-arrow-left-right{
+  font-size: 60px;
+}
+.selected-cab{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+.selected-cab-img{
+  height: 300px;
+  /* width: 300px; */
+  padding: 0;
+  /* border: 1px solid red; */
+}
+.selected-cab-img img{
+  height: 100%;
+  width: 100% !important;
+  object-fit: contain;
+  object-position: center;
+}
+.address-details{
+  /* border: 1px solid red; */
+  margin: 0 0 0 20px;
+}
+.traveller-details form{
+  background-color: #a4a4e7;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px !important;
+  /* text-align: center; */
+}
+.traveller-details label{
+ font-size: 18px;
+ font-weight: 400;
+ margin-top: 20px;
+ color: white;
+}
+.traveller-details input{
+  border: none;
+  border-bottom: 1px solid white ;
+  color: white;
+  width: 100%;
+  background-color: transparent;
+  border-radius: 5px;
+}
+.traveller-details button{
+  margin-top: 20px;
+  border: none;
+  /* border: 1px solid black; */
+  background-color: white;
+  color: black;
+  padding: 5px 30px;
+  border-radius: 5px;
+  font-weight: 700;
+
+}
+
 
 
 
