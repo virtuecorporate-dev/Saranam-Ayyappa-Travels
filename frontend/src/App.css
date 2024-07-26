@@ -647,3 +647,95 @@ footer{
     color: black;
   }
   
+/* about page start------------------------------ */
+
+.about-head h5, .about-head h4{
+  float: right;
+}
+.about-head h4{
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.about-row{
+  display: flex;
+}
+
+.about .about-img {
+  height: 250px !important;
+  box-shadow: 5px 5px whitesmoke;
+  padding: 15px;  
+
+}
+
+.about-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.about-point li{
+  list-style-type: none;
+  line-height: 1.5;
+  font-size: larger;
+  font-style: normal;
+
+}
+
+.about-service button{
+  background-color: #2E236C;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+}
+
+.about-service button:hover{
+  background-color: white;
+  border-radius: 10px;
+  padding: 5px;
+  color:black;
+  
+}
+.about-ser{
+  /* border: 2px solid black; */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+
+.about-img{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 500px;
+}
+
+.about-img img{
+  object-fit: contain;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.about-text{
+  text-align: center;
+  justify-content: center;
+  position: absolute;
+  margin-top: -300px;
+  justify-content: center;
+  color: white;
+  font-weight: 900;
+  font-style: normal;
+  font-size: xx-large;
+  margin-left: 500px;
+}
+
+.about-banner-content{
+  margin-top: -130px !important;
+}
+
+.about-banner-content i{
+  border: 2px solid red;
+  padding: 5px;
+  font-size: 20px;
+  background-color: red;
+}

@@ -54,7 +54,7 @@ export function CreateTable() {
   return (
     <div className="container create">
       <form onSubmit={handleSubmit} className="create-table">
-        <h1 className="create-head mb-5">Adding Your Car Details</h1>
+        <h1 className="create-head mb-5">Adding Your Cab Details</h1>
         
         <div className="form-group">
           <label htmlFor="carModel">Car Model:</label>

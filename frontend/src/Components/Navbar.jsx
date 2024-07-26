@@ -17,7 +17,8 @@ const Navbar = () => {
                 
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">About us </a>
+                <Link to='/about' style={{"textDecoration":"none"}}> <a className="nav-link" >About</a> </Link>
+                
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="#">Service</a>
