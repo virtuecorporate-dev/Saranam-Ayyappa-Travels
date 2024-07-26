@@ -8,7 +8,7 @@ body {
     font-style: normal;
     /* overflow-x: hidden; */
 }
-
+/* 
 .navbar {
     background-color: transparent !important;
     padding: 20px;
@@ -39,7 +39,99 @@ body {
 .navbar-toggler {
     color: white;
     background-color: white;
+} */
+
+
+.desktop-nav{
+  background-color: transparent;
+      z-index: 1000;
+      padding:20px;
+     
+  }
+ .nav-link {
+    font-weight: 700;
+  }
+  .navbar-toggler {
+    color: white !important;
+   
 }
+  
+
+ .nav-item .homeNav-color{
+    color: #fff !important;
+  }
+  
+  .scroll-nav{
+    background-color: #005395 !important;
+    padding: 10px !important;
+    color: #fff;
+    position: sticky;
+    top: 0;
+  }
+  .scroll-nav .nav-link{
+    color: #fff !important;
+  }
+  
+  .scroll-nav .logo{
+    width: 100px !important;
+  }
+  
+  /* ----------------mobile-nav------------------------------- */
+  
+  .mobile-nav{
+    display: none;
+  }
+  
+@media (max-width:990px){
+  
+  .desktop-nav{
+    display: none;
+  }
+  
+  .mobile-nav{
+    display: block;
+  background-color: transparent;
+      z-index: 1000;
+      padding:10px;
+     
+  }
+  .mobile-nav .icons{
+    font-size: larger;
+    font-weight: bolder;
+  }
+  .mobile-nav .nav-item{
+    font-size: larger;
+  }
+  /* .mobile-nav .nav-link{
+    color: black !important;
+  } */
+  
+  .mobile-nav .navbar-collapse .navbar-nav{
+    width: 100%;
+   display: flex;
+   justify-content: end;
+   margin-right: 0 !important;
+  }
+  .mobile-nav .nav-item{
+    padding: 0 20px;
+   font-weight: 500;
+   
+  }
+  .mobile-nav .navbar-toggler{
+    border: none;
+  }
+}
+
+@media (max-width:790px){
+  .mobile-logo{
+    margin-left: -20px;
+    /* border: 1px solid red; */
+  }
+  .mobile-logo img{
+    width: 150px !important;
+  }
+}
+
 
 /* navbar end-------------------------------------------- */
 
@@ -88,8 +180,14 @@ body {
     padding: 0;
 }
 .landing{
-    margin-top: -116px !important;
+    margin-top: -128px !important;
     /* z-index: -700; */
+}
+
+@media (max-width:990px){
+  .landing{
+    margin-top: 0 !important;
+  }
 }
 /*------------------------------- Banner-image-end-------------------------------------- */
 
@@ -265,34 +363,42 @@ margin:5px ;
 }
 
 /* -----------------full banner image---------------------------- */
+
+.fullbanner-sec{
+  position: relative;
+  height: 100vh;
+}
 .fullbanner{
-    height: 100vh;
-    padding: 0;
-    margin: 0;
-    position: relative;
+    height: 100%;
+    width: 100%;
+    /* padding: 0;
+    margin: 0; */
 }
 .fullbanner img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .banner-text{
     position: absolute;
-    margin-top: -500px;
+    top: 0;
     color: white;
     display: flex;
-    justify-content: right;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    margin-left: 400px;
+    height: 100%;
     
 }
-
+.banner-text-inner{
+  width: 80%;
+}
 .banner-text h1{
   font-weight: 700;
 }
 
 .banner-text p{
   font-weight: 400;
-  font-size: larger;
   justify-self: right;
 
 }
