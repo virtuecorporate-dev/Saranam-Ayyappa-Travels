@@ -57,7 +57,7 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY>200) {
+      if (window.scrollY) {
         setNavbar(true);
       } else {
         setNavbar(false);

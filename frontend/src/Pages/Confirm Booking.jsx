@@ -82,7 +82,7 @@ const ConfirmBooking = () => {
 
             <div className='row'>
                 <div className='col-12'>
-                    <div className='container'>
+                    <div className='container' style={{border:"1px solid red"}}>
                         <div className='row'>
                             <div className='col-8'>
                                 <div className='selected-cab'>

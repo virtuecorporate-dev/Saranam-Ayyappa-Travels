@@ -11,7 +11,7 @@ const BookingForm = () => {
         triptype: "One Way Trip",
         from: "",
         to: "",
-        date: new Date(),
+        date: new Date().toISOString(),
         pickUpTime: '10.00 am',
         pickUpLocation: "",
         dropTime: "2.00 pm",
@@ -32,7 +32,7 @@ const BookingForm = () => {
             case "TO":
                 return { ...state, to: action.payload };
             case "DATE":
-                return { ...state, date: action.payload.toISOString() };
+                return { ...state, date: action.payload };
             case "NAME":
                 return { ...state, name: action.payload };
             case "MOBILE":
