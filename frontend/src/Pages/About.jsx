@@ -43,8 +43,8 @@ export default function About() {
                     </div>
                 </div>
             </main>
-            <section className='container-fluid landing'>
-                <div className='row'>
+            <section className='container-fluid landing ' >
+                <div className='row' style={{"margin-top":"200px"}}>
                     <div className='col-12 p-0'>
                         <div className='banner'>
                             <div className="banner-img">
