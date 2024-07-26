@@ -38,7 +38,7 @@ export function CreateTable() {
       if (file) {
         formData.append('imageUrl', file);
       }
-      
+
       const response = await axios.post('http://localhost:8000/api/v1/createCar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
@@ -52,95 +52,107 @@ export function CreateTable() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="carModel">Car Model:</label>
-        <input
-          type="text"
-          id="carModel"
-          name="carModel"
-          value={carModel}
-          onChange={(e) => setCarModel(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="brand">Brand:</label>
-        <input
-          type="text"
-          id="brand"
-          name="brand"
-          value={brand}
-          onChange={(e) => setBrand(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="price">Price:</label>
-        <input
-          type="number"
-          id="price"
-          name="price"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="seats">Seats:</label>
-        <input
-          type="number"
-          id="seats"
-          name="seats"
-          value={seats}
-          onChange={(e) => setSeats(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="availability">Availability:</label>
-        <input
-          type="checkbox"
-          id="availability"
-          name="availability"
-          checked={availability}
-          onChange={(e) => setAvailability(e.target.checked)}
-        />
-      </div>
-      <div>
-        <label htmlFor="description">Description:</label>
-        <input
-          type="text"
-          id="description"
-          name="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="imageUrl">Upload Image:</label>
-        <input
-          type="file"
-          id="imageUrl"
-          name="imageUrl"
-          onChange={handleFileChange}
-        />
-      </div>
-      {imagePreviewUrl && (
-        <div>
-          <img src={imagePreviewUrl} alt="Image Preview" style={{ width: '200px', height: 'auto' }} />
+    <div className="container create">
+      <form onSubmit={handleSubmit} className="create-table">
+        <h1 className="create-head mb-5">Adding Your Car Details</h1>
+        
+        <div className="form-group">
+          <label htmlFor="carModel">Car Model:</label>
+          <input 
+            type="text"
+            id="carModel"
+            name="carModel"
+            value={carModel}
+            onChange={(e) => setCarModel(e.target.value)}
+          />
         </div>
-      )}
-      <div>
-        <label htmlFor="category">Category:</label>
-        <select
-          id="category"
-          name="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="One Way Trip">One Way Trip</option>
-          <option value="Round Trip">Round Trip</option>
-          <option value="Hourly Trip">Hourly Trip</option>
-        </select>
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+        
+        <div className="form-group">
+          <label htmlFor="brand">Brand:</label>
+          <input
+            type="text"
+            id="brand"
+            name="brand"
+            value={brand}
+            onChange={(e) => setBrand(e.target.value)}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="price">Price:</label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="seats">Seats:</label>
+          <input
+            type="number"
+            id="seats"
+            name="seats"
+            value={seats}
+            onChange={(e) => setSeats(e.target.value)}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="availability">Availability:</label>
+          <input
+            type="checkbox"
+            id="availability"
+            name="availability"
+            checked={availability}
+            onChange={(e) => setAvailability(e.target.checked)}
+          />
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="description">Description:</label>
+          <textarea 
+            id="description"
+            name="description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          ></textarea>
+        </div>
+        
+        <div className="form-group">
+          <label htmlFor="imageUrl">Upload Image:</label>
+          <input
+            type="file"
+            id="imageUrl"
+            name="imageUrl"
+            onChange={handleFileChange}
+          />
+        </div>
+        
+        {imagePreviewUrl && (
+          <div>
+            <img src={imagePreviewUrl} alt="Image Preview" style={{ width: '200px', height: 'auto' }} />
+          </div>
+        )}
+        
+        <div className="form-group">
+          <label htmlFor="category">Category:</label>
+          <select
+            id="category"
+            name="category"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            <option value="One Way Trip">One Way Trip</option>
+            <option value="Round Trip">Round Trip</option>
+            <option value="Hourly Trip">Hourly Trip</option>
+          </select>
+        </div>
+        
+        <button className="create-submit mb-3" type="submit">Create</button>
+      </form>
+    </div>
   );
 }
