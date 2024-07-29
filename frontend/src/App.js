@@ -11,6 +11,8 @@ import Cars from './Pages/Cars';
 import { UpdateTable } from './Components/updateTable';
 import ConfirmBooking from './Pages/Confirm Booking';
 import About from './Pages/About';
+import LoginPage from './Pages/Login';
+import RegisterPage from './Pages/Register';
 
 
 function App() {
@@ -28,6 +30,9 @@ function App() {
             <Route path='/cars' element={<Cars/>}/>
             <Route path='/edit/:id' element={<UpdateTable/>} />
             <Route path='/confirmbooking' element={<ConfirmBooking/>}/>
+            <Route path='/login' element= {<LoginPage/>}/>
+            <Route path='/register' element= {<RegisterPage/>}/>
+
           </Routes>
 
           <Footer />

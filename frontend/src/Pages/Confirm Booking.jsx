@@ -66,7 +66,7 @@ const ConfirmBooking = () => {
         <section className='confirmBooking-sec container'>
             <h5 className='mt-4'>Confirm Your Cab</h5>
             <div className='row mt-4'>
-
+{/* 
                 <div className='col-12'>
                     <div className='form-details' style={{ backgroundColor: "#a4a4e7", color: "white" }}>
 
@@ -83,7 +83,7 @@ const ConfirmBooking = () => {
 
 
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className='row mt-5 mb-5'>

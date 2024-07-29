@@ -1073,3 +1073,184 @@ footer {
   font-size: 20px;
   background-color: red;
 }
+
+/* login start----------------------------------- */
+
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-left {
+  flex: 1;
+  background-color: #2E236C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.login-right {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-phone-image {
+  max-width: 80%;
+  height: auto;
+}
+
+.login-header {
+  text-align: center;
+}
+
+.login-user-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.login-header h2 {
+  color: #2E236C;
+  margin-top: 10px;
+}
+
+.login-form {
+  margin-top: 30px;
+}
+
+.login-input {
+  margin-bottom: 20px;
+}
+
+.login-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-forgot-password {
+  color: #2E236C;
+  cursor: pointer;
+}
+
+.login-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #2E236C;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.login-signin {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.login-signin span {
+  color: #2E236C;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+/* register page--------------------------------------- */
+
+
+.register-container {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-left {
+  flex: 1;
+  background-color: #2E236C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.register-right {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.register-phone-image {
+  max-width: 80%;
+  height: auto;
+}
+
+.register-header {
+  text-align: center;
+}
+
+.register-user-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.register-header h2 {
+  color: #2E236C;
+  margin-top: 10px;
+}
+
+.register-form {
+  margin-top: 30px;
+}
+
+.register-input {
+  margin-bottom: 20px;
+}
+
+.register-input input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #2E236C;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-login {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.register-login span {
+  color: #2E236C;
+  cursor: pointer;
+  text-decoration: underline;
+}
