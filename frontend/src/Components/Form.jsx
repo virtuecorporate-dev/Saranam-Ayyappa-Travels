@@ -82,7 +82,7 @@ const BookingForm = () => {
     return (
         <div className="container form-section">
             <div className="row search-call">
-                <div className=" col-md-4 form-left " style={{ backgroundColor: "#2E236C" }} >
+                <div className=" col-md-4 form-left " style={{ backgroundColor: "#005395" }} >
                     <h3>Call Now !</h3>
                     <div className="row">
                         <div className="col-2 phone-icons mt-4">

@@ -1,58 +1,11 @@
-// import React, { Fragment } from 'react'
-// import { Link } from 'react-router-dom'
-
-// const Navbar = () => {
-//   return (
-//     <Fragment>
-//       <nav className="navbar navbar-expand-lg bg-body-tertiary custom-navbar">
-//         <div className="container-fluid">
-//           <a className="navbar-brand" href="#">
-//             <img src="./images/sap travels bg logo.png" alt="sap logo" style={{width:"150px"}}/>
-//           </a>
-//           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//             <span className="navbar-toggler-icon"></span>
-//           </button>
-//           <div className="collapse navbar-collapse" id="navbarNav">
-//             <ul className="navbar-nav mx-auto" >
-//               <li className="nav-item">
-//                 <Link to='/' style={{"textDecoration":"none"}}> <a className="nav-link active" >Home</a> </Link>
-
-//               </li>
-//               <li className="nav-item">
-//                 <a className="nav-link" href="#">About us </a>
-//               </li>
-//               <li className="nav-item">
-//                 <a className="nav-link" href="#">Service</a>
-//               </li>
-//               <li className="nav-item">
-//                 <a className="nav-link" href="#">Book a Bus</a>
-//               </li>
-
-
-
-//             </ul>
-//             <ul className=' navbar-nav ml-auto'>
-//               <li className="nav-item sign">
-//                 <a className="nav-link" href="#"><i class="fa-solid fa-user"></i> &nbsp;&nbsp; Sign in</a>
-//               </li>
-//               </ul>
-//           </div>
-
-//         </div>
-//       </nav>
-//     </Fragment>
-//   )
-// }
-
-// export default Navbar
-
 import React, { Fragment, useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import LoginPage from '../Pages/Login';
 
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
   const [homeNav, setHomeNav] = useState(false);
-  // const homeNavRef = useRef(null);
+  const [visible,setVisisble] = useState(false)
   const location = useLocation();
 
   useEffect(() => {
@@ -75,6 +28,13 @@ export default function Header() {
     }
   }, [location]);
 
+  const handleOpenLogin=(()=>{
+    setVisisble(true)
+  })
+
+const handleCloseLogin=(()=>{
+  setVisisble(false)
+})
   return (
     <Fragment>
       <nav className={navbar ? "navbar navbar-expand-lg desktop-nav scroll-nav" : "navbar navbar-expand-lg desktop-nav"}>
@@ -104,14 +64,14 @@ export default function Header() {
             </ul>
             <ul className=' navbar-nav ml-auto'>
               <li className="nav-item sign">
-              <Link to='/login' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Sign in</a> </Link>
+              <button className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}>Sign in</button>
               </li>
             </ul>
           </div>
 
         </div>
       </nav>
-
+      {visible && <LoginPage onClose={handleCloseLogin}/>}
       {/* ------------------moblie navbar-------------------------- */}
 
       <nav className={navbar ? "navbar navbar-expand-lg mobile-nav scroll-nav" : "navbar navbar-expand-lg mobile-nav"}>

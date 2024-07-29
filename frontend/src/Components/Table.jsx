@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteCar, getAllCar } from '../Slice/carsSlice';
@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function Table() {
     const dispatch = useDispatch();
     const cars = useSelector(state => state.Cars.Cars || [])
+    
 
     const handleDelete = (id) => {
         try {

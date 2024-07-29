@@ -223,9 +223,9 @@ body {
 /* 
 .book button {
     background-color: red !important;
-    border: #2E236C;
+    border: #005395;
     border-radius: 5px;
-    color: #2E236C;
+    color: #005395;
     font-weight: bolder;
     padding: 5px;
 }
@@ -271,7 +271,7 @@ body {
 .search-cab button {
   font-weight: 700;
   padding: 5px 30px;
-  background-color: #2e236cd0;
+  background-color: #005395d0;
   color: white;
   border-radius: 5px;
   border: none;
@@ -279,8 +279,8 @@ body {
 
 .search-cab button:hover {
   background-color: white !important;
-  color: #2e236cd0 !important;
-  border: 1px solid #2e236cd0;
+  color: #005395d0 !important;
+  border: 1px solid #005395d0;
 }
 
 .from-input input {
@@ -312,7 +312,7 @@ body {
 .visiting-pl-add,
 .visiting-pl-delete {
   border: none;
-  background-color: #2e236cd0;
+  background-color: #005395d0;
   color: white;
   border-radius: 20px;
   padding: 0px 9px;
@@ -345,7 +345,7 @@ body {
 }
 
 .home-banner-text {
-  color: #2E236C !important;
+  color: #005395 !important;
   font-weight: 700;
   margin-top: 5px;
 }
@@ -367,12 +367,21 @@ body {
   width: 100%;
 }
 
+.home-banner1-icons .card{
+  padding: 15px;
+  background-color: whitesmoke;
+  box-shadow: 0px 5px 5px white
+  0px 5px 3px white;
+  gap: 20px;
+}
+
+
 /* -----------------------------------home -banner----------------------------------- */
 
 
 /*--------------------------------------- whoweare ------------------------------------------------ */
 .whoweare {
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
 }
 
@@ -440,9 +449,9 @@ body {
 
 .banner-text button {
   border-radius: 5px;
-  border: 1px solid #2e236cd0;
+  border: 1px solid #005395d0;
   background-color: white;
-  color: #2e236cd0;
+  color: #005395d0;
   padding: 5px 30px;
   font-weight: 700;
   font-size: 18px;
@@ -452,7 +461,7 @@ body {
 }
 
 .banner-text button:hover {
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
 }
 
@@ -466,7 +475,7 @@ body {
 /* ---------------avail car page---------------------- */
 
 .avail-cars h2 {
-  background-color: #2e236cd0;
+  background-color: #005395d0;
   padding: 10px 20px;
   width: fit-content;
   font-weight: 700;
@@ -508,7 +517,7 @@ body {
 .select-button{
   font-weight: 700;
   padding: 5px 30px;
-  background-color: #2e236cd0;
+  background-color: #005395d0;
   color: white;
   border-radius: 5px;
   border: none;
@@ -517,8 +526,8 @@ body {
 
 .select-button:hover{
   background-color: white !important;
-  color: #2e236cd0 !important;
-  border: 1px solid #2e236cd0;
+  color: #005395d0 !important;
+  border: 1px solid #005395d0;
 }
 
 
@@ -631,7 +640,7 @@ body {
 }
 
 .table-add button {
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
   padding: 5px;
   border-radius: 5px;
@@ -646,7 +655,7 @@ body {
 
 .update,
 .delete {
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
 }
 
@@ -660,7 +669,7 @@ body {
 .car-detail {
   /* border: 2px solid blue; */
   padding: 20px;
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
 }
 
@@ -675,8 +684,8 @@ body {
 .create-table {
   text-align: center;
   align-items: center;
-  border: 2px solid #2E236C;
-  background-color: #2E236C;
+  border: 2px solid #005395;
+  background-color: #005395;
   color: white;
   width: 800px;
 }
@@ -731,7 +740,7 @@ body {
 
 /* -------------footer-start--------------- */
 footer {
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
 }
 
@@ -982,6 +991,12 @@ footer {
 
   
 /* about page start------------------------------ */
+.about-head h5{
+  font-size: 25px;
+}
+.about-row p{
+  font-size: 20px;
+}
 
 .about-head h5, .about-head h4{
   float: right;
@@ -990,6 +1005,9 @@ footer {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
+  font-size: 35px;
+  color: #005395 ;
+
 }
 .about-row{
   display: flex;
@@ -1009,31 +1027,43 @@ footer {
 
 .about-point li{
   list-style-type: none;
-  line-height: 1.5;
-  font-size: larger;
+  line-height: 2;
+  font-size: 20px;
   font-style: normal;
+
 
 }
 
 .about-service button{
-  background-color: #2E236C;
+  background-color: #005395;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   color: white;
+}
+
+.about-service p{
+  font-size: 23px;
 }
 
 .about-service button:hover{
   background-color: white;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   color:black;
   
 }
+
+.about-service h3{
+  font-size: 45px;
+  color: #005395;
+  font-weight: bold;
+}
 .about-ser{
   /* border: 2px solid black; */
-  margin-top: 30px;
+  margin-top: 60px;
   margin-bottom: 30px;
 }
+
 
 
 .about-img{
@@ -1064,7 +1094,8 @@ footer {
 }
 
 .about-banner-content{
-  margin-top: -130px !important;
+  margin-top: -150px !important;
+  justify-content:center;
 }
 
 .about-banner-content i{
@@ -1074,24 +1105,19 @@ footer {
   background-color: red;
 }
 
+.about-banner-para {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 20px;
+}
 /* login start----------------------------------- */
 
 
 .login-container {
   display: flex;
-  height: 100vh;
   align-items: center;
   justify-content: center;
-}
-
-.login-left {
-  flex: 1;
-  background-color: #2E236C;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  width: 400px;
 }
 
 .login-right {
@@ -1118,7 +1144,7 @@ footer {
 }
 
 .login-header h2 {
-  color: #2E236C;
+  color: #005395;
   margin-top: 10px;
 }
 
@@ -1143,7 +1169,7 @@ footer {
 }
 
 .login-forgot-password {
-  color: #2E236C;
+  color: #005395;
   cursor: pointer;
 }
 
@@ -1151,7 +1177,7 @@ footer {
   width: 100%;
   padding: 10px;
   border: none;
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -1164,9 +1190,41 @@ footer {
 }
 
 .login-signin span {
-  color: #2E236C;
+  color: #005395;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.login-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.login-popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.login-popup-close {
+  position: absolute;
+  background-color: #005395;
+  border: 2px solid #005395;
+  right: 10px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 
@@ -1175,14 +1233,14 @@ footer {
 
 .register-container {
   display: flex;
-  height: 100vh;
+  width: 600px !important;
   align-items: center;
   justify-content: center;
 }
 
 .register-left {
   flex: 1;
-  background-color: #2E236C;
+  background-color: #005395;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1214,7 +1272,7 @@ footer {
 }
 
 .register-header h2 {
-  color: #2E236C;
+  color: #005395;
   margin-top: 10px;
 }
 
@@ -1237,7 +1295,7 @@ footer {
   width: 100%;
   padding: 10px;
   border: none;
-  background-color: #2E236C;
+  background-color: #005395;
   color: white;
   border-radius: 5px;
   cursor: pointer;
@@ -1250,7 +1308,7 @@ footer {
 }
 
 .register-login span {
-  color: #2E236C;
+  color: #005395;
   cursor: pointer;
   text-decoration: underline;
 }

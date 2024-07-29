@@ -1,42 +1,57 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
+import RegisterPage from './Register';
 
+const LoginPopup = ({ onClose }) => {
+  const [isRegisterVisible, setRegisterVisible] = useState(false);
 
-const LoginPage = () => {
+  const handleOpenRegister = () => {
+    console.log('Opening register page');
+    setRegisterVisible(true);
+  };
+
+  const handleCloseRegister = () => {
+    console.log('Closing register page');
+    setRegisterVisible(false);
+  };
+
   return (
-    <div className="login-container container">
-      <div className="login-left">
-        <div className="login-phone">
-          <img src="./images/carbanner.jpg" alt="Phone" className="login-phone-image" />
-        </div>
-      </div>
-      <div className="login-right">
-        <div className="login-header">
-          {/* <img src="user-icon-url" alt="User Icon" className="login-user-icon" /> */}
-          <i class="fa-solid fa-user"></i>
-          <h2>WELCOME</h2>
-        </div>
-        <div className="login-form">
-          <div className="login-input">
-            <input type="text" placeholder="Username" />
-          </div>
-          <div className="login-input">
-            <input type="password" placeholder="Password" />
-          </div>
-          <div className="login-options">
-            <span className="login-forgot-password">Forgot Password?</span>
-          </div>
-          <button className="login-button">LOGIN</button>
-          <div className="login-signin">
-            <Link to='/register'>
-            <span >New User</span>
-
-            </Link>
-          </div>
+    <div className="login-popup">
+      <div className="login-popup-content">
+        <button className="login-popup-close" onClick={onClose}>
+          <h3>X</h3>
+        </button>
+        <div className="login-container container">
+          {!isRegisterVisible ? (
+            <div className="login-right">
+              <div className="login-header">
+                <i className="fa-solid fa-user"></i>
+                <h2>WELCOME</h2>
+              </div>
+              <div className="login-form">
+                <div className="login-input">
+                  <input type="text" placeholder="Username" />
+                </div>
+                <div className="login-input">
+                  <input type="password" placeholder="Password" />
+                </div>
+                {/* <div className="login-options">
+                  <span className="login-forgot-password">Forgot Password?</span>
+                </div> */}
+                <button className="login-button">LOGIN</button>
+                <div className="login-signin">
+                  <button onClick={handleOpenRegister}>
+                 New User
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <RegisterPage onCloseRegister={handleCloseRegister} />
+          )}
         </div>
       </div>
     </div>
   );
 };
 
-export default LoginPage;
+export default LoginPopup;
