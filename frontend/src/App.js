@@ -13,6 +13,8 @@ import ConfirmBooking from './Pages/Confirm Booking';
 import About from './Pages/About';
 import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
+import TermsConditions from './Pages/Terms & Conditions';
+import Service from './Pages/Service';
 import ScrollToTop from './Components/scrollToTop'
 
 
@@ -33,6 +35,9 @@ function App() {
             <Route path='/confirmbooking' element={<ConfirmBooking/>}/>
             {/* <Route path='/login' element= {<LoginPage/>}/> */}
             <Route path='/register' element= {<RegisterPage/>}/>
+            <Route path='/terms&conditions' element={<TermsConditions/>}/>
+            <Route path='/services' element={<Service/>}/>
+
 
           </Routes>
 

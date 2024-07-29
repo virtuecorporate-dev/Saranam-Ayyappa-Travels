@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useState } from 'react';
 import {useNavigate} from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 // import {TimePickerComponent} from '@syncfusion/ej2-react-calendars'
@@ -8,13 +8,13 @@ import 'react-datepicker/dist/react-datepicker.css';
 const BookingForm = () => {
 
     const InitialState = {
-        triptype: "One Way Trip",
+        triptype: "",
         from: "",
         to: "",
-        date: new Date().toISOString(),
-        pickUpTime: '10.00 am',
+        date: new Date(),
+        pickUpTime: '',
         pickUpLocation: "",
-        dropTime: "2.00 pm",
+        dropTime: "",
         dropLocation: "",
         package: "",
         visitingPlaces: [""],  
@@ -62,11 +62,20 @@ const BookingForm = () => {
     };
 
     const [state, dispatch] = useReducer(reducer, InitialState);
+    const [error, setError] = useState("")
 
     const navigate= useNavigate()
     const FormSubmit = (e) => {
         e.preventDefault();
-        navigate("/cars", {state:state})
+
+        if(!state.triptype){
+            setError("Please Select The TripType")
+            return
+        }
+        setError("")
+
+
+        navigate("/cars", {state:{...state, date:state.date.toLocaleDateString()}})
        
     };
 
@@ -94,6 +103,7 @@ const BookingForm = () => {
                                     id='One-Way-Trip'
                                     name='trip-type'
                                     value="One Way Trip"
+                                    
                                     onChange={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}
                                 />
                                 <label htmlFor="One-Way-Trip">One Way Trip</label>
@@ -120,13 +130,22 @@ const BookingForm = () => {
                             </div>
                         </div>
 
-                        <div className='row mt-3'>
+                        {error && (
+                            <div className='row mt-2'>
+                                <div className='col-12'>
+                                    <p style={{ color: 'red' ,fontSize:"12px"}} >{error}</p>
+                                </div>
+                            </div>
+                        )}
+
+                        <div className='row mt-0'>
                             <div className='col-4'>
                                 <label htmlFor="From">From</label>
                                 <input type="text" className='input-field'
                                     id='From'
                                     value={state.from}
                                     placeholder="Coimbatore, Tamil Nadu, India"
+                                    required
                                     onChange={(e) => { dispatch({ type: "FROM", payload: e.target.value }) }} />
                             </div>
 
@@ -136,6 +155,7 @@ const BookingForm = () => {
                                     id='To'
                                     value={state.to}
                                     placeholder="Salem, Tamil Nadu, India"
+                                    required
                                     onChange={(e) => { dispatch({ type: "TO", payload: e.target.value }) }} />
                             </div>
 
@@ -143,7 +163,7 @@ const BookingForm = () => {
                                 <label htmlFor="Date">Date</label> <br />
                                 <Datepicker  className='input-field'
                                     selected={state.date}
-                
+                                    required
                                     onChange={(date) => { dispatch({ type: "DATE", payload: date }) }} />
                             </div>
                         </div>
@@ -179,6 +199,7 @@ const BookingForm = () => {
                                     id='PickUpLoaction'
                                     value={state.pickUpLocation}
                                     placeholder="Gandhipuram,Cbe"
+                                    required
                                     onChange={(e) => { dispatch({ type: "PICK-UP-LOCATION", payload: e.target.value }) }} />
                             </div>
                             <div className='col-6'>
@@ -186,7 +207,7 @@ const BookingForm = () => {
                                 <input type="text" className='input-field'
                                     id='PickUpTime'
                                     value={state.pickUpTime}
-                                    placeholder={state.pickUpTime}
+                                    placeholder="10.00 am"
                                     onChange={(e) => dispatch({ type: "PICK-UP-TIME", payload: e.target.value })} />
                             </div>
                         </div>
@@ -202,6 +223,7 @@ const BookingForm = () => {
                                                     type="text"
                                                     className='input-field'
                                                     value={place}
+                                                    
                                                     onChange={(e) => dispatch({ type: "UPDATE-VISITING-PLACE", payload: { index, value: e.target.value } })}
                                                 />
                                             </div>
@@ -223,13 +245,16 @@ const BookingForm = () => {
                                         id='DropLoaction'
                                         value={state.dropLocation}
                                         placeholder="Aathur,Salem"
+                                        required
                                         onChange={(e) => { dispatch({ type: "DROP-LOCATION", payload: e.target.value }) }} />
                                 </div>
                                 <div className='col-6'>
                                     <label htmlFor="DropTime">Drop Time</label>
                                     <input type="text" className='input-field'
                                         id='DropTime'
-                                        placeholder={state.dropTime}
+                                        value={state.dropTime}
+                                        placeholder='2.00 pm'
+                                        required
                                         onChange={(e) => dispatch({ type: "DROP-TIME", payload: e.target.value })} />
                                 </div>
                             </div>

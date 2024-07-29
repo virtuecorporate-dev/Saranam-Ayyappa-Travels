@@ -561,9 +561,7 @@ body {
   font-weight: 700;
   font-size: 12px;
 }
-.car-description{
-  /* display: flex; */
-}
+
 
 /*  ---------------avail cars page---------------------- */
 
@@ -1323,4 +1321,29 @@ footer {
   color: #005395;
   cursor: pointer;
   text-decoration: underline;
+}
+
+.terms-head{
+  text-align: center;
+ width: 90%;
+ margin: auto;
+}
+
+.terms-head h1{
+  font-weight: 700;
+}
+
+.italic{
+  font-style: italic;
+  color: gray;
+}
+
+.terms-content-inner{
+  margin-top:70px !important ;
+}
+
+.terms-content-inner li a{
+  /* color: black; */
+  text-decoration: none;
+  font-size: 15px;
 }
