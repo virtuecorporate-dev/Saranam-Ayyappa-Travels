@@ -375,7 +375,10 @@ body {
   gap: 20px;
 }
 
-
+.card-body h5{
+  font-size: 25px;
+  font-weight: bold;
+}
 /* -----------------------------------home -banner----------------------------------- */
 
 
@@ -994,20 +997,23 @@ footer {
   
 /* about page start------------------------------ */
 .about-head h5{
-  font-size: 25px;
+  font-size: 25px ;
+  margin-right: 20px;
 }
+
 .about-row p{
   font-size: 20px;
 }
 
-.about-head h5, .about-head h4{
+.about-head h5, .about-head h3{
   float: right;
+ 
 }
-.about-head h4{
+.about-head h3{
   font-family: "Roboto", sans-serif;
   font-weight: 900;
   font-style: normal;
-  font-size: 35px;
+  font-size: 40px;
   color: #005395 ;
 
 }
@@ -1111,6 +1117,10 @@ footer {
   display: flex;
   justify-content: space-evenly;
   row-gap: 20px;
+}
+
+.about-banner-para p{
+  font-size: 18px;
 }
 /* login start----------------------------------- */
 

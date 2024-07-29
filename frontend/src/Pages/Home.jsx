@@ -153,7 +153,7 @@ export default function Home() {
                 </div>
 
                 <div className="card-body">
-                  <h5 className="card-title text-center">Corporate Travelers</h5>
+                  <h5 className="card-title text-center">One Way Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title text-center">Corporate Travelers</h5>
+                  <h5 className="card-title text-center">Round Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
@@ -189,7 +189,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title text-center">Corporate Travelers</h5>
+                  <h5 className="card-title text-center">Hourly Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>

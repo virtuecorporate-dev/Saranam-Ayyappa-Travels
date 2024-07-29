@@ -13,6 +13,7 @@ import ConfirmBooking from './Pages/Confirm Booking';
 import About from './Pages/About';
 import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
+import ScrollToTop from './Components/scrollToTop'
 
 
 function App() {
@@ -20,8 +21,8 @@ function App() {
     <Provider store={Store}>
       <BrowserRouter>
         <div>
-          <Navbar />
-
+          <Navbar/>
+          <ScrollToTop/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About/>} />
