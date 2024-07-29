@@ -71,7 +71,11 @@ function Table() {
                                     <label htmlFor="seats">Seats:{car.seats}</label>
                                 </div>
                                 <div className="availability col-lg-3">
-                                    <label htmlFor="availability">Availability:{car.availability}</label>
+                                    {
+                                        car.availability ?<label htmlFor="availability">Availability:{car.availability} yes</label>:
+                                        "No Available"
+
+                                    }
                                 </div>
                                 <div className="category col-lg-3">
                                     <label htmlFor="category">Category:{car.category}</label>
