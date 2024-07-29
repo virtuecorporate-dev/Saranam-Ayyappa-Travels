@@ -56,7 +56,7 @@ const handleCloseLogin=(()=>{
                 
               </li>
               <li className="nav-item">
-                <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</a>
+                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</Link>
               </li>
               <li className="nav-item">
                 <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Book a Bus</a>
@@ -64,7 +64,7 @@ const handleCloseLogin=(()=>{
             </ul>
             <ul className=' navbar-nav ml-auto'>
               <li className="nav-item sign">
-              <button className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}>Sign in</button>
+              <Link className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}>Sign in</Link>
               </li>
             </ul>
           </div>
