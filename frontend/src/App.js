@@ -15,6 +15,7 @@ import LoginPage from './Pages/Login';
 import RegisterPage from './Pages/Register';
 import TermsConditions from './Pages/Terms & Conditions';
 import Service from './Pages/Service';
+import ScrollToTop from './Components/scrollToTop'
 
 
 function App() {
@@ -22,8 +23,8 @@ function App() {
     <Provider store={Store}>
       <BrowserRouter>
         <div>
-          <Navbar />
-
+          <Navbar/>
+          <ScrollToTop/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About/>} />
