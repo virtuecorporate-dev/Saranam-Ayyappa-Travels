@@ -104,7 +104,7 @@ export default function Header() {
             </ul>
             <ul className=' navbar-nav ml-auto'>
               <li className="nav-item sign">
-                <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#"><i class="fa-solid fa-user"></i> &nbsp;&nbsp; Sign in</a>
+              <Link to='/login' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Sign in</a> </Link>
               </li>
             </ul>
           </div>
