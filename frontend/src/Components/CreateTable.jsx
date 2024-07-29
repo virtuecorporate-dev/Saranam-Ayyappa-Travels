@@ -14,7 +14,7 @@ export function CreateTable() {
   const [category, setCategory] = useState('');
   const [file, setFile] = useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState('');
-
+  
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ export function CreateTable() {
   };
 
   return (
-    <div className="container create">
+    <div className="container create ">
       <form onSubmit={handleSubmit} className="create-table">
         <h1 className="create-head mb-5">Adding Your Cab Details</h1>
         

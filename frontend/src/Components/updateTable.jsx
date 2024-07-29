@@ -44,7 +44,8 @@ export function UpdateTable(){
   
     return(
         <Fragment>
-            <form onSubmit={handleUpdate} className="create-table">
+          <div className="container create">
+          <form onSubmit={handleUpdate} className="create-table">
             <h1 className="create-head mb-5">Update Your Cab Details</h1>
 
       <div className="form-group">
@@ -136,6 +137,8 @@ export function UpdateTable(){
       </div>
       <button className="create-submit mb-3" type="submit">Update</button>
     </form>
+          </div>
+           
         </Fragment>
     )
 }

@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from 'react';
+ 
 
 export default function About() {
     return (
@@ -8,6 +9,7 @@ export default function About() {
                     <img src="./images/w4.jpg" alt="" />
                 </div>
                 <div className="about-text">
+
                     <h1 >About us</h1>
                     <h3>Be comfortable while you travel with our reliable bus rental.</h3>
                 </div>
@@ -27,7 +29,7 @@ export default function About() {
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
                         </div>
                     </div>
-                    <div className="row">
+                    <div className="row mt-3">
                         <div className="col-lg-3 about-img">
                             <img src="./images/car1.png" alt="" class="img-fluid" />
                         </div>
@@ -52,12 +54,12 @@ export default function About() {
                             </div>
                             <div className="landing-text container-fluid">
                                 <div className='row'>
-                                    <div className="col-9 col-sm-8 col-md-6 ">
-                                        <div className='about-banner-content'>
+                                    <div className="col-lg-8 col-sm-8 col-md-6 ">
+                                        <div className='about-banner-content p-5'>
                                             <h1>Why Choose Us                                            </h1>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                                            <div className="row mt-4">
-                                                <div className="col-lg-6 mt-4">
+                                            <div className="row mt-4 about-banner-para">
+                                                <div className="col-lg-6 mt-4 ">
                                                     <h3 className='text-center'>
                                                     <i class="fa-solid fa-check"></i> &nbsp;
                                                         Safety & Security</h3>
