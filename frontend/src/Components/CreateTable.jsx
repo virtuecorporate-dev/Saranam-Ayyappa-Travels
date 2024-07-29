@@ -63,6 +63,7 @@ export function CreateTable() {
             id="carModel"
             name="carModel"
             value={carModel}
+            required
             onChange={(e) => setCarModel(e.target.value)}
           />
         </div>
@@ -74,6 +75,7 @@ export function CreateTable() {
             id="brand"
             name="brand"
             value={brand}
+            required
             onChange={(e) => setBrand(e.target.value)}
           />
         </div>
@@ -85,6 +87,7 @@ export function CreateTable() {
             id="price"
             name="price"
             value={price}
+            required
             onChange={(e) => setPrice(e.target.value)}
           />
         </div>
@@ -96,17 +99,20 @@ export function CreateTable() {
             id="seats"
             name="seats"
             value={seats}
+            required
             onChange={(e) => setSeats(e.target.value)}
           />
         </div>
         
         <div className="form-group">
           <label htmlFor="availability">Availability:</label>
+
           <input
             type="checkbox"
             id="availability"
             name="availability"
             checked={availability}
+            required
             onChange={(e) => setAvailability(e.target.checked)}
           />
         </div>
@@ -118,6 +124,7 @@ export function CreateTable() {
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
           ></textarea>
         </div>
         
@@ -128,6 +135,7 @@ export function CreateTable() {
             id="imageUrl"
             name="imageUrl"
             onChange={handleFileChange}
+            required
           />
         </div>
         
@@ -144,6 +152,7 @@ export function CreateTable() {
             name="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            required
           >
             <option value="One Way Trip">One Way Trip</option>
             <option value="Round Trip">Round Trip</option>
