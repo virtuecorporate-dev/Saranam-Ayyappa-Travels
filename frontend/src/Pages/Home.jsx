@@ -98,17 +98,17 @@ export default function Home() {
 
 
           </div>
-          <div className="row gap-0" >
-            <div className="col-lg-3">
+          <div className="row gap-0 " >
+            <div className="col-lg-3 whoweare-img">
               <img src="./images/car1.png" alt="" class="img-fluid" />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 whoweare-img">
               <img src="./images/car2.png" class="img-fluid" alt="" />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 whoweare-img">
               <img src="./images/car3.png" class="img-fluid" alt="" />
             </div>
-            <div className="col-lg-3">
+            <div className="col-lg-3 whoweare-img">
               <img src="./images/car4.png" class="img-fluid" alt="" />
             </div>
           </div>
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="container p-5">
             <h5 className='text-center' style={{ fontWeight: "700", "font-size":"30px" }}>OUR SERVICES </h5>
             <h3 className='text-center  mt-4' style={{ fontWeight: "700","font-size":"45px" ,"color":"#005395"}}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4'style={{ fontWeight: "400", "font-size":"23px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+            <p className='text-center mt-4'style={{ fontWeight: "400", "font-size":"18px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
 
           </div>
           <div className="row p-5 home-banner1-icons">

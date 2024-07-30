@@ -34,7 +34,7 @@ const carSchema = new mongoose.Schema({
       category: {
         type: String,
         required: true,
-        enum: ['One-Way Rental', 'Round Trip', 'Hourly Rental'],
+        enum: ['Outstation', 'Local Trip', 'Drop Trip'],
       },
      
 })
