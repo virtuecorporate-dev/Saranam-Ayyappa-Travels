@@ -66,24 +66,24 @@ const ConfirmBooking = () => {
         <section className='confirmBooking-sec container'>
             <h5 className='mt-4'>Confirm Your Cab</h5>
             <div className='row mt-4'>
-{/* 
+
                 <div className='col-12'>
                     <div className='form-details' style={{ backgroundColor: "#a4a4e7", color: "white" }}>
 
                         <div className='d-flex justify-content-around location' >
                             <h4>
                                 {state.from} &nbsp; &nbsp;
-                                <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className ="bi bi-arrow-left-right" viewBox="0 0 16 16">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5m14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5" />
                                 </svg> &nbsp; &nbsp;
                                 {state.to}
                             </h4>
-                            <h4>Date-{state.date} </h4> <h4>Time-{state.pickUpTime}</h4>
+                            <h4>Date-{state.PickUpdate} </h4> <h4>Time-{state.pickUpTime}</h4>
                         </div>
 
 
                     </div>
-                </div> */}
+                </div>
             </div>
 
             <div className='row mt-5 mb-5'>
@@ -96,17 +96,22 @@ const ConfirmBooking = () => {
                                         <img src={state.selectedCab.imageUrl} alt={state.selectedCab.brand} style={{ width: "250px" }} />
                                     </div>
                                     <div className='address-details'>
-                                        <h4 style={{fontWeight:"700"}}>{state.selectedCab.brand} {state.selectedCab.carModel}</h4>
+                                        <h4 style={{ fontWeight: "700" }}>{state.selectedCab.brand} {state.selectedCab.carModel}</h4>
                                         <p></p>
                                         <p> <b>Pick Up Location</b> - {state.pickUpLocation}</p>
                                         <p> <b>Pick Up Time</b> - {state.pickUpTime}</p>
-                                        {state.triptype === "Hourly Trip" &&
-                                            <p> <b>Visiting Place</b> - {state.visitingPlaces.join(', ')}</p>
-                                        }
-                                        {(state.triptype === "Round Trip" || state.triptype === "Hourly Trip") &&
+                                        {state.triptype === "Outstation" &&
                                             <div>
-                                                <p> <b>Drop Location</b> - {state.dropLocation}</p>
-                                                <p> <b>Drop Time</b> - {state.dropTime}</p>
+                                                <p> <b>Visiting Place</b> - {state.visitingPlaces.join(', ')}</p>
+                                                <p> <b>Number Of Persons</b> - {state.NumberOfPersons} Members</p>
+                                                <p> <b>Cab Type</b> - {state.CabType}</p>
+                                            </div>
+
+                                        }
+                                        {(state.triptype === "Local Trip" || state.triptype === "Outstation") &&
+                                            <div>
+                                                <p> <b>Return Location</b> - {state.returnLocation}</p>
+                                                <p> <b>Return Time</b> - {state.ReturnTime}</p>
                                             </div>
 
                                         }

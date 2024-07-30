@@ -98,8 +98,11 @@ export default function Home() {
 
 
           </div>
-          <div className="row gap-0 " >
-            <div className="col-lg-3 whoweare-img">
+          <div className="row gap-0" >
+            <div className='whoweare-img p-0'>
+              <img className='img-fluid' src="./images/who we are img.png" alt="whoweare" />
+            </div>
+            {/* <div className="col-lg-3">
               <img src="./images/car1.png" alt="" class="img-fluid" />
             </div>
             <div className="col-lg-3 whoweare-img">
@@ -110,7 +113,7 @@ export default function Home() {
             </div>
             <div className="col-lg-3 whoweare-img">
               <img src="./images/car4.png" class="img-fluid" alt="" />
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
