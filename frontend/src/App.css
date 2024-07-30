@@ -400,10 +400,15 @@ body {
   font-weight: 400;
   text-align: justify;
 }
-
-.whoweare-img{
-  border: 5px solid red;
+/* .whoweare-img{
+  border: 1px solid red;
+} */
+.whoweare-img img{
+  width: 100%;
 }
+/* .whoweare-img{
+  border: 5px solid red;
+} */
 
 /* -----------------full banner image---------------------------- */
 

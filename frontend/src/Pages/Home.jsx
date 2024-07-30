@@ -98,7 +98,7 @@ export default function Home() {
 
 
           </div>
-          <div className="row gap-0" style={{border:"1px solid red"}}>
+          <div className="row gap-0" >
             <div className='whoweare-img p-0'>
               <img className='img-fluid' src="./images/who we are img.png" alt="whoweare" />
             </div>
