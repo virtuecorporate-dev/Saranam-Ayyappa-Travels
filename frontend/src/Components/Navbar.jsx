@@ -59,7 +59,7 @@ const handleCloseLogin=(()=>{
                 <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</Link>
               </li>
               <li className="nav-item">
-                <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Book a Bus</a>
+              <Link to='/contactus' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Contact Us</a> </Link>
               </li>
             </ul>
             <ul className=' navbar-nav ml-auto'>
