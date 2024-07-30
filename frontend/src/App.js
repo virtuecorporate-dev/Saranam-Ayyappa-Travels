@@ -14,6 +14,7 @@ import About from './Pages/About';
 import TermsConditions from './Pages/Terms & Conditions';
 import Service from './Pages/Service';
 import ScrollToTop from './Components/scrollToTop'
+import Contact from './Pages/Contact';
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
             <Route path='/cars' element={<Cars/>}/>
             <Route path='/edit/:id' element={<UpdateTable/>} />
             <Route path='/confirmbooking' element={<ConfirmBooking/>}/>
-            {/* <Route path='/login' element= {<LoginPage/>}/> */}
+            <Route path='/contactus' element= {<Contact/>}/>
             {/* <Route path='/register' element= {<RegisterPage/>}/> */}
             <Route path='/terms&conditions' element={<TermsConditions/>}/>
             <Route path='/services' element={<Service/>}/>
