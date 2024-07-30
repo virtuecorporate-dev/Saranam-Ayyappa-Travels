@@ -40,7 +40,7 @@ const handleCloseLogin=(()=>{
       <nav className={navbar ? "navbar navbar-expand-lg desktop-nav scroll-nav" : "navbar navbar-expand-lg desktop-nav"}>
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div className="logo-img">
-            <img className="img-fluid logo" src={homeNav || navbar ? "/images/sap travels logo.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '200px' }} />
+            <img className="img-fluid logo" src={homeNav || navbar ? "/images/logowhite1.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '200px' }} />
           </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className={homeNav? "navbar-toggler-icon hamburger homeNav-color" : "navbar-toggler-icon hamburger"} style={{color:"white"}}>jh</span>
