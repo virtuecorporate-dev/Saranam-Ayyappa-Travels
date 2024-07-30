@@ -1373,3 +1373,20 @@ footer {
   background-color: whitesmoke;
   padding: 10px;
 }
+.drop-icon{
+  /* border: 1px solid red; */
+  height: 60px;
+  margin-top: 20px;
+}
+.drop-icon svg{
+  /* border: 1px solid black; */
+  /* height: 100%; */
+  /* width: 100%; */
+  /* object-fit: cover; */
+margin-top: -15px;
+  overflow-y: hidden;
+ 
+}
+.item h3{
+  margin-top: 5px;
+}
