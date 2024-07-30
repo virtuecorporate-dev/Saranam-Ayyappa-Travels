@@ -154,9 +154,9 @@ export function CreateTable() {
             onChange={(e) => setCategory(e.target.value)}
             required
           >
-            <option value="One Way Trip">One Way Trip</option>
-            <option value="Round Trip">Round Trip</option>
-            <option value="Hourly Trip">Hourly Trip</option>
+            <option value="Outstation">Outstation</option>
+            <option value="Local Trip">Local Trip</option>
+            <option value="Drop Trip">Drop Trip</option>
           </select>
         </div>
         

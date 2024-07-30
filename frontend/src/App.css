@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Arsenal+SC:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arsenal SC", sans-serif;
+  font-family: "Noto Serif", serif;
   font-style: normal;
   /* overflow-x: hidden; */
 }
@@ -341,7 +340,7 @@ body {
 }
 
 .home-banner p {
-  font-weight: 400;
+  /* font-weight: 400; */
 }
 
 .home-banner-text {
@@ -400,6 +399,10 @@ body {
 .whoweare p {
   font-weight: 400;
   text-align: justify;
+}
+
+.whoweare-img{
+  border: 5px solid red;
 }
 
 /* -----------------full banner image---------------------------- */
@@ -1000,7 +1003,7 @@ footer {
 }
 
 .about-row p{
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .about-head h5, .about-head h3{
@@ -1048,7 +1051,7 @@ footer {
 }
 
 .about-service p{
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .about-service button:hover{
@@ -1118,7 +1121,7 @@ footer {
 }
 
 .about-banner-para p{
-  font-size: 18px;
+  font-size: 16px;
 }
 /* login start----------------------------------- */
 
