@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react';
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 // import {TimePickerComponent} from '@syncfusion/ej2-react-calendars'
 import 'react-datepicker/dist/react-datepicker.css';
@@ -11,13 +11,16 @@ const BookingForm = () => {
         triptype: "",
         from: "",
         to: "",
-        date: new Date(),
+        PickUpdate: new Date(),
         pickUpTime: '',
         pickUpLocation: "",
-        dropTime: "",
-        dropLocation: "",
+        returndate: new Date(),
+        ReturnTime: "",
+        returnLocation: "",
         package: "",
-        visitingPlaces: [""],  
+        visitingPlaces: [""],
+        NumberOfPersons: "",
+        CabType: "",
         name: "",
         mobile: "",
         mail: "",
@@ -31,8 +34,10 @@ const BookingForm = () => {
                 return { ...state, from: action.payload };
             case "TO":
                 return { ...state, to: action.payload };
-            case "DATE":
-                return { ...state, date: action.payload };
+            case "PICK-UP-DATE":
+                return { ...state, PickUpdate: action.payload };
+            case "RETURN-DATE":
+                return { ...state, returndate: action.payload };
             case "NAME":
                 return { ...state, name: action.payload };
             case "MOBILE":
@@ -43,10 +48,10 @@ const BookingForm = () => {
                 return { ...state, pickUpLocation: action.payload };
             case "PICK-UP-TIME":
                 return { ...state, pickUpTime: action.payload };
-            case "DROP-LOCATION":
-                return { ...state, dropLocation: action.payload };
-            case "DROP-TIME":
-                return { ...state, dropTime: action.payload };
+            case "RETURN-LOCATION":
+                return { ...state, returnLocation: action.payload };
+            case "RETURN-TIME":
+                return { ...state, ReturnTime: action.payload };
             case "ADD-VISITING-PLACE":
                 return { ...state, visitingPlaces: [...state.visitingPlaces, ""] };
             case "REMOVE-VISITING-PLACE":
@@ -56,6 +61,12 @@ const BookingForm = () => {
                     index === action.payload.index ? action.payload.value : place
                 );
                 return { ...state, visitingPlaces: updatedVisitingPlaces };
+            case "NUMBER-OF-PERSONS":
+                console.log(action.payload);
+                return { ...state, NumberOfPersons: action.payload };
+            case "CAB-TYPE":
+                console.log(action.payload);
+                return { ...state, CabType: action.payload };
             default:
                 return state;
         }
@@ -64,19 +75,19 @@ const BookingForm = () => {
     const [state, dispatch] = useReducer(reducer, InitialState);
     const [error, setError] = useState("")
 
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     const FormSubmit = (e) => {
         e.preventDefault();
 
-        if(!state.triptype){
+        if (!state.triptype) {
             setError("Please Select The TripType")
             return
         }
         setError("")
 
 
-        navigate("/cars", {state:{...state, date:state.date.toLocaleDateString()}})
-       
+        navigate("/cars", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+
     };
 
     return (
@@ -86,7 +97,7 @@ const BookingForm = () => {
                     <h3>Call Now !</h3>
                     <div className="row">
                         <div className="col-2 phone-icons mt-4">
-                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white",textAlign:"start" }}></i>
+                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white", textAlign: "start" }}></i>
                         </div>
                         <div className=" col-10 callDetails">
                             <h6>Call for detail information</h6>
@@ -100,46 +111,46 @@ const BookingForm = () => {
                             <div className='col-4 from-input'>
                                 <input
                                     type="radio"
-                                    id='One-Way-Trip'
+                                    id='Drop-Trip'
                                     name='trip-type'
-                                    value="One Way Trip"
-                                    
+                                    value="Drop Trip"
+
                                     onChange={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}
                                 />
-                                <label htmlFor="One-Way-Trip">One Way Trip</label>
+                                <label htmlFor="Drop-Trip">Drop Trip</label>
                             </div>
                             <div className='col-4 from-input'>
                                 <input
                                     type="radio"
-                                    id='Round-Trip'
+                                    id='Local-Trip'
                                     name='trip-type'
-                                    value="Round Trip"
+                                    value="Local Trip"
                                     onChange={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}
                                 />
-                                <label htmlFor="Round-Trip">Round Trip</label>
+                                <label htmlFor="Local-Trip">Local Trip</label>
                             </div>
                             <div className='col-4 from-input'>
                                 <input
                                     type="radio"
-                                    id='Hourly-Trip'
+                                    id='Outstation'
                                     name='trip-type'
-                                    value="Hourly Trip"
+                                    value="Outstation"
                                     onChange={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}
                                 />
-                                <label htmlFor="Hourly-Trip">Hourly Trip</label>
+                                <label htmlFor="Outstation">Outstation</label>
                             </div>
                         </div>
 
                         {error && (
                             <div className='row mt-2'>
                                 <div className='col-12'>
-                                    <p style={{ color: 'red' ,fontSize:"12px"}} >{error}</p>
+                                    <p style={{ color: 'red', fontSize: "12px" }} >{error}</p>
                                 </div>
                             </div>
                         )}
 
                         <div className='row mt-0'>
-                            <div className='col-4'>
+                            <div className='col-6'>
                                 <label htmlFor="From">From</label>
                                 <input type="text" className='input-field'
                                     id='From'
@@ -149,7 +160,7 @@ const BookingForm = () => {
                                     onChange={(e) => { dispatch({ type: "FROM", payload: e.target.value }) }} />
                             </div>
 
-                            <div className='col-4'>
+                            <div className='col-6'>
                                 <label htmlFor="To">To</label>
                                 <input type="text" className='input-field'
                                     id='To'
@@ -159,13 +170,7 @@ const BookingForm = () => {
                                     onChange={(e) => { dispatch({ type: "TO", payload: e.target.value }) }} />
                             </div>
 
-                            <div className='col-4'>
-                                <label htmlFor="Date">Date</label> <br />
-                                <Datepicker  className='input-field'
-                                    selected={state.date}
-                                    required
-                                    onChange={(date) => { dispatch({ type: "DATE", payload: date }) }} />
-                            </div>
+
                         </div>
 
                         {/* <div className='row mt-3'>
@@ -193,7 +198,7 @@ const BookingForm = () => {
                         </div> */}
 
                         <div className='row mt-3'>
-                            <div className='col-6'>
+                            <div className='col-4'>
                                 <label htmlFor="PickUpLoaction">Pick Up Loaction</label>
                                 <input type="text" className='input-field'
                                     id='PickUpLoaction'
@@ -202,7 +207,16 @@ const BookingForm = () => {
                                     required
                                     onChange={(e) => { dispatch({ type: "PICK-UP-LOCATION", payload: e.target.value }) }} />
                             </div>
-                            <div className='col-6'>
+
+                            <div className='col-4'>
+                                <label htmlFor="Date">Pick Up Date</label> <br />
+                                <Datepicker className='input-field'
+                                    selected={state.PickUpdate}
+                                    required
+                                    onChange={(date) => { dispatch({ type: "PICK-UP-DATE", payload: date }) }} />
+                            </div>
+
+                            <div className='col-4'>
                                 <label htmlFor="PickUpTime">Pick Up Time</label> <br />
                                 <input type="text" className='input-field'
                                     id='PickUpTime'
@@ -210,52 +224,96 @@ const BookingForm = () => {
                                     placeholder="10.00 am"
                                     onChange={(e) => dispatch({ type: "PICK-UP-TIME", payload: e.target.value })} />
                             </div>
+
                         </div>
 
-                        {state.triptype === "Hourly Trip" && (
-                            <div className='row mt-3'>
-                                <div className="col-12">
-                                    <label htmlFor="Visiting Places">Visiting Places</label>
-                                    {state.visitingPlaces.map((place, index) => (
-                                        <div className='row mb-2' key={index}>
-                                            <div className="col-8">
-                                                <input
-                                                    type="text"
-                                                    className='input-field'
-                                                    value={place}
-                                                    
-                                                    onChange={(e) => dispatch({ type: "UPDATE-VISITING-PLACE", payload: { index, value: e.target.value } })}
-                                                />
+                        {state.triptype === "Outstation" && (
+                            <>
+                                <div className='row mt-3'>
+                                    <div className="col-12">
+                                        <label htmlFor="Visiting Places">Visiting Places</label>
+                                        {state.visitingPlaces.map((place, index) => (
+                                            <div className='row mb-2' key={index}>
+                                                <div className="col-8">
+                                                    <input
+                                                        type="text"
+                                                        className='input-field'
+                                                        value={place}
+
+                                                        onChange={(e) => dispatch({ type: "UPDATE-VISITING-PLACE", payload: { index, value: e.target.value } })}
+                                                    />
+                                                </div>
+                                                <div className='col-4'>
+                                                    <button className='visiting-pl-add' type='button' onClick={() => dispatch({ type: "ADD-VISITING-PLACE" })}>+</button>
+                                                    <button className='visiting-pl-delete' type='button' onClick={() => dispatch({ type: "REMOVE-VISITING-PLACE", payload: index })}>x</button>
+                                                </div>
                                             </div>
-                                            <div className='col-4'>
-                                                <button className='visiting-pl-add' type='button' onClick={() => dispatch({ type: "ADD-VISITING-PLACE" })}>+</button>
-                                                <button className='visiting-pl-delete' type='button' onClick={() => dispatch({ type: "REMOVE-VISITING-PLACE", payload: index })}>x</button>
-                                            </div>
-                                        </div>
-                                    ))}
+                                        ))}
+                                    </div>
                                 </div>
-                            </div>
+
+                                <div className='row mt-3'>
+                                    <div className='col-6'>
+                                        <label htmlFor="NumberOfPersons">Number Of Persons</label>
+                                        <input type="text" className='input-field'
+                                            id='NumberOfPersons'
+                                            value={state.NumberOfPersons}
+                                            placeholder="4"
+                                            required
+                                            onChange={(e) => { dispatch({ type: "NUMBER-OF-PERSONS", payload: e.target.value }) }} />
+                                    </div>
+                                    <div className='col-6'>
+                                        <label htmlFor="CabType">Cab Type</label> <br />
+                                        <select
+                                            id='CabType'
+                                            className='input-field'
+                                            value={state.CabType}
+                                            required
+                                            onChange={(e) => { dispatch({ type: "CAB-TYPE", payload: e.target.value }) }}
+                                        >
+                                            <option>3 Seater</option>
+                                            <option>4 Seater</option>
+                                            <option>5 Seater</option>
+                                            <option>6 Seater</option>
+                                        </select>
+                                       
+                                    </div>
+
+
+                                </div>
+                            </>
+
+
                         )}
 
-                        {(state.triptype === "Round Trip" || state.triptype === "Hourly Trip") && (
+                        {(state.triptype === "Local Trip" || state.triptype === "Outstation") && (
                             <div className='row mt-3'>
-                                <div className='col-6'>
-                                    <label htmlFor="DropLocation">Drop Location </label>
+                                <div className='col-4'>
+                                    <label htmlFor="returnLocation">Return Location </label>
                                     <input type="text" className='input-field'
                                         id='DropLoaction'
-                                        value={state.dropLocation}
+                                        value={state.ReturnLocation}
                                         placeholder="Aathur,Salem"
                                         required
-                                        onChange={(e) => { dispatch({ type: "DROP-LOCATION", payload: e.target.value }) }} />
+                                        onChange={(e) => { dispatch({ type: "RETURN-LOCATION", payload: e.target.value }) }} />
                                 </div>
-                                <div className='col-6'>
-                                    <label htmlFor="DropTime">Drop Time</label>
+
+                                <div className='col-4'>
+                                    <label htmlFor="Date">Return Date</label> <br />
+                                    <Datepicker className='input-field'
+                                        selected={state.returndate}
+                                        required
+                                        onChange={(date) => { dispatch({ type: "RETURN-DATE", payload: date }) }} />
+                                </div>
+
+                                <div className='col-4'>
+                                    <label htmlFor="ReturnTime">Return Time</label>
                                     <input type="text" className='input-field'
-                                        id='DropTime'
-                                        value={state.dropTime}
+                                        id='ReturnTime'
+                                        value={state.ReturnTime}
                                         placeholder='2.00 pm'
                                         required
-                                        onChange={(e) => dispatch({ type: "DROP-TIME", payload: e.target.value })} />
+                                        onChange={(e) => dispatch({ type: "RETURN-TIME", payload: e.target.value })} />
                                 </div>
                             </div>
                         )}
