@@ -137,7 +137,9 @@ export default function About() {
           <div className="container p-5">
             <h5 className='text-center' style={{ fontWeight: "700", "font-size": "30px" }}>OUR SERVICES </h5>
             <h3 className='text-center  mt-4' style={{ fontWeight: "700", "font-size": "45px", "color": "#005395" }}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "23px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+            <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "18px" }}>
+              Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
+            </p>
 
           </div>
           <div className="row p-5 home-banner1-icons">
@@ -156,7 +158,7 @@ export default function About() {
 
                 <div className="card-body">
                   <h5 className="card-title text-center">One Way Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center"> For a seamless travel experience, choose our one-way trip service. Enjoy convenient and reliable transportation with professional drivers and well-maintained vehicles. Reach your destination comfortably and on time with ease.</p>
                 </div>
               </div>
             </div>
@@ -174,7 +176,7 @@ export default function About() {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Round Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center">Experience the convenience of our round trip service. Enjoy a comfortable and reliable journey with both outbound and return transportation included. Our professional drivers and well-maintained vehicles ensure a smooth trip from start to finish.</p>
                 </div>
               </div>
             </div>
@@ -192,7 +194,7 @@ export default function About() {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Hourly Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center">Opt for our hourly trip service for flexible and convenient transportation. Whether you need a vehicle for a few hours or an entire day, our professional drivers and well-maintained cars are at your service. Enjoy the freedom to travel at your own pace with reliable and comfortable rides.</p>
                 </div>
               </div>
             </div>

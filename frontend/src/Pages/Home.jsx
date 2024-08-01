@@ -13,7 +13,7 @@ export default function Home() {
                 <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
               </div>
               <div className="landing-text container-fluid">
-                
+
                 <div className='row'>
                   <div className="col-9 col-sm-8 col-md-6">
                     <div className='banner-content'>
@@ -48,20 +48,20 @@ export default function Home() {
           <div className="container">
             <div className="row home-banner ">
               <div className="col-lg-6">
-                <h2>A Car rental that's affordable and comfortable</h2>
-                <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus saepe voluptatem magni optio! Porro, ipsam temporibus adipisci tempore quam explicabo recusandae fuga? Quam voluptatem reiciendis neque, fugiat illo eius dolorum!
-                </p>
+                <h2>A Cab rental that's affordable and comfortable</h2>
+
+                <p className='mt-4'>Looking for a cab rental that's both affordable and comfortable? Our cab rental service offers top-notch vehicles and professional drivers to ensure your journey is smooth and enjoyable. Whether you need a ride for a short trip or a long-distance travel, we provide reliable and cost-effective solutions to meet your transportation needs. Book with us today and experience the convenience and comfort of our cab rental service, all at competitive prices.</p>
+
                 <div className="row mt-2">
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>25 + </h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                    <h5>Cab Ready</h5>
+                    <p>cabs ready to provide you with affordable and comfortable travel!</p>
                   </div>
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>97 %</h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                    <h5>Satisfied Customer</h5>
+                    <p>Our customers are highly satisfied with our service!</p>
                   </div>
                 </div>
               </div>
@@ -89,8 +89,8 @@ export default function Home() {
                     <h3>Enjoy the journey – travel with us</h3>
                   </div>
                   <div className="col-lg-8">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
+                    <p>At our cab rental service, we are dedicated to providing exceptional transportation experiences. We believe that every journey should be enjoyable, comfortable, and hassle-free. Our team of professional drivers and well-maintained vehicles are here to ensure that you reach your destination safely and on time. Whether you're traveling for business or leisure, choose us for a seamless and pleasant ride. Enjoy the journey – travel with us and experience the difference.</p>
+
                   </div>
                 </div>
               </div>
@@ -125,8 +125,8 @@ export default function Home() {
         <div className="banner-text  p-0">
           <div className="banner-text-inner">
             <h1>Charter With Us For An Adventure-Filled Journey</h1>
+            <p className='mt-3'>Charter with us for an adventure-filled journey that you'll never forget. Our top-notch vehicles and experienced drivers are ready to take you to your next exciting destination. Whether you're planning a road trip, a scenic tour, or a special event, we provide reliable and comfortable transportation to make your adventure smooth and enjoyable. Trust us to be your travel partner and embark on a journey filled with fun and memorable experiences. Travel with us and turn every trip into an adventure!</p>
 
-            <p className='mt-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
             <button>Explore us </button>
           </div>
 
@@ -136,9 +136,11 @@ export default function Home() {
       <section>
         <div className="container-fluid">
           <div className="container p-5">
-            <h5 className='text-center' style={{ fontWeight: "700", "font-size":"30px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700","font-size":"45px" ,"color":"#005395"}}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4'style={{ fontWeight: "400", "font-size":"18px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+            <h5 className='text-center' style={{ fontWeight: "700", "font-size": "30px" }}>OUR SERVICES </h5>
+            <h3 className='text-center  mt-4' style={{ fontWeight: "700", "font-size": "45px", "color": "#005395" }}> We Provide Best Services For You</h3>
+            <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "18px" }}>
+              Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
+            </p>
 
           </div>
           <div className="row p-5 home-banner1-icons">
@@ -157,7 +159,7 @@ export default function Home() {
 
                 <div className="card-body">
                   <h5 className="card-title text-center">One Way Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center"> For a seamless travel experience, choose our one-way trip service. Enjoy convenient and reliable transportation with professional drivers and well-maintained vehicles. Reach your destination comfortably and on time with ease.</p>
                 </div>
               </div>
             </div>
@@ -175,7 +177,7 @@ export default function Home() {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Round Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center">Experience the convenience of our round trip service. Enjoy a comfortable and reliable journey with both outbound and return transportation included. Our professional drivers and well-maintained vehicles ensure a smooth trip from start to finish.</p>
                 </div>
               </div>
             </div>
@@ -193,11 +195,11 @@ export default function Home() {
                 </div>
                 <div className="card-body">
                   <h5 className="card-title text-center">Hourly Trip</h5>
-                  <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p className="card-text text-center">Opt for our hourly trip service for flexible and convenient transportation. Whether you need a vehicle for a few hours or an entire day, our professional drivers and well-maintained cars are at your service. Enjoy the freedom to travel at your own pace with reliable and comfortable rides.</p>
                 </div>
               </div>
             </div>
-           
+
           </div>
         </div>
       </section>
