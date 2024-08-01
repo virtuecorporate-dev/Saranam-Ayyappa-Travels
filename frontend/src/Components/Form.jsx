@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 // import {TimePickerComponent} from '@syncfusion/ej2-react-calendars'
 import 'react-datepicker/dist/react-datepicker.css';
@@ -24,6 +24,8 @@ const BookingForm = () => {
         name: "",
         mobile: "",
         mail: "",
+        distance: "",
+        fare: ""
     };
 
     const reducer = (state, action) => {
@@ -67,6 +69,10 @@ const BookingForm = () => {
             case "CAB-TYPE":
                 console.log(action.payload);
                 return { ...state, CabType: action.payload };
+            case "DISTANCE":
+                return { ...state, distance: action.payload };
+            case "FARE":
+                return { ...state, fare: action.payload };
             default:
                 return state;
         }
@@ -90,6 +96,32 @@ const BookingForm = () => {
 
     };
 
+    const calculateFare = (distance) => {
+        let fare = 0;
+        if (distance >= 100 && distance < 200) {
+            fare = 5000;
+        }
+        if (distance >= 200 && distance < 300) {
+            fare = 6000;
+        }if (distance >= 300 && distance < 400) {
+            fare = 7000;
+        }if (distance >= 400 && distance <500) {
+            fare = 8000;
+        }if (distance >= 500 && distance < 600) {
+            fare =9000;
+        }if (distance >= 700 && distance < 800) {
+            fare = 10000;
+        }
+        return fare;
+    };
+
+    const handleDistanceChange = (e) => {
+        const distance = e.target.value;
+        dispatch({ type: "DISTANCE", payload: distance });
+        const fare = calculateFare(parseFloat(distance) || 0);
+        dispatch({ type: "FARE", payload: fare });
+    };
+
     return (
         <div className="container form-section">
             <div className="row search-call">
@@ -101,7 +133,7 @@ const BookingForm = () => {
                         </div>
                         <div className=" col-10 callDetails">
                             <h6>Call for detail information</h6>
-                            <h2>1234 1234 983</h2>
+                            <h2>9994074471</h2>
                         </div>
                     </div>
                 </div>
@@ -276,7 +308,7 @@ const BookingForm = () => {
                                             <option>5 Seater</option>
                                             <option>6 Seater</option>
                                         </select>
-                                       
+
                                     </div>
 
 
@@ -318,6 +350,44 @@ const BookingForm = () => {
                             </div>
                         )}
 
+                        {state.triptype === "Outstation" && (
+                            <>
+                                <div className='row mt-3'>
+                                    <div className='col-6'>
+                                        <label htmlFor="Distance">Distance <b style={{fontSize:"12px"}}>({state.from} - {state.to} in km)</b></label>
+                                        <input type="number" className='input-field'
+                                            id='Distance'
+                                            value={state.distance}
+                                            placeholder="100"
+                                            required
+                                            onChange={handleDistanceChange} />
+                                    </div>
+
+                                    {/* <div className='col-6'>
+                                        <label htmlFor="Fare">Fare (Rs)</label>
+                                        <input type="text" className='input-field'
+                                            id='Fare'
+                                            value={state.fare}
+                                            readOnly
+                                        />
+                                        <p style={{color:"black"}}>{state.fare}</p>
+                                    </div> */}
+                                    <div className='col-6 text-right' >
+                                        {/* <label htmlFor="Fare">Fare (Rs)</label> */}
+                                        <p className='fare-text mt-4' style={{color:"black"}}>
+                                            approx&nbsp;<b style={{fontSize:"30px"}}>₹{state.fare}</b>
+                                        </p>
+                                        <Link to="/terms&conditions">
+                                        <p className='fare-explanation' style={{color:"black", marginTop:"-20px", fontSize:"10px", textAlign:"right"}}>
+                                            Terms & conditions Applicable
+                                        </p>
+                                        </Link>
+                                        
+                                    </div>
+                                </div>
+                            </>
+                        )}
+
                         <div className='row mt-4'>
                             <div className="col-12 search-cab">
                                 <button type='submit'>Search Cabs</button>
@@ -331,3 +401,6 @@ const BookingForm = () => {
 }
 
 export default BookingForm;
+
+
+

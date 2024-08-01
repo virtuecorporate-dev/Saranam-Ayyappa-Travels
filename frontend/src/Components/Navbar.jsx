@@ -55,8 +55,14 @@ const handleCloseLogin=(()=>{
                 <Link to='/about' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >About</a> </Link>
                 
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</Link>
+              </li> */}
+              <li className="nav-item">
+                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Tour package</Link>
+              </li>
+              <li className="nav-item">
+                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Holiday Package</Link>
               </li>
               <li className="nav-item">
               <Link to='/contactus' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Contact Us</a> </Link>
