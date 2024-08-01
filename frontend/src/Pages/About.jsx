@@ -5,20 +5,59 @@ import { Link } from 'react-router-dom'
 export default function About() {
   return (
     <Fragment>
-      <div className="container-fluid p-0">
+      <div className="container-fluid p-0 about-banner">
         <div className="about-img ">
           <img src="./images/w4.jpg" alt="" />
         </div>
-        <div className="about-text">
+        <div className="about-text container-fluid mx-auto" >
+          <div className='row'>
+            <div className='col-10 col-md-6 about-content'>
+              <h2 style={{fontWeight:"600"}}>About Us</h2>
+              <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.
+              </h5>
+                
+              <p className=' bredcrumb mt-3'>
+                    <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>
+                    <Link to="/about" style={{ color: "white", textDecoration: "none" }}>About</Link>
+                </p>
+            </div>
+            <div className='col-2 col-md-6'></div>
+          </div>
 
-          <h2 className='text-center ' >
-            <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>Home/ </Link>
-            <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>About Us</Link>
-          </h2>   <h3>Be comfortable while you travel with our reliable bus rental.</h3>
         </div>
 
       </div>
-      <main>
+      <section>
+        <div className="container-fluid mt-5 whoweare" style={{ backgroundColor: "transparent" }}>
+          <div className="row">
+            <div className='col-12 col-md-10 mx-auto pt-5 pb-5'>
+              <div className='container'>
+                <div className='row' style={{ color: "black" }}>
+                  <div className="col-lg-4">
+                    <h6>WHO WE ARE
+                    </h6>
+                    <h2 style={{ color: "#005395" }}>Enjoy the journey – travel with us</h2>
+                  </div>
+                  <div className="col-lg-8 mt-3 mt-lg-0">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div className="row gap-0" >
+            <div className='whoweare-img p-0'>
+              <img className='img-fluid' src="./images/who we are img.png" alt="whoweare" />
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* <main>
         <div className="container-fluid  mt-5 about">
           <div className="row p-5 ">
             <div className='col-12 col-md-10 mx-auto pt-5 pb-5'>
@@ -53,9 +92,9 @@ export default function About() {
             </div>
           </div>
         </div>
-      </main>
-      <section className='container-fluid landing ' >
-        <div className='row' style={{ "margin-top": "200px" }}>
+      </main> */}
+      {/* <section className='container-fluid mt-5' >
+        <div className='row' >
           <div className='col-12 p-0'>
             <div className='banner'>
               <div className="banner-img">
@@ -108,7 +147,7 @@ export default function About() {
         </div>
 
 
-      </section>
+      </section> */}
       <section>
         <div className="container mb-3 about-ser">
           <div className="row about-service">
@@ -116,8 +155,8 @@ export default function About() {
               <img src="./images/carbanner1.png" alt="" className='img-fluid' />
             </div>
             <div className="col-lg-6">
-              <h3>We make sure every bus is in excellent shape
-              </h3>
+              <h2>We make sure every bus is in excellent shape
+              </h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
               <div >
                 <ul className="about-point p-4">
@@ -135,9 +174,9 @@ export default function About() {
       <section>
         <div className="container-fluid">
           <div className="container p-5">
-            <h5 className='text-center' style={{ fontWeight: "700", "font-size": "30px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700", "font-size": "45px", "color": "#005395" }}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "23px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+            <h6 className='text-center' style={{ fontWeight: "700" }}>OUR SERVICES </h6>
+            <h3 className='text-center  mt-4' style={{ fontWeight: "700", "color": "#005395" }}> We Provide Best Services For You</h3>
+            <p className='text-center mt-4' style={{ fontWeight: "400"}}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
 
           </div>
           <div className="row p-5 home-banner1-icons">

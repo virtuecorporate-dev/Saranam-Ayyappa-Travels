@@ -129,7 +129,7 @@ const BookingForm = () => {
                     <h3>Call Now !</h3>
                     <div className="row">
                         <div className="col-2 phone-icons mt-4">
-                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white", textAlign: "start" }}></i>
+                            <i className="fa-solid fa-phone" style={{ fontSize: "40px", padding: "8px", color: "white", textAlign: "start",marginTop:" -10px" }}></i>
                         </div>
                         <div className=" col-10 callDetails">
                             <h6>Call for detail information</h6>
@@ -140,8 +140,8 @@ const BookingForm = () => {
                 <div className=" col-md-8 form-right" style={{ backgroundColor: "white" }}>
                     <form className='container-fluid booking-form' onSubmit={FormSubmit}>
                         <div className='row triptype'>
-                            <div className='col-4 from-input'>
-                                <input
+                            <div className='col-4 from-input '>
+                                <input className='p-0'
                                     type="radio"
                                     id='Drop-Trip'
                                     name='trip-type'
@@ -181,8 +181,8 @@ const BookingForm = () => {
                             </div>
                         )}
 
-                        <div className='row mt-0'>
-                            <div className='col-6'>
+                        <div className='row mt-3'>
+                            <div className='col-12 col-sm-6'>
                                 <label htmlFor="From">From</label>
                                 <input type="text" className='input-field'
                                     id='From'
@@ -192,8 +192,8 @@ const BookingForm = () => {
                                     onChange={(e) => { dispatch({ type: "FROM", payload: e.target.value }) }} />
                             </div>
 
-                            <div className='col-6'>
-                                <label htmlFor="To">To</label>
+                            <div className='col-12 col-sm-6 '>
+                                <label className='mt-3 mt-sm-0' htmlFor="To">To</label>
                                 <input type="text" className='input-field'
                                     id='To'
                                     value={state.to}
@@ -230,7 +230,7 @@ const BookingForm = () => {
                         </div> */}
 
                         <div className='row mt-3'>
-                            <div className='col-4'>
+                            <div className='col-12 col-lg-4'>
                                 <label htmlFor="PickUpLoaction">Pick Up Loaction</label>
                                 <input type="text" className='input-field'
                                     id='PickUpLoaction'
@@ -240,16 +240,16 @@ const BookingForm = () => {
                                     onChange={(e) => { dispatch({ type: "PICK-UP-LOCATION", payload: e.target.value }) }} />
                             </div>
 
-                            <div className='col-4'>
-                                <label htmlFor="Date">Pick Up Date</label> <br />
+                            <div className='col-12 col-sm-4'>
+                                <label className='mt-3 mt-sm-0' htmlFor="Date">Pick Up Date</label> <br />
                                 <Datepicker className='input-field'
                                     selected={state.PickUpdate}
                                     required
                                     onChange={(date) => { dispatch({ type: "PICK-UP-DATE", payload: date }) }} />
                             </div>
 
-                            <div className='col-4'>
-                                <label htmlFor="PickUpTime">Pick Up Time</label> <br />
+                            <div className='col-12 col-sm-4'>
+                                <label className='mt-3 mt-sm-0' htmlFor="PickUpTime">Pick Up Time</label> <br />
                                 <input type="text" className='input-field'
                                     id='PickUpTime'
                                     value={state.pickUpTime}
@@ -266,7 +266,7 @@ const BookingForm = () => {
                                         <label htmlFor="Visiting Places">Visiting Places</label>
                                         {state.visitingPlaces.map((place, index) => (
                                             <div className='row mb-2' key={index}>
-                                                <div className="col-8">
+                                                <div className=" col-8">
                                                     <input
                                                         type="text"
                                                         className='input-field'
@@ -285,8 +285,8 @@ const BookingForm = () => {
                                 </div>
 
                                 <div className='row mt-3'>
-                                    <div className='col-6'>
-                                        <label htmlFor="NumberOfPersons">Number Of Persons</label>
+                                    <div className='col-12 col-sm-6'>
+                                        <label  htmlFor="NumberOfPersons">Number Of Persons</label>
                                         <input type="text" className='input-field'
                                             id='NumberOfPersons'
                                             value={state.NumberOfPersons}
@@ -294,8 +294,8 @@ const BookingForm = () => {
                                             required
                                             onChange={(e) => { dispatch({ type: "NUMBER-OF-PERSONS", payload: e.target.value }) }} />
                                     </div>
-                                    <div className='col-6'>
-                                        <label htmlFor="CabType">Cab Type</label> <br />
+                                    <div className='col-12 col-sm-6'>
+                                        <label className='mt-3 mt-sm-0' htmlFor="CabType">Cab Type</label> <br />
                                         <select
                                             id='CabType'
                                             className='input-field'
@@ -320,8 +320,8 @@ const BookingForm = () => {
 
                         {(state.triptype === "Local Trip" || state.triptype === "Outstation") && (
                             <div className='row mt-3'>
-                                <div className='col-4'>
-                                    <label htmlFor="returnLocation">Return Location </label>
+                                <div className='col-12 col-sm-4'>
+                                    <label  htmlFor="returnLocation">Return Location </label>
                                     <input type="text" className='input-field'
                                         id='DropLoaction'
                                         value={state.ReturnLocation}
@@ -330,16 +330,16 @@ const BookingForm = () => {
                                         onChange={(e) => { dispatch({ type: "RETURN-LOCATION", payload: e.target.value }) }} />
                                 </div>
 
-                                <div className='col-4'>
-                                    <label htmlFor="Date">Return Date</label> <br />
+                                <div className='col-12 col-sm-4'>
+                                    <label className='mt-3 mt-sm-0' htmlFor="Date">Return Date</label> <br />
                                     <Datepicker className='input-field'
                                         selected={state.returndate}
                                         required
                                         onChange={(date) => { dispatch({ type: "RETURN-DATE", payload: date }) }} />
                                 </div>
 
-                                <div className='col-4'>
-                                    <label htmlFor="ReturnTime">Return Time</label>
+                                <div className='col-12 col-sm-4'>
+                                    <label className='mt-3 mt-sm-0' htmlFor="ReturnTime">Return Time</label>
                                     <input type="text" className='input-field'
                                         id='ReturnTime'
                                         value={state.ReturnTime}
@@ -353,7 +353,7 @@ const BookingForm = () => {
                         {state.triptype === "Outstation" && (
                             <>
                                 <div className='row mt-3'>
-                                    <div className='col-6'>
+                                    <div className='col-6 '>
                                         <label htmlFor="Distance">Distance <b style={{fontSize:"12px"}}>({state.from} - {state.to} in km)</b></label>
                                         <input type="number" className='input-field'
                                             id='Distance'
