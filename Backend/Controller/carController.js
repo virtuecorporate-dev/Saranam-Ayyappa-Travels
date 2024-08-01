@@ -1,6 +1,7 @@
 
-const CarModel = require('../Model/carModel')
-
+const CarModel = require('../Model/carModel');
+const bycrpt = require('bcryptjs')
+const userModel = require('../Model/UserModel')
 exports.getAllCar = async (req, res) => {
   try { 
     const Cars = await CarModel.find({})
@@ -112,4 +113,57 @@ exports.deleteCar = async(req,res)=>{
   }
   
 
+}
+
+///register in 
+exports.Register = async (req, res) => {
+  try {
+    // Assuming some registration logic here
+    const { name, email, password, confirmPassword } = req.body;
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({ error: 'Passwords do not match' });
+    }
+
+    const newUser = new userModel({
+      name, email, password, confirmPassword
+    });
+
+    await newUser.save();
+
+    res.status(201).json({
+      success: true,
+      newUser
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message
+    });
+  }
+};
+
+
+
+exports.Login = async(req,res)=>{
+  try {
+    const {email,password}=req.body;
+    
+    const user = await userModel.findOne({email})
+    if(!user){
+      res.status(400).json({error:"userName is invalid"})
+    }
+    if(user.password != password){
+      res.status(401).json({error:"password does not match"})
+    }
+    res.status(201).json({
+      success:"true",
+      messagee:"login succesFull"
+    })
+  } catch (error) {
+    res.status(500).json({
+      succes:"fail",
+      error:error.message
+    })
+  }
 }

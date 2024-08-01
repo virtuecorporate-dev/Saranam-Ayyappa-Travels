@@ -1,6 +1,6 @@
 const express= require("express")
 const router= express.Router()
-const { getAllCar , updateCar, deleteCar,getCarsByCategory} = require("./Controller/carController");
+const { getAllCar , updateCar, deleteCar,getCarsByCategory, Register, Login} = require("./Controller/carController");
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
@@ -65,5 +65,7 @@ router.post("/createCar", upload.single('imageUrl'), async (req, res) => {
 router.route("/update/:id").put(updateCar);
 router.route("/delete/:id").delete(deleteCar)
 router.post('/sendemail', sendMail);
+router.route('/register').post(Register);
+router.route('/login').post(Login)
 
 module.exports=router
