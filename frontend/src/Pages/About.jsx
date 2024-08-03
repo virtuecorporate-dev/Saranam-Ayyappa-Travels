@@ -14,7 +14,7 @@ export default function About() {
           <h2 className='text-center ' >
             <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>Home/ </Link>
             <Link to="/about" style={{ color: "#fff", textDecoration: "none" }}>About Us</Link>
-          </h2>   <h3>Be comfortable while you travel with our reliable bus rental.</h3>
+          </h2>   <h3>Be comfortable while you travel with our reliable Cab rental.</h3>
         </div>
 
       </div>
@@ -30,8 +30,7 @@ export default function About() {
                     <h3>Enjoy the journey – travel with us</h3>
                   </div>
                   <div className="col-lg-8 about-row">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
+                    <p>At our core, we are passionate about making every journey an unforgettable experience. We believe in the magic of travel, the thrill of exploring new destinations, and the joy of discovering the unknown. Our team is dedicated to providing exceptional service, ensuring that every step of your journey is seamless and enjoyable. From the moment you book with us to the time you return home, we are committed to creating memories that will last a lifetime. Whether you're embarking on a solo adventure, a family vacation, or a romantic getaway, travel with us and let us make your journey as delightful as the destination itself.</p>
                   </div>
                 </div>
               </div>
@@ -66,31 +65,33 @@ export default function About() {
                   <div className="col-lg-8 col-sm-8 col-md-6 ">
                     <div className='about-banner-content p-5'>
                       <h1>Why Choose Us                                            </h1>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+                      <p>Choose us for cab rental for our well-maintained vehicles, professional drivers, transparent pricing, and exceptional customer service, ensuring a smooth and reliable experience every time.</p>
                       <div className="row mt-4 about-banner-para">
                         <div className="col-lg-6 mt-4 ">
                           <h3 className='text-center'>
                             <i class="fa-solid fa-check"></i> &nbsp;
                             Safety & Security</h3>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat iusto sequi saepe rerum quis et nesciunt quia expedita! Quas dolores cum aliquam iure tenetur, aut rerum? Officia, accusantium in.</p>
+                            <p>
+                            We prioritize your safety with stringent vehicle checks and 24/7 support, ensuring a secure journey.
+                      </p>
                         </div>
                         <div className="col-lg-6 mt-4">
                           <h3 className='text-center'>
                             <i class="fa-solid fa-check"></i> &nbsp;
                             On Time & Punctual</h3>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat iusto sequi saepe rerum quis et nesciunt quia expedita! Quas dolores cum aliquam iure tenetur, aut rerum? Officia, accusantium in.</p>
+                            <p>We pride ourselves on being on time and punctual, ensuring you reach your destination promptly and reliably every time.</p>
                         </div>
                         <div className="col-lg-6 mt-4">
                           <h3 className='text-center'>
                             <i class="fa-solid fa-check"></i> &nbsp;
                             Professional Drivers</h3>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat iusto sequi saepe rerum quis et nesciunt quia expedita! Quas dolores cum aliquam iure tenetur, aut rerum? Officia, accusantium in.</p>
+                            <p>Our professional drivers are experienced, courteous, and dedicated to providing a safe and comfortable journey for you.</p>
                         </div>
                         <div className="col-lg-6 mt-4">
                           <h3 className='text-center'>
                             <i class="fa-solid fa-check"></i> &nbsp;
                             Well Maintenance</h3>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates quaerat iusto sequi saepe rerum quis et nesciunt quia expedita! Quas dolores cum aliquam iure tenetur, aut rerum? Officia, accusantium in.</p>
+                            <p>We meticulously maintain our vehicles to ensure a safe, smooth, and reliable ride every time.</p>
                         </div>
                       </div>
                     </div>
@@ -116,9 +117,10 @@ export default function About() {
               <img src="./images/carbanner1.png" alt="" className='img-fluid' />
             </div>
             <div className="col-lg-6">
-              <h3>We make sure every bus is in excellent shape
+              <h3>We make sure every Cab is in excellent shape
               </h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+              <p>We ensure every cab is in excellent shape through regular maintenance and thorough inspections. Our commitment to vehicle upkeep means you can trust in a safe, comfortable, and reliable ride every time you travel with us.
+              </p>
               <div >
                 <ul className="about-point p-4">
                   <li><i class="fa-solid fa-check"></i>&nbsp;  Confirming a proper amount of engine oil and coolant</li>
