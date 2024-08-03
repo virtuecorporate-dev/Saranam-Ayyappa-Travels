@@ -15,6 +15,8 @@ import TermsConditions from './Pages/Terms & Conditions';
 import Service from './Pages/Service';
 import ScrollToTop from './Components/scrollToTop'
 import Contact from './Pages/Contact';
+import RegisterPage from './Pages/Register';
+import LoginPopup from './Pages/Login';
 
 
 function App() {
@@ -33,7 +35,8 @@ function App() {
             <Route path='/edit/:id' element={<UpdateTable/>} />
             <Route path='/confirmbooking' element={<ConfirmBooking/>}/>
             <Route path='/contactus' element= {<Contact/>}/>
-            {/* <Route path='/register' element= {<RegisterPage/>}/> */}
+            <Route path='/register' element= {<RegisterPage/>}/>
+            <Route path='/login' element={<LoginPopup/>}/>
             <Route path='/terms&conditions' element={<TermsConditions/>}/>
             <Route path='/services' element={<Service/>}/>
 

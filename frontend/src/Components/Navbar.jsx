@@ -68,11 +68,11 @@ const handleCloseLogin=(()=>{
               <Link to='/contactus' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Contact Us</a> </Link>
               </li>
             </ul>
-            <ul className=' navbar-nav ml-auto'>
+            {/* <ul className=' navbar-nav ml-auto'>
               <li className="nav-item sign">
               <Link className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}>Sign in</Link>
               </li>
-            </ul>
+            </ul> */}
           </div>
 
         </div>

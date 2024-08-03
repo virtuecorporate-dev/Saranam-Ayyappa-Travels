@@ -1,19 +1,14 @@
-// src/components/LoginPopup.js
-
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import RegisterPage from './Register';
-import { loginUser } from '../Slice/userSlice';
 
 const LoginPopup = ({ onClose }) => {
   const [isRegisterVisible, setRegisterVisible] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -23,11 +18,15 @@ const LoginPopup = ({ onClose }) => {
         password
       });
 
-      const user = response.data.user; // Adjust based on your API response
-      dispatch(loginUser(user));
-      toast.success('Login successful!');
-      navigate('/admin');
-      onClose(); 
+      // Assume the API response contains user data if login is successful
+      const user = response.data.user;
+
+      if (user) {
+        localStorage.setItem('user', JSON.stringify(user)); // Save user data to localStorage
+        toast.success('Login successful!');
+        navigate('/admin'); // Redirect to /admin
+        onClose();
+      }
     } catch (error) {
       toast.error('Login failed. Please try again.');
       console.error(error.message);
