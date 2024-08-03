@@ -48,7 +48,7 @@ export default function About() {
               <img src="./images/car3.png" class="img-fluid" alt="" />
             </div>
             <div className="col-lg-3 about-img">
-              <img src="./images/car4.png" class="img-fluid" alt="" />
+              <img src="./images/car4.png" class="img-fluid" alt="image not found" />
             </div>
           </div>
         </div>
