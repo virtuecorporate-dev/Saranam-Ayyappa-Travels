@@ -125,9 +125,9 @@ export default function Home() {
       <section>
         <div className="container-fluid">
           <div className="container p-5">
-            <h5 className='text-center' style={{ fontWeight: "700", "font-size":"30px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700","font-size":"45px" ,"color":"#005395"}}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4'style={{ fontWeight: "400", "font-size":"18px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+            <h6 className='text-center' style={{ fontWeight: "700" }}>OUR SERVICES </h6>
+            <h2 className='text-center  mt-4' style={{ fontWeight: "700" ,"color":"#005395"}}> We Provide Best Services For You</h2>
+            <p className='text-center mt-4'style={{ fontWeight: "400" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
 
           </div>
           <div className='row '>
@@ -435,7 +435,7 @@ export default function Home() {
               </div>
             </div>
            
-          </div>
+          </div>*/}
         </div>
       </section>
     </Fragment>
