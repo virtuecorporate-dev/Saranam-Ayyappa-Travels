@@ -6,20 +6,20 @@ import { Link } from 'react-router-dom'
 
 
 export default function Contact() {
-    const [formData,setFormData]=useState({
-        name:'',
-        email:'',
-        phone:'',
-        message:'',
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
     });
 
-    const handleChange=(e)=>{
-        const{name,value}=e.target;
+    const handleChange = (e) => {
+        const { name, value } = e.target;
         setFormData({
             ...formData,
-            [name]:value,
+            [name]: value,
         });
-      
+
     };
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -38,35 +38,44 @@ export default function Contact() {
             },
             body: json
         }).then((res) => res.json());
-        
-            // toast.success("Form submitted successfully!");
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                message: ''
-              });
-         
-      
+
+        // toast.success("Form submitted successfully!");
+        setFormData({
+            name: '',
+            email: '',
+            phone: '',
+            message: ''
+        });
+
+
     };
 
 
 
     return (
         <div className='contact-page'>
-           <div className="container-fluid p-0">
-        <div className="about-img ">
-          <img src="./images/w4.jpg" alt="" />
-        </div>
-        <div className="about-text">
+            <div className="container-fluid p-0 about-banner">
+                <div className="about-img ">
+                    <img src="./images/w4.jpg" alt="" />
+                </div>
+                <div className="about-text container-fluid mx-auto" >
+                    <div className='row'>
+                        <div className='col-10 col-md-6 about-content'>
+                            <h2 style={{ fontWeight: "600" }}>About Us</h2>
+                            <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.
+                            </h5>
 
-          <h2 className='text-center ' >
-            <Link to="/" style={{ color: "#fff", textDecoration: "none" }}>Home/ </Link>
-            <Link to="/contactus" style={{ color: "#fff", textDecoration: "none" }}>Contact Us</Link>
-          </h2>   <h3>Be comfortable while you travel with our reliable bus rental.</h3>
-        </div>
+                            <p className=' bredcrumb mt-3'>
+                                <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>
+                                <Link to="/about" style={{ color: "white", textDecoration: "none" }}>About</Link>
+                            </p>
+                        </div>
+                        <div className='col-2 col-md-6'></div>
+                    </div>
 
-      </div>
+                </div>
+
+            </div>
 
             <hr className='bredcrumb-hr' />
             <div className='container'>
@@ -75,31 +84,31 @@ export default function Contact() {
                         <div className='service-item-inner text-center'>
                             <div className='item'>
 
-                            <h3>Office Location </h3>
-                            <p>abc street, abc</p>
+                                <h3>Office Location </h3>
+                                <p>abc street, abc</p>
                             </div>
                         </div>
                     </div>
                     <div className='col-12 col-md-4 service-item'>
                         <div className='service-item-inner text-center'>
                             <div className='item'>
-                            <h3>Phone Number</h3>
-                            <a href="tel:9994074471"> 9994074471</a>
+                                <h3>Phone Number</h3>
+                                <a href="tel:9994074471"> 9994074471</a>
                             </div>
 
                         </div>
                     </div>
                     <div className='col-12 col-md-4 service-item'>
                         <div className='service-item-inner text-center'>
-                        <div className='item'>
-                            <h3>Email Address</h3>
-                            <a href="mailto:abc@gmail.com">abc@gmail.com</a>
-                        </div>
+                            <div className='item'>
+                                <h3>Email Address</h3>
+                                <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+                            </div>
 
                         </div>
                     </div>
                 </div>
-                
+
             </div>
 
             <div className='contact-form container mt-3 p-5'>
@@ -151,7 +160,7 @@ export default function Contact() {
                                     </div>
                                     <div className="row">
                                         <div className="col-12 mx-auto">
-                                                   <textarea
+                                            <textarea
                                                 name="message"
                                                 rows="7"
                                                 placeholder="Enter your message"
