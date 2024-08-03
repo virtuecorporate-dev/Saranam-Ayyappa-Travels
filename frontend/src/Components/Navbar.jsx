@@ -94,13 +94,13 @@ const handleCloseLogin=(()=>{
                 <Link to="/" className="nav-link" >Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/franchise" className="nav-link">About us</Link>
+                <Link to="/about" className="nav-link">About us</Link>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">Service</Link>
+                <Link to="/services" className="nav-link">Services</Link>
               </li>
               <li className="nav-item">
-                <Link to="/contact" className="nav-link">Book a Bus</Link>
+                <Link to="/contactus" className="nav-link">Contact Us</Link>
               </li>
             </ul>
           </div>

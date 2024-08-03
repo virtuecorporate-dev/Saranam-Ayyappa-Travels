@@ -1,16 +1,44 @@
+// src/components/LoginPopup.js
+
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import RegisterPage from './Register';
+import { loginUser } from '../Slice/userSlice';
 
 const LoginPopup = ({ onClose }) => {
   const [isRegisterVisible, setRegisterVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/v1/login', {
+        email,
+        password
+      });
+
+      const user = response.data.user; // Adjust based on your API response
+      dispatch(loginUser(user));
+      toast.success('Login successful!');
+      navigate('/admin');
+      onClose(); 
+    } catch (error) {
+      toast.error('Login failed. Please try again.');
+      console.error(error.message);
+    }
+  };
 
   const handleOpenRegister = () => {
-    console.log('Opening register page');
     setRegisterVisible(true);
   };
 
   const handleCloseRegister = () => {
-    console.log('Closing register page');
     setRegisterVisible(false);
   };
 
@@ -29,18 +57,27 @@ const LoginPopup = ({ onClose }) => {
               </div>
               <div className="login-form">
                 <div className="login-input">
-                  <input type="text" placeholder="Username" />
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="login-input">
-                  <input type="password" placeholder="Password" />
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
-                {/* <div className="login-options">
-                  <span className="login-forgot-password">Forgot Password?</span>
-                </div> */}
-                <button className="login-button">LOGIN</button>
+                <button className="login-button" onClick={handleLogin}>
+                  LOGIN
+                </button>
                 <div className="login-signin">
                   <button onClick={handleOpenRegister}>
-                 New User
+                    New User
                   </button>
                 </div>
               </div>
@@ -50,6 +87,7 @@ const LoginPopup = ({ onClose }) => {
           )}
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

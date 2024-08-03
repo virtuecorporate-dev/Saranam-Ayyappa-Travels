@@ -48,20 +48,20 @@ export default function Home() {
           <div className="container">
             <div className="row home-banner ">
               <div className="col-lg-6">
-                <h2>A Car rental that's affordable and comfortable</h2>
-                <p className='mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto inventore iste beatae, nam eveniet velit consectetur, accusantium reprehenderit quia saepe laudantium ratione ipsa omnis sunt obcaecati facilis quisquam similique. Quidem?
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus saepe voluptatem magni optio! Porro, ipsam temporibus adipisci tempore quam explicabo recusandae fuga? Quam voluptatem reiciendis neque, fugiat illo eius dolorum!
-                </p>
+                <h2>A Cab rental that's affordable and comfortable</h2>
+
+                <p className='mt-4'>Looking for a cab rental that's both affordable and comfortable? Our cab rental service offers top-notch vehicles and professional drivers to ensure your journey is smooth and enjoyable. Whether you need a ride for a short trip or a long-distance travel, we provide reliable and cost-effective solutions to meet your transportation needs. Book with us today and experience the convenience and comfort of our cab rental service, all at competitive prices.</p>
+
                 <div className="row mt-2">
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>25 + </h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                    <h5>Cab Ready</h5>
+                    <p>cabs ready to provide you with affordable and comfortable travel!</p>
                   </div>
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>97 %</h2>
-                    <h5>Bus Ready</h5>
-                    <p>Sed nunc si consectetur convallis facilisis dictumst nibh.</p>
+                    <h5>Satisfied Customer</h5>
+                    <p>Our customers are highly satisfied with our service!</p>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Home() {
                     </h6>
                     <h1>Enjoy the journey – travel with us</h1>
                   </div>
-                  <div className="col-lg-8 mt-3 mt-lg-0">
+                  <div className="col-lg-8">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam odio reprehenderit quos minima natus. Non est explicabo sed culpa iusto accusantium ducimus asperiores dolore voluptatibus, perferendis architecto aut, necessitatibus esse?
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni non eveniet, consequatur quas vel quaerat voluptate animi! Sequi incidunt ipsa odit hic, itaque reprehenderit exercitationem ipsum asperiores quam voluptatibus earum.</p>
                   </div>
@@ -114,20 +114,20 @@ export default function Home() {
         <div className="banner-text  p-0">
           <div className="banner-text-inner">
             <h1>Charter With Us For An Adventure-Filled Journey</h1>
+            <p className='mt-3'>Charter with us for an adventure-filled journey that you'll never forget. Our top-notch vehicles and experienced drivers are ready to take you to your next exciting destination. Whether you're planning a road trip, a scenic tour, or a special event, we provide reliable and comfortable transportation to make your adventure smooth and enjoyable. Trust us to be your travel partner and embark on a journey filled with fun and memorable experiences. Travel with us and turn every trip into an adventure!</p>
 
-            <p className='mt-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p>
             <button>Explore us </button>
           </div>
 
         </div>
       </section>
 
-      <section className='pb-5'>
-        <div className="container">
-          <div className="pt-5 home-service">
-            <h5 className='text-center' style={{ fontWeight: "700", "font-size": "18px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700",  "color": "#005395" }}> We Provide Best Services For You</h3>
-            <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "16px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
+      <section>
+        <div className="container-fluid">
+          <div className="container p-5">
+            <h5 className='text-center' style={{ fontWeight: "700", "font-size":"30px" }}>OUR SERVICES </h5>
+            <h3 className='text-center  mt-4' style={{ fontWeight: "700","font-size":"45px" ,"color":"#005395"}}> We Provide Best Services For You</h3>
+            <p className='text-center mt-4'style={{ fontWeight: "400", "font-size":"18px" }}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis inventore non dolorem delectus nesciunt harum perferendis, in, ullam assumenda distinctio libero, dolores molestias magnam rem. Ad doloribus labore dignissimos adipisci.</p>
 
           </div>
           <div className='row '>
@@ -393,7 +393,7 @@ export default function Home() {
                 </div>
 
                 <div className="card-body">
-                  <h5 className="card-title text-center">Drop Trip</h5>
+                  <h5 className="card-title text-center">One Way Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
@@ -411,7 +411,7 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title text-center">Local Trip</h5>
+                  <h5 className="card-title text-center">Round Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
@@ -429,13 +429,13 @@ export default function Home() {
                   </svg>
                 </div>
                 <div className="card-body">
-                  <h5 className="card-title text-center">OutStation</h5>
+                  <h5 className="card-title text-center">Hourly Trip</h5>
                   <p className="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 </div>
               </div>
             </div>
            
-          </div> */}
+          </div>
         </div>
       </section>
     </Fragment>

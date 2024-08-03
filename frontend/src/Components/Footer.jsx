@@ -12,10 +12,9 @@ export default function Footer() {
                                 <div>
                                     {/* <img className='img-fluid footer-logo' src="./images/Logo.png" alt="logo" /> */}
                                 </div>
-                                <h1>Car Rentals</h1>
+                                <h1>Cab Rentals</h1>
                                 <p>
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est rerum nemo eaque. Repudiandae eos aliquam incidunt praesentium! Temporibus quidem repellendus, vitae excepturi impedit provident praesentium, doloremque ipsum delectus accusantium nam?
-                                </p>
+                                For reliable and comfortable car rentals, contact us anytime. We look forward to serving you again soon                                </p>
                             </div>
                         </div>
 
