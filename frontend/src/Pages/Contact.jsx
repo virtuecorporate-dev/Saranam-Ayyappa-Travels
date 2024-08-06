@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import Iframe from 'react-iframe'
 import { Link } from 'react-router-dom'
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Contact() {
@@ -25,7 +25,7 @@ export default function Contact() {
         event.preventDefault();
         const formData = new FormData(event.target);
 
-        formData.append("access_key", "ce35ddae-b998-4d02-9326-0b6952ff5ced");
+        formData.append("access_key", "87797686-d2c1-4623-ba82-7deacf1662c1");
 
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
@@ -39,7 +39,8 @@ export default function Contact() {
             body: json
         }).then((res) => res.json());
 
-        // toast.success("Form submitted successfully!");
+
+        toast.success("Form submitted successfully!");
         setFormData({
             name: '',
             email: '',
