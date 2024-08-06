@@ -5,6 +5,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const CarModel = require("./Model/carModel");
+const { sendMail } = require('./nodemailer');
 
 
 const upload = multer({
@@ -21,11 +22,6 @@ const upload = multer({
         }
     })
 });
-
-
-
-const { sendMail } = require("./nodemailer");
-
 router.route("/allCars").get(getAllCar)
 router.route("/avaibleCars").get(getCarsByCategory)
 router.post("/createCar", upload.single('imageUrl'), async (req, res) => {
@@ -64,7 +60,7 @@ router.post("/createCar", upload.single('imageUrl'), async (req, res) => {
 // router.route("/createCar").post(createCar);
 router.route("/update/:id").put(updateCar);
 router.route("/delete/:id").delete(deleteCar)
-router.post('/sendemail', sendMail);
+router.route('/sendemail').post(sendMail);
 router.route('/register').post(Register);
 router.route('/login').post(Login)
 

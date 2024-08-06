@@ -1,20 +1,25 @@
-const nodemailer= require("nodemailer")
+const nodemailer = require("nodemailer");
 
+// Create a transporter using environment variables
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: 'your-email@gmail.com',
-      pass: 'your-email-password'
-    }
-  });
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL, // Use environment variable for email
+    pass: process.env.EMAIL_PASSWORD  // Use environment variable for password
+  }
+});
 
-  exports.sendMail= async(req,res)=>{
+exports.sendMail = async (req, res) => {
+  const { bookingDetails } = req.body;
 
-    const { bookingDetails } = req.body;
+  // Validate bookingDetails
+  if (!bookingDetails || !bookingDetails.name || !bookingDetails.mobile || !bookingDetails.mail) {
+    return res.status(400).json({ message: 'Missing booking details' });
+  }
 
   const mailOptions = {
-    from: 'your-email@gmail.com',
-    to: 'website-owner-email@gmail.com',
+    from: process.env.EMAIL, // Use environment variable for sender email
+    to: 'mareeswarivirtue@gmail.com', // Replace with your desired recipient
     subject: 'New Cab Booking',
     text: `
       Trip Type: ${bookingDetails.triptype}
@@ -34,11 +39,10 @@ const transporter = nodemailer.createTransport({
     `
   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      return res.status(500).send(error.toString());
-    }
-    res.status(200).send('Email sent: ' + info.response);
-  });
-
+  try {
+    const info = await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Email sent: ' + info.response });
+  } catch (error) {
+    res.status(500).json({ message: 'Error sending email: ' + error.toString() });
   }
+};
