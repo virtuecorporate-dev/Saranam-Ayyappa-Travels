@@ -18,10 +18,10 @@ export default function Home() {
                 <div className='row'>
                   <div className="col-8 col-sm-6">
                     <div className='banner-content'>
-                      <h1>Charter With Us For An Adventure-Filled Journey</h1>
+                      {/* <h1>Charter With Us For An Adventure-Filled Journey</h1> */}
 
                       {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p> */}
-                      <button className='mt-4'>Explore us </button>
+                      {/* <button className='mt-4'>Explore us </button> */}
                     </div>
 
                   </div>
@@ -440,3 +440,5 @@ export default function Home() {
     </Fragment>
   )
 }
+
+

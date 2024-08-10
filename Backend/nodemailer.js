@@ -1,11 +1,12 @@
 const nodemailer = require("nodemailer");
+require('dotenv').config(); 
 
 // Create a transporter using environment variables
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL, // Use environment variable for email
-    pass: process.env.EMAIL_PASSWORD  // Use environment variable for password
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS 
   }
 });
 
@@ -18,8 +19,8 @@ exports.sendMail = async (req, res) => {
   }
 
   const mailOptions = {
-    from: process.env.EMAIL, // Use environment variable for sender email
-    to: 'mareeswarivirtue@gmail.com', // Replace with your desired recipient
+    from:bookingDetails.mail, // Use environment variable for sender email
+    to: 'sathiyakalavirtue@gmail.com', // Replace with your desired recipient
     subject: 'New Cab Booking',
     text: `
       Trip Type: ${bookingDetails.triptype}

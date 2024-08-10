@@ -31,7 +31,15 @@ body {
 
 
 .nav-item .homeNav-color {
-  color: #fff !important;
+  color: #fff ;
+}
+.nav-item .homeNav-color.nav-link.active{
+  color: #000000;
+  font-weight: 700;
+}
+.navbar-nav .nav-link.active {
+  color: #005395 ;
+  font-weight: 700;
 }
 
 .scroll-nav {
@@ -43,11 +51,14 @@ body {
 }
 
 .scroll-nav .nav-link {
-  color: #fff !important;
+  color: #fff ;
+}
+.scroll-nav .nav-link.active{
+ color: black !important;;
 }
 
 .scroll-nav .logo {
-  width: 100px !important;
+  width: 150px !important;
 }
 
 /* ----------------mobile-nav------------------------------- */
@@ -169,12 +180,12 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  background-color:#00000033;
+  /* background-color:#00000033; */
   z-index: 100;
 }
 
 .landing {
-  margin-top: -128px !important;
+  margin-top: -146px !important;
   /* z-index: -500; */
 }
 
@@ -189,7 +200,7 @@ body {
 /*---------------------------------- form start------------------------------------ */
 
 .booking-form-sec {
-  margin-top: -100px;
+  margin-top: -250px;
   position: relative;
   z-index: 200;
 }
@@ -263,6 +274,25 @@ body {
   color: #005395d0 !important;
   border: 1px solid #005395d0;
 }
+.trip-type-btn button{
+  background-color: white ;
+  color: #005395d0 ;
+  border-radius: 5px;
+  border: 1px solid #005395d0;
+  font-weight: 500;
+  padding: 5px 30px;
+}
+
+.trip-type-btn button:hover{
+  background-color: #005395d0;
+  color: white;
+  border: none;
+}
+.trip-type-btn .active{
+  background-color: #005395d0;
+  color: white;
+  border: none;
+}
 
 .from-input input {
   margin: 10px 10px 0 0;
@@ -310,6 +340,13 @@ body {
 #Fare{
   border: none;
 }
+.agree-tc label{
+color: black;
+font-weight: 300;
+font-size: 14px;
+margin-left: 10px;
+}
+
 
 /*---------------------------------- form end------------------------------------ */
 
