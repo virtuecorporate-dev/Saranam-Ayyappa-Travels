@@ -19,7 +19,7 @@ const Service = () => {
                     <h5>OUR SERVICES</h5>
                     <h1>We Provide Best Services For You</h1>
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                     <div className='col-12 col-md-4 service-item'>
                         <div className='service-item-inner text-center'>
                             <div className='item'>
@@ -328,12 +328,93 @@ const Service = () => {
                     <div className='offset-2'></div>
                     <div className='col-2'></div>
 
-                </div>
+                </div> */}
+                <section className='package row '>
+                    <div className="package-card  col-lg-5">
+                        <img src="./images/package.jpg" alt="" className='img-fluid' />
+                        <div>
+                        <h3>Package : Ooty 2-Days 2-Night</h3>
+                        <h4>No of Persons : 3</h4>
+                            <p>Service Included
+                                <ul>
+                                    <li>Food</li>
+                                    <li>Places</li>
+                                    <li>Food</li>
+                                    <li>visitig places</li>
+                                    <li>sunset</li>
+                                    <li>sunrise</li>
+                                </ul>
+                            </p>
+                            <div className="package-btn">                           
+                                 <button>Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="package-card  col-lg-5">
+                        <img src="./images/package1.jpg" alt="" className='img-fluid' />
+                        <div>
+                            <h3>Package : Ooty 2-Days 2-Night</h3>
+                            <h4>No of Persons : 3</h4>
+                            <p>Service Included
+                                <ul>
+                                    <li>Food</li>
+                                    <li>Places</li>
+                                    <li>Food</li>
+                                    <li>visitig places</li>
+                                    <li>sunset</li>
+                                    <li>sunrise</li>
+                                </ul>
+                            </p>
+                            <div className="package-btn">                           
+                                 <button>Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="package-card col-lg-5">
+                        <img src="./images/package2.jpg" alt="" className='img-fluid' />
+                        <div>
+                        <h3>Package : Ooty 2-Days 2-Night</h3>
+                        <h4>No of Persons : 3</h4>
+                            <p>Service Included
+                                <ul>
+                                    <li>Food</li>
+                                    <li>Places</li>
+                                    <li>Food</li>
+                                    <li>visitig places</li>
+                                    <li>sunset</li>
+                                    <li>sunrise</li>
+                                </ul>
+                            </p>
+                            <div className="package-btn">                           
+                                 <button>Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="package-card col-lg-5">
+                        <img src="./images/package.jpg" alt="" className='img-fluid' />
+                        <div>
+                        <h3>Package : Ooty 2-Days 2-Night</h3>
+                        <h4>No of Persons : 3</h4>
+                            <p>Service Included
+                                <ul>
+                                    <li>Food</li>
+                                    <li>Places</li>
+                                    <li>Food</li>
+                                    <li>visitig places</li>
+                                    <li>sunset</li>
+                                    <li>sunrise</li>
+                                </ul>
+                            </p>
+                            <div className="package-btn">                           
+                                 <button>Book Now</button>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </section>
             </div>
 
-            <section id='DropServices'>
-                <h2>Drop Services</h2>
-            </section>
+
         </section>
 
     )
