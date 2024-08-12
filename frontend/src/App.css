@@ -1,46 +1,16 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 
 body {
   margin: 0;
   padding: 0;
-  font-family: "Noto Serif", serif;
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
   font-style: normal;
   /* overflow-x: hidden; */
 }
 
-/* 
-.navbar {
-    background-color: transparent !important;
-    padding: 20px;
-    z-index: 1000;
-}
-
-
-.nav-link,
-.nav-link.active {
-    color: black !important;
-    align-items: end !important;
-    display: flex;
-}
-
-.navbar-nav .nav-link:hover {
-    color: red !important;
-}
-
-.navbar-nav.ml-auto {
-    display: flex;
-    justify-content: end !important;
-}
-
-#navbarNav {
-    justify-items: flex-end;
-}
-
-.navbar-toggler {
-    color: white;
-    background-color: white;
-} */
 
 
 .desktop-nav {
@@ -51,7 +21,7 @@ body {
 }
 
 .nav-link {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .navbar-toggler {
@@ -61,7 +31,15 @@ body {
 
 
 .nav-item .homeNav-color {
-  color: #fff !important;
+  color: #fff ;
+}
+.nav-item .homeNav-color.nav-link.active{
+  color: #000000;
+  font-weight: 700;
+}
+.navbar-nav .nav-link.active {
+  color: #005395 ;
+  font-weight: 700;
 }
 
 .scroll-nav {
@@ -70,15 +48,17 @@ body {
   color: #fff;
   position: sticky;
   top: 0;
-  z-index: 3000;
 }
 
 .scroll-nav .nav-link {
-  color: #fff !important;
+  color: #fff ;
+}
+.scroll-nav .nav-link.active{
+ color: black !important;;
 }
 
 .scroll-nav .logo {
-  width: 100px !important;
+  width: 150px !important;
 }
 
 /* ----------------mobile-nav------------------------------- */
@@ -146,7 +126,7 @@ body {
 
 /* navbar end-------------------------------------------- */
 
-/* about Banner-image start-------------------------------------- */
+/* Banner-image start-------------------------------------- */
 
 .banner {
   position: relative;
@@ -161,17 +141,17 @@ body {
   top: 250px;
   color: white;
   text-align: center;
-
+  z-index: 2000;
 }
 
 .landing-text h1 {
-  font-weight: 700;
-  font-size: 50px;
+  font-weight: 500;
+  font-size: 40px;
 }
 
 .landing-text p {
 
-  font-weight: 500;
+  font-weight: 300;
   justify-self: right;
 
 }
@@ -180,8 +160,8 @@ body {
   border-radius: 5px;
   background-color: white;
   color: black;
-  padding: 10px 30px;
-  font-weight: 700;
+  padding: 5px 30px;
+  font-weight: 500;
   font-size: 18px;
   border: none;
 
@@ -191,11 +171,22 @@ body {
   height: 100%;
   width: 100%;
   padding: 0;
+  position: relative;
+}
+.banner-img::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* background-color:#00000033; */
+  z-index: 100;
 }
 
 .landing {
-  margin-top: -128px !important;
-  /* z-index: -700; */
+  margin-top: -146px !important;
+  /* z-index: -500; */
 }
 
 @media (max-width:990px) {
@@ -209,8 +200,9 @@ body {
 /*---------------------------------- form start------------------------------------ */
 
 .booking-form-sec {
-  margin-top: -100px;
+  margin-top: -250px;
   position: relative;
+  z-index: 200;
 }
 
 
@@ -245,31 +237,31 @@ body {
 }
 
 .form-left h3 {
-  font-weight: 700;
+  font-weight: 500;
   text-align: start !important;
-  padding: 10px;
-
+  /* padding: 10px; */
+  /* font-size: 20px; */
 }
 
 .callDetails {
   text-align: start;
-  font-weight: 400;
-  margin-top: 20px;
+  font-weight: 300;
+  margin-top: 10px;
 
 }
 
 .callDetails h2 {
-  font-weight: 700;
+  font-weight: 500;
   text-align: start !important;
 }
 
 .triptype label {
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 20px;
 }
 
 .search-cab button {
-  font-weight: 700;
+  font-weight: 500;
   padding: 5px 30px;
   background-color: #005395d0;
   color: white;
@@ -281,6 +273,25 @@ body {
   background-color: white !important;
   color: #005395d0 !important;
   border: 1px solid #005395d0;
+}
+.trip-type-btn button{
+  background-color: white ;
+  color: #005395d0 ;
+  border-radius: 5px;
+  border: 1px solid #005395d0;
+  font-weight: 500;
+  padding: 5px 30px;
+}
+
+.trip-type-btn button:hover{
+  background-color: #005395d0;
+  color: white;
+  border: none;
+}
+.trip-type-btn .active{
+  background-color: #005395d0;
+  color: white;
+  border: none;
 }
 
 .from-input input {
@@ -317,18 +328,25 @@ body {
   border-radius: 20px;
   padding: 0px 9px;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 500;
   margin: 5px;
 }
 
 .visiting-pl-delete {
-  font-weight: 400 !important;
+  font-weight: 300 !important;
   font-size: 18px;
 }
 
 #Fare{
   border: none;
 }
+.agree-tc label{
+color: black;
+font-weight: 300;
+font-size: 14px;
+margin-left: 10px;
+}
+
 
 /*---------------------------------- form end------------------------------------ */
 
@@ -340,24 +358,23 @@ body {
 }
 
 .home-banner h2 {
-  font-weight: 700;
-  font-size: 35px;
+  font-weight: 500;
+  /* font-size: 35px; */
 }
 
 .home-banner p {
-  /* font-weight: 400; */
+  /* font-weight: 300; */
 }
 
 .home-banner-text {
   color: #005395 !important;
-  font-weight: 700;
+  font-weight: 500;
   margin-top: 5px;
 }
 
 .home-banner h5 {
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-style: normal;
+  
+  font-weight: 600;
 
 }
 
@@ -393,16 +410,16 @@ body {
 }
 
 .whoweare h5 {
-  font-weight: 700;
+  font-weight: 500;
 }
 
-.whoweare h3 {
+.whoweare h2 {
   font-weight: 700;
-  font-size: 40px;
+  /* font-size: 40px; */
 }
 
 .whoweare p {
-  font-weight: 400;
+  font-weight: 300;
   text-align: justify;
 }
 /* .whoweare-img{
@@ -454,11 +471,11 @@ body {
 }
 
 .banner-text h1 {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .banner-text p {
-  font-weight: 400;
+  font-weight: 300;
   justify-self: right;
 
 }
@@ -469,7 +486,7 @@ body {
   background-color: white;
   color: #005395d0;
   padding: 5px 30px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 18px;
 
 
@@ -494,7 +511,7 @@ body {
   background-color: #005395d0;
   padding: 10px 20px;
   width: fit-content;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 15px;
   color: white;
   border-radius: 10px;
@@ -531,7 +548,7 @@ body {
   /* overflow: hidden; */
 }
 .select-button{
-  font-weight: 700;
+  font-weight: 500;
   padding: 5px 30px;
   background-color: #005395d0;
   color: white;
@@ -549,11 +566,11 @@ body {
 
 
 .car-name-details h3{
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .cab-fare{
-  font-weight: 700;
+  font-weight: 500;
  text-align: right;
  padding-right: 25px;
 }
@@ -571,7 +588,7 @@ body {
   width: fit-content;
   padding: 0 10px;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 12px;
 }
 
@@ -585,7 +602,7 @@ body {
   padding: 20px 0;
 }
 .form-details h4{
-  font-weight: 700;
+  font-weight: 500;
 }
 .form-details h4 .bi-arrow-left-right{
   font-size: 60px;
@@ -620,7 +637,7 @@ body {
 }
 .traveller-details label{
  font-size: 18px;
- font-weight: 400;
+ font-weight: 300;
  margin-top: 20px;
  color: white;
 }
@@ -640,7 +657,7 @@ body {
   color: black;
   padding: 5px 30px;
   border-radius: 5px;
-  font-weight: 700;
+  font-weight: 500;
 
 }
 
@@ -790,220 +807,15 @@ footer {
 
 
 
-@media (max-width:1400px) {
+/* @media (max-width:1300px) {
   .landing-text {
     position: absolute;
     top: 200px;
   }
 
 
-}
+} */
 
-@media (max-width:1300px) {
-  .landing-text {
-    position: absolute;
-    top: 150px;
-  }
-
-  .landing-text h1 {
-    font-size: 40px;
-  }
-
-  .landing-text button {
-    font-size: 16px;
-  }
-
-  .booking-form-sec {
-    margin-top: 50px;
-    position: relative;
-  }
-}
-
-@media (max-width:1050px) {
-  .landing-text {
-    position: absolute;
-    top: 120px;
-  }
-
-  .landing-text h1 {
-    font-size: 30px;
-  }
-}
-
-@media (max-width:900px) {
-  .banner-content {
-    padding: 0 0 0 10px;
-  }
-
-  .landing-text {
-    position: absolute;
-    top: 100px;
-  }
-
-}
-
-@media (max-width:800px) {
-  .landing-text {
-    position: absolute;
-    top: 80px;
-
-  }
-
-  .landing-text h1 {
-    font-size: 25px;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-  }
-
-  .banner-content {
-    padding: 0 30px 30px 30px;
-  }
-
-}
-
-@media (max-width:700px) {
-  .landing-text {
-    position: absolute;
-    top: 80px;
-
-  }
-
-  .landing-text h1 {
-    font-size: 20px;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-  }
-
-  .banner-content {
-    padding: 0 30px 0 30px;
-  }
-}
-
-@media (max-width:680px) {
-  .landing-text {
-    position: absolute;
-    top: 70px;
-
-
-  }
-
-  .landing-text h1 {
-    font-size: 20px;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-    margin-bottom: 5px !important;
-  }
-
-  .landing-text p {
-    margin-bottom: 5px !important;
-  }
-
-  .banner-content {
-    padding: 0 0px 20px 20px;
-  }
-
-}
-
-@media (max-width:570px) {
-  .landing-text {
-    position: absolute;
-    top: 60px;
-
-  }
-
-  .banner-content {
-    padding: 0 50px 0 0px;
-  }
-
-  .landing-text p {
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width:530px) {
-  .landing-text {
-    position: absolute;
-    top: 50px;
-
-  }
-
-  .banner-content {
-    padding: 0 40px 0 0px;
-  }
-
-  .landing-text h1 {
-    font-size: 18px;
-  }
-
-  .landing-text p {
-    font-size: 12px;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width:460px) {
-  .landing-text {
-    position: absolute;
-    top: 40px;
-
-  }
-
-  .banner-content {
-    padding: 0 30px 0 0px;
-  }
-
-  .landing-text h1 {
-    font-size: 18px;
-  }
-
-  .landing-text p {
-    font-size: 10px;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-    font-size: 12px;
-  }
-
-}
-
-@media (max-width:420px) {
-  .landing-text {
-    position: absolute;
-    top: 40px;
-
-  }
-
-  .banner-content {
-    padding: 0 25px 0 0px;
-  }
-
-  .landing-text h1 {
-    font-size: 18px;
-  }
-
-  .landing-text p {
-    font-size: 10px;
-    margin-bottom: 5px !important;
-  }
-
-  .landing-text button {
-    padding: 3px 20px;
-    font-size: 10px;
-  }
-}
 
   
 /* about page start------------------------------ */
@@ -1047,7 +859,7 @@ footer {
 .about-point li{
   list-style-type: none;
   line-height: 2;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-style: normal;
 
 
@@ -1055,9 +867,11 @@ footer {
 
 .about-service button{
   background-color: #005395;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 5px;
+  padding: 5px 30px;
   color: white;
+  border: none;
+
 }
 
 .about-service p{
@@ -1066,14 +880,14 @@ footer {
 
 .about-service button:hover{
   background-color: white;
-  border-radius: 10px;
-  padding: 10px;
+  
   color:black;
+  border:1px solid #005395 ;
   
 }
 
 .about-service h3{
-  font-size: 45px;
+  /* font-size: 45px; */
   color: #005395;
   font-weight: bold;
 }
@@ -1086,30 +900,37 @@ footer {
 
 
 .about-img{
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 500px;
+  height: 100%;
+  width: 100%;
+}
+.about-banner{
+height: 300px;
+position: relative;
 }
 
 .about-img img{
-  object-fit: contain;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  padding: 0;
-  margin: 0;
 }
 
 .about-text{
-  text-align: center;
-  justify-content: center;
+  /* text-align: center; */
+  /* justify-content: center; */
   position: absolute;
-  margin-top: -300px;
-  justify-content: center;
+  top: 100px;
+  /* left: 100px; */
+  /* justify-content: center; */
   color: white;
-  font-weight: 900;
+  font-weight: 400;
   font-style: normal;
   font-size: xx-large;
-  margin-left: 500px;
+  
+  /* width: fit-content; */
+  
+}
+.about-content{
+  padding-left: 160px;
 }
 
 .about-banner-content{
@@ -1140,7 +961,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 400px;
+  width: 300px;
 }
 
 .login-right {
@@ -1343,7 +1164,7 @@ footer {
 }
 
 .terms-head h1{
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .italic{
@@ -1399,6 +1220,272 @@ margin-top: -15px;
 }
 .item h3{
   margin-top: 5px;
+}
+.bredcrumb{
+  font-size: 13px;
+}
+
+
+@media (max-width:1300px) {
+  .landing-text {
+    position: absolute;
+    top: 220px;
+  }
+
+  .landing-text h1 {
+    font-size: 35px;
+  }
+
+  .landing-text button {
+    font-size: 16px;
+  }
+  .banner-content {
+    /* text-align: left; */
+    padding: 0 ;
+  }
+  .booking-form-sec {
+    margin-top: 50px;
+    position: relative;
+  }
+ 
+}
+
+@media (max-width:1050px) {
+  .landing-text {
+    position: absolute;
+    top: 180px;
+  }
+
+  .landing-text h1 {
+    font-size: 30px;
+  }
+  .banner-content {
+    /* text-align: left; */
+    padding: 0 ;
+  }
+  .about-content{
+    padding-left: 70px !important;
+  }
+}
+
+@media(max-width:990px){
+  .landing-text {
+    position: absolute;
+    top: 130px;
+    /* border: 5px solid black !important; */
+  }
+}
+
+@media (max-width:900px) {
+  .banner-content {
+    padding: 0 0 0 10px;
+  }
+
+  .landing-text {
+    position: absolute;
+    top: 130px;
+  }
+ 
+  .whoweare-img{
+    height: 200px;
+  }
+  .whoweare-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about-content{
+    padding-left: 40px !important;
+  }
+
+}
+
+@media (max-width:800px) {
+  .landing-text {
+    position: absolute;
+    top: 110px;
+
+  }
+
+  .landing-text h1 {
+    font-size: 25px;
+  }
+
+  .landing-text button {
+    margin-top: 10px !important;
+    padding: 3px 20px;
+  }
+ 
+
+  .banner-content {
+    text-align: left;
+    padding: 0 30px 30px 0p;
+  }
+
+}
+
+@media (max-width:500px) {
+  .landing-text {
+    position: absolute;
+    top: 130px;
+    /* border: 1px solid red; */
+
+  }
+
+  .landing-text h1 {
+    font-size: 25px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+  }
+
+  .banner-content {
+    padding: 0 30px 0 30px;
+  }
+  .fa-phone{
+    font-size: 35px !important;
+    margin-top: -10px;
+  }
+  .form-left h3{
+    font-size: 20px;
+  }
+  .form-left h2{
+    font-size: 20px ;
+  }
+}
+
+@media (max-width:680px) {
+  .landing-text {
+    position: absolute;
+    top: 90px;
+
+
+  }
+
+  .landing-text h1 {
+    font-size: 25px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    margin-bottom: 5px !important;
+  }
+
+  .landing-text p {
+    /* display:none; */
+    /* margin-bottom: 5px !important; */
+  }
+
+  .banner-content {
+    padding: 0 0px 20px 20px;
+  }
+
+}
+
+@media (max-width:570px) {
+  .landing-text {
+    position: absolute;
+    top: 70px;
+  
+
+  }
+
+  .banner-content {
+    padding: 0 0px 0 0px;
+    /* border: 1px solid red; */
+  }
+  .landing-text h1{
+    font-size: 22px;
+  }
+
+
+}
+
+@media (max-width:530px) {
+  .landing-text {
+    position: absolute;
+    top: 60px;
+
+  }
+
+ 
+
+  .landing-text h1 {
+    font-size: 20px;
+  }
+
+  
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width:460px) {
+  .landing-text {
+    position: absolute;
+    top: 60px;
+
+  }
+
+  .banner-content {
+    /* padding: 0 0 0 20px; */
+  }
+
+  .landing-text h1 {
+    font-size: 20px;
+  }
+
+  .landing-text p {
+    font-size: 10px;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width:420px) {
+  .landing-text {
+    position: absolute;
+    top: 60px;
+
+  }
+
+  .banner-content {
+    /* padding: 0 25px 0 0px; */
+  }
+
+  .landing-text h1 {
+    font-size: 18px;
+  }
+
+  .landing-text p {
+    font-size: 10px;
+    margin-bottom: 5px !important;
+  }
+
+  .landing-text button {
+    padding: 3px 20px;
+    font-size: 10px;
+  }
+}
+
+
+@media (max-width:370px) {
+  .landing-text {
+    position: absolute;
+    top: 40px;
+
+  }
+  .landing-text h1 {
+    font-size: 18px !important;
+  }
 }
 
 

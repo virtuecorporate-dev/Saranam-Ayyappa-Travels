@@ -1,16 +1,16 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import LoginPage from '../Pages/Login';
 
 export default function Header() {
   const [navbar, setNavbar] = useState(false);
   const [homeNav, setHomeNav] = useState(false);
-  const [visible,setVisisble] = useState(false)
+  const [visible, setVisible] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      if (window.scrollY>100) {
+      if (window.scrollY) {
         setNavbar(true);
       } else {
         setNavbar(false);
@@ -28,62 +28,60 @@ export default function Header() {
     }
   }, [location]);
 
-  const handleOpenLogin=(()=>{
-    setVisisble(true)
-  })
+  const handleOpenLogin = () => {
+    setVisible(true);
+  };
 
-const handleCloseLogin=(()=>{
-  setVisisble(false)
-})
+  const handleCloseLogin = () => {
+    setVisible(false);
+  };
+
   return (
     <Fragment>
       <nav className={navbar ? "navbar navbar-expand-lg desktop-nav scroll-nav" : "navbar navbar-expand-lg desktop-nav"}>
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div className="logo-img">
-            <img className="img-fluid logo" src={homeNav || navbar ? "/images/logowhite1.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '200px' }} />
+            <img className="img-fluid logo" src={homeNav || navbar ? "/images/logowhite1.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '250px' }} />
           </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className={homeNav? "navbar-toggler-icon hamburger homeNav-color" : "navbar-toggler-icon hamburger"} style={{color:"white"}}>jh</span>
+            <span className={homeNav ? "navbar-toggler-icon hamburger homeNav-color" : "navbar-toggler-icon hamburger"} style={{ color: "white" }}></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mx-auto" >
+            <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <Link to='/' style={{ "textDecoration": "none" }}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Home</a> </Link>
-
+                <NavLink exact to='/' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Home</NavLink>
               </li>
               <li className="nav-item">
-                <Link to='/about' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >About</a> </Link>
-                
+                <NavLink to='/about' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">About</NavLink>
               </li>
               <li className="nav-item">
-                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Service</Link>
+                <NavLink to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Services</NavLink>
               </li>
               <li className="nav-item">
-                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Tour package</Link>
+                <NavLink to='/tour-package' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Tour Package</NavLink>
               </li>
               <li className="nav-item">
-                <Link to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} href="#">Holiday Package</Link>
+                <NavLink to='/holiday-package' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Holiday Package</NavLink>
               </li>
               <li className="nav-item">
-              <Link to='/contactus' style={{"textDecoration":"none"}}> <a className={homeNav ? "nav-link homeNav-color" : "nav-link"} >Contact Us</a> </Link>
+                <NavLink to='/contactus' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Contact Us</NavLink>
               </li>
             </ul>
-            <ul className=' navbar-nav ml-auto'>
+            {/* <ul className=' navbar-nav ml-auto'>
               <li className="nav-item sign">
-              <Link className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}></Link>
+                <button className={homeNav ? "nav-link homeNav-color btn btn-link" : "nav-link btn btn-link"} onClick={handleOpenLogin}>Sign In</button>
               </li>
-            </ul>
+            </ul> */}
           </div>
-
         </div>
       </nav>
-      {visible && <LoginPage onClose={handleCloseLogin}/>}
-      {/* ------------------moblie navbar-------------------------- */}
+      {visible && <LoginPage onClose={handleCloseLogin} />}
+      {/* ------------------mobile navbar-------------------------- */}
 
       <nav className={navbar ? "navbar navbar-expand-lg mobile-nav scroll-nav" : "navbar navbar-expand-lg mobile-nav"}>
         <div className="container-fluid d-flex justify-content-between align-items-center">
           <div className="logo-img mobile-logo">
-            <img className="img-fluid logo" src={navbar ? "/images/sap travels logo.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '150px' }} />
+            <img className="img-fluid logo" src={navbar ? "/images/logowhite1.png" : "/images/sap travels logo.png"} alt="Logo" style={{ width: '150px' }} />
           </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -91,23 +89,22 @@ const handleCloseLogin=(()=>{
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link" >Home</Link>
+                <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/about" className="nav-link">About us</Link>
+                <NavLink to="/about" className="nav-link" activeClassName="active">About Us</NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/services" className="nav-link">Services</Link>
+                <NavLink to="/services" className="nav-link" activeClassName="active">Services</NavLink>
               </li>
               <li className="nav-item">
-                <Link to="/contactus" className="nav-link">Contact Us</Link>
+                <NavLink to="/contactus" className="nav-link" activeClassName="active">Contact Us</NavLink>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-
     </Fragment>
-
   );
 }
+

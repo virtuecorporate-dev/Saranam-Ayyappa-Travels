@@ -24,7 +24,7 @@ export default function About() {
         </div>
       </div>
 
-      <section>
+      {/* <section>
         <div className="container-fluid mt-5 whoweare" style={{ backgroundColor: "transparent" }}>
           <div className="row">
             <div className='col-12 col-md-10 mx-auto pt-5 pb-5'>
@@ -47,7 +47,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section>
         <div className="container mb-3 about-ser">
