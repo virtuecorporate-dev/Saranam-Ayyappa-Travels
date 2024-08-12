@@ -6,6 +6,8 @@ const path = require('path');
 const fs = require('fs');
 const CarModel = require("./Model/carModel");
 const { sendMail } = require('./nodemailer');
+const { getHoliday, createHoliday } = require("./Controller/holidayController");
+const { getAllTour, createTour, updateTour } = require("./Controller/tourController");
 
 
 const upload = multer({
@@ -63,5 +65,14 @@ router.route("/delete/:id").delete(deleteCar)
 router.route('/sendemail').post(sendMail);
 router.route('/register').post(Register);
 router.route('/login').post(Login)
+
+
+///route foor getHolidayPackages
+router.route('/holiday').get(getHoliday);
+router.route('/createHoliday').post(createHoliday)
+router.route('/updateTour/:id').put(updateTour);
+///route foor getTourPackage
+router.route('/tour').get(getAllTour);
+router.route('/createTour').post(createTour);
 
 module.exports=router
