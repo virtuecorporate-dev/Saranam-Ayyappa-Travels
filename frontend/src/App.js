@@ -18,6 +18,7 @@ import Contact from './Pages/Contact';
 import Login1 from './Pages/Login1';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
+import TourPackages from './Pages/Tourpackages';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -45,7 +46,8 @@ function App() {
               element={<Login1 setIsAuthenticated={setIsAuthenticated} />} 
             />
             <Route path="/terms&conditions" element={<TermsConditions />} />
-            <Route path="/services" element={<Service />} />
+            <Route path="/holidayPackage" element={<Service />} />
+            <Route path='/tourPackage' element={<TourPackages/>}/>
           </Routes>
           <Footer />
         </div>

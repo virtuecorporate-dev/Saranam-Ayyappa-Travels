@@ -54,14 +54,14 @@ export default function Header() {
               <li className="nav-item">
                 <NavLink to='/about' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">About</NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink to='/services' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Services</NavLink>
+              </li> */}
+              <li className="nav-item">
+                <NavLink to='/tourPackage' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Tour Package</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to='/tour-package' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Tour Package</NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to='/holiday-package' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Holiday Package</NavLink>
+                <NavLink to='/holidayPackage' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Holiday Package</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink to='/contactus' className={homeNav ? "nav-link homeNav-color" : "nav-link"} activeClassName="active">Contact Us</NavLink>
