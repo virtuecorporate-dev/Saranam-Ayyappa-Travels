@@ -25,7 +25,7 @@ function App() {
   return (
     <Provider store={Store}>
       <BrowserRouter>
-        <div>
+        <div className='app'>
           <Navbar />
           <ScrollToTop />
           <Routes>
