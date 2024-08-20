@@ -12,7 +12,7 @@ function Login1({ setIsAuthenticated }) {
     e.preventDefault();
     if (email === 'admin@gmail.com' && password === 'admin123') {
       setIsAuthenticated(true);
-      navigate('/admin');
+      // navigate('/admin');
     } else {
       toast.error('Invalid credentials');
     }
