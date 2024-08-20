@@ -25,6 +25,7 @@ const SelectCab = ({ state, dispatch }) => {
 
     useEffect(() => {
         fetch(`http://localhost:8000/api/v1/avaibleCars?category=${state.triptype}`)
+        // fetch(`http://localhost:8000/api/v1/allFilteredCabs?category=${state.triptype}&seats=${state.NumberOfPersons}&distance=${state.distance}`)
 
 
             .then((res) => res.json())

@@ -8,6 +8,7 @@ const CarModel = require("./Model/carModel");
 const { sendMail } = require('./nodemailer');
 const { getHoliday, createHoliday } = require("./Controller/holidayController");
 const { getAllTour, createTour, updateTour } = require("./Controller/tourController");
+const {getfilteredCabs}= require("./Controller/AllCabsController")
 
 
 const upload = multer({
@@ -24,6 +25,8 @@ const upload = multer({
         }
     })
 });
+
+router.route("/allFilteredCabs").get(getfilteredCabs)
 router.route("/allCars").get(getAllCar)
 router.route("/avaibleCars").get(getCarsByCategory)
 router.post("/createCar", upload.single('imageUrl'), async (req, res) => {

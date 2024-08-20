@@ -1,0 +1,252 @@
+[
+    {
+        "carModel": "Hutch Back",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 25,
+                "additionalInfo": "/KM +100 MF"
+            },
+            "26-50": {
+                "price": 35,
+                "additionalInfo": "/KM +100 MF"
+            },
+            "51-75": {
+                "price": 35,
+                "additionalInfo": "/KM +300 MF"
+            },
+            "76-100": {
+                "price": 35
+            },
+            "101-150": {
+                "price": 32
+            },
+            "151-200": {
+                "price": 28
+            },
+            "201-250": {
+                "price": 28
+            },
+            ">300": {
+                "price": 26,
+                "additionalInfo": "/KM +800 MF"
+            }
+        },
+        "seats": 4,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Compact car, perfect for short trips with minimal luggage.",
+        "category": "Drop Trip"
+    },
+    {
+        "carModel": "Sedan",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 30,
+                "additionalInfo": "/KM +100 MF"
+            },
+            "26-50": {
+                "price": 35,
+                "additionalInfo": "/KM +200 MF"
+            },
+            "51-75": {
+                "price": 35,
+                "additionalInfo": "/KM +300 MF"
+            },
+            "76-100": {
+                "price": 36
+            },
+            "101-150": {
+                "price": 32
+            },
+            "151-200": {
+                "price": 28
+            },
+            "201-250": {
+                "price": 28
+            },
+            ">300": {
+                "price": 26,
+                "additionalInfo": "/KM +800 MF"
+            }
+        },
+        "seats": 4,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Comfortable sedan for city and intercity travel.",
+        "category": "Drop Trip"
+    },
+    {
+        "carModel": "SUV 7pax + 1",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 1800,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "26-50": {
+                "price": 2500,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "51-75": {
+                "price": 63,
+                "additionalInfo": "/KM"
+            },
+            "76-100": {
+                "price": 55,
+                "additionalInfo": "/KM"
+            },
+            "101-150": {
+                "price": 48,
+                "additionalInfo": "/KM"
+            },
+            "151-200": {
+                "price": 42,
+                "additionalInfo": "/KM"
+            },
+            "201-250": {
+                "price": 38,
+                "additionalInfo": "/KM"
+            },
+            ">300": {
+                "price": 36,
+                "additionalInfo": "/KM +800 MF"
+            }
+        },
+        "seats": 7,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Spacious SUV, ideal for long journeys with a larger group.",
+        "category": "Outstation"
+    },
+    {
+        "carModel": "SUV 8pax + 1",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 1800,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "26-50": {
+                "price": 2500,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "51-75": {
+                "price": 63,
+                "additionalInfo": "/KM"
+            },
+            "76-100": {
+                "price": 55,
+                "additionalInfo": "/KM"
+            },
+            "101-150": {
+                "price": 48,
+                "additionalInfo": "/KM"
+            },
+            "151-200": {
+                "price": 42,
+                "additionalInfo": "/KM"
+            },
+            "201-250": {
+                "price": 38,
+                "additionalInfo": "/KM"
+            },
+            ">300": {
+                "price": 36,
+                "additionalInfo": "/KM +800 MF"
+            }
+        },
+        "seats": 8,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Extra spacious SUV for even larger groups.",
+        "category": "Outstation"
+    },
+    {
+        "carModel": "TT 14pax",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 2200,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "26-50": {
+                "price": 3500,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "51-75": {
+                "price": 77,
+                "additionalInfo": "/KM"
+            },
+            "76-100": {
+                "price": 66,
+                "additionalInfo": "/KM"
+            },
+            "101-150": {
+                "price": 56,
+                "additionalInfo": "/KM"
+            },
+            "151-200": {
+                "price": 50,
+                "additionalInfo": "/KM"
+            },
+            "201-250": {
+                "price": 23,
+                "additionalInfo": "/KM"
+            },
+            ">300": {
+                "price": 22,
+                "additionalInfo": "/KM +1000 MF"
+            }
+        },
+        "seats": 14,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Mini-bus suitable for large groups.",
+        "category": "Outstation"
+    },
+    {
+        "carModel": "TT AC 14pax",
+        "brand": "Generic",
+        "pricePerKm": {
+            "0-25": {
+                "price": 2500,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "26-50": {
+                "price": 4500,
+                "additionalInfo": "* FOR BEST DEAL CALL US"
+            },
+            "51-75": {
+                "price": 87,
+                "additionalInfo": "/KM"
+            },
+            "76-100": {
+                "price": 74,
+                "additionalInfo": "/KM"
+            },
+            "101-150": {
+                "price": 64,
+                "additionalInfo": "/KM"
+            },
+            "151-200": {
+                "price": 57,
+                "additionalInfo": "/KM"
+            },
+            "201-250": {
+                "price": 27,
+                "additionalInfo": "/KM"
+            },
+            ">300": {
+                "price": 26,
+                "additionalInfo": "/KM +1000 MF"
+            }
+        },
+        "seats": 14,
+        "availability": true,
+        "imageUrl": "./images/car.avif",
+        "description": "Air-conditioned mini-bus for long trips in comfort.",
+        "category": "Outstation"
+    }
+]

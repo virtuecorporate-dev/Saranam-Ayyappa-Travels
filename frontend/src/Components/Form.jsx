@@ -148,7 +148,7 @@ const BookingForm = () => {
                                     type='button'
                                     className={`${state.triptype === 'Drop Trip' ? "active" : ""}`}
                                     value="Drop Trip"
-                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Drop Type
+                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Drop Trip
                                 </button>
 
                                 {/* <input

@@ -11,7 +11,7 @@ export default function Home() {
           <div className='col-12 p-0'>
             <div className='banner'>
               <div className="banner-img">
-                <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
+                <img src="images/landing.jpg" alt="image-not-found" className='img-fluid'/>
               </div>
               <div className="landing-text container-fluid">
 
