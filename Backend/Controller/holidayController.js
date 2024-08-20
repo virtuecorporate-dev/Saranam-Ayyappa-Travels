@@ -18,6 +18,8 @@ const upload = multer({
         }
     })
 });
+// http://localhost:8000/api/v1/holiday
+
 
 exports.getHoliday = async (req, res) => {
     try {
@@ -34,6 +36,8 @@ exports.getHoliday = async (req, res) => {
     }
 };
 
+
+// http://localhost:8000/api/v1/createHoliday
 exports.createHoliday = [
     upload.single('imageUrl'),
     async (req, res) => {
@@ -41,7 +45,7 @@ exports.createHoliday = [
             const { name, category, services } = req.body;
             const imageUrl = req.file ? `/images/${req.file.filename}` : "";
 
-            if (!name || !category || !imageUrl) {
+            if ( !imageUrl) {
                 return res.status(400).json({
                     success: false,
                     message: 'Required fields are missing or image not uploaded'
@@ -70,3 +74,49 @@ exports.createHoliday = [
     }
 ];
 
+
+exports.updateHoliday= async(req,res)=>{
+    try{
+        const id  = req.params.id
+        const updateHoliday = await holidayModel.findByIdAndUpdate(id,{
+            name:req.body.name,
+            category:req.body.category,
+            services:req.body.services,
+            imageUrl:req.body.imageUrl
+
+        },{
+            new:true
+        });
+        if(!updateHoliday){
+            res.status(400).json({success:"false",message:"updateholiday does not update"})
+        }
+
+        res.status(201).json({
+            success:true,
+            holiday:updateHoliday
+        })
+}
+catch(err){
+    res.status(500).json({
+        success:false,
+    message:err.message
+    })
+}
+
+}
+    
+exports.deleteHoliday= async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const deleteHoliday = await holidayModel.findByIdAndDelete({_id:id})
+        res.status(201).json({
+            success:true,
+            holiday:deleteHoliday
+        })
+    } catch (error) {
+        res.status(500).json({
+            success:false,
+            message:error.message
+        })
+    }
+}

@@ -77,12 +77,14 @@ exports.createTour = [
     }
 ];
 
+// http://localhost:8000/api/v1/updateTour/id
+
 
 exports.updateTour=async(req,res)=>{
     try {
-        const id = req.params.body;
-        const updateTour = await tourModel.findByIdAndUpdate({
-            name:req.body.name,
+        const id = req.params.id;
+        const updateTour = await tourModel.findByIdAndUpdate(id,{
+                name:req.body.name,
                 numberOfPersons:req.body.numberOfPersons,
                 imageUrl:req.body.imageUrl,
                 services:req.body.services,
@@ -90,12 +92,12 @@ exports.updateTour=async(req,res)=>{
         },
         {new:true}
         
-       )
+       );
 
        if(!updateTour){
         res.status(400).json({success:"false",message:"tour not found"})
        }
-       res.status(200).jsosn({
+       res.status(200).json({
         success:true,
         tour:updateTour
     })
@@ -106,4 +108,24 @@ exports.updateTour=async(req,res)=>{
             error: error.message
         });
     }
+}
+
+// http://localhost:8000/api/v1/deleteTour/id
+
+exports.deleteTour=async(req,res)=>{
+    try{
+        const id = req.params.id;
+        const deleteTour = await tourModel.findByIdAndDelete({_id:id})
+        res.status(201).json({
+            success:true,
+            deleteTour
+        })
+    }
+  catch(err){
+    res.status(500).json({
+        success:false,
+        message:err.message
+    })
+  }
+
 }

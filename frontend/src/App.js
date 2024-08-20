@@ -19,6 +19,9 @@ import Login1 from './Pages/Login1';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import TourPackages from './Pages/Tourpackages';
+import { Table } from 'react-bootstrap';
+import Holiday from './Components/Holiday';
+import CreateHoliday from './Components/createHoliday';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -32,22 +35,20 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route 
-              path="/admin" 
-              element={isAuthenticated ? <Admin /> : <Navigate to="/login" />} 
-            />
+            <Route path="/admin" element={<Admin/>}/>
+            {/* // {isAuthenticated ? <Admin /> : <Navigate to="/login" />} /> */}
+            <Route path='/table' element={<Table/>}/>
             <Route path="/admin/create" element={<CreateTable />} />
             <Route path="/cars" element={<Cars />} />
             <Route path="/edit/:id" element={<UpdateTable />} />
             <Route path="/confirmbooking" element={<ConfirmBooking />} />
             <Route path="/contactus" element={<Contact />} />
-            <Route 
-              path="/login" 
-              element={<Login1 setIsAuthenticated={setIsAuthenticated} />} 
-            />
+            <Route path="/login" element={<Login1 setIsAuthenticated={setIsAuthenticated} />} />
             <Route path="/terms&conditions" element={<TermsConditions />} />
             <Route path="/holidayPackage" element={<Service />} />
             <Route path='/tourPackage' element={<TourPackages/>}/>
+            <Route path='/holiday' element={<Holiday/>}/>
+            <Route path='/holiday/create' element={<CreateHoliday/>}/>
           </Routes>
           <Footer />
         </div>

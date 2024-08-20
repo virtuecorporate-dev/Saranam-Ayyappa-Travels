@@ -36,6 +36,7 @@ function Table() {
     return (
         <Fragment>
                <div className="container mb-3">
+               
                 <div className="table-add mt-4">
 
                     <Link to='/admin/create'>
