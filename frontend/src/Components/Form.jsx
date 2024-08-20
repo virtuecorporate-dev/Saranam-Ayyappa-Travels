@@ -1,8 +1,8 @@
 import React, { useReducer, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
-// import {TimePickerComponent} from '@syncfusion/ej2-react-calendars'
 import 'react-datepicker/dist/react-datepicker.css';
+import SelectCab from './SelectCab';
 
 
 const BookingForm = () => {
@@ -91,6 +91,8 @@ const BookingForm = () => {
 
 
         navigate("/cars", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        // navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        
 
     };
 
@@ -120,31 +122,7 @@ const BookingForm = () => {
         dispatch({ type: "FARE", payload: fare });
     };
 
-    // const handlePickUpTimeChange = (e) => {
-    //     const inputTime = e.target.value;
-    
-    //     // Validate time format (HH:MM AM/PM)
-    //     const timePattern = /^(0?[1-9]|1[0-2]):([0-5][0-9])\s?(AM|PM)$/i;
-    //     if (!timePattern.test(inputTime)) {
-    //         return; // Invalid time format, do not update state or show alert
-    //     }
-    
-    //     const [time, amPm] = inputTime.split(' ');
-    //     const [hours, minutes] = time.split(':').map(Number);
-    
-    //     let pickUpTime = new Date();
-    //     pickUpTime.setHours(amPm.toUpperCase() === 'PM' && hours !== 12 ? hours + 12 : hours);
-    //     pickUpTime.setMinutes(minutes);
-    //     pickUpTime.setSeconds(0);
-    
-    //     const currentTime = new Date();
-    
-    //     if (pickUpTime - currentTime < 30 * 60 * 1000) { // 30 minutes in milliseconds
-    //         alert("Bookings are available only after 30 minutes of the current time.");
-    //     } else {
-    //         dispatch({ type: "PICK-UP-TIME", payload: inputTime });
-    //     }
-    // };
+
 
     return (
         <div className="container form-section">
@@ -274,11 +252,10 @@ const BookingForm = () => {
                                 <label htmlFor="PickUpTime">Pick Up Time</label> <br />
                                 <input type="text" className='input-field'
                                     id='PickUpTime'
-                                    value={state.pickUpTime} 
+                                    value={state.pickUpTime}
                                     placeholder="10.00 am"
-                                    // onChange={handlePickUpTimeChange}
                                     onChange={(e) => dispatch({ type: "PICK-UP-TIME", payload: e.target.value })}
-                                     />
+                                />
                             </div>
 
                         </div>
@@ -314,39 +291,7 @@ const BookingForm = () => {
 
                         )}
 
-                        <div className='row mt-3'>
-                            <div className='col-6'>
-                                <label htmlFor="NumberOfPersons">Number Of Persons</label>
-                                <input type="text" className='input-field'
-                                    id='NumberOfPersons'
-                                    value={state.NumberOfPersons}
-                                    placeholder="4"
-                                    required
-                                    onChange={(e) => { dispatch({ type: "NUMBER-OF-PERSONS", payload: e.target.value }) }} />
-                            </div>
-                            {state.triptype === "Outstation" ?
-                                <div className='col-6'>
-                                    <label htmlFor="CabType">Cab Type</label> <br />
-                                    <select
-                                        id='CabType'
-                                        className='input-field'
-                                        value={state.CabType}
-                                        required
-                                        onChange={(e) => { dispatch({ type: "CAB-TYPE", payload: e.target.value }) }}
-                                    >
-                                        <option>3 Seater</option>
-                                        <option>4 Seater</option>
-                                        <option>5 Seater</option>
-                                        <option>6 Seater</option>
-                                    </select>
 
-                                </div> :
-                                state.triptype === ""
-                            }
-
-
-
-                        </div>
 
                         {(state.triptype === "Local Trip" || state.triptype === "Outstation") && (
                             <div className='row mt-3'>
@@ -380,20 +325,55 @@ const BookingForm = () => {
                             </div>
                         )}
 
-                        {state.triptype === "Outstation" && (
-                            <>
-                                <div className='row mt-3'>
-                                    <div className='col-6'>
-                                        <label htmlFor="Distance">Distance <b style={{ fontSize: "12px" }}>({state.from} - {state.to} in km)</b></label>
-                                        <input type="number" className='input-field'
-                                            id='Distance'
-                                            value={state.distance}
-                                            placeholder="100"
-                                            required
-                                            onChange={handleDistanceChange} />
-                                    </div>
+                        <div className='row mt-3'>
+                            <div className='col-6'>
+                                <label htmlFor="NumberOfPersons">Number Of Persons</label>
+                                <input type="text" className='input-field'
+                                    id='NumberOfPersons'
+                                    value={state.NumberOfPersons}
+                                    placeholder="4"
+                                    required
+                                    onChange={(e) => { dispatch({ type: "NUMBER-OF-PERSONS", payload: e.target.value }) }} />
+                            </div>
 
-                                    {/* <div className='col-6'>
+                            <div className='col-6'>
+                                <label htmlFor="Distance">Distance <b style={{ fontSize: "12px" }}>({state.from} - {state.to} in km)</b></label>
+                                <input type="number" className='input-field'
+                                    id='Distance'
+                                    value={state.distance}
+                                    placeholder="100"
+                                    required
+                                    onChange={handleDistanceChange} />
+                            </div>
+
+
+
+
+                        </div>
+
+
+
+                        <div className='row mt-3'>
+
+                            <SelectCab state={state} dispatch={dispatch} />
+                            {/* <div className='col-6'>
+
+                                     <label htmlFor="CabType">Cab Type</label> <br />
+                                        <select
+                                            id='CabType'
+                                            className='input-field'
+                                            value={state.CabType}
+                                            required
+                                            onChange={(e) => { dispatch({ type: "CAB-TYPE", payload: e.target.value }) }}
+                                        >
+                                            <option>3 Seater</option>
+                                            <option>4 Seater</option>
+                                            <option>5 Seater</option>
+                                            <option>6 Seater</option>
+                                        </select>
+
+                                    </div> */}
+                            {/* <div className='col-6'>
                                         <label htmlFor="Fare">Fare (Rs)</label>
                                         <input type="text" className='input-field'
                                             id='Fare'
@@ -402,21 +382,20 @@ const BookingForm = () => {
                                         />
                                         <p style={{color:"black"}}>{state.fare}</p>
                                     </div> */}
-                                    <div className='col-6 text-right' >
-                                        {/* <label htmlFor="Fare">Fare (Rs)</label> */}
-                                        <p className='fare-text mt-4' style={{ color: "black" }}>
-                                            approx&nbsp;<b style={{ fontSize: "30px" }}>₹{state.fare}</b>
-                                        </p>
-                                        <Link to="/terms&conditions">
-                                            <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
-                                                Terms & conditions Applicable
-                                            </p>
-                                        </Link>
+                            <div className='col-6 text-right' >
+                                {/* <label htmlFor="Fare">Fare (Rs)</label> */}
+                                <p className='fare-text mt-4' style={{ color: "black" }}>
+                                    approx&nbsp;<b style={{ fontSize: "30px" }}>₹{state.fare}</b>
+                                </p>
+                                <Link to="/terms&conditions">
+                                    <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
+                                        Terms & conditions Applicable
+                                    </p>
+                                </Link>
 
-                                    </div>
-                                </div>
-                            </>
-                        )}
+                            </div>
+                        </div>
+
 
                         <div className='row mt-4'>
                             <div className="col-12 agree-tc">
@@ -429,7 +408,7 @@ const BookingForm = () => {
 
                         <div className='row mt-4'>
                             <div className="col-12 search-cab">
-                                <button type='submit'>Search Cabs</button>
+                                <button type='submit'>Book Now</button>
                             </div>
                         </div>
                     </form>
