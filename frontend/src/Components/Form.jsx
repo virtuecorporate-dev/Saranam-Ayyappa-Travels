@@ -90,37 +90,39 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/cars", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
         // navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
         
 
     };
 
-    const calculateFare = (distance) => {
-        let fare = 0;
-        if (distance >= 100 && distance < 200) {
-            fare = 5000;
-        }
-        if (distance >= 200 && distance < 300) {
-            fare = 6000;
-        } if (distance >= 300 && distance < 400) {
-            fare = 7000;
-        } if (distance >= 400 && distance < 500) {
-            fare = 8000;
-        } if (distance >= 500 && distance < 600) {
-            fare = 9000;
-        } if (distance >= 700 && distance < 800) {
-            fare = 10000;
-        }
-        return fare;
-    };
+    // const calculateFare = (distance) => {
+    //     let fare = 0;
+    //     if (distance >= 100 && distance < 200) {
+    //         fare = 5000;
+    //     }
+    //     if (distance >= 200 && distance < 300) {
+    //         fare = 6000;
+    //     } if (distance >= 300 && distance < 400) {
+    //         fare = 7000;
+    //     } if (distance >= 400 && distance < 500) {
+    //         fare = 8000;
+    //     } if (distance >= 500 && distance < 600) {
+    //         fare = 9000;
+    //     } if (distance >= 700 && distance < 800) {
+    //         fare = 10000;
+    //     }
+    //     return fare;
+    // };
 
     const handleDistanceChange = (e) => {
         const distance = e.target.value;
         dispatch({ type: "DISTANCE", payload: distance });
-        const fare = calculateFare(parseFloat(distance) || 0);
-        dispatch({ type: "FARE", payload: fare });
+        // const fare = calculateFare(parseFloat(distance) || 0);
+        // dispatch({ type: "FARE", payload: fare });
     };
+
+   
 
 
 
@@ -343,7 +345,8 @@ const BookingForm = () => {
                                     value={state.distance}
                                     placeholder="100"
                                     required
-                                    onChange={handleDistanceChange} />
+                                    onChange={handleDistanceChange}
+                                     />
                             </div>
 
 
@@ -382,18 +385,7 @@ const BookingForm = () => {
                                         />
                                         <p style={{color:"black"}}>{state.fare}</p>
                                     </div> */}
-                            <div className='col-6 text-right' >
-                                {/* <label htmlFor="Fare">Fare (Rs)</label> */}
-                                <p className='fare-text mt-4' style={{ color: "black" }}>
-                                    approx&nbsp;<b style={{ fontSize: "30px" }}>₹{state.fare}</b>
-                                </p>
-                                <Link to="/terms&conditions">
-                                    <p className='fare-explanation' style={{ color: "black", marginTop: "-20px", fontSize: "10px", textAlign: "right" }}>
-                                        Terms & conditions Applicable
-                                    </p>
-                                </Link>
-
-                            </div>
+                            
                         </div>
 
 

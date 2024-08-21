@@ -83,11 +83,13 @@
         "pricePerKm": {
             "0-25": {
                 "price": 1800,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":1800
             },
             "26-50": {
                 "price": 2500,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":2500
             },
             "51-75": {
                 "price": 63,
@@ -118,7 +120,7 @@
         "availability": true,
         "imageUrl": "./images/car.avif",
         "description": "Spacious SUV, ideal for long journeys with a larger group.",
-        "category": "Outstation"
+        "category": "Drop Trip"
     },
     {
         "carModel": "SUV 8pax + 1",
@@ -126,11 +128,13 @@
         "pricePerKm": {
             "0-25": {
                 "price": 1800,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":1800
             },
             "26-50": {
                 "price": 2500,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":2500
             },
             "51-75": {
                 "price": 63,
@@ -161,7 +165,7 @@
         "availability": true,
         "imageUrl": "./images/car.avif",
         "description": "Extra spacious SUV for even larger groups.",
-        "category": "Outstation"
+        "category": "Drop Trip"
     },
     {
         "carModel": "TT 14pax",
@@ -169,11 +173,13 @@
         "pricePerKm": {
             "0-25": {
                 "price": 2200,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":2200
             },
             "26-50": {
                 "price": 3500,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":3500
             },
             "51-75": {
                 "price": 77,
@@ -204,7 +210,7 @@
         "availability": true,
         "imageUrl": "./images/car.avif",
         "description": "Mini-bus suitable for large groups.",
-        "category": "Outstation"
+        "category": "Drop Trip"
     },
     {
         "carModel": "TT AC 14pax",
@@ -212,11 +218,13 @@
         "pricePerKm": {
             "0-25": {
                 "price": 2500,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":2500
             },
             "26-50": {
                 "price": 4500,
-                "additionalInfo": "* FOR BEST DEAL CALL US"
+                "additionalInfo": "* FOR BEST DEAL CALL US",
+                "totalFare":4500
             },
             "51-75": {
                 "price": 87,
@@ -247,6 +255,6 @@
         "availability": true,
         "imageUrl": "./images/car.avif",
         "description": "Air-conditioned mini-bus for long trips in comfort.",
-        "category": "Outstation"
+        "category": "Drop Trip"
     }
 ]

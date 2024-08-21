@@ -8,6 +8,10 @@ const pricePerKmSchema = new mongoose.Schema({
   additionalInfo: {
     type: String,
     required: false
+  },
+  totalFare: {
+    type: Number,
+    required: false
   }
 }, { _id: false }); // Disable _id field for subdocuments
 
