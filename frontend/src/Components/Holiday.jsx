@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 export default function Holiday() {
     const dispatch = useDispatch();
     const holidays = useSelector(state => state.holidays.holidays );
-    console.log("holiday",holidays);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,7 +73,11 @@ export default function Holiday() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1"></div>
+                        <div className="col-lg-1 mt-3">
+                            <Link to={`/holidayEdit/${holiday.id}`}>
+                            <button className="update"><i class="fa-solid fa-pen-to-square "></i>Update</button></Link>
+                            <button className="delete"><i class="fa-solid fa-bucket "></i>Delete</button>
+                        </div>
                     </div>
                 ))}
             </div>

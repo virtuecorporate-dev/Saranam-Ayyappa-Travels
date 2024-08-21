@@ -5,7 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function(){
-    const[name,setName]=useState([]);
+    const[name,setName]=useState("");
     const[imageUrl,setImageUrl]=useState('');
     const[category,setCategory]=useState('');
     const[services,setServices]=useState([]);
@@ -26,30 +26,45 @@ export default function(){
         setImageUrl(URL.createObjectURL(selectedFile))
     }
 
-    const handleSubmit= async(e)=>{
+    const handleSubmit = async (e) => {
         try {
-            e.preventDefault(); 
-            const formData= new formData();
-            formData.append("name",name);
-            formData.append("services",services);
-            formData.append("category",category);
-            if(file){
-                formData.append("image",imageUrl);
-            }
+            e.preventDefault();
     
-            const response = await axios.post('http://localhost:8000/api/v1/createHoliday',formData,{
-                headers:{
-                    "Content-type" : "multipart/form-data"
-                }
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("category", category);
+            formData.append("imageUrl", file);
+    
+            services.forEach((service, index) => {
+                formData.append(`services[${index}][name]`, service.name);
             });
-          
-            dispatch(addHoliday(response.data.holidays));  
-            navigate('/holiday')
+    
+            const response = await axios.post(
+                'http://localhost:8000/api/v1/createHoliday',
+                formData,
+                {
+                    headers: {
+                        "Content-type": "multipart/form-data",
+                    },
+                }
+            );
+    
+            // Log the response data to understand its structure
+            console.log("Response data:", response.data);
+    
+            // Handle response based on the actual structure
+            if (response.data && response.data.holiday) {
+                dispatch(addHoliday(response.data.holiday));
+                navigate('/holiday');
+            } else {
+                console.error("Holiday data is undefined or missing in response.");
+            }
         } catch (error) {
-            console.log("error",error.message)
+            console.log("Error:", error.message);
         }
-      
-    }
+    };
+    
+    
     return(
         <Fragment>
                 <div className="container create">
@@ -69,21 +84,26 @@ export default function(){
                             </button>
                         </div>
                         <div className="form-group">
-                            {
-                                services.map((service,index)=>{
+
                                     <ul>
+                                    {services.map((service,index)=>(
                                         <li key={index}>{service.name}</li>
+                                    ))}
                                     </ul>
-                                })
-                            }
+                             
+                            
                         </div>
                         <div className="form-group">
                             <label htmlFor="category">category</label>
-                            <input type="text" id="category" onchange={(e)=>setCategory(e.target.value)} />
+                            {/* <input type="text" id="category" onChange={(e)=>setCategory(e.target.value)} /> */}
+                            <select name="categoroy" id="" onChange={(e)=>setCategory(e.target.value)}>
+                                <option value="Basic">Basic</option>
+                                <option value="Premius">Premium</option>
+                            </select>
                         </div>
                         <div className="form-group">
                             <label htmlFor="imageUrl">Image</label>
-                            <input type="file" id="imageUrl" onchange={handleFileChange} />
+                            <input type="file" id="imageUrl" onChange={handleFileChange} />
                         </div>
 
                         {
