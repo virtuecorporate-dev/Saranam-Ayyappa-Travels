@@ -45,7 +45,7 @@ function Admin() {
             </Link>
           </div>
           <div className="col-lg-3 col-sm-12">
-            <Link to='/createHoliday'>
+            <Link to='/holiday'>
               <button>Holiday Package</button>
             </Link>
           </div>

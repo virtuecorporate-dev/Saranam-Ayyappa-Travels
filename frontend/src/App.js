@@ -22,6 +22,7 @@ import TourPackages from './Pages/Tourpackages';
 import { Table } from 'react-bootstrap';
 import Holiday from './Components/Holiday';
 import CreateHoliday from './Components/createHoliday';
+import UpdateHoliday from './Components/updateHoliday';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -43,12 +44,12 @@ function App() {
             <Route path="/edit/:id" element={<UpdateTable />} />
             <Route path="/confirmbooking" element={<ConfirmBooking />} />
             <Route path="/contactus" element={<Contact />} />
-            <Route path="/login" element={<Login1 setIsAuthenticated={setIsAuthenticated} />} />
             <Route path="/terms&conditions" element={<TermsConditions />} />
             <Route path="/holidayPackage" element={<Service />} />
             <Route path='/tourPackage' element={<TourPackages/>}/>
             <Route path='/holiday' element={<Holiday/>}/>
             <Route path='/holiday/create' element={<CreateHoliday/>}/>
+            <Route path='/holidayEdit/:id' element={<UpdateHoliday/>}/>
           </Routes>
           <Footer />
         </div>
