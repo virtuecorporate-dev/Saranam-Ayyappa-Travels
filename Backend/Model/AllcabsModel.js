@@ -15,6 +15,36 @@ const pricePerKmSchema = new mongoose.Schema({
   }
 }, { _id: false }); // Disable _id field for subdocuments
 
+const HourBasisSchema = new mongoose.Schema({
+  minCharge: {
+    type: Number,
+    required: true 
+  },
+  extraHourCharge: {
+    type: String,
+    required: false
+  },
+  extraKmCharge: {
+    type: Number,
+    required: false
+  }
+}, { _id: false }); // Disable _id field for subdocuments
+
+const DayUseSchema = new mongoose.Schema({
+  perDayRent: {
+    type: Number,
+    required: true 
+  },
+  freeKm: {
+    type: String,
+    required: false
+  },
+  extraKmCharge: {
+    type: Number,
+    required: false
+  }
+}, { _id: false }); // Disable _id field for subdocuments
+
 const cabSchema = new mongoose.Schema({
   cabModel: {
     type: String,
@@ -53,9 +83,14 @@ const cabSchema = new mongoose.Schema({
     '151-200': pricePerKmSchema,
     '201-250': pricePerKmSchema,
     '>300': pricePerKmSchema
+  },
+  localTripType:{
+    "Hour-Basis":HourBasisSchema,
+    "Day-Use": DayUseSchema
   }
 }, { timestamps: true });
 
 const cabModel = mongoose.model('cab', cabSchema);
 
 module.exports = cabModel;
+

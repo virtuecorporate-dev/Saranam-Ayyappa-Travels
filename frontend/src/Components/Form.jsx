@@ -25,7 +25,8 @@ const BookingForm = () => {
         mobile: "",
         mail: "",
         distance: "",
-        fare: ""
+        fare: "",
+        LocalTripType: "Hour-Basis"
     };
 
     const reducer = (state, action) => {
@@ -67,6 +68,8 @@ const BookingForm = () => {
                 return { ...state, NumberOfPersons: action.payload };
             case "CAB-TYPE":
                 return { ...state, CabType: action.payload };
+            case "LOCAL-TRIP-TYPE":
+                return { ...state, LocalTripType: action.payload };
             case "DISTANCE":
                 return { ...state, distance: action.payload };
             case "FARE":
@@ -92,7 +95,7 @@ const BookingForm = () => {
 
         navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
         // navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
-        
+
 
     };
 
@@ -122,7 +125,7 @@ const BookingForm = () => {
         // dispatch({ type: "FARE", payload: fare });
     };
 
-   
+
 
 
 
@@ -252,7 +255,7 @@ const BookingForm = () => {
 
                             <div className='col-4'>
                                 <label htmlFor="PickUpTime">Pick Up Time</label> <br />
-                                <input type="text" className='input-field'
+                                <input type="time" className='input-field'
                                     id='PickUpTime'
                                     value={state.pickUpTime}
                                     placeholder="10.00 am"
@@ -317,7 +320,7 @@ const BookingForm = () => {
 
                                 <div className='col-4'>
                                     <label htmlFor="ReturnTime">Return Time</label>
-                                    <input type="text" className='input-field'
+                                    <input type="time" className='input-field'
                                         id='ReturnTime'
                                         value={state.ReturnTime}
                                         placeholder='2.00 pm'
@@ -326,6 +329,27 @@ const BookingForm = () => {
                                 </div>
                             </div>
                         )}
+
+                        {state.triptype === "Local Trip" && (
+                            <div className='row mt-3'>
+                                <div className='col-10'>
+                                    <label htmlFor="LocalTripType">Select Trip Type</label>
+                                    <select
+                                        id='LocalTripType'
+                                        className='input-field'
+                                        value={state.LocalTripType}
+                                        required
+                                        onChange={(e) => { dispatch({ type: "LOCAL-TRIP-TYPE", payload: e.target.value }) }}
+                                    >
+                                        <option value="Hour-Basis">Hour-Basis</option>
+                                        <option value="Day-Use">Day-Use</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                        )
+
+                        }
 
                         <div className='row mt-3'>
                             <div className='col-6'>
@@ -346,7 +370,7 @@ const BookingForm = () => {
                                     placeholder="100"
                                     required
                                     onChange={handleDistanceChange}
-                                     />
+                                />
                             </div>
 
 
@@ -385,7 +409,7 @@ const BookingForm = () => {
                                         />
                                         <p style={{color:"black"}}>{state.fare}</p>
                                     </div> */}
-                            
+
                         </div>
 
 
