@@ -50,13 +50,12 @@ function Admin() {
             </Link>
           </div>
           <div className="col-lg-3 col-sm-12">
-            <Link to='/createTour'>
+            <Link to='/tour'>
               <button>Tour Package</button>
             </Link>
           </div>
         </div>
       </div>
-      <Table />
     </div>
   );
 }

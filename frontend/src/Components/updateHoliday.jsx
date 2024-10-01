@@ -1,137 +1,136 @@
-import axios from "axios";
-import { Fragment, useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Fragment, useState } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { useParams , useNavigate} from "react-router-dom"
 import { updateHoliday } from "../Slice/holidaySlice";
+import axios from "axios";
 
-export default function UpdateHoliday() {
-    const holidays = useSelector(state => state.holidays.holidays);
-    console.log("holidays", holidays);
-
-    const { id } = useParams();
-    const navigate = useNavigate();
+export default function UpdateHoliday(){
+    const holidays= useSelector(state=>state.holidays.holidays)
+    const {id} = useParams();
+    const holiday = holidays.find(u=>u.id === id);
+    
+    const[name,setName] = useState(holiday?.name || '');
+    const[services,setServices]=useState(holiday?.services ||[]);
+    const[imageUrl,setImageUrl] = useState(holiday?.imageUrl || '');
+    const[pdf,setPdf]=useState(holiday?.pdf || '');
+    const[serviceName,setServiceName]=useState('');
+    const[category,setCategory]=useState(''); 
+    const[file,setFile] = useState(null)
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-    // Find the holiday to update from the list using the ID
-    const holiday = holidays.find(u => u._id === id); // Fixed `id` to `_id` assuming MongoDB object ID
-    console.log("holiday", holiday);
-
-    // Initialize state with the holiday details
-    const [name, setName] = useState(holiday?.name || "");
-    const [imageUrl, setImageUrl] = useState(holiday?.imageUrl || "");
-    const [services, setServices] = useState(holiday?.services || []);
-    const [serviceName, setServiceName] = useState("");
-    const [category, setCategory] = useState(holiday?.category || "");
-    const [file, setFile] = useState(null);
-
-    useEffect(() => {
-        if (holiday) {
-            setName(holiday.name);
-            setImageUrl(holiday.imageUrl);
-            setServices(holiday.services);
-            setCategory(holiday.category);
-        }
-    }, [holiday]);
-
-    const handleFileChange = (e) => {
-        const selectedFile = e.target.files[0];
-        setFile(selectedFile);
-        setImageUrl(URL.createObjectURL(selectedFile));
-    };
-
-    const addService = (e) => {
+    const addService =(e)=>{
         e.preventDefault();
-        if (serviceName.trim()) {
-            setServices([...services, { name: serviceName }]);
-            setServiceName("");
+        if(serviceName.trim()){
+            setServices([...services,{name:serviceName}]);
+        setServiceName('')
         }
-    };
+        
+    }
 
-    const deleteService = (serviceId) => {
-        const updatedServices = services.filter(service => service._id !== serviceId);
-        setServices(updatedServices);
-    };
+    const removeService = (index)=>{
+        const updatedServices= services.filter(i=>i !== index);
+        setServices(updatedServices)
+    }
 
-    const handleUpdate = async (e) => {
+    const handleFileChange =(e)=>{
+        const selectedFile = e.target.files[0];
+        setFile(selectedFile)
+        if(selectedFile){
+            setImageUrl(URL.createObjectURL(selectedFile))
+        }
+    }   
+    const handlePdfChange = (e)=>{
+        const selectedPdf = e.target.files[0];
+        if(selectedPdf){
+            setPdf(selectedPdf)
+        }
+    }
+
+   
+    const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const formData = { name, services, imageUrl, category };
+            const formData = { name, category, services, imageUrl, pdf };
             const response = await axios.put(`http://localhost:8000/api/v1/updateHoliday/${id}`, formData);
-            dispatch(updateHoliday(response.data.holidays));
-            navigate('/holiday');
+
+            dispatch(updateHoliday(response.data.holiday));
+            navigate('/tour');
         } catch (error) {
-            console.log("error", error.message);
+            console.log(error.message);
         }
     };
 
-    return (
+    return(
         <Fragment>
-            <div className="container create">
-                <form className="create-table" onSubmit={handleUpdate}>
-                    <h2 className="create-head">Update Your Holiday Package Details</h2>
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input
-                            type="text"
-                            id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                        />
+        <div className="container create">
+            <form className="create-table" onSubmit={handleSubmit}>
+                <div className="create-head">
+                    <h2>Update Your Holiday Details</h2>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="serviceName">Services</label>
+                    <input
+                        type="text"
+                        id="serviceName"
+                        value={serviceName}
+                        onChange={(e) => setServiceName(e.target.value)}
+                    />
+                    <button onClick={addService}>Add Services</button>
+                </div>
+                <div className="form-group">
+                    <ul>
+                        {services.map((service, index) => (
+                            <li key={index}>{service.name}
+                            <button onClick={()=>removeService(index)}>Remove</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="category">Category</label>
+                    <select
+                        name="category"
+                        id="category"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        <option value="Basic">Basic</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+               
+                <div className="form-group">
+                    <label htmlFor="imageUrl">Image</label>
+                    <input type="file" id="imageUrl" accept="image/*" onChange={handleFileChange} />
+                </div>
+
+                {imageUrl && (
+                    <div>
+                        <img src={imageUrl} alt={name} style={{ width: '200px', height: 'auto' }} />
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="services">Services</label>
-                        <input
-                            type="text"
-                            id="services"
-                            value={serviceName}
-                            onChange={(e) => setServiceName(e.target.value)}
-                        />
-                        <button onClick={addService}>Add Service</button>
+                )}
+
+                <div className="form-group">
+                    <label htmlFor="pdfFile">PDF</label>
+                    <input type="file" accept="application/pdf" id="pdfFile" onChange={handlePdfChange} />
+                </div>
+
+                {pdf && (
+                    <div>
+                        <a href={URL.createObjectURL(pdf)} target="_blank" rel="noopener noreferrer">
+                            View PDF
+                        </a>
                     </div>
-                    <div className="form-group">
-                        <ul>
-                            {services.map((service, index) => (
-                                <li key={index}>
-                                    {service.name}
-                                    <button onClick={() => deleteService(service._id)}>
-                                        <i className="fa-regular fa-circle-xmark"></i>
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="category">Category</label>
-                        <select
-                            name="category"
-                            id="category"
-                            value={category}
-                            onChange={(e) => setCategory(e.target.value)}
-                        >
-                            <option value="basic">Basic</option>
-                            <option value="premium">Premium</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="image">Image</label>
-                        <input
-                            type="file"
-                            id="image"
-                            onChange={handleFileChange}
-                        />
-                        {imageUrl && (
-                            <div>
-                                <img
-                                    src={imageUrl}
-                                    alt={name}
-                                    style={{ width: '200px', height: 'auto' }}
-                                />
-                            </div>
-                        )}
-                    </div>
-                    <button className="create-submit mb-3" type="submit">Update</button>
-                </form>
-            </div>
-        </Fragment>
-    );
+                )}
+
+                <button className="create-submit mb-3" type="submit">Update</button>
+            </form>
+        </div>
+    </Fragment>
+    )
 }

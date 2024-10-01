@@ -19,11 +19,13 @@ import Login1 from './Pages/Login1';
 import { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import TourPackages from './Pages/Tourpackages';
-import { Table } from 'react-bootstrap';
 import Holiday from './Components/Holiday';
 import CreateHoliday from './Components/createHoliday';
 import UpdateHoliday from './Components/updateHoliday';
-
+import Tour from './Components/tour';
+import CreateTour from './Components/createTour';
+import UpdateTour from './Components/updateTour';
+import Table from './Components/Table'
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -50,6 +52,9 @@ function App() {
             <Route path='/holiday' element={<Holiday/>}/>
             <Route path='/holiday/create' element={<CreateHoliday/>}/>
             <Route path='/holidayEdit/:id' element={<UpdateHoliday/>}/>
+            <Route path='/tour' element={<Tour/>}/>
+            <Route path='/tour/create' element={<CreateTour/>}/>
+            <Route path='tourEdit/:id' element={<UpdateTour/>}/>
           </Routes>
           <Footer />
         </div>

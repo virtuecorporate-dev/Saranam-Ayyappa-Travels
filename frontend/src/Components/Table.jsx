@@ -3,18 +3,20 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteCar, getAllCar } from '../Slice/carsSlice';
 import { Link } from 'react-router-dom';
+import Admin from "../Pages/Admin";
+
 
 function Table() {
     const dispatch = useDispatch();
     const cars = useSelector(state => state.Cars.Cars || [])
     
-
+    console.log("cars",cars)
     const handleDelete = (id) => {
         try {
             const response1 = axios.delete(`http://localhost:8000/api/v1/delete/${id}`)
             dispatch(deleteCar(response1({ id })))
         } catch (error) {
-
+            console.loge(error.message)
         }
     }
 
@@ -35,6 +37,7 @@ function Table() {
 
     return (
         <Fragment>
+                <Admin/>
                <div className="container mb-3">
                
                 <div className="table-add mt-4">

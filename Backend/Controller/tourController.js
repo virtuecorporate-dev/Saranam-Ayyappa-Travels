@@ -2,7 +2,8 @@ const tourModel = require('../Model/tourModel');
 const path=require('path');
 const multer = require('multer');
 const fs = require('fs');
-const dir = path.join(__dirname, 'public', 'images');
+const dir = path.join(__dirname, '../public/images');
+console.log(dir)
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -40,33 +41,51 @@ exports.getAllTour= async(req,res)=>{
 // /api/vi/createTour
 
 exports.createTour = [
-    upload.single('imageUrl'), 
+    upload.fields([
+        { name: "imageUrl", maxCount: 1 },
+        { name: "pdf", maxCount: 1 }
+    ]),
     async (req, res) => {
         try {
             const { name, numberOfPersons, services, category } = req.body;
-            const imageUrl = req.file ? `/images/${req.file.filename}` : "";
 
-            if (!imageUrl) {
+            // Ensure image and PDF file URLs are set correctly
+            const imageUrl = req.files && req.files['imageUrl'] ? `./images/${req.files['imageUrl'][0].filename}` : "";
+            const pdf = req.files && req.files['pdf'] ? `./images/${req.files['pdf'][0].filename}` : "";
+
+            // Check if files are uploaded
+            if (!imageUrl || !pdf) {
                 return res.status(400).json({
                     success: false,
-                    message: 'Image not uploaded'
+                    message: 'Image or PDF not uploaded'
                 });
             }
 
+            // Convert `services` to an array of objects with the required `name` field
+            const servicesArray = Array.isArray(services) 
+                ? services.map(service => ({ name: service })) 
+                : [{ name: services }];
 
+            // Convert `category` to an array if not already
+            const categoryArray = Array.isArray(category) ? category : [category];
+
+            // Create new tour object
             const newTour = new tourModel({
                 name,
                 numberOfPersons,
                 imageUrl,
-                services: Array.isArray(services) ? services : [services],
-                category: Array.isArray(category) ? category : [category]
+                pdf,
+                services: servicesArray,
+                category: categoryArray
             });
 
+            // Save the new tour to the database
             await newTour.save();
 
+            // Send success response
             res.status(200).json({
                 success: true,
-                tour: newTour // Return the saved document
+                tour: newTour
             });
         } catch (error) {
             res.status(500).json({
@@ -76,6 +95,7 @@ exports.createTour = [
         }
     }
 ];
+
 
 // http://localhost:8000/api/v1/updateTour/id
 
@@ -87,6 +107,7 @@ exports.updateTour=async(req,res)=>{
                 name:req.body.name,
                 numberOfPersons:req.body.numberOfPersons,
                 imageUrl:req.body.imageUrl,
+                pdf:req.body.pdf,
                 services:req.body.services,
                 category:req.body.category
         },

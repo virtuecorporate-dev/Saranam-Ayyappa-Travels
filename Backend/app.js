@@ -18,18 +18,10 @@ app.use(cors({
 
 app.use(express.json())
 app.use(express.static(path.join(__dirname, 'public')));
+// app.use('/controller-images', express.static(path.join(__dirname, 'controllers/public/images')));
 
-// Multer setup for file uploads
-const upload = multer({
-    storage: multer.diskStorage({
-        destination: function (req, file, cb) {
-            cb(null, path.join(__dirname, 'public/images')); // Adjust the path if needed
-        },
-        filename: function (req, file, cb) {
-            cb(null, file.originalname);
-        }
-    })
-});
+
+
 
 const router=require('./Router')
 
