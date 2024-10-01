@@ -119,6 +119,7 @@ const SelectCab = ({ state, dispatch }) => {
         const selectedCab = `${cabbrand} ${cabmodel} - ${cab.seats} Seater`;
         dispatch({ type: "CAB-TYPE", payload: selectedCab });
         dispatch({ type: "FARE", payload: fareForCab });
+        dispatch({ type: "SELECTED-CAB", payload: cab})
         closePopup();
     };
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
+import { Spinner } from 'react-bootstrap'
 
 const ConfirmBooking = () => {
   const { state } = useLocation();
@@ -35,6 +36,8 @@ const ConfirmBooking = () => {
     }));
   };
 
+  const [loading, setLoading] = useState(false)
+
   const BookNow = async (e) => {
     e.preventDefault();
     const bookingDetails = {
@@ -42,6 +45,7 @@ const ConfirmBooking = () => {
       ...form,
       selectedCab: state.selectedCab
     };
+    setLoading(true)
 
     try {
       const response = await fetch('http://localhost:8000/api/v1/sendemail', {
@@ -53,25 +57,22 @@ const ConfirmBooking = () => {
       });
 
       const data = await response.json();
-    toast.success('Your booking is confirmed our team will contact you soon');
-    
-
-    setForm({
-    name: "",
-    mobile: "",
-    mail: ""
-    })
-
-    //   if (response.ok) {
-    //     alert("Email sent successfully!");
-    //     console.log('Success:', data);
-    //   } else {
-    //     alert("Failed to send email: " + data.message);
-    //     console.error('Error:', data);
-    //   }
+      if (data) {
+        toast.success('Your booking is confirmed our team will contact you soon');
+      }
+      else {
+        toast.warning("Failed to Book Your cab, Please contact Our Customer Support")
+      }
+      setForm({
+        name: "",
+        mobile: "",
+        mail: ""
+      })
     } catch (error) {
       alert("Error sending email: " + error.message);
       console.error('Error:', error);
+    } finally{
+      setLoading(false)
     }
   };
 
@@ -89,14 +90,14 @@ const ConfirmBooking = () => {
                 </svg> &nbsp; &nbsp;
                 {state.to}
               </h4>
-              <h4>Date-{state.PickUpdate} </h4>
-              <h4>Time-{state.pickUpTime}</h4>
+              <h4>Date - {state.PickUpdate} </h4>
+              <h4>Time - {state.pickUpTime}</h4>
             </div>
           </div>
         </div>
       </div>
 
-      <div className='row mt-5 mb-5'> 
+      <div className='row mt-5 mb-5'>
         <div className='col-12'>
           <div className='container p-0'>
             <div className='row'>
@@ -127,7 +128,7 @@ const ConfirmBooking = () => {
               </div>
               <div className='col-12 col-lg-4'>
                 <div className='price-details'>
-                  <h4>  <b> Total Price - ₹{state.selectedCab.price}</b> </h4>
+                  <h4>  <b> Total Price - ₹{state.fare} approx</b> </h4>
                 </div>
                 <div className='traveller-details mt-4'>
                   <h6>Fill Your Details </h6>
@@ -135,29 +136,31 @@ const ConfirmBooking = () => {
                     <div className='field'>
                       <label className='mt-0' htmlFor="name">Name</label> <br />
                       <input type="text"
-                             id='name'
-                             value={form.name}
-                             onChange={handleName}
-                             required />
+                        id='name'
+                        value={form.name}
+                        onChange={handleName}
+                        required />
                     </div>
                     <div className='field'>
                       <label htmlFor="mobile">Mobile</label> <br />
                       <input type="text"
-                             id='mobile'
-                             value={form.mobile}
-                             onChange={handleMobile}
-                             required />
+                        id='mobile'
+                        value={form.mobile}
+                        onChange={handleMobile}
+                        required />
                     </div>
                     <div className='field'>
                       <label htmlFor="mail">Mail Id</label> <br />
                       <input type="email"
-                             id='mail'
-                             value={form.mail}
-                             onChange={handleMail}
-                             required />
+                        id='mail'
+                        value={form.mail}
+                        onChange={handleMail}
+                        required />
                     </div>
                     <div>
-                      <button type='submit'>Book Now</button>
+                      <button type='submit' disabled={loading}>
+                        {loading ? <Spinner animation="border" size="sm" /> : 'Book Now'}
+                      </button>
                     </div>
                   </form>
                 </div>

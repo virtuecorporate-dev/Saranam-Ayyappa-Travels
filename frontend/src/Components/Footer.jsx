@@ -22,10 +22,10 @@ export default function Footer() {
                             <div className='footer-content pt-5'>
                                 <h3>Quick Links</h3>
                                 <ul >
-                                    <li><Link to='/home' className='text-light no-underline'>Home</Link></li>
-                                    <li><Link to='/about' className='text-light no-underline'>About</Link></li>
-                                    <li><Link to='/products'className='text-light no-underline'>Service</Link></li>
-                                    <li><Link to='/contact' className='text-light no-underline'>Book a bus</Link></li>
+                                    <li><Link to='/home' className='text-light no-underline'  style={{ "text-decoration": "none", color: "white" }}>Home</Link></li>
+                                    <li><Link to='/about' className='text-light no-underline' style={{ "text-decoration": "none", color: "white" }}>About</Link></li>
+                                    <li><Link to='/products'className='text-light no-underline' style={{ "text-decoration": "none", color: "white" }}>Service</Link></li>
+                                    <li><Link to='/contact' className='text-light no-underline' style={{ "text-decoration": "none", color: "white" }}>Book a bus</Link></li>
                                 </ul>
 
                             </div>
@@ -35,10 +35,10 @@ export default function Footer() {
                             <div className='footer-content pt-5'>
                                 <h3>Site Links</h3>
                                 <ul>
-                                    <li><Link to='/cart' className='text-light no-underline'>Rental Details</Link></li>
-                                    <li><Link to='/comboproducts' className='text-light no-underline'>Drop</Link></li>
-                                    <li> <Link to={"/privacy-policy"} className='text-light no-underline'> Privacy Policy</Link></li>
-                                    <li> <Link to={"/terms&conditions"} className='text-light no-underline'> Terms & Conditions</Link></li>
+                                    <li><Link to='/cart' className='text-light no-underline'  style={{ "text-decoration": "none", color: "white" }}>Rental Details</Link></li>
+                                    <li><Link to='/comboproducts' className='text-light no-underline'  style={{ "text-decoration": "none", color: "white" }}>Drop</Link></li>
+                                    <li> <Link to={"/privacy-policy"} className='text-light no-underline'  style={{ "text-decoration": "none", color: "white" }}> Privacy Policy</Link></li>
+                                    <li> <Link to={"/terms&conditions"} className='text-light no-underline'  style={{ "text-decoration": "none", color: "white" }}> Terms & Conditions</Link></li>
                                 </ul>
 
                             </div>
@@ -62,12 +62,22 @@ export default function Footer() {
                             <div className='footer-content pt-5'>
                                 <h3>Address</h3>
                                 <p>
-                                    XYZ Corporation
-                                    1234 Elm Street
-                                    Suite 567
-                                    Springfield, IL 62704
-                                    USA
+                                No 13, Thadagam Road, 
+                                Somayampalayam Post, Kanuvai, 
+                                Coimbatore
+                                641108.
                                 </p>
+
+                            </div>
+                        </div>
+
+                        <div className='col-12 col-md-3 footer-content-col' >
+                            <div className='footer-content pt-5'>
+                                <h3>Contact</h3>
+                                <a className='p-0'  style={{ "text-decoration": "none", color: "white" }} href="tel:9994074471"><p  className='my-0'>9994074471</p></a>
+                                <a  className='p-0'  style={{ "text-decoration": "none", color: "white" }} href="tel:9994074471"><p  className='my-0'>9994074471</p></a>
+                                <a  className='p-0'  style={{ "text-decoration": "none", color: "white" }} href="tel:9443403533."><p  className='my-0'>9443403533</p></a>
+                                
 
                             </div>
                         </div>

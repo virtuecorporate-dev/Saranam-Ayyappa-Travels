@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 import SelectCab from './SelectCab';
@@ -26,7 +26,8 @@ const BookingForm = () => {
         mail: "",
         distance: "",
         fare: "",
-        LocalTripType: "Hour-Basis"
+        LocalTripType: "Hour-Basis",
+        selectedCab:null
     };
 
     const reducer = (state, action) => {
@@ -67,13 +68,19 @@ const BookingForm = () => {
             case "NUMBER-OF-PERSONS":
                 return { ...state, NumberOfPersons: action.payload };
             case "CAB-TYPE":
+               
                 return { ...state, CabType: action.payload };
+              
+                
             case "LOCAL-TRIP-TYPE":
                 return { ...state, LocalTripType: action.payload };
             case "DISTANCE":
                 return { ...state, distance: action.payload };
             case "FARE":
                 return { ...state, fare: action.payload };
+            case "SELECTED-CAB":
+                console.log(action.payload.brand);
+                return{...state, selectedCab: action.payload}   
             default:
                 return state;
         }
@@ -93,30 +100,12 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
-        // navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", { state: { ...state,PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
 
 
     };
 
-    // const calculateFare = (distance) => {
-    //     let fare = 0;
-    //     if (distance >= 100 && distance < 200) {
-    //         fare = 5000;
-    //     }
-    //     if (distance >= 200 && distance < 300) {
-    //         fare = 6000;
-    //     } if (distance >= 300 && distance < 400) {
-    //         fare = 7000;
-    //     } if (distance >= 400 && distance < 500) {
-    //         fare = 8000;
-    //     } if (distance >= 500 && distance < 600) {
-    //         fare = 9000;
-    //     } if (distance >= 700 && distance < 800) {
-    //         fare = 10000;
-    //     }
-    //     return fare;
-    // };
+   
 
     const handleDistanceChange = (e) => {
         const distance = e.target.value;
@@ -301,7 +290,7 @@ const BookingForm = () => {
                         {(state.triptype === "Local Trip" || state.triptype === "Outstation") && (
                             <div className='row mt-3'>
                                 <div className='col-4'>
-                                    <label htmlFor="returnLocation">Return Location </label>
+                                    <label htmlFor="returnLocation">Return Location <b style={{ fontSize: "12px" }}>(Distination is Garage) </b></label>
                                     <input type="text" className='input-field'
                                         id='DropLoaction'
                                         value={state.ReturnLocation}
