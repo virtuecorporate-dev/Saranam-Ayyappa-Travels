@@ -96,7 +96,7 @@ const ConfirmBooking = () => {
         </div>
       </div>
 
-      <div className='row mt-5 mb-5'>
+      <div className='row mt-5 mb-5'> 
         <div className='col-12'>
           <div className='container p-0'>
             <div className='row'>

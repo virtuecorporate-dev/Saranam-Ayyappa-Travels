@@ -1,10 +1,121 @@
+// const cabModel = require("../Model/AllcabsModel");
+// exports.getfilteredCabs = async (req, res) => {
+//     try {
+//         const { category, distance, localTripType } = req.query;
+//         const distanceInKm = parseInt(distance, 10);
+
+//         let distanceKey = "";
+//         if (distanceInKm >= 0 && distanceInKm <= 25) {
+//             distanceKey = "0-25";
+//         } else if (distanceInKm > 25 && distanceInKm <= 50) {
+//             distanceKey = "26-50";
+//         } else if (distanceInKm > 50 && distanceInKm <= 75) {
+//             distanceKey = "51-75";
+//         } else if (distanceInKm > 75 && distanceInKm <= 100) {
+//             distanceKey = "76-100";
+//         } else if (distanceInKm > 100 && distanceInKm <= 150) {
+//             distanceKey = "101-150";
+//         } else if (distanceInKm > 150 && distanceInKm <= 200) {
+//             distanceKey = "151-200";
+//         } else if (distanceInKm > 200 && distanceInKm <= 250) {
+//             distanceKey = "201-250";
+//         } else if (distanceInKm > 300) {
+//             distanceKey = ">300";
+//         }
+
+//         let OSDistanceKey = "";
+//         if (distanceInKm >= 0 && distanceInKm <= 400) {
+//             OSDistanceKey = "0-400";
+//         } else if (distanceInKm > 400) {
+//             OSDistanceKey = ">400";
+//         }
+
+
+//         const filterConditions = { category };
+
+//         if (category === "Drop Trip") {
+//             filterConditions[`pricePerKm.${distanceKey}`] = { $exists: true };
+//         }
+
+
+
+//         // if (category === "Local Trip" && localTripType) {
+//         //     filterConditions[`localTripType.${localTripType}`] = { $exists: true };
+//         // }
+
+//         if (category === "Local Trip" && localTripType) {
+//             const pricingKey = localTripType === "Hour-Basis" ? "minCharge" : "perDayRent"; // Example logic for key selection
+//             filterConditions[`localTripType.${localTripType}.${pricingKey}`] = { $exists: true };
+//         }
+
+//         if (category === "Outstation") {
+//             filterConditions[`pricePerday.${OSDistanceKey}`] = { $exists: true };
+//         }
+
+//         const filteredCabs = await cabModel.find(filterConditions).lean();
+
+
+//         const result = filteredCabs.map(cab => {
+//             if (category === "Drop Trip") {
+
+//                 return {
+//                     ...cab,
+//                     pricePerKm: {
+//                         [distanceKey]: cab.pricePerKm[distanceKey]
+//                     },
+//                     // distance: distanceInKm 
+//                 };
+//             } 
+//              if (category === "Local Trip" && localTripType) {
+
+//                 return {
+//                     ...cab,
+//                     localTripType: {
+//                         [localTripType]: cab.localTripType[localTripType]
+//                     }
+//                 };
+//             } 
+//             if(category === "Outstation"){
+//                 return {
+//                     ...cab,
+//                     pricePerday: {
+//                         [OSDistanceKey]: cab.pricePerday[OSDistanceKey]
+//                     },
+//                     // distance: distanceInKm 
+//                 }; 
+//             }
+//             return cab;
+//         });
+
+        
+
+//         if (result.length === 0) {
+//             return res.status(404).json({
+//                 success: false,
+//                 message: "No cabs found matching the criteria.",
+//             });
+//         }
+//         res.json({
+//             success: true,
+//             filteredCabs: result
+//         });
+//     } catch (error) {
+//         console.log(error.message);
+//         res.status(500).json({
+//             success: false,
+//             message: "Internal server error",
+//         });
+//     }
+// };
+
 const cabModel = require("../Model/AllcabsModel");
+
 exports.getfilteredCabs = async (req, res) => {
     try {
         const { category, distance, localTripType } = req.query;
         const distanceInKm = parseInt(distance, 10);
 
-        // Determine the correct range key based on the distance (only for Drop Trip)
+        // Distance Key for Drop Trip and Outstation
         let distanceKey = "";
         if (distanceInKm >= 0 && distanceInKm <= 25) {
             distanceKey = "0-25";
@@ -24,47 +135,65 @@ exports.getfilteredCabs = async (req, res) => {
             distanceKey = ">300";
         }
 
-        // Build the filter conditions based on the category
+        // Outstation Distance Key
+        let OSDistanceKey = "";
+        if (distanceInKm >= 0 && distanceInKm <= 400) {
+            OSDistanceKey = "0-400";
+        } else if (distanceInKm > 400) {
+            OSDistanceKey = ">400";
+        }
 
         const filterConditions = { category };
-        // If it's a Drop Trip, filter by pricePerKm and distance
 
+        // Drop Trip: Ensure price for the selected distance range exists
         if (category === "Drop Trip") {
             filterConditions[`pricePerKm.${distanceKey}`] = { $exists: true };
         }
 
-        // If it's a Local Trip, filter by localTripType instead
-
+        // Local Trip: Ensure data for the selected localTripType and respective pricing exists
         if (category === "Local Trip" && localTripType) {
-            filterConditions[`localTripType.${localTripType}`] = { $exists: true };
+            if (localTripType === "Hour-Basis") {
+                filterConditions[`localTripType.${localTripType}.minCharge`] = { $exists: true };
+            } else {
+                filterConditions[`localTripType.${localTripType}.perDayRent`] = { $exists: true };
+            }
         }
 
-        // Find the filtered cabs
+        // Outstation: Ensure data for the selected distance range exists
+        if (category === "Outstation") {
+            filterConditions[`pricePerday.${OSDistanceKey}`] = { $exists: true };
+        }
+
         const filteredCabs = await cabModel.find(filterConditions).lean();
-        // Process the result based on the category
+
+        // Format the result to include only relevant fields
         const result = filteredCabs.map(cab => {
             if (category === "Drop Trip") {
-                // For Drop Trip, return the pricePerKm based on distance
                 return {
                     ...cab,
                     pricePerKm: {
                         [distanceKey]: cab.pricePerKm[distanceKey]
-                    },
-                    // distance: distanceInKm 
+                    }
                 };
-            } else if (category === "Local Trip" && localTripType) {
-                // For Local Trip, return the local trip pricing details
+            } 
+            if (category === "Local Trip" && localTripType) {
                 return {
                     ...cab,
                     localTripType: {
                         [localTripType]: cab.localTripType[localTripType]
                     }
                 };
+            } 
+            if (category === "Outstation") {
+                return {
+                    ...cab,
+                    pricePerday: {
+                        [OSDistanceKey]: cab.pricePerday[OSDistanceKey]
+                    }
+                };
             }
             return cab;
         });
-
-        // Check if result is empty and return appropriate response
 
         if (result.length === 0) {
             return res.status(404).json({
@@ -84,7 +213,3 @@ exports.getfilteredCabs = async (req, res) => {
         });
     }
 };
-
-
-
-

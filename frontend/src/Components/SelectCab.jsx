@@ -47,17 +47,24 @@ const SelectCab = ({ state, dispatch }) => {
         return null;
     };
 
-    useEffect(() => {
+    const getkmRange = (distance) => {
+        if (distance >= 0 && distance <= 400) return "0-400";
+        if (distance > 400) return ">400";
+        return null;
+    };
 
+    useEffect(() => {
         if (state.triptype && state.NumberOfPersons && state.distance) {
-            
             let apiUrl = `http://localhost:8000/api/v1/allFilteredCabs?category=${state.triptype}&seats=${state.NumberOfPersons}`;
 
             if (state.triptype === 'Drop Trip') {
                 apiUrl += `&distance=${state.distance}`;
             }
             if (state.triptype === 'Local Trip' && state.LocalTripType) {
-                apiUrl += `&localType=${state.LocalTripType}`;
+                apiUrl += `&LocalTripType=${state.LocalTripType}`;
+            }
+            if (state.triptype === 'Outstation') {
+                apiUrl += `&distance=${state.distance}`;
             }
             fetch(apiUrl)
                 .then((res) => res.json())
@@ -67,34 +74,53 @@ const SelectCab = ({ state, dispatch }) => {
         }
     }, [state.triptype, state.NumberOfPersons, state.distance, state.LocalTripType]);
 
-
     const handleSelectCab = (cab) => {
-    
         let fareForCab;
-        let additionalInfo;
+        let additionalInfo = "";
 
         if (state.triptype === "Local Trip") {
             const localType = state.LocalTripType;
+
+            // Check if the cab has data for the selected LocalTripType (Hour-Basis or Day-Use)
             const localTripData = cab.localTripType[localType];
-            fareForCab = localTripData?.minCharge || localTripData?.perDayRent || "Price not available";
-            additionalInfo = localType==="Hour-Basis" ?
-            ( `${localTripData?.minCharge} for 2hrs 20km ----- ${localTripData?.extraHourCharge}₹/Extra Hour ----- ${localTripData?.extraKmCharge}₹/Extra Km` ) || "Call For Best Deals" : ( `Free For ${localTripData?.freeKm}km  ----- ${localTripData?.extraKmCharge}₹/Extra Km` || "Call For Best Deals" )
+
+            if (localTripData) {
+                fareForCab = localTripData.minCharge || localTripData.perDayRent || "Price not available";
+
+                additionalInfo = localType === "Hour-Basis" ?
+                    (`${localTripData.minCharge} for 2hrs 20km ----- ${localTripData.extraHourCharge}₹/Extra Hour ----- ${localTripData.extraKmCharge}₹/Extra Km`) || "Call For Best Deals"
+                    :
+                    (`Free For ${localTripData.freeKm}km  ----- ${localTripData.extraKmCharge}₹/Extra Km`) || "Call For Best Deals";
+            } else {
+                // If cab doesn't have data for the selected LocalTripType, show "Not Available"
+                fareForCab = "Not available for selected trip type";
+                additionalInfo = "";
+            }
         }
 
-        else {
+        if (state.triptype === "Drop Trip") {
             const priceRange = getPriceRange(state.distance);
-            console.log(priceRange);
             fareForCab = cab.pricePerKm[priceRange]?.totalFare || (cab.pricePerKm[priceRange]?.price * state.distance) || "Price not available";
             additionalInfo = cab.pricePerKm[priceRange]?.additionalInfo || "";
         }
 
-        const selectedCab = `${cab.brand} ${cab.carModel} - ${cab.seats} Seater`;
+        if (state.triptype === "Outstation") {
+            const priceRange = getkmRange(state.distance);
+
+            if (priceRange === ">400") {
+                fareForCab = ((cab.pricePerday[priceRange]?.kmCharge * state.distance) + (cab.pricePerday[priceRange]?.driverBeta || 0)) || "Price not available";
+            } else {
+                fareForCab = ((cab.pricePerday[priceRange]?.kmCharge * state.distance) + (cab.pricePerday[priceRange]?.price || 0)) || "Price not available";
+            }
+        }
+
+        let cabbrand = cab.brand ? cab.brand : ""
+        let cabmodel = cab.carModel ? cab.carModel : ""
+        const selectedCab = `${cabbrand} ${cabmodel} - ${cab.seats} Seater`;
         dispatch({ type: "CAB-TYPE", payload: selectedCab });
         dispatch({ type: "FARE", payload: fareForCab });
         closePopup();
     };
-
-
 
     return (
         <>
@@ -134,32 +160,39 @@ const SelectCab = ({ state, dispatch }) => {
                         pagination={{ clickable: true }}
                     >
                         {cabs && cabs.length > 0 ? (
-                            cabs.map((cab) => {
-                                console.log(cab)
-
+                            cabs.filter(cab => {
+                                if (state.triptype === "Local Trip" && state.LocalTripType) {
+                                    return cab.localTripType[state.LocalTripType];
+                                }
+                                return true;
+                            }).map((cab) => {
+                                let cabbrand = cab.brand ? cab.brand : ""
+                                let cabmodel = cab.carModel ? cab.carModel : ""
                                 let fareForCab;
                                 let additionalInfo;
-                        
+
                                 if (state.triptype === "Local Trip") {
-                                    // Local trip pricing logic
                                     const localType = state.LocalTripType;
-
-                                    
-                                   
-
                                     fareForCab = cab.localTripType[localType]?.minCharge || cab.localTripType[localType]?.perDayRent || "Price not available";
-                                    additionalInfo = localType==="Hour-Basis" ?
-                                       ( `${cab.localTripType[localType]?.minCharge} for 2hrs 20km ----- ${cab.localTripType[localType]?.extraHourCharge}₹/Extra Hour ----- ${cab.localTripType[localType]?.extraKmCharge}₹/Extra Km` ) || "Call For Best Deals" : ( `Free For ${cab.localTripType[localType]?.freeKm}km  ----- ${cab.localTripType[localType]?.extraKmCharge}₹/Extra Km` || "Call For Best Deals" )
-                                        
-                                    
-                                }
-                                else {
-                                    // Drop trip pricing logic
-                                    const priceRange = getPriceRange(state.distance);
-                                    console.log(priceRange);
 
+                                    additionalInfo = localType === "Hour-Basis" ?
+                                        (`${cab.localTripType[localType]?.minCharge} for 2hrs 20km ----- ${cab.localTripType[localType]?.extraHourCharge}₹/Extra Hour ----- ${cab.localTripType[localType]?.extraKmCharge}₹/Extra Km`) || "Call For Best Deals" : (`Free For ${cab.localTripType[localType]?.freeKm}km  ----- ${cab.localTripType[localType]?.extraKmCharge}₹/Extra Km` || "Call For Best Deals");
+
+                                } else if (state.triptype === "Drop Trip") {
+                                    const priceRange = getPriceRange(state.distance);
                                     fareForCab = cab.pricePerKm[priceRange]?.totalFare || (cab.pricePerKm[priceRange]?.price * state.distance) || "Price not available";
+
                                     additionalInfo = cab.pricePerKm[priceRange]?.additionalInfo || "";
+
+                                } else if (state.triptype === "Outstation") {
+                                    const priceRange = getkmRange(state.distance);
+                                    fareForCab = (priceRange === "0-400") ?
+                                        ((cab.pricePerday[priceRange]?.kmCharge * state.distance) + cab.pricePerday[priceRange]?.price) || "Price not available" :
+                                        ((cab.pricePerday[priceRange]?.kmCharge * state.distance) + cab.pricePerday[priceRange]?.driverBeta) || "Price not available";
+
+
+                                    const baseKm = cab.pricePerday[priceRange]?.basekm ? `for ${cab.pricePerday[priceRange]?.basekm} km` : ""
+                                    additionalInfo = (priceRange === "0-400") ? (`Base Fare: ${cab.pricePerday[priceRange]?.price} ${baseKm} ----- ${cab.pricePerday[priceRange]?.kmCharge}/km`) : (`${cab.pricePerday[priceRange]?.kmCharge}/km ----- ${cab.pricePerday[priceRange]?.driverBeta} for Driver Beta`)
                                 }
 
                                 return (
@@ -173,7 +206,7 @@ const SelectCab = ({ state, dispatch }) => {
                                                     <div className='row'>
                                                         <div className='col-8'>
                                                             <div className='car-name-details'>
-                                                                <h3>{cab.brand} {cab.carModel}</h3>
+                                                                <h3>{cabbrand} {cabmodel}</h3>
                                                             </div>
                                                             <div className='car-description'>
                                                                 <p>Manual - Petrol - {cab.seats} seats</p>
@@ -195,7 +228,7 @@ const SelectCab = ({ state, dispatch }) => {
                                                         <div className="col-9" >
                                                             <p className='extra-fea'>{additionalInfo}</p>
                                                         </div>
-                                                        <div className='col-3 p-0' style={{ textAlign:"end"}}>
+                                                        <div className='col-3 p-0' style={{ textAlign: "end" }}>
                                                             <button className='select-button mx-2' type='button' onClick={() => handleSelectCab(cab)}>
                                                                 Select
                                                             </button>
@@ -218,3 +251,4 @@ const SelectCab = ({ state, dispatch }) => {
 };
 
 export default SelectCab;
+

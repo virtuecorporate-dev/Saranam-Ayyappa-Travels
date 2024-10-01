@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const pricePerKmSchema = new mongoose.Schema({
   price: {
     type: Number,
-    required: true 
+    required: true
   },
   additionalInfo: {
     type: String,
@@ -18,7 +18,7 @@ const pricePerKmSchema = new mongoose.Schema({
 const HourBasisSchema = new mongoose.Schema({
   minCharge: {
     type: Number,
-    required: true 
+    required: true
   },
   extraHourCharge: {
     type: String,
@@ -33,7 +33,7 @@ const HourBasisSchema = new mongoose.Schema({
 const DayUseSchema = new mongoose.Schema({
   perDayRent: {
     type: Number,
-    required: true 
+    required: true
   },
   freeKm: {
     type: String,
@@ -44,6 +44,32 @@ const DayUseSchema = new mongoose.Schema({
     required: false
   }
 }, { _id: false }); // Disable _id field for subdocuments
+
+const below400Schema = new mongoose.Schema({
+  price: {
+    type: Number,
+    required: true
+  },
+  basekm:{
+    type:Number,
+    required:true
+  },
+  kmCharge: {
+    type: Number,
+    required: true
+  }
+})
+
+const above400Schema = new mongoose.Schema({
+  kmCharge: {
+    type: Number,
+    required: true
+  },
+  driverBeta: {
+    type: Number,
+    required: true
+  }
+})
 
 const cabSchema = new mongoose.Schema({
   cabModel: {
@@ -84,9 +110,13 @@ const cabSchema = new mongoose.Schema({
     '201-250': pricePerKmSchema,
     '>300': pricePerKmSchema
   },
-  localTripType:{
-    "Hour-Basis":HourBasisSchema,
+  localTripType: {
+    "Hour-Basis": HourBasisSchema,
     "Day-Use": DayUseSchema
+  },
+  pricePerday: {
+    "0-400": below400Schema,
+    ">400": above400Schema
   }
 }, { timestamps: true });
 
