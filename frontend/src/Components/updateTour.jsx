@@ -127,8 +127,8 @@ export default function UpdateTour() {
                     )}
 
                     <div className="form-group">
-                        <label htmlFor="pdfFile">PDF</label>
-                        <input type="file" accept="application/pdf" id="pdfFile" onChange={handlePdfChange} />
+                        <label htmlFor="pdf">PDF</label>
+                        <input type="file" accept="application/pdf" id="pdf" onChange={handlePdfChange} />
                     </div>
 
                     {pdf && (

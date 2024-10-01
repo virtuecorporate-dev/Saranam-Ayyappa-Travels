@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 const dir = path.join(__dirname, '../public/images');
-console.log(dir)
+console.log("holiday",dir);
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -46,9 +46,15 @@ exports.createHoliday = [
     async (req, res) => {
         try {
             const { name, category, services } = req.body;
-            const imageUrl = req.files && req.files ? `/images/${req.files['imageUrl'][0].filename}` : "";
-            const pdf = req.files && req.files? `/images/${req.files['pdf'][0].filename}` : ""
-
+            const imageUrl = req.files?.imageUrl ? `/images/${req.files['imageUrl'][0].filename}` : null;
+            const pdf = req.files?.pdf ? `/images/${req.files['pdf'][0].filename}` : null;
+            
+            if (!imageUrl || !pdf) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Image or PDF not uploaded',
+                });
+            }
 
             if(!imageUrl) {
                 return res.status(400).json({

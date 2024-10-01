@@ -6,12 +6,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function() {
     const [name, setName] = useState("");
-    const [imageUrl, setImageUrl] = useState('');
     const [category, setCategory] = useState('');
     const [services, setServices] = useState([]);
     const [serviceName, setServiceName] = useState('');
-    const [file, setFile] = useState(null);
-    const [pdf, setPdf] = useState(null); // Change initial value to null for file handling
+    const [file, setFile] = useState(null); // Image file
+    const [pdf, setPdf] = useState(null); // PDF file
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -22,16 +21,15 @@ export default function() {
             setServiceName("");
         }
     };
+
     const removeService = (index) => {
         const updatedServices = services.filter((_, i) => i !== index);
         setServices(updatedServices);
     };
 
-
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
-        setFile(selectedFile);
-        setImageUrl(URL.createObjectURL(selectedFile));
+        setFile(selectedFile); // Set the file, not a temporary URL
     };
 
     const handlePdfChange = (e) => {
@@ -46,7 +44,7 @@ export default function() {
             const formData = new FormData();
             formData.append("name", name);
             formData.append("category", category);
-            formData.append("imageUrl", file);  // Append the file for image
+            formData.append("imageUrl", file);  // Append the image file
             formData.append("pdf", pdf); // Append the PDF file
 
             services.forEach((service, index) => {
@@ -77,7 +75,7 @@ export default function() {
     return (
         <Fragment>
             <div className="container create">
-                <form action="" className="create-table" onSubmit={handleSubmit}>
+                <form className="create-table" onSubmit={handleSubmit}>
                     <div className="create-head">
                         <h2>Create Holiday Package</h2>
                     </div>
@@ -93,14 +91,16 @@ export default function() {
                     <div className="form-group">
                         <ul>
                             {services.map((service, index) => (
-                                <li key={index}>{service.name}
-                                 <button onClick={addService}>Add Services</button></li>
+                                <li key={index}>
+                                    {service.name}
+                                    <button type="button" onClick={() => removeService(index)}>Remove</button>
+                                </li>
                             ))}
                         </ul>
                     </div>
                     <div className="form-group">
                         <label htmlFor="category">Category</label>
-                        <select name="category" id="category" onChange={(e) => setCategory(e.target.value)}>
+                        <select id="category" onChange={(e) => setCategory(e.target.value)}>
                             <option value="Basic">Basic</option>
                             <option value="Premium">Premium</option>
                         </select>
@@ -109,26 +109,20 @@ export default function() {
                         <label htmlFor="imageUrl">Image</label>
                         <input type="file" id="imageUrl" accept="image/*" onChange={handleFileChange} />
                     </div>
-
-                    {imageUrl && (
+                    {file && (
                         <div>
-                            <img src={imageUrl} alt={name} style={{ width: '200px', height: 'auto' }} />
+                            <p>Image Selected: {file.name}</p>
                         </div>
                     )}
-
                     <div className="form-group">
                         <label htmlFor="pdfFile">PDF</label>
                         <input type="file" accept="application/pdf" id="pdfFile" onChange={handlePdfChange} />
                     </div>
-
                     {pdf && (
                         <div>
-                            <a href={URL.createObjectURL(pdf)} target="_blank" rel="noopener noreferrer">
-                                View PDF
-                            </a>
+                            <p>PDF Selected: {pdf.name}</p>
                         </div>
                     )}
-
                     <button className="create-submit mb-3" type="submit">Create</button>
                 </form>
             </div>

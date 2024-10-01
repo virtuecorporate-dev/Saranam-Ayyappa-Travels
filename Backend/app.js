@@ -4,7 +4,6 @@ const dotenv= require("dotenv")
 const path= require("path")
 const mongodbConnection = require("./config/connectDatabase");
 const cors= require('cors');
-const multer = require('multer');
 
 
 dotenv.config({path:path.join(__dirname,"config","config.env")})
@@ -16,10 +15,12 @@ app.use(cors({
 }));
 
 
-app.use(express.json())
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/controller-images', express.static(path.join(__dirname, 'controllers/public/images')));
 
+// app.use('/public', express.static(path.join(__dirname, 'public')));
 
 
 

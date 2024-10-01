@@ -16,7 +16,8 @@ const holidaySlice=createSlice({
                     id:service?._id,
                     name:service?.name
                 })),
-                category:holiday.category
+                category:holiday.category,
+                pdf:holiday.pdf
             }
         })
     },
@@ -30,7 +31,8 @@ const holidaySlice=createSlice({
                 id: service?._id || null,
                 name: service?.name
             })) : [],
-            category: action.payload.category || ""
+            category: action.payload.category || "",
+            pdf:action.payload.pdf 
         });
     },
     updateHoliday : (state,action)=>{

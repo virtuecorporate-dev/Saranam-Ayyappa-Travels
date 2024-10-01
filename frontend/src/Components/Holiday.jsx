@@ -29,7 +29,7 @@ export default function Holiday() {
         };
         fetchData();
     }, [dispatch]);
-
+console.log("holiday",holidays)
     return (
         <Fragment>
             <Admin/>
@@ -44,7 +44,7 @@ export default function Holiday() {
                     <div className="row car-detail" key={index}>
                         <div className="col-lg-2">
                             <img
-                                src={holiday.imageUrl}
+                                src={`http://localhost:8000/${holiday.imageUrl}`}
                                 alt="Holiday Image"
                                 className="img-fluid"
                             />
@@ -75,15 +75,19 @@ export default function Holiday() {
                             </div>
                         </div>
                         <div className="col-lg-1">
+                        <label htmlFor="pdf">pdf :                                                                </label>
+
+
                             {holiday.pdf && (
                                 <a 
-                                    href={holiday.pdf}  // URL to the PDF file
+                                    href={`http://localhost:8000/${holiday.pdf}`}  // URL to the PDF file
                                     target="_blank"      // Opens the PDF in a new tab or window
                                     rel="noopener noreferrer"
                                     className="btn btn-primary"
                                 >
                                     Download PDF
                                 </a>
+
                             )}
                         </div>
                         <div className="col-lg-1 mt-3">
