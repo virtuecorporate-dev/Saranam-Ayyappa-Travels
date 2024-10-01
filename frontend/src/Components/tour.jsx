@@ -51,7 +51,7 @@ export default function Tour() {
                         <div className="row car-detail" key={tour.id}>
                             <div className="col-lg-2">
                                 <img
-                                    src={tour.imageUrl}
+                                    src={`http://localhost:8000/${tour.imageUrl}`}
                                     alt="Holiday Image"
                                     className="img-fluid"
                                 />
@@ -91,7 +91,7 @@ export default function Tour() {
                             <div className="col-lg-1">
                                 {tour.pdf && (
                                     <a
-                                        href={tour.pdf}  // URL to the PDF file
+                                        href={`http://localhost:8000/${tour.pdf}`}  // URL to the PDF file
                                         target="_blank"      // Opens the PDF in a new tab or window
                                         rel="noopener noreferrer"
                                         className="btn btn-primary"

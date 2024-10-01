@@ -74,58 +74,60 @@ export default function() {
 
     return (
         <Fragment>
-            <div className="container create">
-                <form className="create-table" onSubmit={handleSubmit}>
-                    <div className="create-head">
-                        <h2>Create Holiday Package</h2>
+        <div className="container create">
+            <form className="create-table" onSubmit={handleSubmit}>
+                <div className="create-head">
+                    <h2>Create Holiday Package</h2>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="name">Name</label>
+                    <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="serviceName">Services</label>
+                    <input type="text" id="serviceName" value={serviceName} onChange={(e) => setServiceName(e.target.value)} />
+                    <button onClick={addService}>Add Services</button>
+                </div>
+                <div className="form-group">
+                    <ul>
+                        {services.map((service, index) => (
+                            <li key={index}>
+                                {service.name}
+                                <button type="button" onClick={() => removeService(index)}>Remove</button>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="category">Category</label>
+                    <select id="category" onChange={(e) => setCategory(e.target.value)}>
+                        <option value="Basic">Basic</option>
+                        <option value="Premium">Premium</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="imageUrl">Image</label>
+                    <input type="file" id="imageUrl" accept="image/*" onChange={handleFileChange} />
+                </div>
+                {file && (
+                    <div>
+                        <p>Image Selected: {file.name}</p>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="name">Name</label>
-                        <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
+                )}
+                <div className="form-group">
+                    <label htmlFor="pdfFile">PDF</label>
+                    <input type="file" accept="application/pdf" id="pdfFile" onChange={handlePdfChange} />
+                </div>
+                {pdf && (
+                    <div>
+                        <p>PDF Selected: {pdf.name}</p>
                     </div>
-                    <div className="form-group">
-                        <label htmlFor="serviceName">Services</label>
-                        <input type="text" id="serviceName" value={serviceName} onChange={(e) => setServiceName(e.target.value)} />
-                        <button onClick={addService}>Add Services</button>
-                    </div>
-                    <div className="form-group">
-                        <ul>
-                            {services.map((service, index) => (
-                                <li key={index}>
-                                    {service.name}
-                                    <button type="button" onClick={() => removeService(index)}>Remove</button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="category">Category</label>
-                        <select id="category" onChange={(e) => setCategory(e.target.value)}>
-                            <option value="Basic">Basic</option>
-                            <option value="Premium">Premium</option>
-                        </select>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="imageUrl">Image</label>
-                        <input type="file" id="imageUrl" accept="image/*" onChange={handleFileChange} />
-                    </div>
-                    {file && (
-                        <div>
-                            <p>Image Selected: {file.name}</p>
-                        </div>
-                    )}
-                    <div className="form-group">
-                        <label htmlFor="pdfFile">PDF</label>
-                        <input type="file" accept="application/pdf" id="pdfFile" onChange={handlePdfChange} />
-                    </div>
-                    {pdf && (
-                        <div>
-                            <p>PDF Selected: {pdf.name}</p>
-                        </div>
-                    )}
-                    <button className="create-submit mb-3" type="submit">Create</button>
-                </form>
-            </div>
-        </Fragment>
+                )}
+                <button className="create-submit mb-3" type="submit">Create</button>
+            </form>
+        </div>
+    </Fragment>
+
+      
     );
 }

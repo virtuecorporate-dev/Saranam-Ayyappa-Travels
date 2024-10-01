@@ -38,7 +38,7 @@ const carSlice = createSlice({
       },
       deleteCar :(state,action)=>{
         const id = action.payload.id;
-        state.Cars=state.Cars.filter(u => u.id =! id)
+        state.Cars=state.Cars.filter(u => u.id !== id)
       },
   
     }

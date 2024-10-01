@@ -33,7 +33,6 @@ export default function CreateTour() {
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         setFile(selectedFile);
-        setImageUrl(URL.createObjectURL(selectedFile));
     };
 
     const handlePdfChange = (e) => {
@@ -137,12 +136,10 @@ export default function CreateTour() {
                         </div>
 
                         {pdf && (
-                            <div>
-                                <a href={URL.createObjectURL(pdf)} target="_blank" rel="noopener noreferrer">
-                                    View PDF
-                                </a>
-                            </div>
-                        )}
+                    <div>
+                        <p>PDF Selected: {pdf.name}</p>
+                    </div>
+                )}
 
                         <button className="create-submit mb-3" type="submit">Create</button>
                     </form>

@@ -50,8 +50,8 @@ exports.createTour = [
             const { name, numberOfPersons, services, category } = req.body;
 
             // Ensure image and PDF file URLs are set correctly
-            const imageUrl = req.files && req.files['imageUrl'] ? `./images/${req.files['imageUrl'][0].filename}` : "";
-            const pdf = req.files && req.files['pdf'] ? `./images/${req.files['pdf'][0].filename}` : "";
+            const imageUrl = req.files?.imageUrl ? `/images/${req.files['imageUrl'][0].filename}` : null;
+            const pdf = req.files?.pdf ? `/images/${req.files['pdf'][0].filename}` : null;
 
             // Check if files are uploaded
             if (!imageUrl || !pdf) {
