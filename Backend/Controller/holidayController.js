@@ -3,7 +3,8 @@ const holidayModel = require('../Model/holidayModel');
 const path = require('path');
 const fs = require('fs');
 
-const dir = path.join(__dirname, 'public', 'images');
+const dir = path.join(__dirname, '../public/images');
+console.log("holiday",dir);
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -39,24 +40,41 @@ exports.getHoliday = async (req, res) => {
 
 // http://localhost:8000/api/v1/createHoliday
 exports.createHoliday = [
-    upload.single('imageUrl'),
+    upload.fields([
+        {name:"imageUrl", maxCount:1},
+        {name:"pdf", maxCount:1}]),
     async (req, res) => {
         try {
             const { name, category, services } = req.body;
-            const imageUrl = req.file ? `/images/${req.file.filename}` : "";
+            const imageUrl = req.files?.imageUrl ? `/images/${req.files['imageUrl'][0].filename}` : null;
+            const pdf = req.files?.pdf ? `/images/${req.files['pdf'][0].filename}` : null;
+            
+            if (!imageUrl || !pdf) {
+                return res.status(400).json({
+                    success: false,
+                    message: 'Image or PDF not uploaded',
+                });
+            }
 
-            if ( !imageUrl) {
+            if(!imageUrl) {
                 return res.status(400).json({
                     success: false,
                     message: 'Required fields are missing or image not uploaded'
                 });
             }
-
+            
+            if(!pdf){
+                return res.status(400).json({
+                    success:"false",
+                    message:"pdf not uploade"
+                })
+            }
             const newHoliday = new holidayModel({
                 name,
                 category: Array.isArray(category) ? category : [category],
                 services: Array.isArray(services) ? services : [services],
-                imageUrl
+                imageUrl,
+                pdf
             });
 
             await newHoliday.save();
@@ -82,7 +100,8 @@ exports.updateHoliday= async(req,res)=>{
             name:req.body.name,
             category:req.body.category,
             services:req.body.services,
-            imageUrl:req.body.imageUrl
+            imageUrl:req.body.imageUrl,
+            pdf:req.body.pdf
 
         },{
             new:true

@@ -16,7 +16,8 @@ const holidaySlice=createSlice({
                     id:service?._id,
                     name:service?.name
                 })),
-                category:holiday.category
+                category:holiday.category,
+                pdf:holiday.pdf
             }
         })
     },
@@ -30,23 +31,29 @@ const holidaySlice=createSlice({
                 id: service?._id || null,
                 name: service?.name
             })) : [],
-            category: action.payload.category || ""
+            category: action.payload.category || "",
+            pdf:action.payload.pdf 
         });
     },
     updateHoliday : (state,action)=>{
         const index = state.holidays.findIndex(x => x.id === action.payload.id);
          state.holidays[index]={
+            ...state.holidays[index],
             name:action.payload.name,
             category:action.payload.category,
             services:action.payload.services,
-
+            pdf:action.payload.pdf,
             imageUrl:action.payload.imageUrl
         }
-    }
+    },
+    deleteHoliday :(state,action)=>{
+        const id = action.payload.id;
+        state.holidays=state.holidays.filter(u => u.id !== id)
+      },
     
 
   }  
 })
 
-export const{getHoliday, addHoliday,updateHoliday}=holidaySlice.actions;
+export const{getHoliday, addHoliday,updateHoliday, deleteHoliday}=holidaySlice.actions;
 export default holidaySlice.reducer;

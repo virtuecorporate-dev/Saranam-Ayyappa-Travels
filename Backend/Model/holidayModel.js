@@ -9,6 +9,10 @@ const holidaySchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+    pdf:{
+        type:String,
+        required:true
+    },
     services:[{
         name:{
             type:String,
@@ -24,3 +28,4 @@ const holidaySchema = new mongoose.Schema({
 
 const holidayModel = mongoose.model("holiday",holidaySchema);
 module.exports = holidayModel;
+

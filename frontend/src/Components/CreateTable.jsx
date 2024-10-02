@@ -21,7 +21,6 @@ export function CreateTable() {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
-    setImagePreviewUrl(URL.createObjectURL(selectedFile));
   };
 
   const handleSubmit = async (e) => {
@@ -45,7 +44,7 @@ export function CreateTable() {
         }
       });
       dispatch(addCar(response.data.newCar));
-      navigate('/admin');
+      navigate('/table');
     } catch (error) {
       console.error('Error:', error.message);
     }
