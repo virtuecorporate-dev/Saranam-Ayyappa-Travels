@@ -13,7 +13,7 @@ export default function About() {
             <div className='col-10 col-md-6 about-content'>
               <h2 style={{ fontWeight: "600" }}>About Us</h2>
               <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.</h5>
-                
+
               <p className='bredcrumb mt-3'>
                 <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>
                 <Link to="/about" style={{ color: "white", textDecoration: "none" }}>About</Link>
@@ -24,30 +24,37 @@ export default function About() {
         </div>
       </div>
 
-      {/* <section>
-        <div className="container-fluid mt-5 whoweare" style={{ backgroundColor: "transparent" }}>
+      <section className='ab-pg mt-0'>
+        <div className="container-fluid  whoweare" style={{ backgroundColor: "transparent" }}>
           <div className="row">
             <div className='col-12 col-md-10 mx-auto pt-5 pb-5'>
               <div className='container'>
-                <div className='row' style={{ color: "black" }}>
+                <div className='row mt-5'>
                   <div className="col-lg-4">
-                    <h6>WHO WE ARE</h6>
-                    <h2 style={{ color: "#005395" }}>Enjoy the journey – travel with us</h2>
+                    <h6>ABOUT SAPTRAVELS</h6>
+                    <h2 style={{ color: "#005395" }}>Our Journey</h2>
                   </div>
                   <div className="col-lg-8 mt-3 mt-lg-0">
-                    <p>We offer a variety of services to meet your travel needs. From one-way trips to hourly and outstation rentals, we ensure comfort and reliability. Experience hassle-free travel with our well-maintained buses and professional drivers.</p>
+                    <p>
+                      In 2000, Saptravels was started by Mr. Subramaniam, who possessed decades of experience working in well-known travel companies. It was when he operated the cab on his own that he attracted a large number of customers due to his dedicated and professional service.
+                    </p>
+                    <p>
+                      With his ambitious drive in both the business world and his personal life, Mr. Krishna Kumar, his second son, was greatly admired. After pursuing master’s degrees, he took over the business in early 2012, elevating it to the next level and gaining a huge boost with many satisfied customers and corporates.
+                    </p>
+                    <p>
+                      Saptravels aims to provide a complete tourism experience for every customer, where tourism means understanding the history, culture, food, and practices associated with the locations visited. Our goal is to help customers feel as if they are living as locals in the places they explore.
+                    </p>
+                    <p>
+                      Whether you are seeking a tourism-format holiday, a memorable trip, or a safe and secure travel partner, stay connected and tuned in with us for the ultimate travel experience.
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div className="row gap-0">
-            <div className='whoweare-img p-0'>
-              <img className='img-fluid' src="./images/who we are img.png" alt="Who We Are" />
-            </div>
-          </div>
         </div>
-      </section> */}
+      </section>
+
 
       <section>
         <div className="container mb-3 about-ser">
@@ -71,68 +78,96 @@ export default function About() {
           </div>
         </div>
       </section>
-      <section className='container-fluid landing'>
-  <div className='row' style={{ marginTop: "200px" }}>
-    <div className='col-12 p-0'>
-      <div className='banner'>
-        <div className="banner-img">
-          <img src="images/w5 (1).jpg" alt="image-not-found" className='img-fluid' />
-        </div>
-        <div className="landing-text container-fluid">
-          <div className='row'>
-            <div className="col-lg-8 col-md-12">
-              <div className='about-banner-content p-5'>
-                <h1>Why Choose Us</h1>
-                <p>Choose us for cab rental for our well-maintained vehicles, professional drivers, transparent pricing, and exceptional customer service, ensuring a smooth and reliable experience every time.</p>
-                <div className="row mt-4 about-banner-para">
-                  <div className="col-lg-6 col-sm-12 mt-4">
-                    <h3 className='text-center'>
-                      <i className="fa-solid fa-check"></i> &nbsp;
-                      Safety & Security
-                    </h3>
-                    <p>We prioritize your safety with stringent vehicle checks and 24/7 support, ensuring a secure journey.</p>
+
+      {/* <section className='container-fluid'>
+        <div className='row' style={{ marginTop: "200px" }}>
+          <div className='col-12 p-0'>
+              <div className=" container-fluid">
+                <div className='row'>
+                  <div className="col-lg-8 col-md-12">
+                    <div className='about-banner-content p-5'>
+                      <h1>Why Choose Us</h1>
+                      <p>Choose us for cab rental for our well-maintained vehicles, professional drivers, transparent pricing, and exceptional customer service, ensuring a smooth and reliable experience every time.</p>
+                      <div className="row mt-4 about-banner-para">
+                        <div className="col-lg-6 col-sm-12 mt-4">
+                          <h3 className='text-center'>
+                            <i className="fa-solid fa-check"></i> &nbsp;
+                            Safety & Security
+                          </h3>
+                          <p>We prioritize your safety with stringent vehicle checks and 24/7 support, ensuring a secure journey.</p>
+                        </div>
+                        <div className="col-lg-6 col-sm-12 mt-4">
+                          <h3 className='text-center'>
+                            <i className="fa-solid fa-check"></i> &nbsp;
+                            On Time & Punctual
+                          </h3>
+                          <p>We pride ourselves on being on time and punctual, ensuring you reach your destination promptly and reliably every time.</p>
+                        </div>
+                        <div className="col-lg-6 col-sm-12 mt-4">
+                          <h3 className='text-center'>
+                            <i className="fa-solid fa-check"></i> &nbsp;
+                            Professional Drivers
+                          </h3>
+                          <p>Our professional drivers are experienced, courteous, and dedicated to providing a safe and comfortable journey for you.</p>
+                        </div>
+                        <div className="col-lg-6 col-sm-12 mt-4">
+                          <h3 className='text-center'>
+                            <i className="fa-solid fa-check"></i> &nbsp;
+                            Well Maintenance
+                          </h3>
+                          <p>We meticulously maintain our vehicles to ensure a safe, smooth, and reliable ride every time.</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="col-lg-6 col-sm-12 mt-4">
-                    <h3 className='text-center'>
-                      <i className="fa-solid fa-check"></i> &nbsp;
-                      On Time & Punctual
-                    </h3>
-                    <p>We pride ourselves on being on time and punctual, ensuring you reach your destination promptly and reliably every time.</p>
-                  </div>
-                  <div className="col-lg-6 col-sm-12 mt-4">
-                    <h3 className='text-center'>
-                      <i className="fa-solid fa-check"></i> &nbsp;
-                      Professional Drivers
-                    </h3>
-                    <p>Our professional drivers are experienced, courteous, and dedicated to providing a safe and comfortable journey for you.</p>
-                  </div>
-                  <div className="col-lg-6 col-sm-12 mt-4">
-                    <h3 className='text-center'>
-                      <i className="fa-solid fa-check"></i> &nbsp;
-                      Well Maintenance
-                    </h3>
-                    <p>We meticulously maintain our vehicles to ensure a safe, smooth, and reliable ride every time.</p>
-                  </div>
+                  <div className="col-md-4 d-none d-md-block"></div>
                 </div>
               </div>
             </div>
-            <div className="col-md-4 d-none d-md-block"></div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section> */}
+
+      <section className='why-choose-us container-fluid'>
+        <div className='row' >
+          <div className='col-12 text-center'>
+            <h1 className='why-choose-us-heading'>Why Choose Us</h1>
+            <p className='why-choose-us-description'>
+              Choose us for cab rental for our well-maintained vehicles, professional drivers, transparent pricing, and exceptional customer service, ensuring a smooth and reliable experience every time.
+            </p>
+          </div>
+          <div className='col-12'>
+            <div className='row justify-content-center mt-4' style={{padding:"0 50px 20px 50px"}}>
+              {[
+                { title: "Safety & Security", description: "We prioritize your safety with stringent vehicle checks and 24/7 support, ensuring a secure journey." },
+                { title: "On Time & Punctual", description: "We pride ourselves on being on time and punctual, ensuring you reach your destination promptly and reliably every time." },
+                { title: "Professional Drivers", description: "Our professional drivers are experienced, courteous, and dedicated to providing a safe and comfortable journey for you." },
+                { title: "Well Maintenance", description: "We meticulously maintain our vehicles to ensure a safe, smooth, and reliable ride every time." },
+              ].map((feature, index) => (
+                <div key={index} className='col-lg-3 col-md-4 col-sm-6 my-3'>
+                  <div className='feature-card d-flex flex-column justify-content-between p-4 text-center'>
+                    <i className='fa-solid fa-check fa-2x mb-3'></i>
+                    <h3 className='feature-title'>{feature.title}</h3>
+                    <p className='feature-description'>{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
 
       <section className='pb-5'>
         <div className="container">
           <div className="pt-5 home-service">
             <h5 className='text-center' style={{ fontWeight: "700", "font-size": "18px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700",  "color": "#005395" }}> We Provide Best Services For You</h3>
+            <h3 className='text-center  mt-4' style={{ fontWeight: "700", "color": "#005395" }}> We Provide Best Services For You</h3>
             <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "16px" }}>
-            Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
-</p>
+              Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
+            </p>
           </div>
           <div className='row '>
             <div className='col-12 col-md-4 service-item mt-5'>
@@ -442,7 +477,7 @@ export default function About() {
           </div> */}
         </div>
       </section>
-      
+
     </Fragment>
   );
 }

@@ -83,11 +83,13 @@ exports.sendMail = async (req, res) => {
       Trip Type: ${bookingDetails.triptype}
       From: ${bookingDetails.from}
       To: ${bookingDetails.to}
-      Date: ${bookingDetails.PickUpdate}
+      Pick Up Date: ${bookingDetails.PickUpdate}
       Pick Up Time: ${bookingDetails.pickUpTime}
       Pick Up Location: ${bookingDetails.pickUpLocation}
-      ${bookingDetails.ReturnTime ? `Drop Time: ${bookingDetails.ReturnTime}` : ''}
-      ${bookingDetails.returnLocation ? `Drop Location: ${bookingDetails.returnLocation}` : ''}
+      ${bookingDetails.returndate ? `Return Date: ${bookingDetails.returndate}` : ''}
+      ${bookingDetails.ReturnTime ? `Return Time: ${bookingDetails.ReturnTime}` : ''}
+      ${bookingDetails.returnLocation ? `Return Location: ${bookingDetails.returnLocation}` : ''}
+      ${bookingDetails.returnLocation ? `Return Location: ${bookingDetails.returnLocation}` : ''}
       ${bookingDetails.visitingPlaces ? `Visiting Places: ${bookingDetails.visitingPlaces.join(', ')}` : ''}
       
       Customer Details:

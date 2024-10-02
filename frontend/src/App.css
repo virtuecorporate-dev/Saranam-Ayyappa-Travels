@@ -133,12 +133,25 @@ body {
 }
 
 .banner-content {
-  padding: 0 0 0 80px;
+  /* padding: 0 0 0 80px; */
+  background-color: rgba(0, 82, 149, 0.358);
+  /* z-index: -100; */
+}
+.banner-content p{
+  /* border: 1px solid black; */
+  background-color: #ffffff67;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold !important;
+  padding: 10px;
+  margin: 0;
+  
 }
 
 .landing-text {
   position: absolute;
-  top: 250px;
+  top: 230px;
+  width: 100%;
   color: white;
   text-align: center;
   z-index: 2000;
@@ -147,6 +160,7 @@ body {
 .landing-text h1 {
   font-weight: 500;
   font-size: 40px;
+  text-align: center;
 }
 
 .landing-text p {
@@ -173,16 +187,7 @@ body {
   padding: 0;
   position: relative;
 }
-.banner-img::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color:#00000033;
-  /* z-index:1; */
-}
+
 
 .landing {
   margin-top: -146px !important;
@@ -193,6 +198,40 @@ body {
   .landing {
     margin-top: 0 !important;
   }
+  .banner-img{
+    height: 60vh;
+    width: 100%;
+  }
+  .banner-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    position: relative;
+  }
+  
+  .banner-img::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#00529570;
+    z-index:1;
+  }
+  .banner-content {
+    /* padding: 0 0 0 80px; */
+    background-color:transparent;
+    /* z-index: -100; */
+  }
+  .banner-content p{
+    /* border: 1px solid black; */
+    background-color: #ffffff7d;
+    color: #000000;
+    
+  }
 }
 
 /*------------------------------- Banner-image-end-------------------------------------- */
@@ -200,7 +239,7 @@ body {
 /*---------------------------------- form start------------------------------------ */
 
 .booking-form-sec {
-  margin-top: -250px;
+  margin-top: -150px;
   position: relative;
   /* z-index: 200; */
 }
@@ -300,7 +339,7 @@ body {
 }
 .input-field{
   margin: 10px 10px 0 0;
-
+ 
 }
 
 .from-input {
@@ -595,70 +634,154 @@ margin-left: 10px;
 
 /*  ---------------avail cars page---------------------- */
 
-/* -----------------selected cab----------------------------- */
+/* -----------------Confirm Booking----------------------------- */
 
-.form-details{
+.confirmBooking-sec {
+  padding: 30px 15px;
+  background-color: #f0f0ff;
+}
+
+.form-details {
+  background-color: #005295cb;
+  color: #f0f0ff;
   border-radius: 5px;
-  padding: 20px 0;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  font-family: 'Poppins', sans-serif;
 }
-.form-details h4{
-  font-weight: 500;
+
+.form-details h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
 }
-.form-details h4 .bi-arrow-left-right{
-  font-size: 60px;
+
+.form-details .bi-arrow-left-right {
+  font-size: 40px;
+  color: #f9d923;
 }
-.selected-cab{
+
+.selected-cab {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  align-items: center;
+  margin-bottom: 20px;
 }
-.selected-cab-img{
-  height: 300px;
-  /* width: 300px; */
-  padding: 0;
-  /* border: 1px solid red; */
-}
-.selected-cab-img img{
-  height: 100%;
-  width: 100% !important;
+
+.selected-cab-img img {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
   object-fit: contain;
-  object-position: center;
 }
-.address-details{
-  /* border: 1px solid red; */
-  margin: 0 0 0 20px;
+
+.address-details {
+  margin-left: 20px;
 }
-.traveller-details form{
-  background-color: #a4a4e7;
+
+.address-details h4 {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.price-details {
+  text-align: right;
+  background-color: #005295cb;
+  color:#fff;
   padding: 20px;
   border-radius: 5px;
-  margin-top: 20px !important;
-  /* text-align: center; */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.traveller-details label{
- font-size: 18px;
- font-weight: 300;
- margin-top: 20px;
- color: white;
-}
-.traveller-details input{
-  border: none;
-  border-bottom: 1px solid white ;
-  color: white;
-  width: 100%;
-  background-color: transparent;
-  border-radius: 5px;
-}
-.traveller-details button{
-  margin-top: 20px;
-  border: none;
-  /* border: 1px solid black; */
-  background-color: white;
-  color: black;
-  padding: 5px 30px;
-  border-radius: 5px;
-  font-weight: 500;
 
+.traveller-details form {
+  background-color: #005295cb;
+  padding: 30px;
+  border-radius: 5px;
+  color: white;
+}
+
+.traveller-details label {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.traveller-details input {
+  border: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  margin-bottom: 15px;
+  /* padding: 10px; */
+  width: 100%;
+  font-size: 1rem;
+}
+
+.traveller-details button {
+  background-color: #ffff;
+  color: #5a58b1;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.traveller-details button:hover {
+  background-color: #c3dcf0;
+  color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+  .form-details h4 {
+    font-size: 1.1rem;
+  }
+
+  .selected-cab {
+    flex-direction: column;
+  }
+
+  .address-details {
+    margin: 20px 0 0 0;
+    text-align: center;
+  }
+
+  .price-details {
+    text-align: center;
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+
+  .traveller-details label {
+    font-size: 14px;
+  }
+
+  .traveller-details input {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .form-details {
+    padding: 15px;
+  }
+
+  .selected-cab {
+    padding: 10px;
+  }
+
+  .price-details {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .traveller-details input {
+    font-size: 0.8rem;
+  }
 }
 
 
@@ -784,8 +907,12 @@ footer {
   margin-bottom: 20px;
 }
 
+.footer-img{
+  margin: -10px;
+  margin-bottom: 20px;
+}
 .footer-logo {
-  width: 130px;
+  width: 250px;
 
 }
 
@@ -820,51 +947,32 @@ footer {
 
   
 /* about page start------------------------------ */
-.about-head h5{
-  font-size: 25px ;
-  margin-right: 20px;
+.ab-pg{
+  background-color: whitesmoke;
+}
+.ab-pg .whoweare h6 {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: black;
 }
 
-.about-row p{
-  font-size: 18px;
+.ab-pg .whoweare p {
+  font-weight: 300;
+  text-align: justify;
+  color: black;
 }
 
-.about-head h5, .about-head h3{
-  float: right;
- 
-}
-.about-head h3{
-  font-family: "Roboto", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 40px;
-  color: #005395 ;
-
-}
-.about-row{
-  display: flex;
+.ab-pg .whoweare h2 {
+  font-weight: 700;
+  color: #005395;
 }
 
-.about .about-img {
-  height: 250px !important;
-  box-shadow: 5px 5px whitesmoke;
-  padding: 15px;  
-
+.ab-pg .whoweare .row {
+  margin-top: 30px;
 }
 
-.about-img img{
-  height: 100%;
-  width: 100%;
-}
-
-.about-point li{
-  list-style-type: none;
-  line-height: 2;
-  /* font-size: 20px; */
-  font-style: normal;
 
 
-}
 
 .about-service button{
   background-color: #005395;
@@ -934,27 +1042,68 @@ position: relative;
   padding-left: 160px;
 }
 
-.about-banner-content{
-  margin-top: -150px !important;
-  justify-content:center;
+
+.why-choose-us {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+  margin: 20px 0; 
 }
 
-.about-banner-content i{
-  border: 2px solid red;
-  padding: 5px;
-  font-size: 20px;
-  background-color: red;
+.why-choose-us-heading {
+  color: #343a40;
+  margin-bottom: 20px;
 }
 
-.about-banner-para {
-  display: flex;
-  justify-content: space-evenly;
-  row-gap: 20px;
+.why-choose-us-description {
+  color: #495057;
+  max-width: 600px;
+  margin: 0 auto 30px;
+  text-align: center;
 }
 
-.about-banner-para p{
-  font-size: 16px;
+.feature-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  height: 250px; 
 }
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-title {
+  color: #007bff;
+  font-size: 1.5rem;
+}
+
+.feature-description {
+  color: #495057;
+}
+
+
+@media (max-width: 768px) {
+  .feature-card {
+    padding: 20px;
+    height: auto; 
+  }
+
+  .why-choose-us-heading {
+    font-size: 1.8rem;
+  }
+
+  .feature-title {
+    font-size: 1.3rem;
+  }
+
+  .why-choose-us-description,
+  .feature-description {
+    font-size: 0.9rem;
+  }
+}
+
+
 /* login start----------------------------------- */
 
 
@@ -1359,7 +1508,7 @@ margin-top: -15px;
 @media (max-width:680px) {
   .landing-text {
     position: absolute;
-    top: 90px;
+    /* top: 90px; */
 
 
   }
@@ -1387,7 +1536,7 @@ margin-top: -15px;
 @media (max-width:570px) {
   .landing-text {
     position: absolute;
-    top: 70px;
+    top: 140px;
   
 
   }
@@ -1406,7 +1555,7 @@ margin-top: -15px;
 @media (max-width:530px) {
   .landing-text {
     position: absolute;
-    top: 60px;
+    top: 130px;
 
   }
 
@@ -1428,7 +1577,7 @@ margin-top: -15px;
 @media (max-width:460px) {
   .landing-text {
     position: absolute;
-    top: 60px;
+    top: 100px;
 
   }
 
@@ -1437,11 +1586,11 @@ margin-top: -15px;
   }
 
   .landing-text h1 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .landing-text p {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   .landing-text button {
@@ -1454,7 +1603,7 @@ margin-top: -15px;
 @media (max-width:420px) {
   .landing-text {
     position: absolute;
-    top: 60px;
+    /* top: 60px; */
 
   }
 
@@ -1463,11 +1612,11 @@ margin-top: -15px;
   }
 
   .landing-text h1 {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .landing-text p {
-    font-size: 10px;
+    font-size: 15px;
     margin-bottom: 5px !important;
   }
 
@@ -1481,11 +1630,14 @@ margin-top: -15px;
 @media (max-width:370px) {
   .landing-text {
     position: absolute;
-    top: 40px;
+    top: 100px;
 
   }
   .landing-text h1 {
-    font-size: 18px !important;
+    font-size: 20px !important;
+  }
+  .landing-text p {
+    font-size: 14px !important;
   }
 }
 

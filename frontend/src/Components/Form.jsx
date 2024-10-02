@@ -30,30 +30,37 @@ const BookingForm = () => {
         selectedCab:null
     };
 
+    const capitalizeFirstLetter = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      };
+
     const reducer = (state, action) => {
         switch (action.type) {
             case "TRIP-TYPE":
-                return { ...state, triptype: action.payload };
+                return { ...state, triptype: capitalizeFirstLetter(action.payload) };
             case "FROM":
-                return { ...state, from: action.payload };
+                return { ...state, from: capitalizeFirstLetter(action.payload) };
             case "TO":
-                return { ...state, to: action.payload };
+                return { ...state, to: capitalizeFirstLetter(action.payload) };
             case "PICK-UP-DATE":
+                console.log(action.payload);
                 return { ...state, PickUpdate: action.payload };
             case "RETURN-DATE":
-                return { ...state, returndate: action.payload };
+                console.log(action.payload);
+                
+                return { ...state, returndate: capitalizeFirstLetter(action.payload)};
             case "NAME":
-                return { ...state, name: action.payload };
+                return { ...state, name: capitalizeFirstLetter(action.payload) };
             case "MOBILE":
                 return { ...state, mobile: action.payload };
             case "MAIL":
                 return { ...state, mail: action.payload };
             case "PICK-UP-LOCATION":
-                return { ...state, pickUpLocation: action.payload };
+                return { ...state, pickUpLocation: capitalizeFirstLetter(action.payload) };
             case "PICK-UP-TIME":
-                return { ...state, pickUpTime: action.payload };
+                return { ...state, pickUpTime: action.payload};
             case "RETURN-LOCATION":
-                return { ...state, returnLocation: action.payload };
+                return { ...state, returnLocation: capitalizeFirstLetter(action.payload)};
             case "RETURN-TIME":
                 return { ...state, ReturnTime: action.payload };
             case "ADD-VISITING-PLACE":
@@ -62,18 +69,18 @@ const BookingForm = () => {
                 return { ...state, visitingPlaces: state.visitingPlaces.filter((_, index) => index !== action.payload) };
             case "UPDATE-VISITING-PLACE":
                 const updatedVisitingPlaces = state.visitingPlaces.map((place, index) =>
-                    index === action.payload.index ? action.payload.value : place
+                    index === action.payload.index ? capitalizeFirstLetter(action.payload.value) : place
                 );
                 return { ...state, visitingPlaces: updatedVisitingPlaces };
             case "NUMBER-OF-PERSONS":
                 return { ...state, NumberOfPersons: action.payload };
             case "CAB-TYPE":
                
-                return { ...state, CabType: action.payload };
+                return { ...state, CabType: capitalizeFirstLetter(action.payload) };
               
                 
             case "LOCAL-TRIP-TYPE":
-                return { ...state, LocalTripType: action.payload };
+                return { ...state, LocalTripType: capitalizeFirstLetter(action.payload) };
             case "DISTANCE":
                 return { ...state, distance: action.payload };
             case "FARE":
@@ -100,7 +107,7 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/confirmbooking", { state: { ...state,PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", { state: { ...state,PickUpdate: state.PickUpdate.toLocaleDateString(), returndate: state.returndate.toLocaleDateString() } })
 
 
     };
@@ -176,7 +183,7 @@ const BookingForm = () => {
                                     type='button'
                                     className={`${state.triptype === 'Outstation' ? "active" : ""}`}
                                     value="Outstation"
-                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Outstation
+                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Out Station
                                 </button>
                                 {/* <input
                                     type="radio"
@@ -197,7 +204,7 @@ const BookingForm = () => {
                             </div>
                         )}
 
-                        <div className={`row  ${error ? "mt-0" : "mt-2"}`}>
+                        <div className={`row  ${error ? "mt-0" : "mt-4"}`}>
                             <div className='col-6'>
                                 <label htmlFor="From">From</label>
                                 <input type="text" className='input-field'
