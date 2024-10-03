@@ -1,0 +1,382 @@
+.form-details{
+    border-radius: 5px;
+    padding: 20px 0;
+  }
+  .form-details h4{
+    font-weight: 500;
+  }
+  .form-details h4 .bi-arrow-left-right{
+    font-size: 60px;
+  }
+  .selected-cab{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .selected-cab-img{
+    height: 300px;
+    /* width: 300px; */
+    padding: 0;
+    /* border: 1px solid red; */
+  }
+  .selected-cab-img img{
+    height: 100%;
+    width: 100% !important;
+    object-fit: contain;
+    object-position: center;
+  }
+  .address-details{
+    /* border: 1px solid red; */
+    margin: 0 0 0 20px;
+  }
+  .traveller-details form{
+    background-color: #a4a4e7;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px !important;
+    /* text-align: center; */
+  }
+  .traveller-details label{
+   font-size: 18px;
+   font-weight: 300;
+   margin-top: 20px;
+   color: white;
+  }
+  .traveller-details input{
+    border: none;
+    border-bottom: 1px solid white ;
+    color: white;
+    width: 100%;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  .traveller-details button{
+    margin-top: 20px;
+    border: none;
+    /* border: 1px solid black; */
+    background-color: white;
+    color: black;
+    padding: 5px 30px;
+    border-radius: 5px;
+    font-weight: 500;
+  
+  }
+
+  
+
+
+  /* ----------------------------------------------------------------------- */
+
+  .confirmBooking-sec {
+    padding: 40px 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .form-details {
+    border-radius: 8px;
+    padding: 25px;
+    background: linear-gradient(135deg, #6e85b7, #b1c6e9);
+    color: white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-details h4 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .form-details h4 .bi-arrow-left-right {
+    font-size: 50px;
+  }
+  
+  .selected-cab {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .selected-cab-img {
+    flex: 1 1 100%;
+    text-align: center;
+    background-color: #ececec;
+    padding: 20px;
+  }
+  
+  .selected-cab-img img {
+    width: 100%;
+    max-width: 280px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .address-details {
+    flex: 1 1 100%;
+    padding: 20px;
+    background-color: #fafafa;
+  }
+  
+  .address-details h4 {
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #333;
+  }
+  
+  .address-details p {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .price-details {
+    text-align: center;
+    background-color: #ffeed0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .price-details h4 {
+    color: #ff6347;
+    font-size: 1.5rem;
+  }
+  
+  .traveller-details form {
+    background-color: #b1c6e9;
+    padding: 25px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .traveller-details label {
+    font-size: 17px;
+    font-weight: 300;
+    color: #fff;
+  }
+  
+  .traveller-details input {
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .traveller-details button {
+    background-color: white;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .traveller-details button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 992px) {
+    .selected-cab {
+      flex-direction: column;
+    }
+  
+    .address-details {
+      text-align: center;
+    }
+  
+    .price-details {
+      margin-top: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .form-details h4 {
+      font-size: 1.1rem;
+    }
+  
+    .selected-cab-img img {
+      max-width: 200px;
+    }
+  
+    .address-details h4 {
+      font-size: 1.4rem;
+    }
+  
+    .price-details h4 {
+      font-size: 1.2rem;
+    }
+  
+    .traveller-details label {
+      font-size: 15px;
+    }
+  
+    .traveller-details input {
+      font-size: 14px;
+    }
+  
+    .traveller-details button {
+      padding: 10px 20px;
+    }
+  }
+
+  
+
+
+
+
+
+
+
+
+
+  /* ===================================================================================== */
+
+  
+.banner {
+    position: relative;
+  }
+  
+  .banner-content {
+    padding: 0 0 0 80px;
+  }
+  
+  .landing-text {
+    position: absolute;
+    top: 250px;
+    color: white;
+    text-align: center;
+    z-index: 2000;
+  }
+  
+  .landing-text h1 {
+    font-weight: 500;
+    font-size: 40px;
+  }
+  
+  .landing-text p {
+  
+    font-weight: 300;
+    justify-self: right;
+  
+  }
+  
+  .landing-text button {
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    padding: 5px 30px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+  
+  }
+  
+  .banner-img img {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    position: relative;
+  }
+  .banner-img::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color:#00000033;
+    /* z-index:1; */
+  }
+  
+  .landing {
+    margin-top: -146px !important;
+    z-index: -500;
+  }
+  
+  @media (max-width:990px) {
+    .landing {
+      margin-top: 0 !important;
+    }
+  }
+
+
+
+  /* -------------------------------------------------------------------------------------- */
+
+  .about-head h5{
+    font-size: 25px ;
+    margin-right: 20px;
+  }
+  
+  .about-row p{
+    font-size: 18px;
+  }
+  
+  .about-head h5, .about-head h3{
+    float: right;
+   
+  }
+  .about-head h3{
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 40px;
+    color: #005395 ;
+  
+  }
+  .about-row{
+    display: flex;
+  }
+  
+  .about .about-img {
+    height: 250px !important;
+    box-shadow: 5px 5px whitesmoke;
+    padding: 15px;  
+  
+  }
+  
+  .about-img img{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .about-point li{
+    list-style-type: none;
+    line-height: 2;
+    /* font-size: 20px; */
+    font-style: normal;
+  
+  
+  }
+
+
+  
+.about-banner-content{
+    margin-top: -150px !important;
+    justify-content:center;
+  }
+  
+  .about-banner-content i{
+    border: 2px solid red;
+    padding: 5px;
+    font-size: 20px;
+    background-color: red;
+  }
+  
+  .about-banner-para {
+    display: flex;
+    justify-content: space-evenly;
+    row-gap: 20px;
+  }
+  
+  .about-banner-para p{
+    font-size: 16px;
+  }

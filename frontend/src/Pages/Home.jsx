@@ -6,28 +6,41 @@ export default function Home() {
 
   return (
     <Fragment>
+
       <section className='container-fluid landing'>
         <div className='row'>
           <div className='col-12 p-0'>
             <div className='banner'>
               <div className="banner-img">
-                <img src="images/landing.jpg" alt="image-not-found" className='img-fluid'/>
+                <img src="images/landing.jpg" alt="image-not-found" className='img-fluid' />
               </div>
-              <div className="landing-text container-fluid">
+              <div className="landing-text container-fuild">
+                <div className='container'>
+                <div className='row '>
+                  <div className="col-12 col-lg-6"></div>
 
-                <div className='row'>
-                  <div className="col-8 col-sm-6">
+                  <div className="col-12 col-lg-6" >
                     <div className='banner-content'>
-                      {/* <h1>Charter With Us For An Adventure-Filled Journey</h1> */}
+                      <h1>Charter With Us For An Adventure-Filled Journey</h1>
+                      <div className='d-flex justify-content-center mt-4' style={{gap:"10px",flexWrap:"wrap"}}>
+                        <p>Safe & Secure</p>
+                        <p>Reasonable & Reliable</p>
+                        <p>Professional & Experienced</p>
+                        <p>24/7 Support</p>
+                        <p>One stop Shop</p>
+                      </div>
+
 
                       {/* <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam cupiditate, consequuntur veritatis eaque in expedita commodi rerum eum ut, exercitationem quia. Nesciunt in nulla, totam modi iste eos alias soluta.</p> */}
-                      {/* <button className='mt-4'>Explore us </button> */}
+
                     </div>
 
                   </div>
-                  <div className="col-6"></div>
 
                 </div>
+                </div>
+
+               
 
 
               </div>
@@ -38,6 +51,8 @@ export default function Home() {
 
 
       </section>
+
+
 
 
       <section className='booking-form-sec'>
@@ -88,7 +103,7 @@ export default function Home() {
                     <h1>Enjoy the journey – travel with us</h1>
                   </div>
                   <div className="col-lg-8 mt-3 mt-lg-0">
-                  <p>At our cab rental service, we are dedicated to providing exceptional transportation experiences. We believe that every journey should be enjoyable, comfortable, and hassle-free. Our team of professional drivers and well-maintained vehicles are here to ensure that you reach your destination safely and on time. Whether you're traveling for business or leisure, choose us for a seamless and pleasant ride. Enjoy the journey – travel with us and experience the difference.</p>
+                    <p>At our cab rental service, we are dedicated to providing exceptional transportation experiences. We believe that every journey should be enjoyable, comfortable, and hassle-free. Our team of professional drivers and well-maintained vehicles are here to ensure that you reach your destination safely and on time. Whether you're traveling for business or leisure, choose us for a seamless and pleasant ride. Enjoy the journey – travel with us and experience the difference.</p>
                   </div>
                 </div>
               </div>
@@ -100,7 +115,7 @@ export default function Home() {
             <div className='whoweare-img p-0'>
               <img className='img-fluid' src="./images/who we are img.png" alt="whoweare" />
             </div>
-          
+
           </div>
         </div>
       </section>
@@ -111,7 +126,7 @@ export default function Home() {
         </div>
         <div className="banner-text  p-0">
           <div className="banner-text-inner">
-            <h1>Charter With Us For An Adventure-Filled Journey</h1>
+            <h1>Ride With Us for an Unforgettable Journey on the Road!</h1>
 
             <p className='mt-3'>Charter with us for an adventure-filled journey that you'll never forget. Our top-notch vehicles and experienced drivers are ready to take you to your next exciting destination. Whether you're planning a road trip, a scenic tour, or a special event, we provide reliable and comfortable transportation to make your adventure smooth and enjoyable. Trust us to be your travel partner and embark on a journey filled with fun and memorable experiences. Travel with us and turn every trip into an adventure!</p>
             <button>Explore us </button>
@@ -124,10 +139,10 @@ export default function Home() {
         <div className="container">
           <div className="pt-5 home-service">
             <h5 className='text-center' style={{ fontWeight: "700", "font-size": "18px" }}>OUR SERVICES </h5>
-            <h3 className='text-center  mt-4' style={{ fontWeight: "700",  "color": "#005395" }}> We Provide Best Services For You</h3>
+            <h3 className='text-center  mt-4' style={{ fontWeight: "700", "color": "#005395" }}> We Provide Best Services For You</h3>
             <p className='text-center mt-4' style={{ fontWeight: "400", "font-size": "16px" }}>
-            Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
-</p>
+              Our cab rental service is dedicated to providing you with the best services tailored to your needs. Whether you need a quick ride across town, a comfortable long-distance journey, or transportation for a special event, we have you covered. With our well-maintained fleet and professional drivers, we ensure a smooth, safe, and reliable experience. Choose us for punctual, dependable service designed to meet your every transportation need.
+            </p>
           </div>
           <div className='row '>
             <div className='col-12 col-md-4 service-item mt-5'>

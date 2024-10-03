@@ -1,5 +1,5 @@
 import React, { useReducer, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Datepicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css';
 import SelectCab from './SelectCab';
@@ -26,33 +26,41 @@ const BookingForm = () => {
         mail: "",
         distance: "",
         fare: "",
-        LocalTripType: "Hour-Basis"
+        LocalTripType: "Hour-Basis",
+        selectedCab:null
     };
+
+    const capitalizeFirstLetter = (str) => {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      };
 
     const reducer = (state, action) => {
         switch (action.type) {
             case "TRIP-TYPE":
-                return { ...state, triptype: action.payload };
+                return { ...state, triptype: capitalizeFirstLetter(action.payload) };
             case "FROM":
-                return { ...state, from: action.payload };
+                return { ...state, from: capitalizeFirstLetter(action.payload) };
             case "TO":
-                return { ...state, to: action.payload };
+                return { ...state, to: capitalizeFirstLetter(action.payload) };
             case "PICK-UP-DATE":
+                console.log(action.payload);
                 return { ...state, PickUpdate: action.payload };
             case "RETURN-DATE":
-                return { ...state, returndate: action.payload };
+                console.log(action.payload);
+                
+                return { ...state, returndate: capitalizeFirstLetter(action.payload)};
             case "NAME":
-                return { ...state, name: action.payload };
+                return { ...state, name: capitalizeFirstLetter(action.payload) };
             case "MOBILE":
                 return { ...state, mobile: action.payload };
             case "MAIL":
                 return { ...state, mail: action.payload };
             case "PICK-UP-LOCATION":
-                return { ...state, pickUpLocation: action.payload };
+                return { ...state, pickUpLocation: capitalizeFirstLetter(action.payload) };
             case "PICK-UP-TIME":
-                return { ...state, pickUpTime: action.payload };
+                return { ...state, pickUpTime: action.payload};
             case "RETURN-LOCATION":
-                return { ...state, returnLocation: action.payload };
+                return { ...state, returnLocation: capitalizeFirstLetter(action.payload)};
             case "RETURN-TIME":
                 return { ...state, ReturnTime: action.payload };
             case "ADD-VISITING-PLACE":
@@ -61,19 +69,25 @@ const BookingForm = () => {
                 return { ...state, visitingPlaces: state.visitingPlaces.filter((_, index) => index !== action.payload) };
             case "UPDATE-VISITING-PLACE":
                 const updatedVisitingPlaces = state.visitingPlaces.map((place, index) =>
-                    index === action.payload.index ? action.payload.value : place
+                    index === action.payload.index ? capitalizeFirstLetter(action.payload.value) : place
                 );
                 return { ...state, visitingPlaces: updatedVisitingPlaces };
             case "NUMBER-OF-PERSONS":
                 return { ...state, NumberOfPersons: action.payload };
             case "CAB-TYPE":
-                return { ...state, CabType: action.payload };
+               
+                return { ...state, CabType: capitalizeFirstLetter(action.payload) };
+              
+                
             case "LOCAL-TRIP-TYPE":
-                return { ...state, LocalTripType: action.payload };
+                return { ...state, LocalTripType: capitalizeFirstLetter(action.payload) };
             case "DISTANCE":
                 return { ...state, distance: action.payload };
             case "FARE":
                 return { ...state, fare: action.payload };
+            case "SELECTED-CAB":
+                console.log(action.payload.brand);
+                return{...state, selectedCab: action.payload}   
             default:
                 return state;
         }
@@ -93,30 +107,12 @@ const BookingForm = () => {
         setError("")
 
 
-        navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
-        // navigate("/confirmbooking", { state: { ...state, PickUpdate: state.PickUpdate.toLocaleDateString(), returndatedate: state.returndate.toLocaleDateString() } })
+        navigate("/confirmbooking", { state: { ...state,PickUpdate: state.PickUpdate.toLocaleDateString(), returndate: state.returndate.toLocaleDateString() } })
 
 
     };
 
-    // const calculateFare = (distance) => {
-    //     let fare = 0;
-    //     if (distance >= 100 && distance < 200) {
-    //         fare = 5000;
-    //     }
-    //     if (distance >= 200 && distance < 300) {
-    //         fare = 6000;
-    //     } if (distance >= 300 && distance < 400) {
-    //         fare = 7000;
-    //     } if (distance >= 400 && distance < 500) {
-    //         fare = 8000;
-    //     } if (distance >= 500 && distance < 600) {
-    //         fare = 9000;
-    //     } if (distance >= 700 && distance < 800) {
-    //         fare = 10000;
-    //     }
-    //     return fare;
-    // };
+   
 
     const handleDistanceChange = (e) => {
         const distance = e.target.value;
@@ -187,7 +183,7 @@ const BookingForm = () => {
                                     type='button'
                                     className={`${state.triptype === 'Outstation' ? "active" : ""}`}
                                     value="Outstation"
-                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Outstation
+                                    onClick={(e) => { dispatch({ type: "TRIP-TYPE", payload: e.target.value }) }}>Out Station
                                 </button>
                                 {/* <input
                                     type="radio"
@@ -208,7 +204,7 @@ const BookingForm = () => {
                             </div>
                         )}
 
-                        <div className={`row  ${error ? "mt-0" : "mt-2"}`}>
+                        <div className={`row  ${error ? "mt-0" : "mt-4"}`}>
                             <div className='col-6'>
                                 <label htmlFor="From">From</label>
                                 <input type="text" className='input-field'
@@ -301,7 +297,7 @@ const BookingForm = () => {
                         {(state.triptype === "Local Trip" || state.triptype === "Outstation") && (
                             <div className='row mt-3'>
                                 <div className='col-4'>
-                                    <label htmlFor="returnLocation">Return Location </label>
+                                    <label htmlFor="returnLocation">Return Location <b style={{ fontSize: "12px" }}>(Distination is Garage) </b></label>
                                     <input type="text" className='input-field'
                                         id='DropLoaction'
                                         value={state.ReturnLocation}

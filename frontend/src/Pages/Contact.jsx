@@ -62,13 +62,13 @@ export default function Contact() {
                 <div className="about-text container-fluid mx-auto" >
                     <div className='row'>
                         <div className='col-10 col-md-6 about-content'>
-                            <h2 style={{ fontWeight: "600" }}>About Us</h2>
-                            <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.
+                            <h2 style={{ fontWeight: "600" }}>Contact Us</h2>
+                            <h5 className='mt-3'>With our reliable cab service, comfort is just a ride away. Contact us to reserve your cab today!
                             </h5>
 
                             <p className=' bredcrumb mt-3'>
                                 <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>
-                                <Link to="/about" style={{ color: "white", textDecoration: "none" }}>About</Link>
+                                <Link to="/contactus" style={{ color: "white", textDecoration: "none" }}>Contact</Link>
                             </p>
                         </div>
                         <div className='col-2 col-md-6'></div>
@@ -86,7 +86,8 @@ export default function Contact() {
                             <div className='item'>
 
                                 <h3>Office Location </h3>
-                                <p>abc street, abc</p>
+                                <p>No 13, Thadagam road, Somayampalayam post, Kanuvai, Coimbatore
+                                641108.</p>
                             </div>
                         </div>
                     </div>
@@ -94,7 +95,9 @@ export default function Contact() {
                         <div className='service-item-inner text-center'>
                             <div className='item'>
                                 <h3>Phone Number</h3>
-                                <a href="tel:9994074471"> 9994074471</a>
+                                <a href="tel:9994074471" style={{textDecoration:"none", color:"black"}}> 9994074471</a> ,<br />
+                                <a href="tel:9442154471" style={{textDecoration:"none", color:"black"}}> 9442154471</a>,
+                                <a href="tel:9443403533" style={{textDecoration:"none", color:"black"}}> 9443403533</a> 
                             </div>
 
                         </div>
@@ -103,7 +106,7 @@ export default function Contact() {
                         <div className='service-item-inner text-center'>
                             <div className='item'>
                                 <h3>Email Address</h3>
-                                <a href="mailto:abc@gmail.com">abc@gmail.com</a>
+                                <a href="mailto:abc@gmail.com" style={{textDecoration:"none", color:"black"}}>info@saptravels.in</a>
                             </div>
 
                         </div>
@@ -115,8 +118,8 @@ export default function Contact() {
             <div className='contact-form container mt-3 p-5'>
                 <div className='row'>
                     <div className='col-12 col-lg-10 mx-auto'>
-                        <h2>LEAVE A COMMENT</h2>
-                        <p>The minutes that usually takes to deliver!</p>
+                        <h2 style={{textAlign:"center"}}>LEAVE A COMMENT</h2>
+                        <p style={{textAlign:"center"}}>The minutes that usually takes to deliver!</p>
 
                         <form className="container mt-5 con-right" onSubmit={onSubmit}>
                             <div className="row">
