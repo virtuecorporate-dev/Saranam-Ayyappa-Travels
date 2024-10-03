@@ -29,7 +29,6 @@ export default function Holiday() {
         };
         fetchData();
     }, [dispatch]);
-console.log("holiday",holidays)
     return (
         <Fragment>
             <Admin/>
@@ -37,7 +36,7 @@ console.log("holiday",holidays)
                 <h2>Create Holiday Page</h2>
                 <div className="table-add mt-4">
                     <Link to='/holiday/create'>
-                        <button><i className="fa-solid fa-plus mb-2"></i> Add</button>
+                        <button><i className="fa-solid fa-plus mb-2"></i> <h5>Add</h5></button>
                     </Link>
                 </div>
                 {holidays.map((holiday, index) => (
@@ -52,13 +51,13 @@ console.log("holiday",holidays)
                         <div className="col-lg-8">
                             <div className="row car-details">
                                 <div className="col-lg-3">
-                                    <label htmlFor={`index:${index}`}>Sno {index + 1}</label>
+                                    <label htmlFor={`index:${index}`}><h6>Sno</h6> {index + 1}</label>
                                 </div>
                                 <div className="col-lg-3">
-                                    <label htmlFor="name">Name : {holiday.name}</label>
+                                    <label htmlFor="name"><h6>Name</h6>{holiday.name}</label>
                                 </div>
                                 <div className="col-lg-3">
-                                    <h5>Services</h5>    
+                                    <h6>Services</h6>    
                                     <ul>
                                         {holiday.services.map((ser, i) => (
                                             <li key={i}>{ser.name}</li>
@@ -66,7 +65,8 @@ console.log("holiday",holidays)
                                     </ul>
                                 </div>
                                 <div className="col-lg-3">
-                                    <label htmlFor="category">Category :
+                                    <label htmlFor="category"><h6>Category</h6>
+                             
                                         <ul>
                                             <li>{holiday.category}</li>
                                         </ul>
@@ -74,8 +74,9 @@ console.log("holiday",holidays)
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-1">
-                        <label htmlFor="pdf">pdf :                                                                </label>
+                        <div className="col-lg-1 holiday-pdf">
+                        <label htmlFor="pdf"> <h6>pdf</h6>
+                                                                        </label>
 
 
                             {holiday.pdf && (
@@ -83,19 +84,21 @@ console.log("holiday",holidays)
                                     href={`http://localhost:8000/${holiday.pdf}`}  // URL to the PDF file
                                     target="_blank"      // Opens the PDF in a new tab or window
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary"
+                                    className="btn btn-primary "
                                 >
                                     Download PDF
                                 </a>
 
                             )}
                         </div>
-                        <div className="col-lg-1 mt-3">
-                            <Link to={`/holidayEdit/${holiday.id}`}>
-                                <button className="update"><i className="fa-solid fa-pen-to-square"></i> Update</button>
-                            </Link>
-                            <button onClick={() => handleDelete(holiday.id)} className="delete"><i className="fa-solid fa-bucket"></i> Delete</button>
-                        </div>
+                        <div className="holiday-actions col-lg-1 mt-3">
+                    <Link to={`/holidayEdit/${holiday.id}`}>
+                        <button className="holiday-update-btn"><i className="fa-solid fa-pen-to-square"></i> Update</button>
+                    </Link>
+                    <button onClick={() => handleDelete(holiday.id)} className="holiday-delete-btn">
+                        <i className="fa-solid fa-bucket"></i> Delete
+                    </button>
+                </div>
                     </div>
                 ))}
             </div>

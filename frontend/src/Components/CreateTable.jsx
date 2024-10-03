@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import axios from 'axios';
 import { addCar } from "../Slice/carsSlice";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 export function CreateTable() {
   const [carModel, setCarModel] = useState('');
@@ -160,6 +161,10 @@ export function CreateTable() {
         </div>
         
         <button className="create-submit mb-3" type="submit">Create</button>
+        <br />
+        <Link to="/table">
+                    <button className="create-cancel" type="button">Cancel</button>
+                </Link>
       </form>
     </div>
   );

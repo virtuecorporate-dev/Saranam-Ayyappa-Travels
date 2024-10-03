@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
 import { updateCar } from "../Slice/carsSlice";
-import { useNavigate, useParams } from "react-router-dom";  
+import { useNavigate, useParams, Link } from "react-router-dom";  
 
 export function UpdateTable(){
     const Cars = useSelector(state => state.Cars.Cars)
@@ -136,6 +136,9 @@ export function UpdateTable(){
         </select>
       </div>
       <button className="create-submit mb-3" type="submit">Update</button>
+      <Link to="/table">
+                    <button className="create-cancel" type="button">Cancel</button>
+                </Link>
     </form>
           </div>
            

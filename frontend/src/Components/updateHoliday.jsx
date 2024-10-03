@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import { useSelector,useDispatch } from "react-redux";
-import { useParams , useNavigate} from "react-router-dom"
+import { useParams , useNavigate, Link} from "react-router-dom"
 import { updateHoliday } from "../Slice/holidaySlice";
 import axios from "axios";
 
@@ -128,6 +128,9 @@ export default function UpdateHoliday(){
                     </div>
                 )}
                 <button className="create-submit mb-3" type="submit">Update</button>
+                <Link to="/holiday">
+                    <button className="create-cancel" type="button">Cancel</button>
+                </Link>
             </form>
         </div>
     </Fragment>

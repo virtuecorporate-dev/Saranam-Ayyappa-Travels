@@ -2,7 +2,7 @@ import { Fragment, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addHoliday } from "../Slice/holidaySlice";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function() {
     const [name, setName] = useState("");
@@ -86,7 +86,7 @@ export default function() {
                 <div className="form-group">
                     <label htmlFor="serviceName">Services</label>
                     <input type="text" id="serviceName" value={serviceName} onChange={(e) => setServiceName(e.target.value)} />
-                    <button onClick={addService}>Add Services</button>
+                    <button type="button" onClick={addService}>Add Services</button>
                 </div>
                 <div className="form-group">
                     <ul>
@@ -123,11 +123,16 @@ export default function() {
                         <p>PDF Selected: {pdf.name}</p>
                     </div>
                 )}
-                <button className="create-submit mb-3" type="submit">Create</button>
+                <div>
+                    <button className="create-submit" type="submit">Create</button>
+                    <Link to="/holiday">
+                    <button className="create-cancel" type="button">Cancel</button>
+                </Link>
+                </div>
             </form>
         </div>
     </Fragment>
-
+    
       
     );
 }

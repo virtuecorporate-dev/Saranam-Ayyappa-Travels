@@ -1,7 +1,7 @@
 import axios from "axios";
 import { Fragment, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { updateTour } from "../Slice/toursSlice";
 
 export default function UpdateTour() {
@@ -140,6 +140,9 @@ export default function UpdateTour() {
                     )}
 
                     <button className="create-submit mb-3" type="submit">Update</button>
+                    <Link to="/tour">
+                    <button className="create-cancel" type="button">Cancel</button>
+                </Link>
                 </form>
             </div>
         </Fragment>

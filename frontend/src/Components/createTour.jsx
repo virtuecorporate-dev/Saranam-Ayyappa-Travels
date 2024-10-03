@@ -51,6 +51,7 @@ export default function CreateTour() {
             services.forEach(service => {
                 formData.append("services", service); // Multiple services
             });
+            
     
             if (file) {
                 formData.append("imageUrl", file);
@@ -99,7 +100,7 @@ export default function CreateTour() {
                             <ul>
                                 {services.map((service, index) => (
                                     <li key={index}>{service.name}
-                                     <button onClick={addService}>Add Services</button></li>
+                                     <button onClick={()=>removeService(index)}>Remove Services</button></li>
                                 ))}
                             </ul>
                         </div>

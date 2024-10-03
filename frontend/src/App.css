@@ -1543,137 +1543,137 @@ margin-top: -15px;
 } */
 
 /* Tour Package start----------------------- */
-.package {
+/* Main container for the tour packages */
+.tour-package {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 15px;
-  margin-bottom: 90px;
-  column-gap: 5px;
-  height: auto; 
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  background-color: #F8F9FC; /* Soft white background */
+  margin: 0 auto;
+  max-width: 1200px; /* Restrict width for proper centering */
 }
 
-.package-card {
-  display: flex;
-  flex-direction: row;
-  width: 65vw;
-  max-width: 650px;
-  background-color: #005395;
-  color: white;
-  align-items: center;
-  border-radius: 24px;
-  padding: 10px 10px 20px 50px;
-  box-shadow: 0 80px 60px rgb(209, 208, 208);
-  margin-bottom: 30px;
-  text-align: center; 
+/* Individual tour package card styling */
+.tour-package-card {
+  width: 30%; /* Three columns layout */
+  background-color: #005395; /* Card background */
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.package-card img {
-  height: 300px;
-  width: 280px;
-  max-width: 32vw;
-  border-radius: inherit;
-  object-fit: cover;
-  margin-left: -60px;
-  margin-right: 30px;
+/* Card hover effect */
+.tour-package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
-.package-card h3 {
-  font-size: 26px;
-  font-weight: 500; 
-  margin: 0 30px 10px; 
-  text-transform: capitalize; 
-}
-
-.package-card h4 {
-  margin: 0 0 12px;
-  font-size: 20px; 
-  font-weight: 400;
-  text-transform: capitalize; 
-}
-
-.package-card p {
-  margin: 0 0 30px;
-  font-size: 19px; 
-}
-.package-card li{
-  font-size: 16px;
+.tour-category li{
   list-style-type: none;
 }
-.package-btn button {
-  padding: 10px 20px; 
-  background-color: white;
-  box-shadow: 2px 2px white;
-  color: black;
-  border: none;
-  border-radius: 8px; 
-  cursor: pointer;
-  font-size: 16px; 
-  text-transform: uppercase;
+
+/* Image styling */
+.tour-package-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
-.package-btn button:hover {
-  background-color: #005395;
+/* Content area within the card */
+.tour-package-content {
+  padding: 20px;
+}
+
+/* Heading styling */
+.tour-package-content h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Subheading (category, persons) */
+.tour-package-content h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 10px;
+}
+
+/* Service included section */
+.tour-package-content p {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Button container */
+.tour-package-btn {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Button styling */
+.tour-package-btn button {
+  background-color: black;
   color: white;
   border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tour-package-btn button:hover {
+  background-color: #333;
+}
+
+/* PDF download button */
+.holiday-pdf {
+  margin-top: 10px;
+}
+
+.holiday-pdf h6 {
+  font-size: 14px;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* PDF button styling */
+.holiday-pdf .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.holiday-pdf .btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive layout */
+@media (max-width: 992px) {
+  .tour-package-card {
+    width: 48%; /* Two columns on tablet */
+  }
 }
 
 @media (max-width: 600px) {
-  .package {
-    justify-content: center;
-  }
-
-  .package-card {
-    margin: 0 40px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 60px;
-    width: 100%;
-    text-align: center;
-    flex-direction: column;
-  }
-
-  .package-card img {
-    margin: -160px 0 30px 0;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    border-radius: inherit;
-  }
-
-  .package-card p {
-    max-width: 400px;
-  }
-}
-
-@media (max-width: 420px) {
-  .package-card {
-    place-items: center;
-    margin-top: 100px;
-  }
-
-  .package-card li {
-    list-style-type: none;
-    text-align: center;
-  }
-
-  .package-card h4 {
-    text-align: center;
-  }
-
- 
-
-  .package-card img {
-    height: 50vw;
-    width: 50vw;
-    border-radius: 50%;
-    margin: -100px 0 30px 0;
+  .tour-package-card {
+    width: 100%; /* One column on mobile */
   }
 }
 
 
-/* admin panel------------------------------------- */
-.adminPanel{
+/* admin panel-------------------------------------  */
+ .adminPanel{
   display: flex;
   justify-content: center;
 }
@@ -1684,4 +1684,106 @@ margin-top: -15px;
   padding: 10px;
   font-weight: bold;
   border-radius:5px;
+}
+
+.holiday-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; 
+}
+
+.holiday-edit-btn,
+.holiday-delete-btn {
+  margin-top: 5px; 
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.holiday-edit-btn {
+  background-color: #28a745; 
+  color: #FFFFFF;
+}
+
+.holiday-delete-btn {
+  background-color: #dc3545;
+  color: #FFFFFF;
+}
+
+.container.create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.create-table {
+    width: 100%;
+    max-width: 600px; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+.create-head h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input, 
+.form-group select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.create-submit, .create-cancel {
+    margin-top: 20px;
+    display: inline-block;
+    width: 48%;
+    margin-right: 2%;
+    text-align: center;
+}
+
+.create-cancel {
+    background-color: #dc3545;
+}
+
+.create-cancel:hover {
+    background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+    .create-submit, .create-cancel {
+        width: 100%;
+        margin: 5px 0;
+    }
 }
