@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getHoliday } from "../Slice/holidaySlice";
+import { Link } from "react-router-dom";
 
 const Service = () => {
   const dispatch = useDispatch();
@@ -22,13 +23,23 @@ const Service = () => {
 
   return (
     <section>
-      <div className="container-fluid p-0">
-        <div className="about-img">
-          <img src="./images/w4.jpg" alt="About Us" />
+       <div className="container-fluid p-0 about-banner">
+        <div className="about-img ">
+          <img src="./images/w4.jpg" alt="About Us Banner" />
         </div>
-        <div className="about-text">
-          <h1>Services</h1>
-          <h3>Be comfortable while you travel with our reliable bus rental.</h3>
+        <div className="about-text container-fluid mx-auto">
+          <div className='row'>
+            <div className='col-10 col-md-6 about-content'>
+              <h2 style={{ fontWeight: "600" }}>Holiday Package</h2>
+              <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.</h5>
+
+              <p className='bredcrumb mt-3'>
+                <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>
+                <Link to="/holidayPackage" style={{ color: "white", textDecoration: "none" }}>Holiday Package</Link>
+              </p>
+            </div>
+            <div className='col-2 col-md-6'></div>
+          </div>
         </div>
       </div>
 

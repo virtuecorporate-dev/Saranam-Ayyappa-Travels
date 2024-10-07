@@ -48,7 +48,7 @@ const BookingForm = () => {
             case "RETURN-DATE":
                 console.log(action.payload);
                 
-                return { ...state, returndate: capitalizeFirstLetter(action.payload)};
+                return { ...state, returndate: action.payload};
             case "NAME":
                 return { ...state, name: capitalizeFirstLetter(action.payload) };
             case "MOBILE":
