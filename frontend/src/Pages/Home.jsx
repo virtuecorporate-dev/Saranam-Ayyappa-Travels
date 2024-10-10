@@ -22,7 +22,8 @@ export default function Home() {
                   <div className="col-12 col-lg-6" >
                     <div className='banner-content'>
                       <h1>Charter With Us For An Adventure-Filled Journey</h1>
-                      <div className='d-flex justify-content-center mt-4' style={{gap:"10px",flexWrap:"wrap"}}>
+                      <h6 className='text-start px-4 mt-4'>Why Choose Us:</h6>
+                      <div className='d-flex justify-content-center mt-3' style={{gap:"10px",flexWrap:"wrap"}}>
                         <p>Safe & Secure</p>
                         <p>Reasonable & Reliable</p>
                         <p>Professional & Experienced</p>

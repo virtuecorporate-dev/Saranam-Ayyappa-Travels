@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getHoliday } from "../Slice/holidaySlice";
@@ -21,9 +21,11 @@ const Service = () => {
     fetchData();
   }, [dispatch]);
 
+  const [Category, setCategory] = useState("")
+
   return (
     <section>
-       <div className="container-fluid p-0 about-banner">
+      <div className="container-fluid p-0 about-banner">
         <div className="about-img ">
           <img src="./images/w4.jpg" alt="About Us Banner" />
         </div>
@@ -44,66 +46,78 @@ const Service = () => {
       </div>
 
       <div className="container mb-5">
-    <div className="text-center mt-5 pb-5">
-        <h5 className="section-title">OUR SERVICES</h5>
-        <h1 className="section-header">We Provide Best Holiday Packages For You</h1>
-    </div>
+        <div className="text-center mt-5 pb-5">
+          <h5 className="section-title">OUR SERVICES</h5>
+          <h1 className="section-header">We Provide Best Holiday Packages For You</h1>
+        </div>
 
-    <section className="tour-package-section">
-        {holidays.map((tour) => (
+        <section className="tour-package-section">
+          {holidays.map((tour) => (
             <div className="tour-package-card" key={tour._id}>
-                <img
-                    src={`http://localhost:8000/${tour.imageUrl}`}
-                    alt={tour.name}
-                    className="tour-image img-fluid"
-                />
-                <div className="tour-package-content">
-                    <h3 className="tour-name">Package: {tour.name}</h3>
-                    <h4 className="category-text">
-                        Category:
-                        <ul className="tour-category">
-                            <li>
-                                <i className="fa-solid fa-check"></i> {tour.category}
-                            </li>
-                        </ul>
-                    </h4>
-                    <p>
-                        Service Included:
-                        <ul className="tour-services">
-                            {tour.services.map((ser, i) => (
-                                <li key={i}>
-                                    <i className="fa-solid fa-check"></i> {ser.name}
-                                </li>
-                            ))}
-                        </ul>
-                    </p>
-                    <div className="tour-package-btn">
-                        <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
-                            <button className="btn-book-now">Book Now</button>
-                        </Link>
-                    </div>
+              <img
+                src={`http://localhost:8000/${tour.imageUrl}`}
+                alt={tour.name}
+                className="tour-image img-fluid"
+              />
+              <div className="tour-package-content">
+                <h3 className="tour-name">Package: {tour.name}</h3>
 
-                    <div className="holiday-pdf">
-                        <label htmlFor="pdf">
-                            <h6>PDF</h6>
-                        </label>
-                        &nbsp; &nbsp;
-                        {tour.pdf && (
-                            <a
-                                href={`http://localhost:8000/${tour.pdf}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-primary"
-                            >
-                                Download PDF
-                            </a>
-                        )}
-                    </div>
+                <h4 className="tour-category ">
+                  <span className="head"> Category:</span>
+                  {/* <span className="category-text">{tour.category}</span> */}
+                  <span className="category-text">
+                    <select
+                      id="category"
+                      name="category"
+                      value={Category}
+                      onChange={(e) => setCategory(e.target.value)}
+                      className="form-control"
+                      required
+                    >
+                      <option value="">Select Category</option>
+                      <option value="Basic">Basic</option>
+                      <option value="Premium">Premium</option>
+                    </select>
+                  </span>
+                </h4>
+
+                <p>
+                  Service Included:
+                  <ul className="tour-services">
+                    {tour.services.map((ser, i) => (
+                      <li key={i}>
+                        <i className="fa-solid fa-check"></i> {ser.name}
+                      </li>
+                    ))}
+                  </ul>
+                </p>
+                <div className="tour-package-btn">
+                  <p className="package-fare">₹5000</p>
+                  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+                    <button className="btn-book-now">Book Now</button>
+                  </Link>
                 </div>
+
+                <div className="holiday-pdf">
+                  {
+                    tour.pdf && (<h6>For More Details about the package :
+                      <a
+                        href={`http://localhost:8000/${tour.pdf}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="package-details"
+                      >
+                        Tour Itenary
+                      </a>
+                    </h6>)
+                  }
+
+                </div>
+              </div>
             </div>
-        ))}
-    </section>
-</div>
+          ))}
+        </section>
+      </div>
 
     </section>
   );

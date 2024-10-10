@@ -57,7 +57,7 @@ const PackageBooknow = () => {
   };
 
   return (
-    <section className="book-now-section">
+    <section className="book-now-section package">
       <div className="container">
         <h2 className="text-center mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "36px", fontWeight: "600" }}>
           Book Your Package

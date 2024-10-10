@@ -107,9 +107,9 @@ export default function TourPackages() {
                             <img src={`http://localhost:8000/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
                             <div className="tour-package-content">
                                 <h3 className="tour-name">Package: {tour.name}</h3>
-                                <h4 className="tour-category">
+                                {/* <h4 className="tour-category">
                                     Category: <span className="category-text">{tour.category}</span>
-                                </h4>
+                                </h4> */}
                                 <h4>No of Persons: {tour.numberOfPersons}</h4>
                                 <p>Service Included:</p>
                                 <ul className="tour-services">
@@ -123,17 +123,19 @@ export default function TourPackages() {
                                     </Link>
                                 </div>
                                 <div className="holiday-pdf">
-                                    <h6>PDF</h6>
-                                    {tour.pdf && (
+                                    {
+                                    tour.pdf && (<h6>For More Details about the package :
                                         <a
                                             href={`http://localhost:8000/${tour.pdf}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="btn btn-outline-secondary"
+                                            className="package-details"
                                         >
-                                            Download PDF
+                                            Tour Itenary
                                         </a>
-                                    )}
+                                    </h6>)
+                                    }
+                                   
                                 </div>
                             </div>
                         </div>

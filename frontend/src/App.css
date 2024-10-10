@@ -133,7 +133,7 @@ body {
 }
 
 .banner-content {
-  /* padding: 0 0 0 80px; */
+  /* padding: 0; */
   background-color: rgba(0, 82, 149, 0.358);
   /* z-index: -100; */
 }
@@ -1935,8 +1935,17 @@ margin-top: -15px;
 }
 
 .tour-category {
+  display: flex;
   font-size: 1.2rem;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.tour-category select:focus{
+  border-color: transparent;
+  outline: none;
+}
+.tour-category .head{
+  margin-top: 5px;
 }
 
 .category-text {
@@ -1956,7 +1965,23 @@ margin-top: -15px;
 }
 
 .tour-package-btn {
+  display: flex;
+  justify-content: space-between;
   margin-top: 15px;
+}
+.tour-package-btn .package-fare{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.package-details{
+color: #626161;
+text-decoration: none;
+}
+.package-details:hover{
+  color: #000000;
+  text-decoration: underline;
 }
 
 .btn-book-now {
@@ -1976,7 +2001,7 @@ margin-top: -15px;
 /* PDF Download Button */
 .holiday-pdf {
   margin-top: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .holiday-pdf h6 {
@@ -2135,7 +2160,7 @@ margin-top: -15px;
 /* PDF Download Button */
 .holiday-pdf {
   margin-top: 20px;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .holiday-pdf h6 {
@@ -2316,59 +2341,59 @@ button:hover {
   padding: 50px 0;
 }
 
-.booking-form {
+.package .booking-form {
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.booking-form h4 {
+.package .booking-form h4 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.booking-form h5 {
+.package .booking-form h5 {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-.booking-form .form-group {
+.package .booking-form .form-group {
   margin-bottom: 20px;
 }
 
-.booking-form .form-group label {
+.package .booking-form .form-group label {
   font-weight: 500;
   font-size: 16px;
 }
 
-.booking-form .form-group .form-control {
+.package .booking-form .form-group .form-control {
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
 }
 
-.booking-form .btn-primary {
+.package .booking-form .btn-primary {
   background-color: #88D66C;
   border: none;
   font-size: 18px;
   font-weight: 600;
 }
 
-.booking-form .btn-primary:hover {
+.package .booking-form .btn-primary:hover {
   background-color: #76c158;
 }
 
-.booking-form h2 {
+.package .booking-form h2 {
   color: #2E236C;
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 600;
 }
 
-.booking-form img {
+.package .booking-form img {
   border-radius: 10px;
   height: 300px;
 }
