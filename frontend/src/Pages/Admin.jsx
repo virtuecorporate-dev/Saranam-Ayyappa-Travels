@@ -1,36 +1,3 @@
-
-// import React from 'react';
-// import Table from '../Components/Table';
-// import { Link } from 'react-router-dom';
-
-// function Admin() {
-//   return (
-//     <div>
-//       <div className="container">
-//         <div className="row adminPanel">
-//           <div className="col-lg-3 col-sm-12">
-//             <Link to='/table'>
-//               <button>Create Car</button>
-//             </Link>
-//           </div>
-//           <div className="col-lg-3 col-sm-12">
-//             <Link to='/holiday'>
-//               <button>Holiday Package</button>
-//             </Link>
-//           </div>
-//           <div className="col-lg-3 col-sm-12">
-//             <Link to='/tour'>
-//               <button>Tour Package</button>
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Admin;
-
 import React from 'react';
 import Table from '../Components/Table';
 import { Link } from 'react-router-dom';

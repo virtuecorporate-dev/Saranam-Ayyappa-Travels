@@ -68,14 +68,17 @@ export default function TourPackages() {
                                     </ul>
                                 </p>
                                 <div className="tour-package-btn">
-                                    <button>Book Now</button>
-                                </div>
+  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+    <button>Book Now</button>
+  </Link>
+</div>
                                 <div className="holiday-pdf">
                                     <label htmlFor="pdf">
                                         <h6>PDF</h6>
-                                    </label>
+                                    </label> &nbsp; &nbsp; &nbsp;
                                     {tour.pdf && (
                                         <a
+                                        
                                             href={`http://localhost:8000/${tour.pdf}`}  // URL to the PDF file
                                             target="_blank"      // Opens the PDF in a new tab or window
                                             rel="noopener noreferrer"

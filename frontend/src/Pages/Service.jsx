@@ -78,12 +78,17 @@ const Service = () => {
                   </ul>
                 </p>
                 <div className="tour-package-btn">
-                  <button>Book Now</button>
-                </div>
+  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+    <button>Book Now</button>
+  </Link>
+</div>
+
                 <div className="holiday-pdf">
                   <label htmlFor="pdf">
-                    <h6>PDF</h6>
+                    <h6>PDF</h6>                   
+
                   </label>
+                  &nbsp; &nbsp;
                   {tour.pdf && (
                     <a
                       href={`http://localhost:8000/${tour.pdf}`}

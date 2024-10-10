@@ -26,6 +26,8 @@ import Tour from './Components/tour';
 import CreateTour from './Components/createTour';
 import UpdateTour from './Components/updateTour';
 import Table from './Components/Table'
+import PackageBooknow from './Components/PackageBooknow';
+import CustomTourPackageForm from './Pages/customizedForm';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -38,9 +40,13 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/admin" element={<Admin/>}/>
-            {/* // {isAuthenticated ? <Admin /> : <Navigate to="/login" />} /> */}
-            <Route path='/table' element={<Table/>}/>
+            <Route path="/admin" 
+             element = {isAuthenticated ? <Admin/> : <Navigate to="/login" />} />
+             <Route path='/login' element ={<Login1 setIsAuthenticated={setIsAuthenticated}/>}/>
+             <Route 
+          path='/table' 
+          element={isAuthenticated ? <Table /> : <Navigate to="/login" />} 
+        />
             <Route path="/admin/create" element={<CreateTable />} />
             <Route path="/cars" element={<Cars />} />
             <Route path="/edit/:id" element={<UpdateTable />} />
@@ -55,6 +61,8 @@ function App() {
             <Route path='/tour' element={<Tour/>}/>
             <Route path='/tour/create' element={<CreateTour/>}/>
             <Route path='tourEdit/:id' element={<UpdateTour/>}/>
+            <Route path='/PackageBooknow/:id' element={<PackageBooknow/>}/>
+            <Route path='/CustomTourPackageForm' element={<CustomTourPackageForm/>}/>
           </Routes>
           <Footer />
         </div>
