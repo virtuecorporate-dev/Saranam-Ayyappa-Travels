@@ -31,7 +31,7 @@ export default function TourPackages() {
                     <div className='row'>
                         <div className='col-10 col-md-6 about-content'>
                             <h2 style={{ fontWeight: "600" }}>Tour Package</h2>
-                            <h5 className='mt-3'>Be comfortable while you travel with our reliable bus rental.</h5>
+                            <h5 className='mt-3'>Unforgettable Journeys, One Package – Discover, Explore, and Enjoy!</h5>
 
                             <p className='bredcrumb mt-3'>
                                 <Link to="/" style={{ color: "#deded7", textDecoration: "none" }}>Home/ </Link>

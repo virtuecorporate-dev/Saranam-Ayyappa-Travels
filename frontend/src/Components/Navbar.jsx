@@ -95,8 +95,12 @@ export default function Header() {
                 <NavLink to="/about" className="nav-link" activeClassName="active">About Us</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/services" className="nav-link" activeClassName="active">Services</NavLink>
+                <NavLink to="/tourPackage" className="nav-link" activeClassName="active">Tour Package</NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink to="/holidayPackage" className="nav-link" activeClassName="active">Holiday Package</NavLink>
+              </li>
+              
               <li className="nav-item">
                 <NavLink to="/contactus" className="nav-link" activeClassName="active">Contact Us</NavLink>
               </li>
