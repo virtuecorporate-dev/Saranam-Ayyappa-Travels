@@ -1716,6 +1716,7 @@ margin-top: -15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  justify-content: center;
 }
 
 /* Card hover effect */
@@ -1938,4 +1939,110 @@ button:hover {
         width: 100%;
         margin: 5px 0;
     }
+}
+
+/* booknow start--- */
+.book-now-section {
+  padding: 50px 0;
+}
+
+.booking-form {
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.booking-form h5 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.booking-form .form-group {
+  margin-bottom: 20px;
+}
+
+.booking-form .form-group label {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.booking-form .form-group .form-control {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.booking-form .btn-primary {
+  background-color: #88D66C;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.booking-form .btn-primary:hover {
+  background-color: #76c158;
+}
+
+.booking-form h2 {
+  color: #2E236C;
+  font-family: 'Poppins', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.booking-form img {
+  border-radius: 10px;
+  height: 300px;
+}
+
+/* customer tour package form---------------------- */
+
+.custom-tour-package-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f9f9f9;
+}
+
+.custom-tour-package-form h2 {
+  text-align: center;
+}
+
+.custom-tour-package-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.custom-tour-package-form input,
+.custom-tour-package-form select,
+.custom-tour-package-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.custom-tour-package-form button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.custom-tour-package-form button:hover {
+  background-color: #0056b3;
 }

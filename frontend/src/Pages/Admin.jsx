@@ -38,6 +38,7 @@ function Admin() {
   return (
     <div>
       <div className="container">
+        
         <div className="row adminPanel">
           <div className="col-lg-3 col-sm-12">
             <Link to='/table'>
