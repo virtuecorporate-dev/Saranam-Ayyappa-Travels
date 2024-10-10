@@ -154,7 +154,7 @@ body {
   width: 100%;
   color: white;
   text-align: center;
-  z-index: 2000;
+  /* z-index: 2000; */
 }
 
 .landing-text h1 {
@@ -789,6 +789,75 @@ margin-left: 10px;
 
 
 /* Admin table start-------------------------------------- */
+
+/* Container for the whole admin section */
+.admin-container {
+  margin-top: 50px;
+ margin-bottom: 80px;
+}
+
+/* Introductory content with some spacing */
+.admin-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.admin-intro p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Admin panel with row-wise structure */
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Each admin option with some spacing */
+.admin-option {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.admin-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #005395;
+  color: #fff;
+}
+.admin-button:hover{
+  border: 2px solid #005395;
+  color: #000000;
+}
+.admin-button.btn2{
+  background-color: #007bff;
+}
+.admin-button.btn2:hover{
+  border: 2px solid #007bff;
+  background-color: transparent;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .admin-option {
+    max-width: 100%;
+  }
+
+  .admin-button {
+    font-size: 1.1rem;
+  }
+}
+
 
 
 

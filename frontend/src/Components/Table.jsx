@@ -97,63 +97,73 @@ function Table() {
         // </Fragment>
 
         <Fragment>
-            <Admin />
-            <div className="tour-container">
-                {/* <div className="table-add mt-4">
-                    <Link to='/admin/create'>
-                        <button className="add-button"><i className="fa-solid fa-plus"></i> Add Car</button>
-                    </Link>
-                </div> */}
-                <div className="d-flex justify-content-between">
-                    <h2 className="tour-header">Manage Cabs</h2>
-                    <div className="table-add">
-                        <Link to='/admin/create'>
-                            <button className="add-button"><i className="fa-solid fa-plus"></i> Add Cab</button>
-                        </Link>
-                    </div>
-                </div>
+  <Admin />
+  <div className="container mb-3 car-list">
+    <div className="table-add mt-4">
+      <Link to='/admin/create'>
+        <button className="btn btn-primary add-button">
+          <i className="fa-solid fa-plus"></i> Add
+        </button>
+      </Link>
+    </div>
+    {
+      cars.map((car, index) => (
+        <div className="row car-detail mt-4" key={index}>
+          <div className="col-lg-2 col-md-4 col-sm-12 car-image mt-2">
+            <img
+              src={`http://localhost:8000/${car.imageUrl}`}
+              alt="Car not visible"
+              className="img-fluid"
+            />
+          </div>
 
-                {cars.length > 0 ? (
-                    <div className="car-grid">
-                        {cars.map((car, index) => (
-                            <div className="tour-card" key={car.id}>
-                                <div className="tour-image">
-                                    <img
-                                        src={`http://localhost:8000/${car.imageUrl}`}
-                                        alt="Car not visible"
-                                        className="img-fluid"
-                                    />
-                                </div>
-
-                                <div className="tour-details">
-                                    <h5>S.no: {index + 1}</h5>
-                                    <p>Model: <strong>{car.carModel}</strong></p>
-                                    <p>Brand: <strong>{car.brand}</strong></p>
-                                    <p>Price: <strong>{car.price}</strong></p>
-                                    <p>Seats: <strong>{car.seats}</strong></p>
-                                    <p>Availability: <strong>{car.availability ? "Yes" : "No"}</strong></p>
-                                    <p>Category: <strong>{car.category}</strong></p>
-                                    <p>Description: {car.description}</p>
-                                </div>
-
-                                <div className="tour-actions">
-                                    <Link to={`/edit/${car.id}`}>
-                                        <button className='action-button update-btn'>
-                                            <i className="fa-solid fa-pen-to-square"></i> Edit
-                                        </button>
-                                    </Link>
-                                    <button className='action-button delete-btn' onClick={() => handleDelete(car.id)}>
-                                        <i className="fa-solid fa-bucket"></i> Delete
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                ) : (
-                    <p>No cars available.</p>
-                )}
+          <div className="col-lg-9 col-md-7 col-sm-12 car-info">
+            <div className="row car-details">
+              <div className="index col-lg-3 col-sm-6">
+                <label>S.no: {index + 1}</label>
+              </div>
+              <div className="model col-lg-3 col-sm-6">
+                <label>Model: {car.carModel}</label>
+              </div>
+              <div className="brand col-lg-3 col-sm-6">
+                <label>Brand: {car.brand}</label>
+              </div>
+              <div className="price col-lg-3 col-sm-6">
+                <label>Price: {car.price}</label>
+              </div>
+              <div className="seats col-lg-3 col-sm-6">
+                <label>Seats: {car.seats}</label>
+              </div>
+              <div className="availability col-lg-3 col-sm-6">
+                <label>Availability: {car.availability ? "Yes" : "No"}</label>
+              </div>
+              <div className="category col-lg-3 col-sm-6">
+                <label>Category: {car.category}</label>
+              </div>
+              <div className="description col-lg-12">
+                <label>Description: {car.description}</label>
+              </div>
             </div>
-        </Fragment>
+          </div>
+
+          <div className="edit col-lg-1 col-md-1 col-sm-12 mt-3">
+            <Link to={`/edit/${car.id}`}>
+              <button className="btn btn-warning update">
+                <i className="fa-solid fa-pen-to-square"></i> Edit
+              </button>
+            </Link>
+            <button className="btn btn-danger delete mt-2" onClick={() => handleDelete(car.id)}>
+              <i className="fa-solid fa-bucket"></i> Delete
+            </button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Fragment>
+
+
+       
 
     );
 }
