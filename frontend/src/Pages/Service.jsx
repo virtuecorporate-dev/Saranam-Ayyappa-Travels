@@ -43,68 +43,68 @@ const Service = () => {
         </div>
       </div>
 
-      <div className="container">
-        <div className="text-center mt-5 pb-5">
-          <h5>OUR SERVICES</h5>
-          <h1>We Provide Best Holiday Packages For You</h1>
-        </div>
+      <div className="container mb-5">
+    <div className="text-center mt-5 pb-5">
+        <h5 className="section-title">OUR SERVICES</h5>
+        <h1 className="section-header">We Provide Best Holiday Packages For You</h1>
+    </div>
 
-        <section className="tour-package row">
-          {holidays.map((tour) => (
-            <div className="tour-package-card col-lg-4" key={tour._id}>
-              <img
-                src={`http://localhost:8000/${tour.imageUrl}`}
-                alt={tour.name}
-                className="img-fluid"
-              />
-              <div className="tour-package-content">
-                <h3>Package: {tour.name}</h3>
-                <h4>
-                  Category:
-                  <ul className="tour-category">
-                    <li>
-                      <i className="fa-solid fa-check"></i> {tour.category}
-                    </li>
-                  </ul>
-                </h4>
-                <p>
-                  Service Included:
-                  <ul className="tour-category">
-                    {tour.services.map((ser, i) => (
-                      <li key={i}>
-                        <i className="fa-solid fa-check"></i> {ser.name}
-                      </li>
-                    ))}
-                  </ul>
-                </p>
-                <div className="tour-package-btn">
-  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
-    <button>Book Now</button>
-  </Link>
+    <section className="tour-package-section">
+        {holidays.map((tour) => (
+            <div className="tour-package-card" key={tour._id}>
+                <img
+                    src={`http://localhost:8000/${tour.imageUrl}`}
+                    alt={tour.name}
+                    className="tour-image img-fluid"
+                />
+                <div className="tour-package-content">
+                    <h3 className="tour-name">Package: {tour.name}</h3>
+                    <h4 className="category-text">
+                        Category:
+                        <ul className="tour-category">
+                            <li>
+                                <i className="fa-solid fa-check"></i> {tour.category}
+                            </li>
+                        </ul>
+                    </h4>
+                    <p>
+                        Service Included:
+                        <ul className="tour-services">
+                            {tour.services.map((ser, i) => (
+                                <li key={i}>
+                                    <i className="fa-solid fa-check"></i> {ser.name}
+                                </li>
+                            ))}
+                        </ul>
+                    </p>
+                    <div className="tour-package-btn">
+                        <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+                            <button className="btn-book-now">Book Now</button>
+                        </Link>
+                    </div>
+
+                    <div className="holiday-pdf">
+                        <label htmlFor="pdf">
+                            <h6>PDF</h6>
+                        </label>
+                        &nbsp; &nbsp;
+                        {tour.pdf && (
+                            <a
+                                href={`http://localhost:8000/${tour.pdf}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-primary"
+                            >
+                                Download PDF
+                            </a>
+                        )}
+                    </div>
+                </div>
+            </div>
+        ))}
+    </section>
 </div>
 
-                <div className="holiday-pdf">
-                  <label htmlFor="pdf">
-                    <h6>PDF</h6>                   
-
-                  </label>
-                  &nbsp; &nbsp;
-                  {tour.pdf && (
-                    <a
-                      href={`http://localhost:8000/${tour.pdf}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      Download PDF
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </section>
-      </div>
     </section>
   );
 };
