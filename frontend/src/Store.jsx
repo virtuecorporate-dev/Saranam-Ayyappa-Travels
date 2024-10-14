@@ -7,7 +7,7 @@ import tourReducer from './Slice/toursSlice'
 
 export const Store = configureStore({
     reducer:{
-        Cars:carReducer,
+        Cabs:carReducer,
         users:userReducer,
         holidays:holidayReducer,
         tours:tourReducer

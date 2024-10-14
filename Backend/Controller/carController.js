@@ -1,13 +1,14 @@
 
 const CarModel = require('../Model/carModel');
+const cabModel = require('../Model/AllcabsModel')
 const bycrpt = require('bcryptjs')
 const userModel = require('../Model/UserModel')
 exports.getAllCar = async (req, res) => {
   try { 
-    const Cars = await CarModel.find({})
+    const Cabs = await cabModel.find({})
     res.json({
       success: true,
-      Cars
+      Cabs
     })
   } catch (error) {
     console.log(error.message)
@@ -66,17 +67,20 @@ exports.updateCar = async (req, res) => {
   try {
     const id = req.params.id;
 
-    const updatedCar = await CarModel.findByIdAndUpdate(
+    // Directly use the body data without any file upload handling
+    const updatedCar = await cabModel.findByIdAndUpdate(
       id,
       {
-        carModel: req.body.carModel,
+        cabModel: req.body.cabModel,
         brand: req.body.brand,
         price: req.body.price,
         seats: req.body.seats,
-        availability: req.body.availability,
-        imageUrl:req.body.imageUrl,
-        category: req.body.category,
+        onRide: req.body.onRide, // Ensure you use the correct field name
         description: req.body.description,
+        category: req.body.category,
+        pricePerKm: req.body.pricePerKm, // Include pricePerKm data
+        localTripType: req.body.localTripType, // Include localTripType data
+        pricePerday: req.body.pricePerday // Include pricePerday data
       },
       { new: true } // This option returns the updated document
     );
@@ -98,10 +102,11 @@ exports.updateCar = async (req, res) => {
 };
 
 
+
 exports.deleteCar = async(req,res)=>{
   try {
     const id = req.params.id;
-  const deleteCar = await CarModel.findByIdAndDelete({_id:id})
+  const deleteCar = await cabModel.findByIdAndDelete({_id:id})
 
   res.status(201).json({
     success:true,
