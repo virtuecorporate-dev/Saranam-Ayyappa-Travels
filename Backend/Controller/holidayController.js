@@ -19,7 +19,7 @@ const upload = multer({
         }
     })
 });
-// http://localhost:8000/api/v1/holiday
+// https://saranamayyappatravels-wqya.vercel.app/api/v1/holiday
 
 
 exports.getHoliday = async (req, res) => {
@@ -38,7 +38,7 @@ exports.getHoliday = async (req, res) => {
 };
 
 
-// http://localhost:8000/api/v1/createHoliday
+// https://saranamayyappatravels-wqya.vercel.app/api/v1/createHoliday
 exports.createHoliday = [
     upload.fields([
         {name:"imageUrl", maxCount:1},

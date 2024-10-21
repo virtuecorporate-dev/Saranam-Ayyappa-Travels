@@ -21,7 +21,7 @@ const RegisterPage = ({ onCloseRegister }) => {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/v1/register', {
+      const response = await axios.post('https://saranamayyappatravels-wqya.vercel.app/api/v1/register', {
         name,
         email,
         password,

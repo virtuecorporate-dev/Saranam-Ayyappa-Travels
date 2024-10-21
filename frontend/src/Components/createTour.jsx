@@ -60,7 +60,7 @@ export default function CreateTour() {
                 formData.append("pdf", pdf);
             }
     
-            const response = await axios.post('http://localhost:8000/api/v1/createTour', formData, {
+            const response = await axios.post('https://saranamayyappatravels-wqya.vercel.app/api/v1/createTour', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
