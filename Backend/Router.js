@@ -4,7 +4,8 @@ const { getAllCar , updateCar, deleteCar,getCarsByCategory, Register, Login} = r
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-const CarModel = require("./Model/carModel");
+// const CarModel = require("./Model/carModel");
+const cabModel = require('./Model/AllcabsModel')
 const { sendMail } = require('./nodemailer');
 // const { getHoliday, createHoliday } = require("./Controller/holidayController");
 // const { getAllTour, createTour, updateTour } = require("./Controller/tourController");
@@ -17,6 +18,7 @@ const upload = multer({
     storage: multer.diskStorage({
         destination: function (req, file, cb) {
             const dir = path.join(__dirname, 'public', 'images');
+            console.log(dir);
             if (!fs.existsSync(dir)) {
                 fs.mkdirSync(dir, { recursive: true });
             }
@@ -33,37 +35,56 @@ router.route("/allCars").get(getAllCar)
 router.route("/avaibleCars").get(getCarsByCategory)
 router.post("/createCar", upload.single('imageUrl'), async (req, res) => {
     try {
-        const { carModel, brand, price, seats, availability, description, category } = req.body;
+        const { cabModel: carModel, brand, seats, onRide, description, category } = req.body;
+        // Image upload logic
         const imageUrl = req.file ? `/images/${req.file.filename}` : '';
 
         if (!imageUrl) {
             throw new Error('Image upload failed. Please try again.');
         }
 
-        const newCar = new CarModel({
-            carModel,
+        // Parse JSON fields safely
+        let pricePerKm, localTripType, pricePerday;
+
+        try {
+            pricePerKm = req.body.pricePerKm ? JSON.parse(req.body.pricePerKm) : {};
+            localTripType = req.body.localTripType ? JSON.parse(req.body.localTripType) : {};
+            pricePerday = req.body.pricePerday ? JSON.parse(req.body.pricePerday) : {};
+        } catch (parseError) {
+            throw new Error('Invalid JSON format for pricePerKm, localTripType, or pricePerday.');
+        }
+
+        // Create new cab instance
+        const newCab = new cabModel({
+            cabModel: cabModel,
             brand,
-            price,
             seats,
-            availability,
-            imageUrl,
-            category: Array.isArray(category) ? category : [category],
+            onRide,
             description,
+            category,
+            imageUrl, // Saving the uploaded image URL
+            pricePerKm, // Parsed JSON
+            localTripType, // Parsed JSON
+            pricePerday // Parsed JSON
         });
 
-        await newCar.save();
+        // Save the new cab in the database
+        await newCab.save();
 
+        // Responding with success
         res.status(201).json({
             success: true,
-            newCar
+            newCab
         });
     } catch (error) {
+        // Handling errors
         res.status(500).json({
             success: false,
             error: error.message
         });
     }
 });
+
 // router.route("/createCar").post(createCar);
 router.route("/update/:id").put(updateCar);
 router.route("/delete/:id").delete(deleteCar)

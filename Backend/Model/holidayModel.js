@@ -20,10 +20,13 @@ const holidaySchema = new mongoose.Schema({
         },
      
     }],
-    category:{
-        type:[String],
-        required: true
-    }
+    category:[{
+        name:{
+            type:String,
+            required: true
+        },
+     
+    }]
 })
 
 const holidayModel = mongoose.model("holiday",holidaySchema);

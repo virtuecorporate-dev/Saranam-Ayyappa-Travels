@@ -64,21 +64,13 @@ const Service = () => {
 
                 <h4 className="tour-category ">
                   <span className="head"> Category:</span>
-                  {/* <span className="category-text">{tour.category}</span> */}
-                  <span className="category-text">
-                    <select
-                      id="category"
-                      name="category"
-                      value={Category}
-                      onChange={(e) => setCategory(e.target.value)}
-                      className="form-control"
-                      required
-                    >
-                      <option value="">Select Category</option>
-                      <option value="Basic">Basic</option>
-                      <option value="Premium">Premium</option>
-                    </select>
-                  </span>
+                  <ul className="tour-services">
+                    {tour.category.map((cat, i) => (
+                      <li key={i}>
+                        <i className="fa-solid fa-check"></i> {cat.name}
+                      </li>
+                    ))}
+                  </ul>
                 </h4>
 
                 <p>
@@ -92,11 +84,10 @@ const Service = () => {
                   </ul>
                 </p>
                 <div className="tour-package-btn">
-                  <p className="package-fare">₹5000</p>
-                  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
-                    <button className="btn-book-now">Book Now</button>
-                  </Link>
-                </div>
+                                    <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+                                        <button className="btn btn-book-now">Book Now</button>
+                                    </Link>
+                                </div>
 
                 <div className="holiday-pdf">
                   {

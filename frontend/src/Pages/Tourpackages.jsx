@@ -102,6 +102,11 @@ export default function TourPackages() {
                 </div>
 
                 <section className="row tour-package-section">
+                <div className="table-add">
+                        <Link to='/CustomTourPackageForm'>
+                            <button className="add-button"><i className="fa-solid fa-plus"></i> Add Customized Tour</button>
+                        </Link>
+                    </div>
                     {tours.map((tour) => (
                         <div className="tour-package-card col-lg-4 col-md-6 col-sm-12 mb-4" key={tour._id}>
                             <img src={`http://localhost:8000/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
