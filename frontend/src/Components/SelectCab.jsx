@@ -207,10 +207,10 @@ const SelectCab = ({ state, dispatch }) => {
                                                     <div className='row'>
                                                         <div className='col-8'>
                                                             <div className='car-name-details'>
-                                                                <h3>{cabbrand} {cabmodel}</h3>
+                                                                <h3>{cabmodel}</h3>
                                                             </div>
                                                             <div className='car-description'>
-                                                                <p>Manual - Petrol - {cab.seats} seats</p>
+                                                                <p>Manual - {cabbrand} - {cab.seats} seats</p>
                                                             </div>
                                                         </div>
                                                         <div className="col-4 p-0">
