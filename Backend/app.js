@@ -10,9 +10,10 @@ dotenv.config({path:path.join(__dirname,"config","config.env")})
 mongodbConnection();
 
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://saranamayyappatravels-frontend.vercel.app',
     credentials: true
-}));
+  }));
+  
 
 app.get('/hello', (req, res) => {
     res.send('Hello, World!');
