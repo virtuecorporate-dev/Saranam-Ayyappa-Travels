@@ -11,7 +11,7 @@ export default function TourPackages() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://saranamayyappatravels-wqya.vercel.app/api/v1/tour`);
+                const response = await axios.get(`https://saranamayyappatravels.vercel.app/api/v1/tour`);
                 dispatch(getTour(response.data.tour));
             } catch (error) {
                 console.log("Cannot fetch data", error.message);
@@ -51,7 +51,7 @@ export default function TourPackages() {
                 <section className="tour-package row">
                     {tours.map((tour) => (
                         <div className="tour-package-card col-lg-4" key={tour._id}>
-                            <img src={`https://saranamayyappatravels-wqya.vercel.app/${tour.imageUrl}`} alt={tour.name} className="img-fluid" />
+                            <img src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`} alt={tour.name} className="img-fluid" />
                             <div className="tour-package-content">
                                 <h3>Package: {tour.name}</h3>
                                 <h4>Category:  <ul className="tour-category">
@@ -79,7 +79,7 @@ export default function TourPackages() {
                                     {tour.pdf && (
                                         <a
                                         
-                                            href={`https://saranamayyappatravels-wqya.vercel.app/${tour.pdf}`}  // URL to the PDF file
+                                            href={`https://saranamayyappatravels.vercel.app/${tour.pdf}`}  // URL to the PDF file
                                             target="_blank"      // Opens the PDF in a new tab or window
                                             rel="noopener noreferrer"
                                             className="btn btn-primary"
@@ -109,7 +109,7 @@ export default function TourPackages() {
                     </div>
                     {tours.map((tour) => (
                         <div className="tour-package-card col-lg-4 col-md-6 col-sm-12 mb-4" key={tour._id}>
-                            <img src={`https://saranamayyappatravels-wqya.vercel.app/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
+                            <img src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
                             <div className="tour-package-content">
                                 <h3 className="tour-name">Package: {tour.name}</h3>
                                 {/* <h4 className="tour-category">
@@ -131,7 +131,7 @@ export default function TourPackages() {
                                     {
                                     tour.pdf && (<h6>For More Details about the package :
                                         <a
-                                            href={`https://saranamayyappatravels-wqya.vercel.app/${tour.pdf}`}
+                                            href={`https://saranamayyappatravels.vercel.app/${tour.pdf}`}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="package-details"
