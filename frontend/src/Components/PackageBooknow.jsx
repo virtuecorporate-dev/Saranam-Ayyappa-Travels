@@ -34,7 +34,7 @@ const PackageBooknow = () => {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          category: formData.category,
+          category: tour.category.map(cat => cat.name),
           tourName: tour.name,
           services: tour.services.map(service => service.name),
           imageUrl: tour.imageUrl,
@@ -57,7 +57,7 @@ const PackageBooknow = () => {
   };
 
   return (
-    <section className="book-now-section">
+    <section className="book-now-section package">
       <div className="container">
         <h2 className="text-center mb-4" style={{ fontFamily: "'Poppins', sans-serif", fontSize: "36px", fontWeight: "600" }}>
           Book Your Package
@@ -77,7 +77,7 @@ const PackageBooknow = () => {
           {/* Booking Form */}
           <div className="col-lg-6">
             <h4 style={{ fontSize: "24px", fontWeight: "500" }}>{tour.name}</h4>
-            <h5 style={{ fontSize: "20px", fontWeight: "400" }}>Category: {tour.category}</h5>
+            <h5 style={{ fontSize: "20px", fontWeight: "400" }}>{tour.category.map(cat => cat.name).join(', ')}</h5>
             <p style={{ fontSize: "16px" }}>Services: {tour.services.map(service => service.name).join(', ')}</p>
 
             <form onSubmit={handleSubmit} className="booking-form">

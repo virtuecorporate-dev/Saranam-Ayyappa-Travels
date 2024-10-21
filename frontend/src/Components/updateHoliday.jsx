@@ -14,8 +14,9 @@ export default function UpdateHoliday() {
   const [imageUrl, setImageUrl] = useState(holiday?.imageUrl || "");
   const [pdf, setPdf] = useState(holiday?.pdf || "");
   const [serviceName, setServiceName] = useState("");
-  const [category, setCategory] = useState("");
-  const [file, setFile] = useState(null);
+  const [categories, setCategories] = useState([]); // Array of category objects
+  const [categoryName, setCategoryName] = useState(""); // Input for category name
+const [file, setFile] = useState(null);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -31,6 +32,19 @@ export default function UpdateHoliday() {
     const updatedServices = services.filter((_, i) => i !== index); // Corrected logic
     setServices(updatedServices);
   };
+  const addCategory = (e) => {
+    e.preventDefault();
+    if (categoryName.trim()) {
+        setCategories([...categories, { name: categoryName }]); // Push category object with name
+        setCategoryName(""); // Clear category input field
+    }
+};
+
+// Remove a category from the array
+const removeCategory = (index) => {
+    const updatedCategories = categories.filter((_, i) => i !== index);
+    setCategories(updatedCategories);
+};
 
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
@@ -49,7 +63,7 @@ export default function UpdateHoliday() {
 
     const formData = new FormData();
     formData.append("name", name);
-    formData.append("category", category);
+    formData.append("category", JSON.stringify(services));
     formData.append("services", JSON.stringify(services)); // Convert services to a JSON string
 
     if (file) {
@@ -117,12 +131,33 @@ export default function UpdateHoliday() {
             </ul>
           </div>
           <div className="form-group">
-            <label htmlFor="category">Category</label>
-            <select id="category" onChange={(e) => setCategory(e.target.value)}>
-              <option value="Basic">Basic</option>
-              <option value="Premium">Premium</option>
-            </select>
-          </div>
+                        <label htmlFor="category">Categories</label>
+                        <input
+                            type="text"
+                            id="category"
+                            value={categoryName}
+                            onChange={(e) => setCategoryName(e.target.value)}
+                        />
+                        <button type="button" onClick={addCategory}>
+                            Add Category
+                        </button>
+                    </div>
+                    <div className="form-group">
+                        <ul>
+                            {categories.map((category, index) => (
+                                <li key={index}>
+                                    {category.name}
+                                    <button
+                                        type="button"
+                                        onClick={() => removeCategory(index)}
+                                    >
+                                        Remove
+                                    </button>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
           <div className="form-group">
             <label htmlFor="imageUrl">Image</label>
             <input

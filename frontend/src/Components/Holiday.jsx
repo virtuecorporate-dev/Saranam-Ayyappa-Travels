@@ -132,7 +132,13 @@ export default function Holiday() {
                                             <li key={i}>{ser.name}</li>
                                         ))}
                                     </ol>
-                                    <p>Category: <strong>{holiday.category}</strong></p>
+                                    <h6>Category:</h6>
+                                    <ol>
+                                        {holiday.category && holiday.category.map((cat, i) => (
+                                            <li key={i}>{cat.name}</li>
+                                        ))}
+                                    </ol>
+
                                 </div>
                                 <div className="tour-pdf">
                                     {holiday.pdf && (

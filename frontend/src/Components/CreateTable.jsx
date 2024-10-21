@@ -15,6 +15,7 @@ export function CreateTable() {
   const [category, setCategory] = useState('');
   const [file, setFile] = useState(null);
   const [imagePreviewUrl, setImagePreviewUrl] = useState('');
+  const [localType, setLocalType] = useState('')
   
   const dispatch = useDispatch();
   const navigate = useNavigate();

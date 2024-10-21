@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { getHoliday } from "../Slice/holidaySlice";
@@ -21,9 +21,11 @@ const Service = () => {
     fetchData();
   }, [dispatch]);
 
+  const [Category, setCategory] = useState("")
+
   return (
     <section>
-       <div className="container-fluid p-0 about-banner">
+      <div className="container-fluid p-0 about-banner">
         <div className="about-img ">
           <img src="./images/w4.jpg" alt="About Us Banner" />
         </div>
@@ -43,33 +45,37 @@ const Service = () => {
         </div>
       </div>
 
-      <div className="container">
+      <div className="container mb-5">
         <div className="text-center mt-5 pb-5">
-          <h5>OUR SERVICES</h5>
-          <h1>We Provide Best Holiday Packages For You</h1>
+          <h5 className="section-title">OUR SERVICES</h5>
+          <h1 className="section-header">We Provide Best Holiday Packages For You</h1>
         </div>
 
-        <section className="tour-package row">
+        <section className="tour-package-section">
           {holidays.map((tour) => (
-            <div className="tour-package-card col-lg-4" key={tour._id}>
+            <div className="tour-package-card" key={tour._id}>
               <img
                 src={`http://localhost:8000/${tour.imageUrl}`}
                 alt={tour.name}
-                className="img-fluid"
+                className="tour-image img-fluid"
               />
               <div className="tour-package-content">
-                <h3>Package: {tour.name}</h3>
-                <h4>
-                  Category:
-                  <ul className="tour-category">
-                    <li>
-                      <i className="fa-solid fa-check"></i> {tour.category}
-                    </li>
+                <h3 className="tour-name">Package: {tour.name}</h3>
+
+                <h4 className="tour-category ">
+                  <span className="head"> Category:</span>
+                  <ul className="tour-services">
+                    {tour.category.map((cat, i) => (
+                      <li key={i}>
+                        <i className="fa-solid fa-check"></i> {cat.name}
+                      </li>
+                    ))}
                   </ul>
                 </h4>
+
                 <p>
                   Service Included:
-                  <ul className="tour-category">
+                  <ul className="tour-services">
                     {tour.services.map((ser, i) => (
                       <li key={i}>
                         <i className="fa-solid fa-check"></i> {ser.name}
@@ -78,33 +84,32 @@ const Service = () => {
                   </ul>
                 </p>
                 <div className="tour-package-btn">
-  <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
-    <button>Book Now</button>
-  </Link>
-</div>
+                                    <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+                                        <button className="btn btn-book-now">Book Now</button>
+                                    </Link>
+                                </div>
 
                 <div className="holiday-pdf">
-                  <label htmlFor="pdf">
-                    <h6>PDF</h6>                   
+                  {
+                    tour.pdf && (<h6>For More Details about the package :
+                      <a
+                        href={`http://localhost:8000/${tour.pdf}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="package-details"
+                      >
+                        Tour Itenary
+                      </a>
+                    </h6>)
+                  }
 
-                  </label>
-                  &nbsp; &nbsp;
-                  {tour.pdf && (
-                    <a
-                      href={`http://localhost:8000/${tour.pdf}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn btn-primary"
-                    >
-                      Download PDF
-                    </a>
-                  )}
                 </div>
               </div>
             </div>
           ))}
         </section>
       </div>
+
     </section>
   );
 };

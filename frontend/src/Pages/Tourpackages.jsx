@@ -42,7 +42,7 @@ export default function TourPackages() {
                     </div>
                 </div>
             </div>
-            <div className="container">
+            {/* <div className="container">
                 <div className="text-center mt-5 pb-5">
                     <h5>OUR SERVICES</h5>
                     <h1>We Provide Best Tour Packages For You</h1>
@@ -93,7 +93,61 @@ export default function TourPackages() {
                     ))}
                 </section>
 
+            </div> */}
+
+            <div className="container mb-5">
+                <div className="text-center mt-5 pb-5">
+                    <h5 className="section-title">OUR SERVICES</h5>
+                    <h1 className="section-header">We Provide the Best Tour Packages For You</h1>
+                </div>
+
+                <section className="row tour-package-section">
+                <div className="table-add">
+                        <Link to='/CustomTourPackageForm'>
+                            <button className="add-button"><i className="fa-solid fa-plus"></i> Add Customized Tour</button>
+                        </Link>
+                    </div>
+                    {tours.map((tour) => (
+                        <div className="tour-package-card col-lg-4 col-md-6 col-sm-12 mb-4" key={tour._id}>
+                            <img src={`http://localhost:8000/${tour.imageUrl}`} alt={tour.name} className="img-fluid tour-image" />
+                            <div className="tour-package-content">
+                                <h3 className="tour-name">Package: {tour.name}</h3>
+                                {/* <h4 className="tour-category">
+                                    Category: <span className="category-text">{tour.category}</span>
+                                </h4> */}
+                                <h4>No of Persons: {tour.numberOfPersons}</h4>
+                                <p>Service Included:</p>
+                                <ul className="tour-services">
+                                    {tour.services.map((ser, i) => (
+                                        <li key={i}><i className="fa-solid fa-check"></i> {ser.name}</li>
+                                    ))}
+                                </ul>
+                                <div className="tour-package-btn">
+                                    <Link to={`/PackageBooknow/${tour._id}`} state={{ tour }}>
+                                        <button className="btn btn-book-now">Book Now</button>
+                                    </Link>
+                                </div>
+                                <div className="holiday-pdf">
+                                    {
+                                    tour.pdf && (<h6>For More Details about the package :
+                                        <a
+                                            href={`http://localhost:8000/${tour.pdf}`}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="package-details"
+                                        >
+                                            Tour Itenary
+                                        </a>
+                                    </h6>)
+                                    }
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </section>
             </div>
+
         </section>
     );
 }

@@ -51,16 +51,33 @@ export default function UpdateTour() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+    
         try {
-            const formData = { name, category, services, noOfPersons, imageUrl, pdf };
-            const response = await axios.put(`http://localhost:8000/api/v1/updateTour/${id}`, formData);
-
+            const formData = new FormData(); // Create FormData object to handle file uploads
+            formData.append('name', name);
+            formData.append('category', category);
+            formData.append('services', JSON.stringify(services)); // Convert services array to a JSON string
+            formData.append('noOfPersons', noOfPersons);
+            if (file) {
+                formData.append('image', file); // Append image file if selected
+            }
+            if (pdf) {
+                formData.append('pdf', pdf); // Append PDF file if selected
+            }
+    
+            const response = await axios.put(`http://localhost:8000/api/v1/updateTour/${id}`, formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data', // Set the content type to multipart for file upload
+                },
+            });
+    
             dispatch(updateTour(response.data.tour));
             navigate('/tour');
         } catch (error) {
             console.log(error.message);
         }
     };
+    
 
     return (
         <Fragment>

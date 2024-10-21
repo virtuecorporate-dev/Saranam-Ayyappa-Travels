@@ -133,7 +133,7 @@ body {
 }
 
 .banner-content {
-  /* padding: 0 0 0 80px; */
+  /* padding: 0; */
   background-color: rgba(0, 82, 149, 0.358);
   /* z-index: -100; */
 }
@@ -154,7 +154,7 @@ body {
   width: 100%;
   color: white;
   text-align: center;
-  z-index: 2000;
+  /* z-index: 2000; */
 }
 
 .landing-text h1 {
@@ -789,6 +789,75 @@ margin-left: 10px;
 
 
 /* Admin table start-------------------------------------- */
+
+/* Container for the whole admin section */
+.admin-container {
+  margin-top: 50px;
+ margin-bottom: 80px;
+}
+
+/* Introductory content with some spacing */
+.admin-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.admin-intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.admin-intro p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Admin panel with row-wise structure */
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Each admin option with some spacing */
+.admin-option {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Button styling */
+.admin-button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  background-color: #005395;
+  color: #fff;
+}
+.admin-button:hover{
+  border: 2px solid #005395;
+  color: #000000;
+}
+.admin-button.btn2{
+  background-color: #007bff;
+}
+.admin-button.btn2:hover{
+  border: 2px solid #007bff;
+  background-color: transparent;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .admin-option {
+    max-width: 100%;
+  }
+
+  .admin-button {
+    font-size: 1.1rem;
+  }
+}
+
 
 
 
@@ -1804,143 +1873,349 @@ margin-top: -15px;
   /* cursor: pointer; */
 }
 
-/* .card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  background: #f0f0f0;
-  border-radius: 10px;
-} */
+
 
 /* Tour Package start----------------------- */
 /* Main container for the tour packages */
-.tour-package {
+/* Section Header Styling */
+.section-title {
+  font-size: 1.5rem;
+  color: #007bff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Tour Package Section Styling */
+.tour-package-section {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: space-between;
-  justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  background-color: #F8F9FC; /* Soft white background */
-  margin: 0 auto;
-  max-width: 1200px; /* Restrict width for proper centering */
 }
 
-/* Individual tour package card styling */
 .tour-package-card {
-  width: 30%; /* Three columns layout */
-  background-color: #005395; /* Card background */
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  background-color: #fff;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+  padding: 20px;
+  flex-basis: 100%; /* Default full width for small screens */
 }
 
-/* Card hover effect */
 .tour-package-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.tour-category li{
-  list-style-type: none;
-}
-
-/* Image styling */
-.tour-package-card img {
+.tour-image {
   width: 100%;
-  height: 300px;
+  height: 200px;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 
-/* Content area within the card */
+/* Tour Package Content Styling */
 .tour-package-content {
   padding: 20px;
 }
 
-/* Heading styling */
-.tour-package-content h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: white;
-}
-
-/* Subheading (category, persons) */
-.tour-package-content h4 {
-  font-size: 16px;
-  font-weight: 400;
-  color: white;
+.tour-name {
+  font-size: 1.4rem;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-/* Service included section */
-.tour-package-content p {
-  font-size: 14px;
-  color: white;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-/* Button container */
-.tour-package-btn {
+.tour-category {
   display: flex;
-  justify-content: flex-start;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+.tour-category select:focus{
+  border-color: transparent;
+  outline: none;
+}
+.tour-category .head{
+  margin-top: 5px;
 }
 
-/* Button styling */
-.tour-package-btn button {
-  background-color: black;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 14px;
+.category-text {
+  color: #4caf50;
+  font-weight: 500;
 }
 
-.tour-package-btn button:hover {
-  background-color: #333;
-}
-
-/* PDF download button */
-.holiday-pdf {
+.tour-services {
+  list-style: none;
+  padding: 0;
   margin-top: 10px;
 }
 
-.holiday-pdf h6 {
-  font-size: 14px;
-  color: white;
+.tour-services li {
   margin-bottom: 5px;
+  font-size: 1rem;
 }
 
-/* PDF button styling */
-.holiday-pdf .btn {
+.tour-package-btn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+.tour-package-btn .package-fare{
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.package-details{
+color: #626161;
+text-decoration: none;
+}
+.package-details:hover{
+  color: #000000;
+  text-decoration: underline;
+}
+
+.btn-book-now {
   background-color: #007bff;
   color: white;
-  padding: 8px 12px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
   border-radius: 5px;
-  text-decoration: none;
-  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
-.holiday-pdf .btn:hover {
+.btn-book-now:hover {
   background-color: #0056b3;
 }
 
-/* Responsive layout */
-@media (max-width: 992px) {
+/* PDF Download Button */
+.holiday-pdf {
+  margin-top: 20px;
+  /* text-align: center; */
+}
+
+.holiday-pdf h6 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.holiday-pdf .btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1200px) {  /* Large screens - 3 columns */
   .tour-package-card {
-    width: 48%; /* Two columns on tablet */
+      flex-basis: 30%; /* 30% width for 3 cards per row */
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1199px) and (min-width: 768px) {  /* Medium screens - 2 columns */
   .tour-package-card {
-    width: 100%; /* One column on mobile */
+      flex-basis: 48%; /* 2 cards per row */
+  }
+}
+
+@media (max-width: 767px) {  /* Small screens - 1 column */
+  .tour-package-card {
+      flex-basis: 100%; /* Full width for small screens */
+  }
+
+  .tour-image {
+      height: 180px;
+  }
+
+  .tour-package-content h3 {
+      font-size: 1.2rem;
+  }
+
+  .tour-category {
+      font-size: 1.1rem;
+  }
+
+  .tour-package-btn .btn-book-now {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {  /* Extra small screens */
+  .tour-image {
+      height: 150px;
+  }
+
+  .tour-package-content h3 {
+      font-size: 1.1rem;
+  }
+}
+
+
+/* Section Header Styling */
+.section-title {
+  font-size: 1.5rem;
+  color: #007bff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.section-header {
+  font-size: 2.5rem;
+  color: #333;
+  font-weight: 700;
+}
+
+/* Tour Package Section Styling */
+.tour-package-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.tour-package-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  text-align: left;
+  padding: 20px;
+  flex-basis: 100%; /* Default full width for small screens */
+}
+
+.tour-package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tour-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Tour Package Content Styling */
+.tour-package-content {
+  padding: 20px;
+}
+
+.tour-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.tour-category {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.category-text {
+  color: #4caf50;
+  font-weight: 500;
+}
+
+.tour-services {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+.tour-services li {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.tour-package-btn {
+  margin-top: 15px;
+}
+
+.btn-book-now {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-book-now:hover {
+  background-color: #0056b3;
+}
+
+/* PDF Download Button */
+.holiday-pdf {
+  margin-top: 20px;
+  /* text-align: center; */
+}
+
+.holiday-pdf h6 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.holiday-pdf .btn {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 1200px) {
+  .tour-package-card {
+      flex-basis: 30%; /* 3 cards per row */
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .tour-package-card {
+      flex-basis: 48%; /* 2 cards per row */
+  }
+}
+
+@media (max-width: 767px) {
+  .tour-package-card {
+      flex-basis: 100%; /* Full width for small screens */
+  }
+
+  .tour-image {
+      height: 180px;
+  }
+
+  .tour-package-content h3 {
+      font-size: 1.2rem;
+  }
+
+  .tour-category {
+      font-size: 1.1rem;
+  }
+
+  .tour-package-btn .btn-book-now {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .tour-image {
+      height: 150px;
+  }
+
+  .tour-package-content h3 {
+      font-size: 1.1rem;
   }
 }
 
@@ -2066,59 +2341,59 @@ button:hover {
   padding: 50px 0;
 }
 
-.booking-form {
+.package .booking-form {
   background-color: #f9f9f9;
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.booking-form h4 {
+.package .booking-form h4 {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.booking-form h5 {
+.package .booking-form h5 {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 10px;
 }
 
-.booking-form .form-group {
+.package .booking-form .form-group {
   margin-bottom: 20px;
 }
 
-.booking-form .form-group label {
+.package .booking-form .form-group label {
   font-weight: 500;
   font-size: 16px;
 }
 
-.booking-form .form-group .form-control {
+.package .booking-form .form-group .form-control {
   border-radius: 5px;
   padding: 10px;
   font-size: 16px;
 }
 
-.booking-form .btn-primary {
+.package .booking-form .btn-primary {
   background-color: #88D66C;
   border: none;
   font-size: 18px;
   font-weight: 600;
 }
 
-.booking-form .btn-primary:hover {
+.package .booking-form .btn-primary:hover {
   background-color: #76c158;
 }
 
-.booking-form h2 {
+.package .booking-form h2 {
   color: #2E236C;
   font-family: 'Poppins', sans-serif;
   font-size: 36px;
   font-weight: 600;
 }
 
-.booking-form img {
+.package .booking-form img {
   border-radius: 10px;
   height: 300px;
 }
