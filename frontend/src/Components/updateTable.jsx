@@ -33,7 +33,7 @@ export function UpdateTable(){
       e.preventDefault();
       try {
         const formData = { carModel, brand, price, seats, availability, description, category,imageUrl  };
-        const response = await axios.put(`http://localhost:8000/api/v1/update/${id}`, formData);
+        const response = await axios.put(`https://saranamayyappatravels.vercel.app/api/v1/update/${id}`, formData);
         dispatch(updateCar(response.data.car));
         navigate('/admin');
       } catch (error) {

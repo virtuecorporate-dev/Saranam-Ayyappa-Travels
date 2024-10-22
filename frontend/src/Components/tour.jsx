@@ -13,7 +13,7 @@
 //     const handleDelete = async (id) => {
 //         try {
 //             // Make a DELETE request to the server
-//             await axios.delete(`http://localhost:8000/api/v1/deleteTour/${id}`);
+//             await axios.delete(`https://saranamayyappatravels.vercel.app/api/v1/deleteTour/${id}`);
 //             // Dispatch the deleteTour action with the id
 //             dispatch(deleteTour({ id }));
 //         } catch (error) {
@@ -24,7 +24,7 @@
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
-//                 const response = await axios.get(`http://localhost:8000/api/v1/tour`);
+//                 const response = await axios.get(`https://saranamayyappatravels.vercel.app/api/v1/tour`);
 //                 dispatch(getTour(response.data.tour));
 //             } catch (error) {
 //                 console.log("cannot fetch data", error.message);
@@ -49,7 +49,7 @@
 //                         <div className="row car-detail" key={tour.id}>
 //                             <div className="col-lg-2">
 //                                 <img
-//                                     src={`http://localhost:8000/${tour.imageUrl}`}
+//                                     src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`}
 //                                     alt="Holiday Image"
 //                                     className="img-fluid"
 //                                 />
@@ -93,7 +93,7 @@
 
 //                                 {tour.pdf && (
 //                                     <a
-//                                         href={`http://localhost:8000/${tour.pdf}`}  // URL to the PDF file
+//                                         href={`https://saranamayyappatravels.vercel.app/${tour.pdf}`}  // URL to the PDF file
 //                                         target="_blank"      // Opens the PDF in a new tab or window
 //                                         rel="noopener noreferrer"
 //                                         className="btn btn-primary "
@@ -136,7 +136,7 @@ export default function Tour() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:8000/api/v1/deleteTour/${id}`);
+            await axios.delete(`https://saranamayyappatravels.vercel.app/api/v1/deleteTour/${id}`);
             dispatch(deleteTour({ id }));
         } catch (error) {
             console.error("Failed to delete the tour", error.message);
@@ -146,7 +146,7 @@ export default function Tour() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/tour`);
+                const response = await axios.get(`https://saranamayyappatravels.vercel.app/api/v1/tour`);
                 dispatch(getTour(response.data.tour));
             } catch (error) {
                 console.log("Cannot fetch data", error.message);
@@ -174,7 +174,7 @@ export default function Tour() {
                         tours.map((tour, index) => (
                             <div className="tour-card" key={tour.id}>
                                 <div className="tour-image">
-                                    <img src={`http://localhost:8000/${tour.imageUrl}`} alt="Holiday Image" />
+                                    <img src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`} alt="Holiday Image" />
                                 </div>
                                 <div className="tour-details">
                                     <h5>Sno: {index + 1}</h5>
@@ -190,7 +190,7 @@ export default function Tour() {
                                 </div>
                                 <div className="tour-pdf">
                                     {tour.pdf && (
-                                        <a href={`http://localhost:8000/${tour.pdf}`} target="_blank" rel="noopener noreferrer" className=" download-btn">
+                                        <a href={`https://saranamayyappatravels.vercel.app/${tour.pdf}`} target="_blank" rel="noopener noreferrer" className=" download-btn">
                                             Download PDF
                                         </a>
                                     )}

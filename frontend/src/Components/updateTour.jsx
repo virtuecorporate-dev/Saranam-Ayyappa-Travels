@@ -65,7 +65,7 @@ export default function UpdateTour() {
                 formData.append('pdf', pdf); // Append PDF file if selected
             }
     
-            const response = await axios.put(`http://localhost:8000/api/v1/updateTour/${id}`, formData, {
+            const response = await axios.put(`https://saranamayyappatravels.vercel.app/api/v1/updateTour/${id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data', // Set the content type to multipart for file upload
                 },

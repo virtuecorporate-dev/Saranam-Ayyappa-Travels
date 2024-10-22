@@ -48,7 +48,7 @@ const ConfirmBooking = () => {
     setLoading(true)
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/sendemail', {
+      const response = await fetch('https://saranamayyappatravels.vercel.app/api/v1/sendemail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

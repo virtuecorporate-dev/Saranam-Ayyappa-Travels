@@ -30,7 +30,7 @@ const PackageBooknow = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "ce35ddae-b998-4d02-9326-0b6952ff5ced",
+          access_key: "941fad71-65af-410f-819f-9d4da8a0ac37",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -67,7 +67,7 @@ const PackageBooknow = () => {
         <div className="row">
           <div className="col-lg-6">
             <img
-              src={`http://localhost:8000/${tour.imageUrl}`}
+              src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`}
               alt={tour.name}
               className="img-fluid mb-4"
               style={{ borderRadius: "10px" }}
