@@ -9,10 +9,10 @@ const cors= require('cors');
 dotenv.config({path:path.join(__dirname,"config","config.env")})
 mongodbConnection();
 
-app.use(cors({
-    origin: 'http://localhost:3000',
-    credentials: true
-}));
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     credentials: true
+// }));
 
 
 app.use(express.json());
