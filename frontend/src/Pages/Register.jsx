@@ -21,7 +21,7 @@ const RegisterPage = ({ onCloseRegister }) => {
     }
 
     try {
-      const response = await axios.post('https://saranamayyappatravels-fp8c.vercel.app/api/v1/register', {
+      const response = await axios.post('${process.env.REACT_APP_ALL_CARS}/register', {
         name,
         email,
         password,

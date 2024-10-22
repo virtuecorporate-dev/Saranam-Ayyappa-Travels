@@ -33,7 +33,7 @@ export function UpdateTable(){
       e.preventDefault();
       try {
         const formData = { carModel, brand, price, seats, availability, description, category,imageUrl  };
-        const response = await axios.put(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/update/${id}`, formData);
+        const response = await axios.put(`${process.env.REACT_APP_ALL_CARS}/update/${id}`, formData);
         dispatch(updateCar(response.data.car));
         navigate('/admin');
       } catch (error) {

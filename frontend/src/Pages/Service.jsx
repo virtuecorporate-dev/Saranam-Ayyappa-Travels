@@ -11,7 +11,7 @@ const Service = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/holiday`);
+        const response = await axios.get(`${process.env.REACT_APP_ALL_CARS}/holiday`);
         dispatch(getHoliday(response.data.holidays));
       } catch (error) {
         console.log("Cannot fetch data", error.message);

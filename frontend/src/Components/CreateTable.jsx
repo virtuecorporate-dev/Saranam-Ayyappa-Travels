@@ -40,7 +40,7 @@ export function CreateTable() {
         formData.append('imageUrl', file);
       }
 
-      const response = await axios.post('https://saranamayyappatravels-fp8c.vercel.app/api/v1/createCar', formData, {
+      const response = await axios.post('${process.env.REACT_APP_ALL_CARS}/createCar', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }

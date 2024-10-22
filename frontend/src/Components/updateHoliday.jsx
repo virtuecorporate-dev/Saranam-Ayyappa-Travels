@@ -76,7 +76,7 @@ const removeCategory = (index) => {
 
     try {
       const response = await axios.put(
-        `https://saranamayyappatravels-fp8c.vercel.app/api/v1/updateHoliday/${id}`,
+        `${process.env.REACT_APP_ALL_CARS}/updateHoliday/${id}`,
         formData,
         {
           headers: {

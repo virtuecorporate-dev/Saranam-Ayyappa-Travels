@@ -11,7 +11,7 @@ export default function TourPackages() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/tour`);
+                const response = await axios.get(`${process.env.REACT_APP_ALL_CARS}/tour`);
                 dispatch(getTour(response.data.tour));
             } catch (error) {
                 console.log("Cannot fetch data", error.message);

@@ -97,7 +97,7 @@ exports.createTour = [
 ];
 
 
-// https://saranamayyappatravels-fp8c.vercel.app/api/v1/updateTour/id
+// ${process.env.REACT_APP_ALL_CARS}/updateTour/id
 
 
 exports.updateTour=async(req,res)=>{
@@ -131,7 +131,7 @@ exports.updateTour=async(req,res)=>{
     }
 }
 
-// https://saranamayyappatravels-fp8c.vercel.app/api/v1/deleteTour/id
+// ${process.env.REACT_APP_ALL_CARS}/deleteTour/id
 
 exports.deleteTour=async(req,res)=>{
     try{

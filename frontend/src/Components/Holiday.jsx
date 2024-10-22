@@ -11,7 +11,7 @@ export default function Holiday() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/deleteHoliday/${id}`);
+            await axios.delete(`${process.env.REACT_APP_ALL_CARS}/deleteHoliday/${id}`);
             dispatch(deleteHoliday({ id })); // Dispatch the action after the response
         } catch (error) {
             console.error("Error deleting holiday:", error);
@@ -21,7 +21,7 @@ export default function Holiday() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://saranamayyappatravels-fp8c.vercel.app/api/v1/holiday');
+                const response = await axios.get('${process.env.REACT_APP_ALL_CARS}/holiday');
                 dispatch(getHoliday(response.data.holidays));
             } catch (error) {
                 console.log("error", error.message);

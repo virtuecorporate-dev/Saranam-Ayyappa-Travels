@@ -55,7 +55,7 @@ const SelectCab = ({ state, dispatch }) => {
 
     useEffect(() => {
         if (state.triptype && state.NumberOfPersons && state.distance) {
-            let apiUrl = `https://saranamayyappatravels-fp8c.vercel.app/api/v1/allFilteredCabs?category=${state.triptype}&seats=${state.NumberOfPersons}`;
+            let apiUrl = `${process.env.REACT_APP_ALL_CARS}/allFilteredCabs?category=${state.triptype}&seats=${state.NumberOfPersons}`;
 
             if (state.triptype === 'Drop Trip') {
                 apiUrl += `&distance=${state.distance}`;

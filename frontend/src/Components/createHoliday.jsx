@@ -77,7 +77,7 @@ export default function CreateHoliday() {
             });
 
             const response = await axios.post(
-                'https://saranamayyappatravels-fp8c.vercel.app/api/v1/createHoliday',
+                '${process.env.REACT_APP_ALL_CARS}/createHoliday',
                 formData,
                 {
                     headers: {
