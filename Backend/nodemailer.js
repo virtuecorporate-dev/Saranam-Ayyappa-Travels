@@ -21,7 +21,7 @@ exports.sendMail = async (req, res) => {
 
   const mailOptions = {
     from: process.env.EMAIL_USER, // Use the environment variable for sender email
-    to: 'sathiyakalavirtue@gmail.com', // Replace with your desired recipient
+    to: 'www.saptravels.in@gmail.com', // Replace with your desired recipient
     subject: 'New Cab Booking Confirmation',
     text: `
       New Cab Booking Details:
