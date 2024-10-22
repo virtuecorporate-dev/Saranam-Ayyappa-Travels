@@ -9,7 +9,7 @@ const cors= require('cors');
 dotenv.config({path:path.join(__dirname,"config","config.env")})
 mongodbConnection();
 
-
+app.use(cors());
 
 app.get('/hello', (req, res) => {
     res.send('Hello, World!');
