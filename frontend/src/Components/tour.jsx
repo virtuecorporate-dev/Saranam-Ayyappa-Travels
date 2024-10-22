@@ -174,7 +174,7 @@ export default function Tour() {
                         tours.map((tour, index) => (
                             <div className="tour-card" key={tour.id}>
                                 <div className="tour-image">
-                                    <img src={`http://localhost:8000/${tour.imageUrl}`} alt="Holiday Image" />
+                                    <img src={`https://saranam-ayyappa-travels-backend.vercel.app/${tour.imageUrl}`} alt="Holiday Image" />
                                 </div>
                                 <div className="tour-details">
                                     <h5>Sno: {index + 1}</h5>
@@ -190,7 +190,7 @@ export default function Tour() {
                                 </div>
                                 <div className="tour-pdf">
                                     {tour.pdf && (
-                                        <a href={`http://localhost:8000//${tour.pdf}`} target="_blank" rel="noopener noreferrer" className=" download-btn">
+                                        <a href={`https://saranam-ayyappa-travels-backend.vercel.app/${tour.pdf}`} target="_blank" rel="noopener noreferrer" className=" download-btn">
                                             Download PDF
                                         </a>
                                     )}
