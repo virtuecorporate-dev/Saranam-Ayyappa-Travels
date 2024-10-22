@@ -67,7 +67,7 @@ const PackageBooknow = () => {
         <div className="row">
           <div className="col-lg-6">
             <img
-              src={`https://saranamayyappatravels-fp8c.vercel.app/${tour.imageUrl}`}
+              src={`${process.env.REACT_APP_ALL_IMG}/${tour.imageUrl}`}
               alt={tour.name}
               className="img-fluid mb-4"
               style={{ borderRadius: "10px" }}

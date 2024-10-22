@@ -21,7 +21,7 @@ export default function Holiday() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('${process.env.REACT_APP_ALL_CARS}/holiday');
+                const response = await axios.get(`${process.env.REACT_APP_ALL_CARS}/holiday`);
                 dispatch(getHoliday(response.data.holidays));
             } catch (error) {
                 console.log("error", error.message);
@@ -121,7 +121,7 @@ export default function Holiday() {
                         holidays.map((holiday, index) => (
                             <div className="tour-card" key={holiday.id}>
                                 <div className="tour-image">
-                                    <img src={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.imageUrl}`} alt="Holiday Image" />
+                                    <img src={`http://localhost:8000/${holiday.imageUrl}`} alt="Holiday Image" />
                                 </div>
                                 <div className="tour-details">
                                     <h5>Sno: {index + 1}</h5>
@@ -142,7 +142,7 @@ export default function Holiday() {
                                 </div>
                                 <div className="tour-pdf">
                                     {holiday.pdf && (
-                                        <a href={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.pdf}`} target="_blank" rel="noopener noreferrer" className="download-btn">
+                                        <a href={`http://localhost:8000/${holiday.pdf}`} target="_blank" rel="noopener noreferrer" className="download-btn">
                                             Download PDF
                                         </a>
                                     )}

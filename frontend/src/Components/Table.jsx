@@ -51,7 +51,7 @@ function Table() {
               <div className="tour-card" key={car.id}>
                 <div className="tour-image">
                   <img
-                    src={`https://saranamayyappatravels-fp8c.vercel.app/${car.imageUrl}`} // Ensure the image URL is correct
+                    src={`http://localhost:8000/${car.imageUrl}`} // Ensure the image URL is correct
                     alt="Car not visible"
                     className="img-fluid"
                   />

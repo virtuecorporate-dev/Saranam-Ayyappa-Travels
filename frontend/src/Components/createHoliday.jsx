@@ -77,7 +77,7 @@ export default function CreateHoliday() {
             });
 
             const response = await axios.post(
-                '${process.env.REACT_APP_ALL_CARS}/createHoliday',
+                `${process.env.REACT_APP_ALL_CARS}/createHoliday`,
                 formData,
                 {
                     headers: {

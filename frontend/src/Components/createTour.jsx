@@ -60,7 +60,7 @@ export default function CreateTour() {
                 formData.append("pdf", pdf);
             }
     
-            const response = await axios.post('${process.env.REACT_APP_ALL_CARS}/createTour', formData, {
+            const response = await axios.post(`${process.env.REACT_APP_ALL_CARS}/createTour`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
