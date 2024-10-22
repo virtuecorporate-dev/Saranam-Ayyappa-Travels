@@ -8,7 +8,7 @@ const Cars = () => {
 
     useEffect(() => {
         console.log(state.triptype);
-        fetch(`https://saranamayyappatravels.vercel.app/api/v1/avaibleCars?category=${state.triptype}`)
+        fetch(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/avaibleCars?category=${state.triptype}`)
             .then((res) => res.json())
             .then((json) => {
                 console.log(json);

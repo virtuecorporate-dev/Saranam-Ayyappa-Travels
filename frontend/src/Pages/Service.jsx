@@ -11,7 +11,7 @@ const Service = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://saranamayyappatravels.vercel.app/api/v1/holiday`);
+        const response = await axios.get(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/holiday`);
         dispatch(getHoliday(response.data.holidays));
       } catch (error) {
         console.log("Cannot fetch data", error.message);
@@ -55,7 +55,7 @@ const Service = () => {
           {holidays.map((tour) => (
             <div className="tour-package-card" key={tour._id}>
               <img
-                src={`https://saranamayyappatravels.vercel.app/${tour.imageUrl}`}
+                src={`https://saranamayyappatravels-fp8c.vercel.app/${tour.imageUrl}`}
                 alt={tour.name}
                 className="tour-image img-fluid"
               />
@@ -93,7 +93,7 @@ const Service = () => {
                   {
                     tour.pdf && (<h6>For More Details about the package :
                       <a
-                        href={`https://saranamayyappatravels.vercel.app/${tour.pdf}`}
+                        href={`https://saranamayyappatravels-fp8c.vercel.app/${tour.pdf}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="package-details"

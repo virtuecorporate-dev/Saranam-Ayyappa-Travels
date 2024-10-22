@@ -12,7 +12,7 @@ function Table() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://saranamayyappatravels.vercel.app/api/v1/delete/${id}`);
+      await axios.delete(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/delete/${id}`);
       dispatch(deleteCar({ id }));
     } catch (error) {
       console.log(error.message);
@@ -22,7 +22,7 @@ function Table() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://saranamayyappatravels.vercel.app/api/v1/allCars`);
+        const response = await axios.get(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/allCars`);
         dispatch(getAllCar(response.data.Cabs));
         navigate('/table'); // Ensure this path is correct
       } catch (error) {
@@ -51,7 +51,7 @@ function Table() {
               <div className="tour-card" key={car.id}>
                 <div className="tour-image">
                   <img
-                    src={`https://saranamayyappatravels.vercel.app/${car.imageUrl}`} // Ensure the image URL is correct
+                    src={`https://saranamayyappatravels-fp8c.vercel.app/${car.imageUrl}`} // Ensure the image URL is correct
                     alt="Car not visible"
                     className="img-fluid"
                   />

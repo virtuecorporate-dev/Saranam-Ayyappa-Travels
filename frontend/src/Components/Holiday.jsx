@@ -11,7 +11,7 @@ export default function Holiday() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://saranamayyappatravels.vercel.app/api/v1/deleteHoliday/${id}`);
+            await axios.delete(`https://saranamayyappatravels-fp8c.vercel.app/api/v1/deleteHoliday/${id}`);
             dispatch(deleteHoliday({ id })); // Dispatch the action after the response
         } catch (error) {
             console.error("Error deleting holiday:", error);
@@ -21,7 +21,7 @@ export default function Holiday() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://saranamayyappatravels.vercel.app/api/v1/holiday');
+                const response = await axios.get('https://saranamayyappatravels-fp8c.vercel.app/api/v1/holiday');
                 dispatch(getHoliday(response.data.holidays));
             } catch (error) {
                 console.log("error", error.message);
@@ -43,7 +43,7 @@ export default function Holiday() {
         //             <div className="row car-detail" key={index}>
         //                 <div className="col-lg-2">
         //                     <img
-        //                         src={`https://saranamayyappatravels.vercel.app/${holiday.imageUrl}`}
+        //                         src={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.imageUrl}`}
         //                         alt="Holiday Image"
         //                         className="img-fluid"
         //                     />
@@ -81,7 +81,7 @@ export default function Holiday() {
 
         //                     {holiday.pdf && (
         //                         <a 
-        //                             href={`https://saranamayyappatravels.vercel.app/${holiday.pdf}`}  // URL to the PDF file
+        //                             href={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.pdf}`}  // URL to the PDF file
         //                             target="_blank"      // Opens the PDF in a new tab or window
         //                             rel="noopener noreferrer"
         //                             className="btn btn-primary "
@@ -121,7 +121,7 @@ export default function Holiday() {
                         holidays.map((holiday, index) => (
                             <div className="tour-card" key={holiday.id}>
                                 <div className="tour-image">
-                                    <img src={`https://saranamayyappatravels.vercel.app/${holiday.imageUrl}`} alt="Holiday Image" />
+                                    <img src={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.imageUrl}`} alt="Holiday Image" />
                                 </div>
                                 <div className="tour-details">
                                     <h5>Sno: {index + 1}</h5>
@@ -142,7 +142,7 @@ export default function Holiday() {
                                 </div>
                                 <div className="tour-pdf">
                                     {holiday.pdf && (
-                                        <a href={`https://saranamayyappatravels.vercel.app/${holiday.pdf}`} target="_blank" rel="noopener noreferrer" className="download-btn">
+                                        <a href={`https://saranamayyappatravels-fp8c.vercel.app/${holiday.pdf}`} target="_blank" rel="noopener noreferrer" className="download-btn">
                                             Download PDF
                                         </a>
                                     )}

@@ -18,7 +18,7 @@ const LoginPopup = ({ onClose }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('https://saranamayyappatravels.vercel.app/api/v1/login', {
+      const response = await axios.post('https://saranamayyappatravels-fp8c.vercel.app/api/v1/login', {
         email,
         password
       });
