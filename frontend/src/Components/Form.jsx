@@ -210,7 +210,7 @@ const BookingForm = () => {
                                 <input type="text" className='input-field'
                                     id='From'
                                     value={state.from}
-                                    placeholder="Coimbatore, Tamil Nadu, India"
+                                    placeholder="Enter Starting Point"
                                     required
                                     onChange={(e) => { dispatch({ type: "FROM", payload: e.target.value }) }} />
                             </div>
@@ -220,7 +220,7 @@ const BookingForm = () => {
                                 <input type="text" className='input-field'
                                     id='To'
                                     value={state.to}
-                                    placeholder="Salem, Tamil Nadu, India"
+                                    placeholder="Enter destination"
                                     required
                                     onChange={(e) => { dispatch({ type: "TO", payload: e.target.value }) }} />
                             </div>
@@ -236,7 +236,7 @@ const BookingForm = () => {
                                 <input type="text" className='input-field'
                                     id='PickUpLoaction'
                                     value={state.pickUpLocation}
-                                    placeholder="Gandhipuram,Cbe"
+                                    placeholder="Enter pickup location"
                                     required
                                     onChange={(e) => { dispatch({ type: "PICK-UP-LOCATION", payload: e.target.value }) }} />
                             </div>
