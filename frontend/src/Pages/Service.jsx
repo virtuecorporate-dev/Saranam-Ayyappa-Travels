@@ -55,7 +55,7 @@ const Service = () => {
           {holidays.map((tour) => (
             <div className="tour-package-card" key={tour._id}>
               <img
-                src={`https://saranam-ayyappa-travels-backend.vercel.app/${tour.imageUrl}`}
+                src={`https://saranamayyappatravels-backend.vercel.app/${tour.imageUrl}`}
                 alt={tour.name}
                 className="tour-image img-fluid"
               />
@@ -93,7 +93,7 @@ const Service = () => {
                   {
                     tour.pdf && (<h6>For More Details about the package :
                       <a
-                        href={`https://saranam-ayyappa-travels-backend.vercel.app/${tour.pdf}`}
+                        href={`https://saranamayyappatravels-backend.vercel.app/${tour.pdf}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="package-details"
