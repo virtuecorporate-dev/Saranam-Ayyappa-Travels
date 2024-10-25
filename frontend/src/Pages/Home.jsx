@@ -66,7 +66,7 @@ export default function Home() {
             <div className="row home-banner ">
               <div className="col-lg-6">
                 <h2>A Cab rental that's affordable and comfortable</h2>
-                <p className='mt-4'>Looking for a cab rental that's both affordable and comfortable? We provide top-notch vehicles and professional drivers to ensure your journey is smooth and enjoyable. Whether you need a ride for a short trip or a long-distance travel, we provide reliable and cost-effective solutions to meet your transportation needs. Book with us today and experience the convenience and comfort of our cab rental service, all at competitive prices. </p>
+                <p className='mt-4'>Looking for a cab rental that's both affordable and comfortable? we provide top-notch vehicles and professional drivers to ensure your journey is smooth and enjoyable. Whether you need a ride for a short trip or a long-distance travel, we provide reliable and cost-effective solutions to meet your transportation needs. Book with us today and experience the convenience and comfort of our cab rental service, all at competitive prices. </p>
                 <div className="row mt-2">
                   <div className="col-lg-6">
                     <h2 className='home-banner-text'>25 + </h2>
